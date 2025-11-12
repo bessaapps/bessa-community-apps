@@ -15,8 +15,14 @@ import Logo from "@/assets/images/logo.png";
 import GradientHeading from "@/components/GradientHeading";
 import { AiOutlineCheck } from "react-icons/ai";
 import { Fragment } from "react";
+import axios from "axios";
 
-export default function Home() {
+export default async function Home() {
+  const services = await axios
+    .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&_embed")
+    .then((response) => response.data)
+    .catch((error) => console.error(error));
+
   const processes = [
     {
       heading: "Discovery",
@@ -227,76 +233,81 @@ export default function Home() {
           </p>
         </div>
       </div>
-      {/*<div className={"max-w-[1200] px-4 py-32 mx-auto"}>*/}
-      {/*  <SectionHeading>Services</SectionHeading>*/}
-      {/*  <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>*/}
-      {/*    {services?.map(*/}
-      {/*      ({ slug, shortTitle, shortDescription, keyword }, index) => (*/}
-      {/*        <Link*/}
-      {/*          key={index}*/}
-      {/*          href={`/services/${slug}`}*/}
-      {/*          title={formatTitle(keyword)}*/}
-      {/*        >*/}
-      {/*          <div className={"bg-neutral aspect-square p-4"}>*/}
-      {/*            <div className={"flex flex-col justify-between h-full"}>*/}
-      {/*              <h3 className={"text-primary font-semibold"}>*/}
-      {/*                {shortTitle}*/}
-      {/*              </h3>*/}
-      {/*              <div className={"flex flex-col gap-4"}>*/}
-      {/*                <p>{shortDescription}</p>*/}
-      {/*                <div>*/}
-      {/*                  <button className={"btn btn-primary btn-outline"}>*/}
-      {/*                    Learn More*/}
-      {/*                  </button>*/}
-      {/*                </div>*/}
-      {/*              </div>*/}
-      {/*            </div>*/}
-      {/*          </div>*/}
-      {/*        </Link>*/}
-      {/*      )*/}
-      {/*    )}*/}
-      {/*    <div className={"row-span-2"} />*/}
-      {/*    <div className={"sm:col-span-2 pt-8"}>*/}
-      {/*      <GradientHeading>*/}
-      {/*        All-in-One App Development Services*/}
-      {/*      </GradientHeading>*/}
-      {/*      <h3 className={"flex items-center gap-2 text-xl"}>*/}
-      {/*        <AiOutlineCheck />*/}
-      {/*        Beautiful on every device and platform*/}
-      {/*      </h3>*/}
-      {/*      <h3 className={"flex items-center gap-2 text-xl"}>*/}
-      {/*        <AiOutlineCheck />*/}
-      {/*        Consistent brand presence across every device*/}
-      {/*      </h3>*/}
-      {/*      <h3 className={"flex items-center gap-2 text-xl"}>*/}
-      {/*        <AiOutlineCheck />*/}
-      {/*        Boost discoverability, downloads, and user loyalty*/}
-      {/*      </h3>*/}
-      {/*    </div>*/}
-      {/*    <div />*/}
-      {/*    <p>*/}
-      {/*      Every business deserves an app that works seamlessly across devices*/}
-      {/*      and platforms. As a react native app developer, I specialize in*/}
-      {/*      mobile development that feels intuitive, powerful, and ready to*/}
-      {/*      scale. From iOS and Android app development to polished web*/}
-      {/*      development that keeps your brand consistent across every*/}
-      {/*      touchpoint, I create solutions that engage customers and strengthen*/}
-      {/*      relationships. Whether you need custom app development,*/}
-      {/*      cross-platform builds, or startup MVPs, I provide the technical*/}
-      {/*      expertise to bring your vision to life.*/}
-      {/*    </p>*/}
-      {/*    <p>*/}
-      {/*      But building the app is just the beginning. My app development*/}
-      {/*      services extend to SEO and ASO strategies that help your app get*/}
-      {/*      discovered, downloaded, and loved. I also handle app store*/}
-      {/*      distribution so your launch is smooth, stress-free, and impactful.*/}
-      {/*      The result is a full-stack partnership where React Native*/}
-      {/*      development services meet marketing insight, so your product*/}
-      {/*      doesn&apos;t just exist in the store, it thrives in the hands of*/}
-      {/*      your customers.*/}
-      {/*    </p>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
+      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
+        <SectionHeading>Services</SectionHeading>
+        <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
+          {services?.map(
+            (service: {
+              id: string;
+              slug: string;
+              title: { rendered: string };
+              excerpt: { rendered: string };
+            }) => (
+              <Link
+                key={service.id}
+                href={`/services/${service.slug}`}
+                title={formatTitle(service.title.rendered)}
+              >
+                <div className={"bg-card aspect-square p-4"}>
+                  <div className={"flex flex-col justify-between h-full"}>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: service.excerpt.rendered
+                      }}
+                      className={"text-primary font-semibold"}
+                    />
+                    <div className={"flex flex-col gap-4"}>
+                      <div>
+                        <Button>Learn More</Button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            )
+          )}
+          <div className={"row-span-2"} />
+          <div className={"sm:col-span-2 pt-8"}>
+            <GradientHeading>
+              All-in-One App Development Services
+            </GradientHeading>
+            <h3 className={"flex items-center gap-2 text-xl"}>
+              <AiOutlineCheck />
+              Beautiful on every device and platform
+            </h3>
+            <h3 className={"flex items-center gap-2 text-xl"}>
+              <AiOutlineCheck />
+              Consistent brand presence across every device
+            </h3>
+            <h3 className={"flex items-center gap-2 text-xl"}>
+              <AiOutlineCheck />
+              Boost discoverability, downloads, and user loyalty
+            </h3>
+          </div>
+          <div />
+          <p>
+            Every business deserves an app that works seamlessly across devices
+            and platforms. As a react native app developer, I specialize in
+            mobile development that feels intuitive, powerful, and ready to
+            scale. From iOS and Android app development to polished web
+            development that keeps your brand consistent across every
+            touchpoint, I create solutions that engage customers and strengthen
+            relationships. Whether you need custom app development,
+            cross-platform builds, or startup MVPs, I provide the technical
+            expertise to bring your vision to life.
+          </p>
+          <p>
+            But building the app is just the beginning. My app development
+            services extend to SEO and ASO strategies that help your app get
+            discovered, downloaded, and loved. I also handle app store
+            distribution so your launch is smooth, stress-free, and impactful.
+            The result is a full-stack partnership where React Native
+            development services meet marketing insight, so your product
+            doesn&apos;t just exist in the store, it thrives in the hands of
+            your customers.
+          </p>
+        </div>
+      </div>
       <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
         <SectionHeading>Solutions</SectionHeading>
         <GradientHeading>Smart Tech with Real Impact</GradientHeading>
@@ -453,13 +464,11 @@ export default function Home() {
       <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
         <SectionHeading>Hello, there!</SectionHeading>
         <div className={"grid sm:grid-cols-4 gap-4"}>
-          <div className={"bg-secondary aspect-[8/10] p-4"}>
+          <div className={"bg-card aspect-[8/10] p-4"}>
             <div className={"flex flex-col justify-between h-full"}>
-              <h3 className={"text-secondary-foreground font-semibold"}>
-                I&apos;m Topher
-              </h3>
+              <h3 className={"font-semibold text-primary"}>I&apos;m Topher</h3>
               <div className={"flex flex-col gap-4"}>
-                <p className={"text-secondary-foreground"}>
+                <p className={"text-primary"}>
                   Ten years of experience building mobile and web apps, solving
                   problems, and fostering community.
                 </p>
