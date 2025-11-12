@@ -14,8 +14,40 @@ import { formatTitle } from "@/lib/helpers";
 import Logo from "@/assets/images/logo.png";
 import GradientHeading from "@/components/GradientHeading";
 import { AiOutlineCheck } from "react-icons/ai";
+import { Fragment } from "react";
 
 export default function Home() {
+  const processes = [
+    {
+      heading: "Discovery",
+      text: "This is where every great app begins. This stage includes open discussion to understand your goals, in-depth research to identify opportunities, and clear scope definition to set the foundation for success. By aligning vision and strategy from the start, this phase ensures that development moves forward with focus, efficiency, and confidence.",
+      steps: ["Discuss", "Research", "Define Scope"]
+    },
+    {
+      heading: "Design",
+      text: "This will bring your app to life visually with a clear style guide and prototypes. This stage defines the look, feel, and flow of your product, ensuring consistency across every screen and a seamless user experience. By combining creativity with usability, this phase lays the groundwork for an app that is both visually stunning and intuitive to navigate.",
+      steps: ["Create a Style Guide", "Prototype Designs"]
+    },
+    {
+      heading: "Build",
+      text: "Here Ideas will take shape and come to life. During this stage, layouts are crafted for clarity and usability, functionality is built to deliver seamless performance, and content is integrated to create a polished, engaging experience. Every detail is handled with precision to ensure the final product reflects your vision and meets the highest standards of quality.",
+      steps: [
+        "Layout Components",
+        "Install Functionality",
+        "Incorporate Content"
+      ]
+    },
+    {
+      heading: "Distribution",
+      text: "The final state ensures your app reaches the world with impact. This stage includes preparing your app for launch and managing submission to app stores, handling requirements and guidelines with expertise. By streamlining the process, the distribution phase makes your app accessible to users quickly and positions it for maximum visibility and success.",
+      steps: [
+        "Gather Requirements",
+        "Submit for Review",
+        "Publish to App Stores"
+      ]
+    }
+  ];
+
   return (
     <main>
       <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
@@ -70,7 +102,7 @@ export default function Home() {
                 className={"hover:scale-125 duration-200"}
               />
             </div>
-            <h3 className={"font-semibold"}>Learn AS/400</h3>
+            <h3 className={"font-semibold text-xl"}>Learn AS/400</h3>
           </div>
           <div className={"flex flex-col gap-4"}>
             <Link
@@ -84,7 +116,7 @@ export default function Home() {
                 className={"hover:scale-125 duration-200"}
               />
             </Link>
-            <h3 className={"font-semibold"}>
+            <h3 className={"font-semibold text-xl"}>
               <Link href={"/bessa"} title={"Bessa | Gay Social Media"}>
                 Bessa
               </Link>
@@ -103,7 +135,7 @@ export default function Home() {
                 className={"hover:scale-125 duration-200"}
               />
             </Link>
-            <h3 className={"font-semibold"}>
+            <h3 className={"font-semibold text-xl"}>
               <Link
                 href={"https://getresumemint.com"}
                 title={"Resume Mint"}
@@ -118,15 +150,15 @@ export default function Home() {
             <GradientHeading>
               Custom App Solutions that People Love to Use
             </GradientHeading>
-            <h3 className={"flex items-center gap-2"}>
+            <h3 className={"flex items-center gap-2 text-xl"}>
               <AiOutlineCheck />
               Effortless, beautiful, and intuitive
             </h3>
-            <h3 className={"flex items-center gap-2"}>
+            <h3 className={"flex items-center gap-2 text-xl"}>
               <AiOutlineCheck />
               Accessible UI design
             </h3>
-            <h3 className={"flex items-center gap-2"}>
+            <h3 className={"flex items-center gap-2 text-xl"}>
               <AiOutlineCheck />
               Meaningful, emotional brand experiences
             </h3>
@@ -160,15 +192,15 @@ export default function Home() {
         <GradientHeading>Belonging is Built Right In</GradientHeading>
         <div className={"flex flex-col gap-4"}>
           <div>
-            <h3 className={"flex items-center gap-2"}>
+            <h3 className={"flex items-center gap-2 text-xl"}>
               <AiOutlineCheck />
               Apps that feel like communities
             </h3>
-            <h3 className={"flex items-center gap-2"}>
+            <h3 className={"flex items-center gap-2 text-xl"}>
               <AiOutlineCheck />
               Transform users into brand advocates
             </h3>
-            <h3 className={"flex items-center gap-2"}>
+            <h3 className={"flex items-center gap-2 text-xl"}>
               <AiOutlineCheck />
               Spark conversation and turn engagement into lasting relationships.
             </h3>
@@ -195,76 +227,76 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
-        <SectionHeading>Services</SectionHeading>
-        <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
-          {/*{services?.map(*/}
-          {/*  ({ slug, shortTitle, shortDescription, keyword }, index) => (*/}
-          {/*    <Link*/}
-          {/*      key={index}*/}
-          {/*      href={`/services/${slug}`}*/}
-          {/*      title={formatTitle(keyword)}*/}
-          {/*    >*/}
-          {/*      <div className={"bg-neutral aspect-square p-4"}>*/}
-          {/*        <div className={"flex flex-col justify-between h-full"}>*/}
-          {/*          <h3 className={"text-primary font-semibold"}>*/}
-          {/*            {shortTitle}*/}
-          {/*          </h3>*/}
-          {/*          <div className={"flex flex-col gap-4"}>*/}
-          {/*            <p>{shortDescription}</p>*/}
-          {/*            <div>*/}
-          {/*              <button className={"btn btn-primary btn-outline"}>*/}
-          {/*                Learn More*/}
-          {/*              </button>*/}
-          {/*            </div>*/}
-          {/*          </div>*/}
-          {/*        </div>*/}
-          {/*      </div>*/}
-          {/*    </Link>*/}
-          {/*  )*/}
-          {/*)}*/}
-          <div className={"row-span-2"} />
-          <div className={"sm:col-span-2 pt-8"}>
-            <GradientHeading>
-              All-in-One App Development Services
-            </GradientHeading>
-            <h3 className={"flex items-center gap-2"}>
-              <AiOutlineCheck />
-              Beautiful on every device and platform
-            </h3>
-            <h3 className={"flex items-center gap-2"}>
-              <AiOutlineCheck />
-              Consistent brand presence across every device
-            </h3>
-            <h3 className={"flex items-center gap-2"}>
-              <AiOutlineCheck />
-              Boost discoverability, downloads, and user loyalty
-            </h3>
-          </div>
-          <div />
-          <p>
-            Every business deserves an app that works seamlessly across devices
-            and platforms. As a react native app developer, I specialize in
-            mobile development that feels intuitive, powerful, and ready to
-            scale. From iOS and Android app development to polished web
-            development that keeps your brand consistent across every
-            touchpoint, I create solutions that engage customers and strengthen
-            relationships. Whether you need custom app development,
-            cross-platform builds, or startup MVPs, I provide the technical
-            expertise to bring your vision to life.
-          </p>
-          <p>
-            But building the app is just the beginning. My app development
-            services extend to SEO and ASO strategies that help your app get
-            discovered, downloaded, and loved. I also handle app store
-            distribution so your launch is smooth, stress-free, and impactful.
-            The result is a full-stack partnership where React Native
-            development services meet marketing insight, so your product
-            doesn&apos;t just exist in the store, it thrives in the hands of
-            your customers.
-          </p>
-        </div>
-      </div>
+      {/*<div className={"max-w-[1200] px-4 py-8 mx-auto"}>*/}
+      {/*  <SectionHeading>Services</SectionHeading>*/}
+      {/*  <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>*/}
+      {/*    {services?.map(*/}
+      {/*      ({ slug, shortTitle, shortDescription, keyword }, index) => (*/}
+      {/*        <Link*/}
+      {/*          key={index}*/}
+      {/*          href={`/services/${slug}`}*/}
+      {/*          title={formatTitle(keyword)}*/}
+      {/*        >*/}
+      {/*          <div className={"bg-neutral aspect-square p-4"}>*/}
+      {/*            <div className={"flex flex-col justify-between h-full"}>*/}
+      {/*              <h3 className={"text-primary font-semibold"}>*/}
+      {/*                {shortTitle}*/}
+      {/*              </h3>*/}
+      {/*              <div className={"flex flex-col gap-4"}>*/}
+      {/*                <p>{shortDescription}</p>*/}
+      {/*                <div>*/}
+      {/*                  <button className={"btn btn-primary btn-outline"}>*/}
+      {/*                    Learn More*/}
+      {/*                  </button>*/}
+      {/*                </div>*/}
+      {/*              </div>*/}
+      {/*            </div>*/}
+      {/*          </div>*/}
+      {/*        </Link>*/}
+      {/*      )*/}
+      {/*    )}*/}
+      {/*    <div className={"row-span-2"} />*/}
+      {/*    <div className={"sm:col-span-2 pt-8"}>*/}
+      {/*      <GradientHeading>*/}
+      {/*        All-in-One App Development Services*/}
+      {/*      </GradientHeading>*/}
+      {/*      <h3 className={"flex items-center gap-2 text-xl"}>*/}
+      {/*        <AiOutlineCheck />*/}
+      {/*        Beautiful on every device and platform*/}
+      {/*      </h3>*/}
+      {/*      <h3 className={"flex items-center gap-2 text-xl"}>*/}
+      {/*        <AiOutlineCheck />*/}
+      {/*        Consistent brand presence across every device*/}
+      {/*      </h3>*/}
+      {/*      <h3 className={"flex items-center gap-2 text-xl"}>*/}
+      {/*        <AiOutlineCheck />*/}
+      {/*        Boost discoverability, downloads, and user loyalty*/}
+      {/*      </h3>*/}
+      {/*    </div>*/}
+      {/*    <div />*/}
+      {/*    <p>*/}
+      {/*      Every business deserves an app that works seamlessly across devices*/}
+      {/*      and platforms. As a react native app developer, I specialize in*/}
+      {/*      mobile development that feels intuitive, powerful, and ready to*/}
+      {/*      scale. From iOS and Android app development to polished web*/}
+      {/*      development that keeps your brand consistent across every*/}
+      {/*      touchpoint, I create solutions that engage customers and strengthen*/}
+      {/*      relationships. Whether you need custom app development,*/}
+      {/*      cross-platform builds, or startup MVPs, I provide the technical*/}
+      {/*      expertise to bring your vision to life.*/}
+      {/*    </p>*/}
+      {/*    <p>*/}
+      {/*      But building the app is just the beginning. My app development*/}
+      {/*      services extend to SEO and ASO strategies that help your app get*/}
+      {/*      discovered, downloaded, and loved. I also handle app store*/}
+      {/*      distribution so your launch is smooth, stress-free, and impactful.*/}
+      {/*      The result is a full-stack partnership where React Native*/}
+      {/*      development services meet marketing insight, so your product*/}
+      {/*      doesn&apos;t just exist in the store, it thrives in the hands of*/}
+      {/*      your customers.*/}
+      {/*    </p>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
       <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
         <SectionHeading>Solutions</SectionHeading>
         <GradientHeading>Smart Tech with Real Impact</GradientHeading>
@@ -297,7 +329,7 @@ export default function Home() {
                 className={"hover:scale-125 duration-200"}
               />
             </div>
-            <h3 className={"font-semibold"}>Authentication</h3>
+            <h3 className={"font-semibold text-xl"}>Authentication</h3>
             <p>
               As a react native app developer, I build secure and seamless
               authentication systems, from social logins to biometric access,
@@ -314,7 +346,7 @@ export default function Home() {
                 className={"hover:scale-125 duration-200"}
               />
             </div>
-            <h3 className={"font-semibold"}>In-App Purchases</h3>
+            <h3 className={"font-semibold text-xl"}>In-App Purchases</h3>
             <p>
               Boost revenue with custom app development that integrates smooth
               and reliable in-app purchasing. Whether it&apos;s subscriptions,
@@ -330,7 +362,7 @@ export default function Home() {
                 className={"hover:scale-125 duration-200"}
               />
             </div>
-            <h3 className={"font-semibold"}>Direct Messaging</h3>
+            <h3 className={"font-semibold text-xl"}>Direct Messaging</h3>
             <p>
               Community thrives on conversation. With cross-platform app
               development, I create in-app messaging features that let users
@@ -399,23 +431,23 @@ export default function Home() {
           </p>
         </div>
         <div className={"grid sm:grid-cols-4 gap-4"}>
-          {/*{processes?.map((process, index) => (*/}
-          {/*  <Fragment key={index}>*/}
-          {/*    <div />*/}
-          {/*    <h2 className={"text-secondary font-bold pt-1"}>*/}
-          {/*      {process.heading}*/}
-          {/*    </h2>*/}
-          {/*    <div className={"sm:col-span-2"}>*/}
-          {/*      <p className={"mb-4"}>{process.text}</p>*/}
-          {/*      {process.steps.map((step) => (*/}
-          {/*        <h3 key={step} className={"flex items-center gap-2"}>*/}
-          {/*          <AiOutlineCheck />*/}
-          {/*          {step}*/}
-          {/*        </h3>*/}
-          {/*      ))}*/}
-          {/*    </div>*/}
-          {/*  </Fragment>*/}
-          {/*))}*/}
+          {processes?.map((process, index) => (
+            <Fragment key={index}>
+              <div />
+              <h2 className={"text-muted-foreground font-bold text-xl pt-1"}>
+                {process.heading}
+              </h2>
+              <div className={"sm:col-span-2"}>
+                <p className={"mb-4"}>{process.text}</p>
+                {process.steps.map((step) => (
+                  <h3 key={step} className={"flex items-center gap-2 text-xl"}>
+                    <AiOutlineCheck />
+                    {step}
+                  </h3>
+                ))}
+              </div>
+            </Fragment>
+          ))}
         </div>
       </div>
       <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
@@ -451,29 +483,29 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
-        <SectionHeading>Dev Gotchas</SectionHeading>
-        <div className={"flex gap-4 overflow-x-auto"}>
-          {/*{gotchas?.map(({ slug, heading, keyword }, index) => (*/}
-          {/*  <Link*/}
-          {/*    key={index}*/}
-          {/*    href={`/dev-gotchas/${slug}`}*/}
-          {/*    title={formatTitle(keyword)}*/}
-          {/*  >*/}
-          {/*    <div className={"w-[250] bg-neutral aspect-square p-4"}>*/}
-          {/*      <div className={"flex flex-col justify-between h-full"}>*/}
-          {/*        <h3 className={"text-primary font-semibold"}>{heading}</h3>*/}
-          {/*        <div>*/}
-          {/*          <button className={"btn btn-primary btn-outline "}>*/}
-          {/*            Learn More*/}
-          {/*          </button>*/}
-          {/*        </div>*/}
-          {/*      </div>*/}
-          {/*    </div>*/}
-          {/*  </Link>*/}
-          {/*))}*/}
-        </div>
-      </div>
+      {/*<div className={"max-w-[1200] px-4 py-8 mx-auto"}>*/}
+      {/*  <SectionHeading>Dev Gotchas</SectionHeading>*/}
+      {/*  <div className={"flex gap-4 overflow-x-auto"}>*/}
+      {/*{gotchas?.map(({ slug, heading, keyword }, index) => (*/}
+      {/*  <Link*/}
+      {/*    key={index}*/}
+      {/*    href={`/dev-gotchas/${slug}`}*/}
+      {/*    title={formatTitle(keyword)}*/}
+      {/*  >*/}
+      {/*    <div className={"w-[250] bg-neutral aspect-square p-4"}>*/}
+      {/*      <div className={"flex flex-col justify-between h-full"}>*/}
+      {/*        <h3 className={"text-primary font-semibold"}>{heading}</h3>*/}
+      {/*        <div>*/}
+      {/*          <button className={"btn btn-primary btn-outline "}>*/}
+      {/*            Learn More*/}
+      {/*          </button>*/}
+      {/*        </div>*/}
+      {/*      </div>*/}
+      {/*    </div>*/}
+      {/*  </Link>*/}
+      {/*))}*/}
+      {/*  </div>*/}
+      {/*</div>*/}
     </main>
   );
 }
