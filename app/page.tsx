@@ -1,65 +1,479 @@
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import Work1 from "@/assets/images/mockups/work-1.png";
+import Work2 from "@/assets/images/mockups/work-2.png";
+import Work3 from "@/assets/images/mockups/work-3.png";
+import Solution1 from "@/assets/images/mockups/solution-1.png";
+import Solution2 from "@/assets/images/mockups/solution-2.png";
+import Solution3 from "@/assets/images/mockups/solution-3.png";
+import Me from "@/assets/images/me.png";
 import Image from "next/image";
+import { SiAndroid, SiApple } from "react-icons/si";
+import SectionHeading from "@/components/SectionHeading";
+import { formatTitle } from "@/lib/helpers";
+import Logo from "@/assets/images/logo.png";
+import GradientHeading from "@/components/GradientHeading";
+import { AiOutlineCheck } from "react-icons/ai";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main>
+      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+        <div className={"max-w-7xl mx-auto px-4 py-16 sm:py-32"}>
+          <div className={"flex flex-col gap-4 max-w-full"}>
+            <Link href={"/"} title={formatTitle("")}>
+              <div className={"w-24 aspect-square"}>
+                <Image src={Logo} alt={formatTitle("")} />
+              </div>
+            </Link>
+            <h1
+              className={
+                "text-5xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-foreground font-bold leading-[1.1] sm:max-w-[75%]"
+              }
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              Community, Connection, and Growth
+            </h1>
+            <p className={"text-2xl sm:max-w-[66%] mb-8"}>
+              As a React Native app developer, I help people and businesses
+              build loyal audiences and lasting impact.
+            </p>
+            <Link
+              href={"https://calendar.app.google/fCR1Xnhv9FUfXznPA"}
+              target={"_blank"}
             >
-              Learning
-            </a>{" "}
-            center.
+              <Button size={"lg"}>Let&apos;s Talk!</Button>
+            </Link>
+          </div>
+        </div>
+        <div className={"flex justify-center gap-4"}>
+          <SiApple
+            size={"6rem"}
+            color={"var(--color-secondary)"}
+            className={"animate-bounce"}
+            style={{ animationDelay: ".85s" }}
+          />
+          <SiAndroid
+            size={"6rem"}
+            color={"var(--color-secondary)"}
+            className={"animate-bounce"}
+          />
+        </div>
+      </div>
+      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+        <SectionHeading>Selected Works</SectionHeading>
+        <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
+          <div className={"flex flex-col gap-4"}>
+            <div className={"overflow-hidden"}>
+              <Image
+                src={Work1}
+                alt={formatTitle("")}
+                className={"hover:scale-125 duration-200"}
+              />
+            </div>
+            <h3 className={"font-semibold"}>Learn AS/400</h3>
+          </div>
+          <div className={"flex flex-col gap-4"}>
+            <Link
+              href={"/bessa"}
+              title={"Bessa | Gay Social Media"}
+              className={"overflow-hidden"}
+            >
+              <Image
+                src={Work2}
+                alt={formatTitle("")}
+                className={"hover:scale-125 duration-200"}
+              />
+            </Link>
+            <h3 className={"font-semibold"}>
+              <Link href={"/bessa"} title={"Bessa | Gay Social Media"}>
+                Bessa
+              </Link>
+            </h3>
+          </div>
+          <div className={"flex flex-col gap-4"}>
+            <Link
+              href={"https://getresumemint.com"}
+              title={"Resume Mint"}
+              target={"_blank"}
+              className={"overflow-hidden"}
+            >
+              <Image
+                src={Work3}
+                alt={formatTitle("")}
+                className={"hover:scale-125 duration-200"}
+              />
+            </Link>
+            <h3 className={"font-semibold"}>
+              <Link
+                href={"https://getresumemint.com"}
+                title={"Resume Mint"}
+                target={"_blank"}
+              >
+                Resume Mint
+              </Link>
+            </h3>
+          </div>
+          <div className={"hidden sm:block"} />
+          <div className={"sm:col-span-2 pt-8"}>
+            <GradientHeading>
+              Custom App Solutions that People Love to Use
+            </GradientHeading>
+            <h3 className={"flex items-center gap-2"}>
+              <AiOutlineCheck />
+              Effortless, beautiful, and intuitive
+            </h3>
+            <h3 className={"flex items-center gap-2"}>
+              <AiOutlineCheck />
+              Accessible UI design
+            </h3>
+            <h3 className={"flex items-center gap-2"}>
+              <AiOutlineCheck />
+              Meaningful, emotional brand experiences
+            </h3>
+          </div>
+          <div className={"hidden sm:block"} />
+          <p>
+            As a react native app developer, I believe a mobile experience
+            should feel effortless, both beautiful and usable. That&apos;s why
+            my work emphasizes accessible UI design that welcomes every
+            customer, regardless of device, ability, or context. From intuitive
+            navigation to thoughtful details in layout and color contrast,
+            accessibility ensures that your brand isn&apos;t just seen, but
+            truly felt. It transforms an app from a tool into a trusted
+            companion that builds real, lasting connections with your audience.
+          </p>
+          <p>
+            But design is only half the story. Powerful functionality is what
+            gives your app depth. With expertise in cross-platform app
+            development, custom app solutions, and scalable architectures, I
+            craft experiences that go beyond the surface. Whether it&apos;s
+            seamless iOS and Android app development, smooth integrations, or
+            future-proof performance, my projects are built to grow alongside
+            your business. The result? Apps that don&apos;t just meet customer
+            needs but strengthen the bond between your brand and the people who
+            matter most.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </div>
+      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+        <SectionHeading>Community</SectionHeading>
+        <GradientHeading>Belonging is Built Right In</GradientHeading>
+        <div className={"flex flex-col gap-4"}>
+          <div>
+            <h3 className={"flex items-center gap-2"}>
+              <AiOutlineCheck />
+              Apps that feel like communities
+            </h3>
+            <h3 className={"flex items-center gap-2"}>
+              <AiOutlineCheck />
+              Transform users into brand advocates
+            </h3>
+            <h3 className={"flex items-center gap-2"}>
+              <AiOutlineCheck />
+              Spark conversation and turn engagement into lasting relationships.
+            </h3>
+          </div>
+          <p>
+            A great app is more than code; it&apos;s a gathering place. As a
+            react native app developer, I see every project as an opportunity to
+            create digital spaces where customers feel like insiders, not just
+            users. Through thoughtful features like in-app chat, personalized
+            experiences, and seamless push notifications, apps become more than
+            tools. They become bridges between brands and the people who believe
+            in them. That sense of belonging transforms casual customers into
+            loyal advocates who return again and again.
+          </p>
+          <p>
+            But community doesn&apos;t happen by accident. It&apos;s built
+            through custom app development that puts people first and scales as
+            relationships grow. Whether you&apos;re a startup nurturing your
+            first audience or an established business ready to deepen
+            engagement, I design apps that help brands spark conversation,
+            foster trust, and keep fans invested. With the right app development
+            services, your app can become a thriving hub where customers
+            don&apos;t just interact with your business; they identify with it.
+          </p>
         </div>
-      </main>
-    </div>
+      </div>
+      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+        <SectionHeading>Services</SectionHeading>
+        <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
+          {/*{services?.map(*/}
+          {/*  ({ slug, shortTitle, shortDescription, keyword }, index) => (*/}
+          {/*    <Link*/}
+          {/*      key={index}*/}
+          {/*      href={`/services/${slug}`}*/}
+          {/*      title={formatTitle(keyword)}*/}
+          {/*    >*/}
+          {/*      <div className={"bg-neutral aspect-square p-4"}>*/}
+          {/*        <div className={"flex flex-col justify-between h-full"}>*/}
+          {/*          <h3 className={"text-primary font-semibold"}>*/}
+          {/*            {shortTitle}*/}
+          {/*          </h3>*/}
+          {/*          <div className={"flex flex-col gap-4"}>*/}
+          {/*            <p>{shortDescription}</p>*/}
+          {/*            <div>*/}
+          {/*              <button className={"btn btn-primary btn-outline"}>*/}
+          {/*                Learn More*/}
+          {/*              </button>*/}
+          {/*            </div>*/}
+          {/*          </div>*/}
+          {/*        </div>*/}
+          {/*      </div>*/}
+          {/*    </Link>*/}
+          {/*  )*/}
+          {/*)}*/}
+          <div className={"row-span-2"} />
+          <div className={"sm:col-span-2 pt-8"}>
+            <GradientHeading>
+              All-in-One App Development Services
+            </GradientHeading>
+            <h3 className={"flex items-center gap-2"}>
+              <AiOutlineCheck />
+              Beautiful on every device and platform
+            </h3>
+            <h3 className={"flex items-center gap-2"}>
+              <AiOutlineCheck />
+              Consistent brand presence across every device
+            </h3>
+            <h3 className={"flex items-center gap-2"}>
+              <AiOutlineCheck />
+              Boost discoverability, downloads, and user loyalty
+            </h3>
+          </div>
+          <div />
+          <p>
+            Every business deserves an app that works seamlessly across devices
+            and platforms. As a react native app developer, I specialize in
+            mobile development that feels intuitive, powerful, and ready to
+            scale. From iOS and Android app development to polished web
+            development that keeps your brand consistent across every
+            touchpoint, I create solutions that engage customers and strengthen
+            relationships. Whether you need custom app development,
+            cross-platform builds, or startup MVPs, I provide the technical
+            expertise to bring your vision to life.
+          </p>
+          <p>
+            But building the app is just the beginning. My app development
+            services extend to SEO and ASO strategies that help your app get
+            discovered, downloaded, and loved. I also handle app store
+            distribution so your launch is smooth, stress-free, and impactful.
+            The result is a full-stack partnership where React Native
+            development services meet marketing insight, so your product
+            doesn&apos;t just exist in the store, it thrives in the hands of
+            your customers.
+          </p>
+        </div>
+      </div>
+      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+        <SectionHeading>Solutions</SectionHeading>
+        <GradientHeading>Smart Tech with Real Impact</GradientHeading>
+        <p className={"mb-8"}>
+          Mobile apps aren&apos;t just software. They&apos;re solutions. As a
+          React Native app developer, I help businesses tackle challenges and
+          unlock opportunities through smart, scalable technology. Need to
+          streamline customer bookings? Launch an e-commerce storefront? Build a
+          platform for community engagement? Why stop there?! With expertise in
+          cross-platform app development, custom business app solutions, and iOS
+          and Android app development, I create tools that make life easier for
+          your customers and more profitable for your business.
+        </p>
+        <p className={"mb-8"}>
+          But solutions don&apos;t stop at functionality. They&apos;re about
+          impact. That&apos;s why I offer end-to-end React Native development
+          services, from app prototyping and MVPs to startup app solutions and
+          full-scale enterprise builds. Every feature is designed with purpose,
+          whether it&apos;s to drive sales, boost engagement, or create stronger
+          brand loyalty. With the right app development services, your app
+          becomes more than just a product. It becomes the solution your
+          customers can&apos;t live without. Here are just a few examples:
+        </p>
+        <div className={"grid sm:grid-cols-3 gap-4"}>
+          <div className={"flex flex-col gap-4"}>
+            <div className={"overflow-hidden"}>
+              <Image
+                src={Solution1}
+                alt={formatTitle("")}
+                className={"hover:scale-125 duration-200"}
+              />
+            </div>
+            <h3 className={"font-semibold"}>Authentication</h3>
+            <p>
+              As a react native app developer, I build secure and seamless
+              authentication systems, from social logins to biometric access,
+              that keep users safe while making sign-ins effortless. Trust
+              starts with security, and your customers will feel it from the
+              first tap.
+            </p>
+          </div>
+          <div className={"flex flex-col gap-4"}>
+            <div className={"overflow-hidden"}>
+              <Image
+                src={Solution2}
+                alt={formatTitle("")}
+                className={"hover:scale-125 duration-200"}
+              />
+            </div>
+            <h3 className={"font-semibold"}>In-App Purchases</h3>
+            <p>
+              Boost revenue with custom app development that integrates smooth
+              and reliable in-app purchasing. Whether it&apos;s subscriptions,
+              upgrades, or one-time buys, I design iOS and Android app
+              development solutions that make it easy for customers to say yes.
+            </p>
+          </div>
+          <div className={"flex flex-col gap-4"}>
+            <div className={"overflow-hidden"}>
+              <Image
+                src={Solution3}
+                alt={formatTitle("")}
+                className={"hover:scale-125 duration-200"}
+              />
+            </div>
+            <h3 className={"font-semibold"}>Direct Messaging</h3>
+            <p>
+              Community thrives on conversation. With cross-platform app
+              development, I create in-app messaging features that let users
+              connect directly, building stronger engagement and lasting loyalty
+              within your app.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+        <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
+          {/*{customers?.map(*/}
+          {/*  ({ slug, shortTitle, shortDescription, keyword }, index) => (*/}
+          {/*    <Fragment key={index}>*/}
+          {/*      <Link href={`/customers/${slug}`} title={formatTitle(keyword)}>*/}
+          {/*        <div className={"bg-neutral aspect-square p-4"}>*/}
+          {/*          <div className={"flex flex-col justify-between h-full"}>*/}
+          {/*            <h3 className={"text-primary font-semibold"}>*/}
+          {/*              {shortTitle}*/}
+          {/*            </h3>*/}
+          {/*            <div className={"flex flex-col gap-4"}>*/}
+          {/*              <p>{shortDescription}</p>*/}
+          {/*              <div>*/}
+          {/*                <button className={"btn btn-primary btn-outline"}>*/}
+          {/*                  Learn More*/}
+          {/*                </button>*/}
+          {/*              </div>*/}
+          {/*            </div>*/}
+          {/*          </div>*/}
+          {/*        </div>*/}
+          {/*      </Link>*/}
+          {/*      {index === 2 && (*/}
+          {/*        <>*/}
+          {/*          <div className={"hidden sm:block"} />*/}
+          {/*          <div className={"hidden sm:block"} />*/}
+          {/*        </>*/}
+          {/*      )}*/}
+          {/*    </Fragment>*/}
+          {/*  )*/}
+          {/*)}*/}
+        </div>
+      </div>
+      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+        <div className={"max-w-full sm:max-w-[66%]"}>
+          <GradientHeading>A Collaborative, End-to-End Process</GradientHeading>
+          <p className={"mb-8"}>
+            At Bessa Apps, I partner with purpose-driven teams to transform big
+            ideas into powerful, intuitive products. As a react native app
+            developer, my focus is on building apps that are scalable,
+            human-centered, and designed to reduce risk while maximizing value.
+            From mobile app development and web development to SEO and ASO
+            strategies and smooth app store distribution, every project is
+            crafted to connect businesses with their audiences in meaningful
+            ways. The process is simple, collaborative, and always tailored to
+            your unique goals.
+          </p>
+          <p className={"mb-8"}>
+            With over a decade of experience, I bring not only technical
+            expertise but also strategic insight to every stage of development.
+            That means you get more than code; you get a clear roadmap for
+            growth, a trusted partner in cross-platform app development, and a
+            product that feels as natural for your users as it is powerful for
+            your business. The result is a custom app solution that isn&apos;t
+            just functional, but deeply aligned with your customers, your
+            values, and your long-term success.
+          </p>
+        </div>
+        <div className={"grid sm:grid-cols-4 gap-4"}>
+          {/*{processes?.map((process, index) => (*/}
+          {/*  <Fragment key={index}>*/}
+          {/*    <div />*/}
+          {/*    <h2 className={"text-secondary font-bold pt-1"}>*/}
+          {/*      {process.heading}*/}
+          {/*    </h2>*/}
+          {/*    <div className={"sm:col-span-2"}>*/}
+          {/*      <p className={"mb-4"}>{process.text}</p>*/}
+          {/*      {process.steps.map((step) => (*/}
+          {/*        <h3 key={step} className={"flex items-center gap-2"}>*/}
+          {/*          <AiOutlineCheck />*/}
+          {/*          {step}*/}
+          {/*        </h3>*/}
+          {/*      ))}*/}
+          {/*    </div>*/}
+          {/*  </Fragment>*/}
+          {/*))}*/}
+        </div>
+      </div>
+      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+        <SectionHeading>Hello, there!</SectionHeading>
+        <div className={"grid sm:grid-cols-4 gap-4"}>
+          <div className={"bg-secondary aspect-[8/10] p-4"}>
+            <div className={"flex flex-col justify-between h-full"}>
+              <h3 className={"text-secondary-foreground font-semibold"}>
+                I&apos;m Topher
+              </h3>
+              <div className={"flex flex-col gap-4"}>
+                <p className={"text-secondary-foreground"}>
+                  Ten years of experience building mobile and web apps, solving
+                  problems, and fostering community.
+                </p>
+                <Link
+                  href={"mailto:topher@bessaapps.com"}
+                  title={formatTitle("")}
+                >
+                  <Button>Let&apos;s Talk!</Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <Image src={Me} alt={formatTitle("")} />
+          <div className={"hidden sm:block col-span-2"} />
+          <div className={"hidden sm:block col-span-2"} />
+          <div className={"sm:col-span-2"}>
+            <GradientHeading>
+              Meet Your React Native app developer, mobile and web app guru,
+              problem-solver, and community builder.
+            </GradientHeading>
+          </div>
+        </div>
+      </div>
+      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+        <SectionHeading>Dev Gotchas</SectionHeading>
+        <div className={"flex gap-4 overflow-x-auto"}>
+          {/*{gotchas?.map(({ slug, heading, keyword }, index) => (*/}
+          {/*  <Link*/}
+          {/*    key={index}*/}
+          {/*    href={`/dev-gotchas/${slug}`}*/}
+          {/*    title={formatTitle(keyword)}*/}
+          {/*  >*/}
+          {/*    <div className={"w-[250] bg-neutral aspect-square p-4"}>*/}
+          {/*      <div className={"flex flex-col justify-between h-full"}>*/}
+          {/*        <h3 className={"text-primary font-semibold"}>{heading}</h3>*/}
+          {/*        <div>*/}
+          {/*          <button className={"btn btn-primary btn-outline "}>*/}
+          {/*            Learn More*/}
+          {/*          </button>*/}
+          {/*        </div>*/}
+          {/*      </div>*/}
+          {/*    </div>*/}
+          {/*  </Link>*/}
+          {/*))}*/}
+        </div>
+      </div>
+    </main>
   );
 }
