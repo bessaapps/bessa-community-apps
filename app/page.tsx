@@ -97,13 +97,13 @@ export default async function Home() {
         <div className={"flex justify-center gap-4"}>
           <SiApple
             size={"6rem"}
-            color={"var(--color-secondary)"}
+            color={"var(--color-foreground)"}
             className={"animate-bounce"}
             style={{ animationDelay: ".85s" }}
           />
           <SiAndroid
             size={"6rem"}
-            color={"var(--color-secondary)"}
+            color={"var(--color-foreground)"}
             className={"animate-bounce"}
           />
         </div>
