@@ -175,3 +175,12 @@ h3 {
     background-color: var(--color-secondary);
     color: var(--color-secondary-foreground);
 }
+
+.wordpress-post > h2 {
+    color: var(--color-muted-foreground);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-bold);
+}
+.wordpress-post > h3 {
+    font-size: var(--text-xl);
+}

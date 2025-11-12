@@ -19,7 +19,7 @@ import axios from "axios";
 
 export default async function Home() {
   const services = await axios
-    .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&_embed")
+    .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2")
     .then((response) => response.data)
     .catch((error) => console.error(error));
 
