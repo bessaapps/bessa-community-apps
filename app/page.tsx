@@ -17,9 +17,20 @@ import { AiOutlineCheck } from "react-icons/ai";
 import { Fragment } from "react";
 import axios from "axios";
 
+interface Post {
+  id: string;
+  slug: string;
+  title: { rendered: string };
+  excerpt: { rendered: string };
+}
+
 export default async function Home() {
   const services = await axios
     .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2")
+    .then((response) => response.data)
+    .catch((error) => console.error(error));
+  const customers = await axios
+    .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=4")
     .then((response) => response.data)
     .catch((error) => console.error(error));
 
@@ -236,36 +247,27 @@ export default async function Home() {
       <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
         <SectionHeading>Services</SectionHeading>
         <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
-          {services?.map(
-            (service: {
-              id: string;
-              slug: string;
-              title: { rendered: string };
-              excerpt: { rendered: string };
-            }) => (
-              <Link
-                key={service.id}
-                href={`/services/${service.slug}`}
-                title={formatTitle(service.title.rendered)}
-              >
-                <div className={"bg-card aspect-square p-4"}>
-                  <div className={"flex flex-col justify-between h-full"}>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: service.excerpt.rendered
-                      }}
-                      className={"text-primary font-semibold"}
-                    />
-                    <div className={"flex flex-col gap-4"}>
-                      <div>
-                        <Button>Learn More</Button>
-                      </div>
-                    </div>
+          {services?.map((service: Post) => (
+            <Link
+              key={service.id}
+              href={`/services/${service.slug}`}
+              title={formatTitle(service.title.rendered)}
+            >
+              <div className={"bg-card aspect-square p-4"}>
+                <div className={"flex flex-col justify-between h-full"}>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: service.excerpt.rendered
+                    }}
+                    className={"text-primary font-semibold"}
+                  />
+                  <div>
+                    <Button>Learn More</Button>
                   </div>
                 </div>
-              </Link>
-            )
-          )}
+              </div>
+            </Link>
+          ))}
           <div className={"row-span-2"} />
           <div className={"sm:col-span-2 pt-8"}>
             <GradientHeading>
@@ -385,35 +387,34 @@ export default async function Home() {
       </div>
       <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
         <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
-          {/*{customers?.map(*/}
-          {/*  ({ slug, shortTitle, shortDescription, keyword }, index) => (*/}
-          {/*    <Fragment key={index}>*/}
-          {/*      <Link href={`/customers/${slug}`} title={formatTitle(keyword)}>*/}
-          {/*        <div className={"bg-neutral aspect-square p-4"}>*/}
-          {/*          <div className={"flex flex-col justify-between h-full"}>*/}
-          {/*            <h3 className={"text-primary font-semibold"}>*/}
-          {/*              {shortTitle}*/}
-          {/*            </h3>*/}
-          {/*            <div className={"flex flex-col gap-4"}>*/}
-          {/*              <p>{shortDescription}</p>*/}
-          {/*              <div>*/}
-          {/*                <button className={"btn btn-primary btn-outline"}>*/}
-          {/*                  Learn More*/}
-          {/*                </button>*/}
-          {/*              </div>*/}
-          {/*            </div>*/}
-          {/*          </div>*/}
-          {/*        </div>*/}
-          {/*      </Link>*/}
-          {/*      {index === 2 && (*/}
-          {/*        <>*/}
-          {/*          <div className={"hidden sm:block"} />*/}
-          {/*          <div className={"hidden sm:block"} />*/}
-          {/*        </>*/}
-          {/*      )}*/}
-          {/*    </Fragment>*/}
-          {/*  )*/}
-          {/*)}*/}
+          {customers?.map((customer: Post, index: number) => (
+            <Fragment key={customer.id}>
+              <Link
+                href={`/customers/${customer.slug}`}
+                title={formatTitle(customer.title.rendered)}
+              >
+                <div className={"bg-card aspect-square p-4"}>
+                  <div className={"flex flex-col justify-between h-full"}>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: customer.excerpt.rendered
+                      }}
+                      className={"text-primary font-semibold"}
+                    />
+                    <div>
+                      <Button>Learn More</Button>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+              {index === 2 && (
+                <>
+                  <div className={"hidden sm:block"} />
+                  <div className={"hidden sm:block"} />
+                </>
+              )}
+            </Fragment>
+          ))}
         </div>
       </div>
       <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
