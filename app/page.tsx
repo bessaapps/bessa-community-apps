@@ -50,7 +50,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
         <div className={"max-w-7xl mx-auto px-4 py-16 sm:py-32"}>
           <div className={"flex flex-col gap-4 max-w-full"}>
             <Link href={"/"} title={formatTitle("")}>
@@ -91,7 +91,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
         <SectionHeading>Selected Works</SectionHeading>
         <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
           <div className={"flex flex-col gap-4"}>
@@ -187,7 +187,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
         <SectionHeading>Community</SectionHeading>
         <GradientHeading>Belonging is Built Right In</GradientHeading>
         <div className={"flex flex-col gap-4"}>
@@ -227,7 +227,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      {/*<div className={"max-w-[1200] px-4 py-8 mx-auto"}>*/}
+      {/*<div className={"max-w-[1200] px-4 py-32 mx-auto"}>*/}
       {/*  <SectionHeading>Services</SectionHeading>*/}
       {/*  <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>*/}
       {/*    {services?.map(*/}
@@ -297,7 +297,7 @@ export default function Home() {
       {/*    </p>*/}
       {/*  </div>*/}
       {/*</div>*/}
-      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
         <SectionHeading>Solutions</SectionHeading>
         <GradientHeading>Smart Tech with Real Impact</GradientHeading>
         <p className={"mb-8"}>
@@ -372,7 +372,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
         <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
           {/*{customers?.map(*/}
           {/*  ({ slug, shortTitle, shortDescription, keyword }, index) => (*/}
@@ -405,7 +405,7 @@ export default function Home() {
           {/*)}*/}
         </div>
       </div>
-      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
         <div className={"max-w-full sm:max-w-[66%]"}>
           <GradientHeading>A Collaborative, End-to-End Process</GradientHeading>
           <p className={"mb-8"}>
@@ -450,7 +450,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
         <SectionHeading>Hello, there!</SectionHeading>
         <div className={"grid sm:grid-cols-4 gap-4"}>
           <div className={"bg-secondary aspect-[8/10] p-4"}>
@@ -483,7 +483,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/*<div className={"max-w-[1200] px-4 py-8 mx-auto"}>*/}
+      {/*<div className={"max-w-[1200] px-4 py-32 mx-auto"}>*/}
       {/*  <SectionHeading>Dev Gotchas</SectionHeading>*/}
       {/*  <div className={"flex gap-4 overflow-x-auto"}>*/}
       {/*{gotchas?.map(({ slug, heading, keyword }, index) => (*/}
