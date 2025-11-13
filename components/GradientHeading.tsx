@@ -6,7 +6,7 @@ export default function GradientHeading({
   return (
     <p
       className={
-        "text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-foreground text-5xl leading-[1.2] mb-4"
+        "animate-text text-transparent bg-clip-text bg-gradient-to-r from-primary via-foreground to-primary-foreground text-5xl leading-[1.2] mb-4"
       }
     >
       {children}

@@ -150,6 +150,19 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
+
+  --animate-text: text 5s ease-in-out infinite;
+  @keyframes text {
+    0%,
+    100% {
+      background-size: 200% 200%;
+      background-position: left center;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: right center;
+    }
+  }
 }
 
 @layer base {
@@ -162,25 +175,25 @@
 }
 
 h1 {
-    font-family: var(--font-raleway), "sans-serif";
+  font-family: var(--font-raleway), "sans-serif";
 }
 h2 {
-    font-family: var(--font-raleway), "sans-serif";
+  font-family: var(--font-raleway), "sans-serif";
 }
 h3 {
-    font-family: var(--font-raleway), "sans-serif";
+  font-family: var(--font-raleway), "sans-serif";
 }
 
 ::selection {
-    background-color: var(--color-secondary);
-    color: var(--color-secondary-foreground);
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-foreground);
 }
 
 .wordpress-post > h2 {
-    color: var(--color-muted-foreground);
-    font-size: var(--text-2xl);
-    font-weight: var(--font-weight-bold);
+  color: var(--color-muted-foreground);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
 }
 .wordpress-post > h3 {
-    font-size: var(--text-xl);
+  font-size: var(--text-xl);
 }
