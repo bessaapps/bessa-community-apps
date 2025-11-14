@@ -16,6 +16,7 @@ import GradientHeading from "@/components/GradientHeading";
 import { AiOutlineCheck } from "react-icons/ai";
 import { Fragment } from "react";
 import axios from "axios";
+import { Badge } from "@/components/ui/badge";
 
 interface Post {
   id: string;
@@ -135,6 +136,11 @@ export default async function Home() {
               />
             </div>
             <h3 className={"font-semibold text-xl"}>Learn AS/400</h3>
+            <div className={"flex gap-4 flex-wrap"}>
+              <Badge>Expo</Badge>
+              <Badge>React Native</Badge>
+              <Badge>Strapi</Badge>
+            </div>
           </div>
           <div className={"flex flex-col gap-4"}>
             <Link
@@ -153,6 +159,14 @@ export default async function Home() {
                 Bessa
               </Link>
             </h3>
+            <div className={"flex gap-4 flex-wrap"}>
+              <Badge>Expo</Badge>
+              <Badge>React Native</Badge>
+              <Badge>Express.js</Badge>
+              <Badge>Node.js</Badge>
+              <Badge>Websockets</Badge>
+              <Badge>MongoDB</Badge>
+            </div>
           </div>
           <div className={"flex flex-col gap-4"}>
             <Link
@@ -176,6 +190,11 @@ export default async function Home() {
                 Resume Mint
               </Link>
             </h3>
+            <div className={"flex gap-4 flex-wrap"}>
+              <Badge>Next.js</Badge>
+              <Badge>React.js</Badge>
+              <Badge>MongoDB</Badge>
+            </div>
           </div>
           <div className={"hidden sm:block"} />
           <div className={"sm:col-span-2 pt-8"}>
