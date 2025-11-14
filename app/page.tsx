@@ -24,6 +24,21 @@ interface Post {
   excerpt: { rendered: string };
 }
 
+const Highlights = ({ list }: { list: string[] }) => {
+  return (
+    <ul className={"flex flex-col gap-2"}>
+      {list?.map((item: string, index: number) => (
+        <li key={index} className={"flex items-center gap-2"}>
+          <span className={"text-xl"}>
+            <AiOutlineCheck />
+          </span>
+          <span className={"text-xl font-semibold"}>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
 export default async function Home() {
   const services = await axios
     .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2")
@@ -167,18 +182,13 @@ export default async function Home() {
             <GradientHeading>
               Custom App Solutions that People Love to Use
             </GradientHeading>
-            <h3 className={"flex items-center gap-2 text-xl"}>
-              <AiOutlineCheck />
-              Effortless, beautiful, and intuitive
-            </h3>
-            <h3 className={"flex items-center gap-2 text-xl"}>
-              <AiOutlineCheck />
-              Accessible UI design
-            </h3>
-            <h3 className={"flex items-center gap-2 text-xl"}>
-              <AiOutlineCheck />
-              Meaningful, emotional brand experiences
-            </h3>
+            <Highlights
+              list={[
+                "Effortless, beautiful, and intuitive",
+                "Accessible UI design",
+                "Meaningful, emotional brand experiences"
+              ]}
+            />
           </div>
           <div className={"hidden sm:block"} />
           <p>
@@ -209,18 +219,13 @@ export default async function Home() {
         <GradientHeading>Belonging is Built Right In</GradientHeading>
         <div className={"flex flex-col gap-4"}>
           <div>
-            <h3 className={"flex items-center gap-2 text-xl"}>
-              <AiOutlineCheck />
-              Apps that feel like communities
-            </h3>
-            <h3 className={"flex items-center gap-2 text-xl"}>
-              <AiOutlineCheck />
-              Transform users into brand advocates
-            </h3>
-            <h3 className={"flex items-center gap-2 text-xl"}>
-              <AiOutlineCheck />
-              Spark conversation and turn engagement into lasting relationships.
-            </h3>
+            <Highlights
+              list={[
+                "Apps that feel like communities",
+                "Transform users into brand advocates",
+                "Spark conversation and turn engagement into lasting relationships."
+              ]}
+            />
           </div>
           <p>
             A great app is more than code; it&apos;s a gathering place. As a
@@ -273,18 +278,13 @@ export default async function Home() {
             <GradientHeading>
               All-in-One App Development Services
             </GradientHeading>
-            <h3 className={"flex items-center gap-2 text-xl"}>
-              <AiOutlineCheck />
-              Beautiful on every device and platform
-            </h3>
-            <h3 className={"flex items-center gap-2 text-xl"}>
-              <AiOutlineCheck />
-              Consistent brand presence across every device
-            </h3>
-            <h3 className={"flex items-center gap-2 text-xl"}>
-              <AiOutlineCheck />
-              Boost discoverability, downloads, and user loyalty
-            </h3>
+            <Highlights
+              list={[
+                "Beautiful on every device and platform",
+                "Consistent brand presence across every device",
+                "Boost discoverability, downloads, and user loyalty"
+              ]}
+            />
           </div>
           <div />
           <p>
@@ -359,12 +359,12 @@ export default async function Home() {
                 className={"hover:scale-125 duration-200"}
               />
             </div>
-            <h3 className={"font-semibold text-xl"}>In-App Purchases</h3>
+            <h3 className={"font-semibold text-xl"}>Direct Messaging</h3>
             <p>
-              Boost revenue with custom app development that integrates smooth
-              and reliable in-app purchasing. Whether it&apos;s subscriptions,
-              upgrades, or one-time buys, I design iOS and Android app
-              development solutions that make it easy for customers to say yes.
+              Community thrives on conversation. With cross-platform app
+              development, I create in-app messaging features that let users
+              connect directly, building stronger engagement and lasting loyalty
+              within your app.
             </p>
           </div>
           <div className={"flex flex-col gap-4"}>
@@ -375,12 +375,12 @@ export default async function Home() {
                 className={"hover:scale-125 duration-200"}
               />
             </div>
-            <h3 className={"font-semibold text-xl"}>Direct Messaging</h3>
+            <h3 className={"font-semibold text-xl"}>In-App Purchases</h3>
             <p>
-              Community thrives on conversation. With cross-platform app
-              development, I create in-app messaging features that let users
-              connect directly, building stronger engagement and lasting loyalty
-              within your app.
+              Boost revenue with custom app development that integrates smooth
+              and reliable in-app purchasing. Whether it&apos;s subscriptions,
+              upgrades, or one-time buys, I design iOS and Android app
+              development solutions that make it easy for customers to say yes.
             </p>
           </div>
         </div>
@@ -451,12 +451,13 @@ export default async function Home() {
               </h2>
               <div className={"sm:col-span-2"}>
                 <p className={"mb-4"}>{process.text}</p>
-                {process.steps.map((step) => (
-                  <h3 key={step} className={"flex items-center gap-2 text-xl"}>
-                    <AiOutlineCheck />
-                    {step}
-                  </h3>
-                ))}
+                <ul className={"flex flex-col gap-2"}>
+                  {process.steps.map((step) => (
+                    <li key={step} className={"flex items-center gap-2"}>
+                      <span className={"text-lg font-semibold"}>{step}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </Fragment>
           ))}
