@@ -77,7 +77,7 @@ export default async function Home() {
             </Link>
             <h1
               className={
-                "animate-text text-5xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-primary via-foreground to-primary-foreground font-bold leading-[1.1] sm:max-w-[75%]"
+                "animate-text text-5xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-tr from-muted-foreground via-primary to-foreground font-bold leading-[1.1] sm:max-w-[75%]"
               }
             >
               Community, Connection, and Growth

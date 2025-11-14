@@ -155,12 +155,12 @@
   @keyframes text {
     0%,
     100% {
-      background-size: 200% 200%;
-      background-position: left center;
+      background-size: 400% 400%;
+      background-position: left;
     }
     50% {
-      background-size: 200% 200%;
-      background-position: right center;
+      background-size: 400% 400%;
+      background-position: right;
     }
   }
 }
