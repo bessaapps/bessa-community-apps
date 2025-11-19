@@ -40,7 +40,7 @@ export default async function CustomerPage({
 
   return (
     <>
-      <div className={"max-w-7xl mx-auto px-4 py-16 sm:py-32"}>
+      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
         <div className={"flex flex-col gap-4 max-w-full sm:max-w-[75%]"}>
           <div className={"w-24 aspect-square"}>
             <Image src={Logo} alt={formatTitle(post.title.rendered)} />
@@ -65,7 +65,7 @@ export default async function CustomerPage({
           </div>
         </div>
       </div>
-      <div className={"max-w-7xl mx-auto px-4 py-16 sm:py-32"}>
+      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
         <div className={"flex flex-col gap-4"}>
           <div
             dangerouslySetInnerHTML={{ __html: post.content.rendered }}
