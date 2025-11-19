@@ -279,12 +279,19 @@ export default async function Home() {
             >
               <div className={"bg-card aspect-square p-4"}>
                 <div className={"flex flex-col justify-between h-full"}>
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: service.excerpt.rendered
-                    }}
-                    className={"text-primary font-semibold"}
-                  />
+                  <div>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: service.excerpt.rendered
+                      }}
+                      className={"text-primary font-semibold"}
+                    />
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: service?.title?.rendered
+                      }}
+                    />
+                  </div>
                   <div>
                     <Button>Learn More</Button>
                   </div>
@@ -414,12 +421,19 @@ export default async function Home() {
               >
                 <div className={"bg-card aspect-square p-4"}>
                   <div className={"flex flex-col justify-between h-full"}>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: customer.excerpt.rendered
-                      }}
-                      className={"text-primary font-semibold"}
-                    />
+                    <div>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: customer.excerpt.rendered
+                        }}
+                        className={"text-primary font-semibold"}
+                      />
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: customer.title.rendered
+                        }}
+                      />
+                    </div>
                     <div>
                       <Button>Learn More</Button>
                     </div>

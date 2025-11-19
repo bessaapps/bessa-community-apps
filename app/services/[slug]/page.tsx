@@ -44,7 +44,7 @@ export default async function ServicePage({
           </div>
           <h1
             className={
-              "text-4xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary font-bold leading-[1.1]"
+              "animate-text text-4xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-tr from-muted-foreground via-primary to-foreground font-bold leading-[1.1] sm:max-w-[75%]"
             }
           >
             {post.title.rendered}
