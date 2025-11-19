@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Logo from "@/assets/images/logo.png";
 import Image from "next/image";
 import { stripHtml } from "string-strip-html";
+import { permanentRedirect } from "next/navigation";
 
 export async function generateMetadata({
   params
@@ -34,6 +35,8 @@ export default async function ServicePage({
     .get(`https://cms.bessaapps.com/wp-json/wp/v2/posts?slug=${slug}`)
     .then((response) => response.data?.[0])
     .catch((error) => console.error(error));
+
+  if (!post?.id) permanentRedirect("/");
 
   return (
     <>
