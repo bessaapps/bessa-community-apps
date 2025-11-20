@@ -128,14 +128,28 @@ export default async function Home() {
         <SectionHeading>Selected Works</SectionHeading>
         <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
           <div className={"flex flex-col gap-4"}>
-            <div className={"overflow-hidden"}>
-              <Image
-                src={Work1}
-                alt={formatTitle("")}
-                className={"hover:scale-125 duration-200"}
-              />
-            </div>
-            <h3 className={"font-semibold text-xl"}>Learn AS/400</h3>
+            <Link
+              href={"https://as400app.com"}
+              title={"AS/400 App"}
+              target={"_blank"}
+            >
+              <div className={"overflow-hidden"}>
+                <Image
+                  src={Work1}
+                  alt={formatTitle("")}
+                  className={"hover:scale-125 duration-200"}
+                />
+              </div>
+            </Link>
+            <h3 className={"font-semibold text-xl"}>
+              <Link
+                href={"https://as400app.com"}
+                title={"AS/400 App"}
+                target={"_blank"}
+              >
+                AS/400 App
+              </Link>
+            </h3>
             <div className={"flex gap-4 flex-wrap"}>
               <Badge>Expo</Badge>
               <Badge>React Native</Badge>
@@ -144,8 +158,9 @@ export default async function Home() {
           </div>
           <div className={"flex flex-col gap-4"}>
             <Link
-              href={"/bessa"}
-              title={"Bessa | Gay Social Media"}
+              href={"https://getbessa.com"}
+              title={"Bessa | Gay Social Media App"}
+              target={"_blank"}
               className={"overflow-hidden"}
             >
               <Image
@@ -155,7 +170,11 @@ export default async function Home() {
               />
             </Link>
             <h3 className={"font-semibold text-xl"}>
-              <Link href={"/bessa"} title={"Bessa | Gay Social Media"}>
+              <Link
+                href={"https://getbessa.com"}
+                title={"Bessa | Gay Social Media App"}
+                target={"_blank"}
+              >
                 Bessa
               </Link>
             </h3>
