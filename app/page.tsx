@@ -129,7 +129,7 @@ export default async function Home() {
         <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
           <div className={"flex flex-col gap-4"}>
             <Link
-              href={"https://as400app.com"}
+              href={"https://apps.apple.com/us/app/learn-as-400/id6751155402"}
               title={"AS/400 App"}
               target={"_blank"}
             >
@@ -143,7 +143,7 @@ export default async function Home() {
             </Link>
             <h3 className={"font-semibold text-xl"}>
               <Link
-                href={"https://as400app.com"}
+                href={"https://apps.apple.com/us/app/learn-as-400/id6751155402"}
                 title={"AS/400 App"}
                 target={"_blank"}
               >
