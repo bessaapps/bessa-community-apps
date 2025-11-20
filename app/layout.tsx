@@ -5,6 +5,7 @@ import { formatMetadata, formatTitle } from "@/lib/helpers";
 import { description, url } from "@/lib/constants";
 import { Raleway, Work_Sans } from "next/font/google";
 import Clock from "@/components/Clock";
+import Weather from "@/components/Weather";
 
 const workSans = Work_Sans({
   variable: "--font-work-sans",
@@ -30,9 +31,7 @@ export default function RootLayout({
         {children}
         <CTA />
         <Clock />
-        <p className={"text-xs fixed top-0 right-50"}>
-          Las Vegas, NV&nbsp;&nbsp;|&nbsp;&nbsp;36.155279 N. 115.113745 W.
-        </p>
+        <Weather />
       </body>
       {process.env.NODE_ENV !== "development" && (
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
