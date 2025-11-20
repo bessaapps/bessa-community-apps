@@ -196,4 +196,8 @@ h3 {
 }
 .wordpress-post > h3 {
   font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+}
+.wordpress-post > ul {
+  font-weight: var(--font-weight-bold);
 }

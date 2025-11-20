@@ -13,7 +13,7 @@ export default function CTA() {
       >
         <div>
           <div className={"text-primary text-6xl leading-[1.2] mb-4"}>
-            Start with a Free Discovery Session
+            {"///"} Start with a Free Discovery Session {"///"}
           </div>
           <p className={"text-muted-foreground mb-4"}>
             Every project begins with a conversation—no pressure, no commitment.
