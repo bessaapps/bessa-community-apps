@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 
 export default function Weather() {
   const [shortForecast, setShortForecast] = useState("");
@@ -24,10 +25,20 @@ export default function Weather() {
   }, []);
 
   return (
-    <p className={"text-xs fixed top-0 left-[50%]"}>
-      Las Vegas, NV&nbsp;&nbsp;|&nbsp;&nbsp;36.155279 N. 115.113745 W.
-      <br />
-      {isDaytime ? "☀︎" : "⏾"} {shortForecast}
-    </p>
+    <>
+      <p className={"text-xs fixed top-0 left-[50%] hidden sm:block"}>
+        Las Vegas, NV&nbsp;&nbsp;|&nbsp;&nbsp;36.155279 N. 115.113745 W.
+        <br />
+        {isDaytime ? "☀︎" : "⏾"} {shortForecast}
+      </p>
+      <div className={"fixed top-0 left-[66.66%]"}>
+        <Link
+          href={"https://calendar.app.google/fCR1Xnhv9FUfXznPA"}
+          target={"_blank"}
+        >
+          <p className={"font-bold"}>Let&apos;s Talk!</p>
+        </Link>
+      </div>
+    </>
   );
 }
