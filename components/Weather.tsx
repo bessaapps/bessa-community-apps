@@ -31,7 +31,7 @@ export default function Weather() {
         <br />
         {isDaytime ? "☀︎" : "⏾"} {shortForecast}
       </p>
-      <div className={"fixed top-0 left-[66.66%]"}>
+      <div className={"fixed top-0 left-[75%]"}>
         <Link
           href={"https://calendar.app.google/fCR1Xnhv9FUfXznPA"}
           target={"_blank"}
