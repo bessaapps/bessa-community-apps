@@ -18,29 +18,27 @@ export default function CTA() {
           <p className={"text-muted-foreground mb-4"}>
             Every project begins with a conversation—no pressure, no commitment.
             At Bessa Apps, I offer a free Discovery phase designed to uncover
-            your goals, explore your vision, and pitch tailored solutions that
-            fit. As a react native app developer, I believe the best
-            partnerships start with listening, not selling. Whether you&apos;re
-            dreaming up a sleek iOS and Android app or planning a custom web
-            development project, this first step helps us identify the
-            opportunities that matter most to your business and your customers.
+            your goals, explore your vision, and present tailored solutions that
+            fit. Whether you&apos;re dreaming up a sleek iOS and Android app or
+            planning a custom web development project, this first step helps us
+            identify the opportunities that matter most to your business and
+            your customers.
           </p>
           <p className={"text-muted-foreground mb-4"}>
             Think of Discovery as your launchpad. It&apos;s where strategy meets
             possibility, giving you clarity and direction before any code is
-            written. From refining your concept to mapping out features like
-            in-app purchases, direct messaging, or authentication, I&apos;ll
-            guide you through the options with transparency and expertise. The
-            result will be a clear path forward, backed by app development
-            services that balance innovation with practicality, so you can move
-            toward launch with confidence.
+            written. From refining your concept to mapping out features,
+            I&apos;ll guide you through the options with transparency and
+            expertise. The result will be a clear path forward, backed by app
+            development services that balance innovation with practicality, so
+            you can move toward launch with confidence.
           </p>
           <div className={"flex flex-col sm:flex-row gap-4 sm:gap-8 py-4"}>
             <Link
               href={"https://calendar.app.google/fCR1Xnhv9FUfXznPA"}
               target={"_blank"}
             >
-              <Button size={"lg"}>Let&apos;s Talk!</Button>
+              <Button size={"lg"}>Book yours Now!</Button>
             </Link>
             <div className={"flex items-center sm:gap-1"}>
               <p className={"font-bold text-muted-foreground sm:text-2xl"}>
