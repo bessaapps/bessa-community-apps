@@ -17,9 +17,9 @@ export default function CTA() {
           </div>
           <p className={"text-muted-foreground mb-4"}>
             Every project begins with a conversation—no pressure, no commitment.
-            At Bessa Apps, I offer a free Discovery phase designed to uncover
-            your goals, explore your vision, and present tailored solutions that
-            fit. Whether you&apos;re dreaming up a sleek iOS and Android app or
+            I offer a free Discovery phase designed to uncover your goals,
+            explore your vision, and present tailored solutions that fit.
+            Whether you&apos;re dreaming up a sleek iOS and Android app or
             planning a custom web development project, this first step helps us
             identify the opportunities that matter most to your business and
             your customers.

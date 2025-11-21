@@ -59,7 +59,7 @@ export default async function ServicePage({
             >
               <Button size={"lg"}>Let&apos;s Talk!</Button>
             </Link>
-            <Link href={"/"} title={formatTitle(post.title.rendered)}>
+            <Link href={"/"} title={formatTitle("")}>
               <Button size={"lg"}>Learn More</Button>
             </Link>
           </div>
