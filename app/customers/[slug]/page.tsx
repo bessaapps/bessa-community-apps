@@ -6,6 +6,7 @@ import Logo from "@/assets/images/logo.png";
 import Image from "next/image";
 import { stripHtml } from "string-strip-html";
 import { permanentRedirect } from "next/navigation";
+import Process from "@/components/Process";
 
 export async function generateMetadata({
   params
@@ -73,6 +74,7 @@ export default async function CustomerPage({
           />
         </div>
       </div>
+      <Process />
     </>
   );
 }
