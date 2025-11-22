@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/services/app-store-distribution-services",
+        destination:
+          "/app-store-distribution-services-that-get-your-app-approved-fast",
+        permanent: true
+      }
+    ];
+  }
 };
 
 export default nextConfig;
