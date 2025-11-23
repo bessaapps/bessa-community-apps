@@ -18,6 +18,7 @@ import { Fragment } from "react";
 import axios from "axios";
 import { Badge } from "@/components/ui/badge";
 import Process from "@/components/Process";
+import { stripHtml } from "string-strip-html";
 
 interface Post {
   id: string;
@@ -260,34 +261,34 @@ export default async function Home() {
       <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
         <SectionHeading>Services</SectionHeading>
         <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
-          {services?.map((service: Post) => (
-            <Link
-              key={service.id}
-              href={`/services/${service.slug}`}
-              title={formatTitle(service.title.rendered)}
-            >
-              <div className={"bg-card aspect-square p-4"}>
-                <div className={"flex flex-col justify-between h-full"}>
-                  <div>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: service.excerpt.rendered
-                      }}
-                      className={"text-primary font-semibold"}
-                    />
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: service?.title?.rendered
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <Button>Learn More</Button>
+          {services?.map((service: Post) => {
+            const excerpt = stripHtml(service.excerpt.rendered).result;
+
+            return (
+              <Link
+                key={service.id}
+                href={`/services/${service.slug}`}
+                title={formatTitle(excerpt)}
+              >
+                <div className={"bg-card aspect-square p-4"}>
+                  <div className={"flex flex-col justify-between h-full"}>
+                    <div>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: service.title.rendered
+                        }}
+                        className={"text-primary font-semibold"}
+                      />
+                      <p>{excerpt}</p>
+                    </div>
+                    <div>
+                      <Button>Learn More</Button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
           <div className={"row-span-2"} />
           <div className={"sm:col-span-2 pt-8"}>
             <GradientHeading>
