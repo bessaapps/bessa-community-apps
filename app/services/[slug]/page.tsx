@@ -8,6 +8,7 @@ import { stripHtml } from "string-strip-html";
 import { permanentRedirect } from "next/navigation";
 import Process from "@/components/Process";
 import SectionHeading from "@/components/SectionHeading";
+import Services from "@/components/Services";
 
 export async function generateMetadata({
   params
@@ -92,6 +93,7 @@ export default async function ServicePage({
           />
         </div>
       </div>
+      <Services sectionHeading={"More Services"} hiddenId={post.id} />
       <Process />
     </>
   );

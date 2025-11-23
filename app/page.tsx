@@ -19,13 +19,7 @@ import axios from "axios";
 import { Badge } from "@/components/ui/badge";
 import Process from "@/components/Process";
 import { stripHtml } from "string-strip-html";
-
-interface Post {
-  id: string;
-  slug: string;
-  title: { rendered: string };
-  excerpt: { rendered: string };
-}
+import { Post } from "@/lib/definitions";
 
 const Highlights = ({ list }: { list: string[] }) => {
   return (
