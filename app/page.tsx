@@ -204,24 +204,18 @@ export default async function Home() {
         <SectionHeading>Services</SectionHeading>
         <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
           {services?.map((service: Post) => {
-            const excerpt = stripHtml(service.excerpt.rendered).result;
+            const title = stripHtml(service.title.rendered).result;
 
             return (
               <Link
                 key={service.id}
                 href={`/services/${service.slug}`}
-                title={formatTitle(excerpt)}
+                title={formatTitle(title)}
               >
                 <div className={"bg-card aspect-square p-4"}>
                   <div className={"flex flex-col justify-between h-full"}>
                     <div>
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: service.title.rendered
-                        }}
-                        className={"text-primary font-semibold"}
-                      />
-                      <p>{excerpt}</p>
+                      <p className={"text-primary font-semibold"}>{title}</p>
                     </div>
                     <div>
                       <Button>Learn More</Button>

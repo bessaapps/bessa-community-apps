@@ -7,7 +7,6 @@ import Image from "next/image";
 import { stripHtml } from "string-strip-html";
 import { permanentRedirect } from "next/navigation";
 import Process from "@/components/Process";
-import SectionHeading from "@/components/SectionHeading";
 import Services from "@/components/Services";
 
 export async function generateMetadata({
@@ -21,9 +20,12 @@ export async function generateMetadata({
     .then((response) => response.data?.[0])
     .catch((error) => console.error(error));
 
+  const title = stripHtml(post.title.rendered).result;
+  const excerpt = stripHtml(post.excerpt.rendered).result;
+
   return formatMetadata({
-    metadataTitle: formatTitle(stripHtml(post?.excerpt?.rendered).result),
-    metadataDescription: "",
+    metadataTitle: formatTitle(title),
+    metadataDescription: excerpt,
     path: `/services/${post.slug}`
   });
 }
@@ -41,7 +43,7 @@ export default async function ServicePage({
 
   if (!post?.id) permanentRedirect("/");
 
-  const excerpt = stripHtml(post.excerpt.rendered).result;
+  const title = stripHtml(post.title.rendered).result;
 
   return (
     <>
@@ -50,7 +52,7 @@ export default async function ServicePage({
           <div className={"hidden sm:block relative aspect-square"}>
             <Image
               src={post._embedded["wp:featuredmedia"][0].source_url}
-              alt={formatTitle(excerpt)}
+              alt={formatTitle(title)}
               fill
               objectFit={"cover"}
             />
@@ -61,14 +63,14 @@ export default async function ServicePage({
               title={formatTitle("")}
               className={"w-24 aspect-square"}
             >
-              <Image src={Logo} alt={formatTitle(post.title.rendered)} />
+              <Image src={Logo} alt={formatTitle(title)} />
             </Link>
             <h1
               className={
                 "animate-text text-4xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-tr from-muted-foreground via-primary to-foreground font-bold"
               }
             >
-              {excerpt}
+              {title}
             </h1>
             <div className={"flex gap-4"}>
               <Link
@@ -85,12 +87,14 @@ export default async function ServicePage({
         </div>
       </div>
       <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
-        <SectionHeading>{post?.title?.rendered}</SectionHeading>
-        <div className={"flex flex-col gap-4"}>
-          <div
-            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-            className={"flex flex-col gap-4 wordpress-post"}
-          />
+        <div className={"grid sm:grid-cols-4 gap-4"}>
+          <div className={"hidden sm:block"} />
+          <div className={"col-span-3 flex flex-col gap-4"}>
+            <div
+              dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+              className={"flex flex-col gap-4 wordpress-post"}
+            />
+          </div>
         </div>
       </div>
       <Services sectionHeading={"More Services"} hiddenId={post.id} />
