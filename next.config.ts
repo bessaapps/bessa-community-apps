@@ -19,6 +19,12 @@ const nextConfig: NextConfig = {
         permanent: true
       },
       {
+        source: "/services/app-store-distribution",
+        destination:
+          "/services/stress-free-app-store-submission-services-that-get-you-approved-fast",
+        permanent: true
+      },
+      {
         source: "/services/app-store-distribution-services",
         destination:
           "/services/stress-free-app-store-submission-services-that-get-you-approved-fast",
