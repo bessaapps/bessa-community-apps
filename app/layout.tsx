@@ -3,16 +3,13 @@ import CTA from "@/components/CTA";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { formatMetadata, formatTitle } from "@/lib/helpers";
 import { description, url } from "@/lib/constants";
-import { Raleway, Work_Sans } from "next/font/google";
+import { Space_Grotesk, Inter } from "next/font/google";
 import Clock from "@/components/Clock";
 import Weather from "@/components/Weather";
 
-const workSans = Work_Sans({
-  variable: "--font-work-sans",
-  subsets: ["latin"]
-});
+const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk" });
 
-const raleway = Raleway({ variable: "--font-raleway", subsets: ["latin"] });
+const inter = Inter({ variable: "--font-inter" });
 
 export const metadata = formatMetadata({
   metadataTitle: formatTitle(""),
@@ -27,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={"en"}>
-      <body className={`${workSans.variable} ${raleway.variable} antialiased`}>
+      <body
+        className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
+      >
         {children}
         <CTA />
         <Clock />
