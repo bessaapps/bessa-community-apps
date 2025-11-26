@@ -36,26 +36,16 @@ export default function Process() {
   return (
     <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
       <div className={"max-w-full sm:max-w-[66%]"}>
-        <GradientHeading>A Collaborative, End-to-End Process</GradientHeading>
-        <p className={"mb-8"}>
-          At Bessa Apps, I partner with purpose-driven teams to transform big
-          ideas into powerful, intuitive products. As a react native app
-          developer, my focus is on building apps that are scalable,
-          human-centered, and designed to reduce risk while maximizing value.
-          From mobile app development and web development to SEO and ASO
-          strategies and smooth app store distribution, every project is crafted
-          to connect businesses with their audiences in meaningful ways. The
-          process is simple, collaborative, and always tailored to your unique
-          goals.
-        </p>
-        <p className={"mb-8"}>
-          With over a decade of experience, I bring not only technical expertise
-          but also strategic insight to every stage of development. That means
-          you get more than code; you get a clear roadmap for growth, a trusted
-          partner in cross-platform app development, and a product that feels as
-          natural for your users as it is powerful for your business. The result
-          is a custom app solution that isn&apos;t just functional, but deeply
-          aligned with your customers, your values, and your long-term success.
+        <GradientHeading>A Simple Path from Idea to Launch</GradientHeading>
+        <p className={"py-8"}>
+          As a mobile app developer, I use a clear, collaborative process that
+          makes mobile app development services feel approachable instead of
+          overwhelming. Every project moves through four stages, Discovery,
+          Design, Build, and Distribution, each crafted to keep you informed and
+          confident. From defining your vision, to prototyping your product, to
+          building intuitive cross-platform experiences, to navigating the App
+          Store and Play Store submission process, this workflow ensures your
+          app launches smoothly and grows with purpose.
         </p>
       </div>
       <div className={"grid sm:grid-cols-4 gap-4"}>
