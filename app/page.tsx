@@ -373,15 +373,16 @@ export default async function Home() {
       {/*</div>*/}
       <Process />
       <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
-        <SectionHeading>Hello, there!</SectionHeading>
+        <SectionHeading>Hi, there!</SectionHeading>
         <div className={"grid sm:grid-cols-4 gap-4"}>
           <div className={"bg-card aspect-[8/10] p-4"}>
             <div className={"flex flex-col justify-between h-full"}>
               <h3 className={"font-semibold text-primary"}>I&apos;m Topher</h3>
               <div className={"flex flex-col gap-4"}>
                 <p className={"text-primary"}>
-                  Ten years of experience building mobile and web apps, solving
-                  problems, and fostering community.
+                  Ten years of bringing ideas to life through mobile and web
+                  apps, solving real problems and building solutions that
+                  support communities.
                 </p>
                 <Link
                   href={"mailto:topher@bessaapps.com"}
@@ -397,8 +398,8 @@ export default async function Home() {
           <div className={"hidden sm:block col-span-2"} />
           <div className={"sm:col-span-2"}>
             <GradientHeading>
-              Meet Your React Native app developer, mobile and web app guru,
-              problem-solver, and community builder.
+              Meet your mobile app developer: part builder, part guide, part
+              community connector.
             </GradientHeading>
           </div>
         </div>
