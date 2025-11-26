@@ -6,11 +6,36 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // {
-      //   source: "/services/app-store-distribution-services",
-      //   destination: "/services/app-store-distribution",
-      //   permanent: true
-      // }
+      {
+        source: "/services/web",
+        destination:
+          "/services/custom-website-design-and-development-that-powers-your-business",
+        permanent: true
+      },
+      {
+        source: "/services/mobile",
+        destination:
+          "/services/custom-mobile-app-development-that-drives-growth",
+        permanent: true
+      },
+      {
+        source: "/services/app-store-distribution-services",
+        destination:
+          "/services/stress-free-app-store-submission-services-that-get-you-approved-fast",
+        permanent: true
+      },
+      {
+        source: "/services/custom-mobile-app-development",
+        destination:
+          "/services/custom-mobile-app-development-that-drives-growth",
+        permanent: true
+      },
+      {
+        source: "/services/aso-and-seo",
+        destination:
+          "/services/smarter-aso-and-seo-services-for-mobile-apps-to-increase-rankings-and-conversions",
+        permanent: true
+      }
     ];
   }
 };
