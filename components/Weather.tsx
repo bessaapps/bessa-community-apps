@@ -36,7 +36,7 @@ export default function Weather() {
           href={"https://calendar.app.google/fCR1Xnhv9FUfXznPA"}
           target={"_blank"}
         >
-          <p className={"font-bold"}>Let&apos;s Talk!</p>
+          <p className={"font-bold"}>Book a Call!</p>
         </Link>
       </div>
     </>

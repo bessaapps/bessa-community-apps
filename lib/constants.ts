@@ -2,4 +2,4 @@ export const keyword = "Mobile App Development Services";
 export const title = "Bessa Community Apps";
 export const url = "https://bessaapps.com";
 export const description =
-  "Bessa Apps offers custom mobile app development for iOS, Android, and the web. Launch scalable, cross-platform apps that engage users and grow your impact.";
+  "Human-centered mobile & web app development services from idea to launch. I build intuitive iOS, Android, and web apps with clarity, scalability, and a focus on growth. Let's turn your vision into a polished product that users love.";

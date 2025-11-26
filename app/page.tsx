@@ -67,7 +67,7 @@ export default async function Home() {
               href={"https://calendar.app.google/fCR1Xnhv9FUfXznPA"}
               target={"_blank"}
             >
-              <Button size={"lg"}>Start my Project</Button>
+              <Button size={"lg"}>Start my Project!</Button>
             </Link>
           </div>
         </div>
