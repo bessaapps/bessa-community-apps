@@ -1,0 +1,36 @@
+import Logo from "@/assets/images/logo.png";
+import Image from "next/image";
+import { formatTitle } from "@/lib/helpers";
+import Link from "next/link";
+
+export default function TopNavigation() {
+  const links = [
+    { href: "/#works", anchor: "Works" },
+    { href: "/#about", anchor: "About" },
+    { href: "#contact", anchor: "Contact" }
+  ];
+
+  return (
+    <div className={"w-full max-w-[1200] px-4 py-2 mx-auto"}>
+      <div className={"flex items-center justify-between gap-8"}>
+        <Link href={"/"} title={formatTitle("")}>
+          <div className={"w-[4rem]"}>
+            <Image src={Logo} alt={formatTitle("")} objectFit={"fit"} />
+          </div>
+        </Link>
+        <div className={"flex gap-4"}>
+          {links.map(({ href, anchor }: { href: string; anchor: string }) => (
+            <Link
+              key={href}
+              href={href}
+              title={formatTitle(anchor)}
+              className={"font-bold hover:underline"}
+            >
+              {anchor}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -2,7 +2,6 @@ import { formatMetadata, formatTitle } from "@/lib/helpers";
 import axios from "axios";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import Logo from "@/assets/images/logo.png";
 import Image from "next/image";
 import { stripHtml } from "string-strip-html";
 import { permanentRedirect } from "next/navigation";
@@ -58,13 +57,6 @@ export default async function ServicePage({
             />
           </div>
           <div className={"flex flex-col justify-center gap-8"}>
-            <Link
-              href={"/"}
-              title={formatTitle("")}
-              className={"w-24 aspect-square"}
-            >
-              <Image src={Logo} alt={formatTitle(title)} />
-            </Link>
             <h1
               className={
                 "animate-text text-4xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-tr from-muted-foreground via-primary to-foreground font-bold"

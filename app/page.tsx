@@ -8,7 +8,6 @@ import Image from "next/image";
 import { SiAndroid, SiApple } from "react-icons/si";
 import SectionHeading from "@/components/SectionHeading";
 import { formatTitle } from "@/lib/helpers";
-import Logo from "@/assets/images/logo.png";
 import GradientHeading from "@/components/GradientHeading";
 import { AiOutlineCheck } from "react-icons/ai";
 import axios from "axios";
@@ -37,21 +36,12 @@ export default async function Home() {
     .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2")
     .then((response) => response.data)
     .catch((error) => console.error(error));
-  // const customers = await axios
-  //   .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=4")
-  //   .then((response) => response.data)
-  //   .catch((error) => console.error(error));
 
   return (
     <main>
-      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
+      <div className={"max-w-[1200] px-4 pt-16 pb-32 mx-auto"}>
         <div className={"max-w-7xl mx-auto px-4 py-16 sm:py-32"}>
           <div className={"flex flex-col gap-4 max-w-full"}>
-            <Link href={"/"} title={formatTitle("")}>
-              <div className={"w-24 aspect-square"}>
-                <Image src={Logo} alt={formatTitle("")} />
-              </div>
-            </Link>
             <h1
               className={
                 "animate-text text-5xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-tr from-muted-foreground via-primary to-foreground font-bold leading-[1.1] sm:max-w-[75%]"
@@ -85,7 +75,7 @@ export default async function Home() {
           />
         </div>
       </div>
-      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
+      <div className={"max-w-[1200] px-4 py-32 mx-auto"} id={"works"}>
         <SectionHeading>Selected Works</SectionHeading>
         <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
           <div className={"flex flex-col gap-4"}>
@@ -366,7 +356,7 @@ export default async function Home() {
       {/*  </div>*/}
       {/*</div>*/}
       <Process />
-      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
+      <div className={"max-w-[1200] px-4 py-32 mx-auto"} id={"about"}>
         <SectionHeading>Hi, there!</SectionHeading>
         <div className={"grid sm:grid-cols-4 gap-4"}>
           <div className={"bg-card aspect-[8/10] p-4"}>

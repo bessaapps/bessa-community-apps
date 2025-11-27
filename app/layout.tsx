@@ -6,6 +6,7 @@ import { description, url } from "@/lib/constants";
 import { Space_Grotesk, Inter } from "next/font/google";
 import Clock from "@/components/Clock";
 import Weather from "@/components/Weather";
+import TopNavigation from "@/components/TopNavigation";
 
 const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk" });
 
@@ -27,8 +28,13 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
       >
-        {children}
-        <CTA />
+        <div className={"h-full max-h-screen grid grid-rows-[auto_1fr]"}>
+          <TopNavigation />
+          <div className={"overflow-y-scroll"}>
+            {children}
+            <CTA />
+          </div>
+        </div>
         <Clock />
         <Weather />
       </body>

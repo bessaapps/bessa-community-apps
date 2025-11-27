@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 
 export default function CTA() {
   return (
-    <div className={"bg-muted"}>
+    <div className={"bg-muted"} id={"contact"}>
       <div
         className={
-          "flex fle-col items-center min-h-dvh max-w-[1200] mx-auto py-16 sm:py-32 px-4"
+          "flex fle-col items-center min-h-[calc(100vh-80px)] max-w-[1200] mx-auto py-16 sm:py-32 px-4"
         }
       >
         <div>
