@@ -33,7 +33,7 @@ export default async function Services({
                 href={`/services/${service.slug}`}
                 title={formatTitle(title)}
               >
-                <div className={"bg-card aspect-square p-4"}>
+                <div className={"bg-card aspect-square rounded-2xl p-4"}>
                   <div className={"flex flex-col justify-between h-full"}>
                     <div>
                       <p className={"text-primary font-semibold"}>{title}</p>

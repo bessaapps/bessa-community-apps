@@ -84,7 +84,7 @@ export default async function Home() {
               title={"AS/400 App"}
               target={"_blank"}
             >
-              <div className={"overflow-hidden"}>
+              <div className={"rounded-2xl overflow-hidden"}>
                 <Image
                   src={Work1}
                   alt={formatTitle("")}
@@ -112,7 +112,7 @@ export default async function Home() {
               href={"https://getbessa.com"}
               title={"Bessa | Gay Social Media App"}
               target={"_blank"}
-              className={"overflow-hidden"}
+              className={"rounded-2xl overflow-hidden"}
             >
               <Image
                 src={Work2}
@@ -143,7 +143,7 @@ export default async function Home() {
               href={"https://getresumemint.com"}
               title={"Resume Mint"}
               target={"_blank"}
-              className={"overflow-hidden"}
+              className={"rounded-2xl overflow-hidden"}
             >
               <Image
                 src={Work3}
@@ -202,7 +202,11 @@ export default async function Home() {
                 href={`/services/${service.slug}`}
                 title={formatTitle(title)}
               >
-                <div className={"bg-card aspect-square p-4"}>
+                <div
+                  className={
+                    "bg-card aspect-square rounded-2xl overflow-hidden p-4"
+                  }
+                >
                   <div className={"flex flex-col justify-between h-full"}>
                     <div>
                       <p className={"text-primary font-semibold"}>{title}</p>
@@ -359,7 +363,7 @@ export default async function Home() {
       <div className={"max-w-[1200] px-4 py-32 mx-auto"} id={"about"}>
         <SectionHeading>Hi, there!</SectionHeading>
         <div className={"grid sm:grid-cols-4 gap-4"}>
-          <div className={"bg-card aspect-[8/10] p-4"}>
+          <div className={"bg-card aspect-[8/10] rounded-2xl p-4"}>
             <div className={"flex flex-col justify-between h-full"}>
               <h3 className={"font-semibold text-primary"}>I&apos;m Topher</h3>
               <div className={"flex flex-col gap-4"}>
@@ -377,7 +381,9 @@ export default async function Home() {
               </div>
             </div>
           </div>
-          <Image src={Me} alt={formatTitle("")} />
+          <div className={"rounded-2xl overflow-hidden"}>
+            <Image src={Me} alt={formatTitle("")} />
+          </div>
           <div className={"hidden sm:block col-span-2"} />
           <div className={"hidden sm:block col-span-2"} />
           <div className={"sm:col-span-2"}>

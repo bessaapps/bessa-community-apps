@@ -48,7 +48,11 @@ export default async function ServicePage({
     <>
       <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
         <div className={"grid sm:grid-cols-2 gap-4"}>
-          <div className={"hidden sm:block relative aspect-square"}>
+          <div
+            className={
+              "hidden sm:block relative aspect-square rounded-2xl overflow-hidden"
+            }
+          >
             <Image
               src={post._embedded["wp:featuredmedia"][0].source_url}
               alt={formatTitle(title)}
