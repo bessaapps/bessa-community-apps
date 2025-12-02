@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Twitter } from "lucide-react";
 import { formatTitle } from "@/lib/helpers";
 import { Button } from "@/components/ui/button";
 
@@ -40,6 +40,9 @@ export default function CTA() {
               </div>
             </div>
             <div className={"flex justify-end gap-4 mb-4"}>
+              <Link href={"https://x.com/bessaapps"}>
+                <Twitter color={"var(--color-muted-foreground)"} />
+              </Link>
               <Link href={"https://www.linkedin.com/in/topherjamesknoll"}>
                 <Linkedin color={"var(--color-muted-foreground)"} />
               </Link>
