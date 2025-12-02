@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Github, Linkedin, Twitter } from "lucide-react";
 import { formatTitle } from "@/lib/helpers";
 import { Button } from "@/components/ui/button";
+import { BsGithub, BsLinkedin, BsTwitterX } from "react-icons/bs";
 
 export default function CTA() {
   return (
@@ -41,13 +41,13 @@ export default function CTA() {
             </div>
             <div className={"flex justify-end gap-4 mb-4"}>
               <Link href={"https://x.com/bessaapps"}>
-                <Twitter color={"var(--color-muted-foreground)"} />
+                <BsTwitterX className={"text-2xl text-muted-foreground"} />
               </Link>
               <Link href={"https://www.linkedin.com/in/topherjamesknoll"}>
-                <Linkedin color={"var(--color-muted-foreground)"} />
+                <BsLinkedin className={"text-2xl text-muted-foreground"} />
               </Link>
               <Link href={"https://github.com/bessaapps"}>
-                <Github color={"var(--color-muted-foreground)"} />
+                <BsGithub className={"text-2xl text-muted-foreground"} />
               </Link>
             </div>
             <p className={"text-right text-muted-foreground"}>
