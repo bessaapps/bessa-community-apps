@@ -36,6 +36,10 @@ export default async function Home() {
     .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2")
     .then((response) => response.data)
     .catch((error) => console.error(error));
+  const articles = await axios
+    .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=6")
+    .then((response) => response.data)
+    .catch((error) => console.error(error));
 
   return (
     <main>
@@ -47,7 +51,7 @@ export default async function Home() {
                 "animate-text text-5xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-tr from-muted-foreground via-primary to-foreground font-bold leading-[1.1] sm:max-w-[75%]"
               }
             >
-              You bring the idea. I&apos;ll bring the app.
+              You bring the idea. I&apos;ll build the app.
             </h1>
             <p className={"text-2xl sm:max-w-[66%] mb-8"}>
               Human-Centered Mobile App Development Services for Ideas That
@@ -245,120 +249,6 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      {/*<div className={"max-w-[1200] px-4 py-32 mx-auto"}>*/}
-      {/*  <SectionHeading>Solutions</SectionHeading>*/}
-      {/*  <GradientHeading>Smart Tech with Real Impact</GradientHeading>*/}
-      {/*  <p className={"mb-8"}>*/}
-      {/*    Mobile apps aren&apos;t just software. They&apos;re solutions. As a*/}
-      {/*    React Native app developer, I help businesses tackle challenges and*/}
-      {/*    unlock opportunities through smart, scalable technology. Need to*/}
-      {/*    streamline customer bookings? Launch an e-commerce storefront? Build a*/}
-      {/*    platform for community engagement? Why stop there?! With expertise in*/}
-      {/*    cross-platform app development, custom business app solutions, and iOS*/}
-      {/*    and Android app development, I create tools that make life easier for*/}
-      {/*    your customers and more profitable for your business.*/}
-      {/*  </p>*/}
-      {/*  <p className={"mb-8"}>*/}
-      {/*    But solutions don&apos;t stop at functionality. They&apos;re about*/}
-      {/*    impact. That&apos;s why I offer end-to-end React Native development*/}
-      {/*    services, from app prototyping and MVPs to startup app solutions and*/}
-      {/*    full-scale enterprise builds. Every feature is designed with purpose,*/}
-      {/*    whether it&apos;s to drive sales, boost engagement, or create stronger*/}
-      {/*    brand loyalty. With the right app development services, your app*/}
-      {/*    becomes more than just a product. It becomes the solution your*/}
-      {/*    customers can&apos;t live without. Here are just a few examples:*/}
-      {/*  </p>*/}
-      {/*  <div className={"grid sm:grid-cols-3 gap-4"}>*/}
-      {/*    <div className={"flex flex-col gap-4"}>*/}
-      {/*      <div className={"overflow-hidden"}>*/}
-      {/*        <Image*/}
-      {/*          src={Solution1}*/}
-      {/*          alt={formatTitle("")}*/}
-      {/*          className={"hover:scale-125 duration-200"}*/}
-      {/*        />*/}
-      {/*      </div>*/}
-      {/*      <h3 className={"font-semibold text-xl"}>Authentication</h3>*/}
-      {/*      <p>*/}
-      {/*        As a react native app developer, I build secure and seamless*/}
-      {/*        authentication systems, from social logins to biometric access,*/}
-      {/*        that keep users safe while making sign-ins effortless. Trust*/}
-      {/*        starts with security, and your customers will feel it from the*/}
-      {/*        first tap.*/}
-      {/*      </p>*/}
-      {/*    </div>*/}
-      {/*    <div className={"flex flex-col gap-4"}>*/}
-      {/*      <div className={"overflow-hidden"}>*/}
-      {/*        <Image*/}
-      {/*          src={Solution2}*/}
-      {/*          alt={formatTitle("")}*/}
-      {/*          className={"hover:scale-125 duration-200"}*/}
-      {/*        />*/}
-      {/*      </div>*/}
-      {/*      <h3 className={"font-semibold text-xl"}>Direct Messaging</h3>*/}
-      {/*      <p>*/}
-      {/*        Community thrives on conversation. With cross-platform app*/}
-      {/*        development, I create in-app messaging features that let users*/}
-      {/*        connect directly, building stronger engagement and lasting loyalty*/}
-      {/*        within your app.*/}
-      {/*      </p>*/}
-      {/*    </div>*/}
-      {/*    <div className={"flex flex-col gap-4"}>*/}
-      {/*      <div className={"overflow-hidden"}>*/}
-      {/*        <Image*/}
-      {/*          src={Solution3}*/}
-      {/*          alt={formatTitle("")}*/}
-      {/*          className={"hover:scale-125 duration-200"}*/}
-      {/*        />*/}
-      {/*      </div>*/}
-      {/*      <h3 className={"font-semibold text-xl"}>In-App Purchases</h3>*/}
-      {/*      <p>*/}
-      {/*        Boost revenue with custom app development that integrates smooth*/}
-      {/*        and reliable in-app purchasing. Whether it&apos;s subscriptions,*/}
-      {/*        upgrades, or one-time buys, I design iOS and Android app*/}
-      {/*        development solutions that make it easy for customers to say yes.*/}
-      {/*      </p>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
-      {/*<div className={"max-w-[1200] px-4 py-32 mx-auto"}>*/}
-      {/*  <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>*/}
-      {/*    {customers?.map((customer: Post, index: number) => (*/}
-      {/*      <Fragment key={customer.id}>*/}
-      {/*        <Link*/}
-      {/*          href={`/customers/${customer.slug}`}*/}
-      {/*          title={formatTitle(customer.title.rendered)}*/}
-      {/*        >*/}
-      {/*          <div className={"bg-card aspect-square p-4"}>*/}
-      {/*            <div className={"flex flex-col justify-between h-full"}>*/}
-      {/*              <div>*/}
-      {/*                <div*/}
-      {/*                  dangerouslySetInnerHTML={{*/}
-      {/*                    __html: customer.excerpt.rendered*/}
-      {/*                  }}*/}
-      {/*                  className={"text-primary font-semibold"}*/}
-      {/*                />*/}
-      {/*                <div*/}
-      {/*                  dangerouslySetInnerHTML={{*/}
-      {/*                    __html: customer.title.rendered*/}
-      {/*                  }}*/}
-      {/*                />*/}
-      {/*              </div>*/}
-      {/*              <div>*/}
-      {/*                <Button>Learn More</Button>*/}
-      {/*              </div>*/}
-      {/*            </div>*/}
-      {/*          </div>*/}
-      {/*        </Link>*/}
-      {/*        {index === 2 && (*/}
-      {/*          <>*/}
-      {/*            <div className={"hidden sm:block"} />*/}
-      {/*            <div className={"hidden sm:block"} />*/}
-      {/*          </>*/}
-      {/*        )}*/}
-      {/*      </Fragment>*/}
-      {/*    ))}*/}
-      {/*  </div>*/}
-      {/*</div>*/}
       <Process />
       <div className={"max-w-[1200] px-4 py-32 mx-auto"} id={"about"}>
         <SectionHeading>Hi, there!</SectionHeading>
@@ -394,29 +284,37 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      {/*<div className={"max-w-[1200] px-4 py-32 mx-auto"}>*/}
-      {/*  <SectionHeading>Dev Gotchas</SectionHeading>*/}
-      {/*  <div className={"flex gap-4 overflow-x-auto"}>*/}
-      {/*{gotchas?.map(({ slug, heading, keyword }, index) => (*/}
-      {/*  <Link*/}
-      {/*    key={index}*/}
-      {/*    href={`/dev-gotchas/${slug}`}*/}
-      {/*    title={formatTitle(keyword)}*/}
-      {/*  >*/}
-      {/*    <div className={"w-[250] bg-neutral aspect-square p-4"}>*/}
-      {/*      <div className={"flex flex-col justify-between h-full"}>*/}
-      {/*        <h3 className={"text-primary font-semibold"}>{heading}</h3>*/}
-      {/*        <div>*/}
-      {/*          <button className={"btn btn-primary btn-outline "}>*/}
-      {/*            Learn More*/}
-      {/*          </button>*/}
-      {/*        </div>*/}
-      {/*      </div>*/}
-      {/*    </div>*/}
-      {/*  </Link>*/}
-      {/*))}*/}
-      {/*  </div>*/}
-      {/*</div>*/}
+      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
+        <SectionHeading>Press Room</SectionHeading>
+        <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
+          {articles?.map((article: Post) => {
+            const title = stripHtml(article.title.rendered).result;
+
+            return (
+              <Link
+                key={article.id}
+                href={`/articles/${article.slug}`}
+                title={formatTitle(title)}
+              >
+                <div
+                  className={
+                    "bg-card aspect-square rounded-2xl overflow-hidden p-4"
+                  }
+                >
+                  <div className={"flex flex-col justify-between h-full"}>
+                    <div>
+                      <p className={"text-primary font-semibold"}>{title}</p>
+                    </div>
+                    <div>
+                      <Button>Learn More</Button>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
     </main>
   );
 }

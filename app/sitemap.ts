@@ -5,8 +5,8 @@ export default async function sitemap() {
     .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2")
     .then((response) => response.data)
     .catch((error) => console.error(error));
-  const customers = await axios
-    .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=4")
+  const articles = await axios
+    .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=6")
     .then((response) => response.data)
     .catch((error) => console.error(error));
 
@@ -23,8 +23,8 @@ export default async function sitemap() {
       changeFrequency: "daily",
       priority: 0.9
     })),
-    ...customers?.flatMap(({ slug }: { slug: string }) => ({
-      url: `https://bessaapps.com/customers/${slug}`,
+    ...articles?.flatMap(({ slug }: { slug: string }) => ({
+      url: `https://bessaapps.com/articles/${slug}`,
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.8

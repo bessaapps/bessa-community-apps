@@ -11,7 +11,7 @@ export default async function Services({
   hiddenId
 }: {
   sectionHeading: string;
-  hiddenId: number;
+  hiddenId?: number;
 }) {
   const services = await axios
     .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2")
