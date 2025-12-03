@@ -68,17 +68,12 @@ export default async function ServicePage({
             >
               {title}
             </h1>
-            <div className={"flex gap-4"}>
-              <Link
-                href={"https://calendar.app.google/fCR1Xnhv9FUfXznPA"}
-                target={"_blank"}
-              >
-                <Button size={"lg"}>Let&apos;s Talk!</Button>
-              </Link>
-              <Link href={"/"} title={formatTitle("")}>
-                <Button size={"lg"}>Learn More</Button>
-              </Link>
-            </div>
+            <Link
+              href={"https://calendar.app.google/fCR1Xnhv9FUfXznPA"}
+              target={"_blank"}
+            >
+              <Button size={"lg"}>Book a FREE Call!</Button>
+            </Link>
           </div>
         </div>
       </div>

@@ -306,7 +306,7 @@ export default async function Home() {
                       <p className={"text-primary font-semibold"}>{title}</p>
                     </div>
                     <div>
-                      <Button>Learn More</Button>
+                      <Button>Read More</Button>
                     </div>
                   </div>
                 </div>
