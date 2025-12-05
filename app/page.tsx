@@ -51,11 +51,12 @@ export default async function Home() {
                 "animate-text text-5xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-tr from-muted-foreground via-primary to-foreground font-bold leading-[1.1] sm:max-w-[75%]"
               }
             >
-              You bring the idea. I&apos;ll build the app.
+              Your app idea is great. Now what?
             </h1>
             <p className={"text-2xl sm:max-w-[66%] mb-8"}>
-              Human-Centered Mobile App Development Services for Ideas That
-              Deserve Momentum
+              Stop dreaming and start launching. I turn your bold concepts into
+              reality with accessible mobile app development services for ideas
+              that deserve momentum.
             </p>
             <Link
               href={"https://calendar.app.google/fCR1Xnhv9FUfXznPA"}
