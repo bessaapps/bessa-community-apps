@@ -54,7 +54,7 @@ export default async function Home() {
               Your app idea is great. Now what?
             </h1>
             <p className={"text-2xl sm:max-w-[66%] mb-8"}>
-              Stop dreaming and start launching. I turn your bold concepts into
+              Stop dreaming and start launching. Turn your bold concepts into
               reality with accessible mobile app development services for ideas
               that deserve momentum.
             </p>
@@ -200,7 +200,6 @@ export default async function Home() {
         <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
           {services?.map((service: Post) => {
             const title = stripHtml(service.title.rendered).result;
-
             return (
               <Link
                 key={service.id}
@@ -254,21 +253,25 @@ export default async function Home() {
       <div className={"max-w-[1200] px-4 py-32 mx-auto"} id={"about"}>
         <SectionHeading>Hi, there!</SectionHeading>
         <div className={"grid sm:grid-cols-4 gap-4"}>
-          <div className={"bg-card aspect-[8/10] rounded-2xl p-4"}>
-            <div className={"flex flex-col justify-between h-full"}>
-              <h3 className={"font-semibold text-primary"}>I&apos;m Topher</h3>
-              <div className={"flex flex-col gap-4"}>
-                <p className={"text-primary"}>
-                  Ten years of bringing ideas to life through mobile and web
-                  apps, solving real problems and building solutions that
-                  support communities.
-                </p>
-                <Link
-                  href={"mailto:topher@bessaapps.com"}
-                  title={formatTitle("")}
-                >
-                  <Button>Let&apos;s Talk!</Button>
-                </Link>
+          <div className={"bg-card aspect-[8/10] rounded-2xl"}>
+            <div className={"p-4"}>
+              <div className={"flex flex-col justify-between h-full"}>
+                <h3 className={"font-semibold text-primary"}>
+                  I&apos;m Topher
+                </h3>
+                <div className={"flex flex-col gap-4"}>
+                  <p className={"text-primary"}>
+                    Ten years of bringing ideas to life through mobile and web
+                    apps, solving real problems and building solutions that
+                    support communities.
+                  </p>
+                  <Link
+                    href={"mailto:topher@bessaapps.com"}
+                    title={formatTitle("")}
+                  >
+                    <Button>Let&apos;s Talk!</Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -290,7 +293,6 @@ export default async function Home() {
         <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
           {articles?.map((article: Post) => {
             const title = stripHtml(article.title.rendered).result;
-
             return (
               <Link
                 key={article.id}
