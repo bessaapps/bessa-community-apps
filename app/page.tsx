@@ -208,10 +208,10 @@ export default async function Home() {
               >
                 <div
                   className={
-                    "bg-card aspect-square rounded-2xl overflow-hidden p-4"
+                    "bg-card aspect-square rounded-2xl overflow-hidden"
                   }
                 >
-                  <div className={"flex flex-col justify-between h-full"}>
+                  <div className={"flex flex-col justify-between h-full p-4"}>
                     <div>
                       <p className={"text-primary font-semibold"}>{title}</p>
                     </div>
@@ -254,24 +254,20 @@ export default async function Home() {
         <SectionHeading>Hi, there!</SectionHeading>
         <div className={"grid sm:grid-cols-4 gap-4"}>
           <div className={"bg-card aspect-[8/10] rounded-2xl"}>
-            <div className={"p-4"}>
-              <div className={"flex flex-col justify-between h-full"}>
-                <h3 className={"font-semibold text-primary"}>
-                  I&apos;m Topher
-                </h3>
-                <div className={"flex flex-col gap-4"}>
-                  <p className={"text-primary"}>
-                    Ten years of bringing ideas to life through mobile and web
-                    apps, solving real problems and building solutions that
-                    support communities.
-                  </p>
-                  <Link
-                    href={"mailto:topher@bessaapps.com"}
-                    title={formatTitle("")}
-                  >
-                    <Button>Let&apos;s Talk!</Button>
-                  </Link>
-                </div>
+            <div className={"flex flex-col justify-between h-full p-4"}>
+              <h3 className={"font-semibold text-primary"}>I&apos;m Topher</h3>
+              <div className={"flex flex-col gap-4"}>
+                <p className={"text-primary"}>
+                  Ten years of bringing ideas to life through mobile and web
+                  apps, solving real problems and building solutions that
+                  support communities.
+                </p>
+                <Link
+                  href={"mailto:topher@bessaapps.com"}
+                  title={formatTitle("")}
+                >
+                  <Button>Let&apos;s Talk!</Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -301,10 +297,10 @@ export default async function Home() {
               >
                 <div
                   className={
-                    "bg-card aspect-square rounded-2xl overflow-hidden p-4"
+                    "bg-card aspect-square rounded-2xl overflow-hidden"
                   }
                 >
-                  <div className={"flex flex-col justify-between h-full"}>
+                  <div className={"flex flex-col justify-between h-full p-4"}>
                     <div>
                       <p className={"text-primary font-semibold"}>{title}</p>
                     </div>
