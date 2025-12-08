@@ -14,13 +14,10 @@ export default function CTA() {
             <div className={"text-primary text-6xl leading-[1.2] mb-4"}>
               Tell me about your Idea__
             </div>
-            <p className={"text-muted-foreground"}>
-              If you&apos;re ready to bring your idea to life, I&apos;d love to
-              hear what you&apos;re building. I&apos;m here to simplify the
-              process, offer clear next steps, and help you move forward with
-              confidence. Whether you have a loose concept or a fully formed
-              plan, I&apos;ll guide you through the path to launch, one step at
-              a time.
+            <p className={"text-muted-foreground sm:text-xl"}>
+              Reach out to share what you&apos;re building, and I&apos;ll help
+              you simplify the process and move from concept to launch with
+              confidence.
             </p>
             <div className={"flex flex-col sm:flex-row gap-4 sm:gap-8 py-4"}>
               <Link

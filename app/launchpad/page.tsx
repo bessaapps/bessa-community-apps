@@ -32,12 +32,12 @@ export default async function Launchpad() {
         </div>
       </div>
       <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
-        <div className={"grid grid-cols-3 gap-4"}>
+        <div className={"grid sm:grid-cols-3 gap-4"}>
           {articles.map((article: Post, index: number) => {
             const title = stripHtml(article.title.rendered).result;
 
             return index === 1 ? (
-              <div className={"col-span-2 row-span-2"}>
+              <div className={"sm:col-span-2 sm:row-span-2"}>
                 <Link
                   href={`/launchpad/${featuredArticle.slug}`}
                   title={formatTitle(featuredArticleTitle)}
@@ -53,20 +53,22 @@ export default async function Launchpad() {
                       <div className={"col-span-2 p-4"}>
                         <div className={"flex flex-col gap-4"}>
                           <div>
-                            <p className={"font-bold"}>Featured</p>
+                            <p className={"font-bold hidden sm:block"}>
+                              Featured
+                            </p>
                             <h3
                               className={"text-4xl text-primary font-semibold"}
                             >
                               {featuredArticleTitle}
                             </h3>
                           </div>
-                          <p>
+                          <p className={"hidden sm:block"}>
                             {stripHtml(featuredArticle.excerpt.rendered).result}
                           </p>
                         </div>
                       </div>
                       <div />
-                      <div className={"relative"}>
+                      <div className={"relative hidden sm:block"}>
                         <Image
                           src={
                             featuredArticle._embedded["wp:featuredmedia"][0]
@@ -109,7 +111,7 @@ export default async function Launchpad() {
         </div>
       </div>
       <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
-        <div className={"grid grid-cols-3 gap-4"}>
+        <div className={"grid sm:grid-cols-3 gap-4"}>
           <div />
           <div className={"bg-card aspect-[8/10] rounded-2xl"}>
             <div className={"flex flex-col justify-between h-full p-4"}>
