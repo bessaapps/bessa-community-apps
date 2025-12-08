@@ -200,6 +200,7 @@ export default async function Home() {
         <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
           {services?.map((service: Post) => {
             const title = stripHtml(service.title.rendered).result;
+
             return (
               <Link
                 key={service.id}
@@ -289,10 +290,11 @@ export default async function Home() {
         <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
           {articles?.map((article: Post) => {
             const title = stripHtml(article.title.rendered).result;
+
             return (
               <Link
                 key={article.id}
-                href={`/articles/${article.slug}`}
+                href={`/launchpad/${article.slug}`}
                 title={formatTitle(title)}
               >
                 <div

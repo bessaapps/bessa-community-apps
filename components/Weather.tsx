@@ -16,7 +16,6 @@ export default function Weather() {
         }
       })
       .then((response) => {
-        console.log(response.data);
         setShortForecast(response.data?.periods?.[0]?.shortForecast);
         setIsDaytime(response.data?.periods?.[0]?.isDaytime);
       })
@@ -26,7 +25,8 @@ export default function Weather() {
   return (
     <>
       <p className={"text-xs fixed top-0 left-[50%] hidden sm:block"}>
-        Las Vegas | {isDaytime ? "☀︎" : "⏾"} {shortForecast}
+        Las Vegas&nbsp;&nbsp;|&nbsp;&nbsp;{isDaytime ? "☀︎" : "⏾"}{" "}
+        {shortForecast}
       </p>
     </>
   );
