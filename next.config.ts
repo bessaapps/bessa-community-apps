@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/articles/:path*",
+        destination: "/launchpad/:path*",
+        permanent: true
+      },
+      {
         source: "/services/web",
         destination:
           "/services/custom-website-design-and-development-that-powers-your-business",

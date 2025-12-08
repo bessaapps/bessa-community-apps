@@ -9,7 +9,7 @@ import { SiAndroid, SiApple } from "react-icons/si";
 import SectionHeading from "@/components/SectionHeading";
 import { formatTitle } from "@/lib/helpers";
 import GradientHeading from "@/components/GradientHeading";
-import { AiOutlineCheck } from "react-icons/ai";
+import { AiOutlineArrowRight, AiOutlineCheck } from "react-icons/ai";
 import axios from "axios";
 import { Badge } from "@/components/ui/badge";
 import Process from "@/components/Process";
@@ -286,9 +286,9 @@ export default async function Home() {
         </div>
       </div>
       <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
-        <SectionHeading>Press Room</SectionHeading>
+        <SectionHeading>Launchpad</SectionHeading>
         <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
-          {articles?.map((article: Post) => {
+          {articles.slice(0, 3).map((article: Post) => {
             const title = stripHtml(article.title.rendered).result;
 
             return (
@@ -307,13 +307,27 @@ export default async function Home() {
                       <p className={"text-primary font-semibold"}>{title}</p>
                     </div>
                     <div>
-                      <Button>Read More</Button>
+                      <Button>Read the Article</Button>
                     </div>
                   </div>
                 </div>
               </Link>
             );
           })}
+          <Link href={"/launchpad"} title={formatTitle("Launchpad")}>
+            <div
+              className={
+                "bg-card aspect-square rounded-2xl overflow-hidden flex items-center justify-center"
+              }
+            >
+              <div
+                className={"flex items-center gap-4 text-primary font-semibold"}
+              >
+                <p>See All</p>
+                <AiOutlineArrowRight className={"text-3xl"} />
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </main>

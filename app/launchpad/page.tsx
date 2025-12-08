@@ -33,86 +33,79 @@ export default async function Launchpad() {
       </div>
       <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
         <div className={"grid grid-cols-3 gap-4"}>
-          {articles
-            .slice(1, articles.length)
-            .map((article: Post, index: number) => {
-              const title = stripHtml(article.title.rendered).result;
+          {articles.map((article: Post, index: number) => {
+            const title = stripHtml(article.title.rendered).result;
 
-              return index === 1 ? (
-                <div className={"col-span-2 row-span-2"}>
-                  <Link
-                    href={`/launchpad/${featuredArticle.slug}`}
-                    title={formatTitle(featuredArticleTitle)}
-                  >
-                    <div
-                      className={
-                        "bg-card aspect-square rounded-2xl overflow-hidden"
-                      }
-                    >
-                      <div
-                        className={"h-full grid grid-cols-2 grid-rows-2 gap-4"}
-                      >
-                        <div className={"col-span-2 p-4"}>
-                          <div className={"flex flex-col gap-4"}>
-                            <div>
-                              <p className={"font-bold"}>Featured</p>
-                              <h3
-                                className={
-                                  "text-4xl text-primary font-semibold"
-                                }
-                              >
-                                {featuredArticleTitle}
-                              </h3>
-                            </div>
-                            <p>
-                              {
-                                stripHtml(featuredArticle.excerpt.rendered)
-                                  .result
-                              }
-                            </p>
-                          </div>
-                        </div>
-                        <div />
-                        <div className={"relative"}>
-                          <Image
-                            src={
-                              featuredArticle._embedded["wp:featuredmedia"][0]
-                                .source_url
-                            }
-                            alt={formatTitle(featuredArticleTitle)}
-                            fill
-                            objectFit={"cover"}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              ) : (
+            return index === 1 ? (
+              <div className={"col-span-2 row-span-2"}>
                 <Link
-                  key={article.id}
-                  href={`/launchpad/${article.slug}`}
-                  title={formatTitle(title)}
+                  href={`/launchpad/${featuredArticle.slug}`}
+                  title={formatTitle(featuredArticleTitle)}
                 >
                   <div
                     className={
                       "bg-card aspect-square rounded-2xl overflow-hidden"
                     }
                   >
-                    <div className={"flex flex-col justify-between h-full p-4"}>
-                      <div>
-                        <h3 className={"text-3xl text-primary font-semibold"}>
-                          {title}
-                        </h3>
+                    <div
+                      className={"h-full grid grid-cols-2 grid-rows-2 gap-4"}
+                    >
+                      <div className={"col-span-2 p-4"}>
+                        <div className={"flex flex-col gap-4"}>
+                          <div>
+                            <p className={"font-bold"}>Featured</p>
+                            <h3
+                              className={"text-4xl text-primary font-semibold"}
+                            >
+                              {featuredArticleTitle}
+                            </h3>
+                          </div>
+                          <p>
+                            {stripHtml(featuredArticle.excerpt.rendered).result}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <Button>Read More</Button>
+                      <div />
+                      <div className={"relative"}>
+                        <Image
+                          src={
+                            featuredArticle._embedded["wp:featuredmedia"][0]
+                              .source_url
+                          }
+                          alt={formatTitle(featuredArticleTitle)}
+                          fill
+                          objectFit={"cover"}
+                        />
                       </div>
                     </div>
                   </div>
                 </Link>
-              );
-            })}
+              </div>
+            ) : (
+              <Link
+                key={article.id}
+                href={`/launchpad/${article.slug}`}
+                title={formatTitle(title)}
+              >
+                <div
+                  className={
+                    "bg-card aspect-square rounded-2xl overflow-hidden"
+                  }
+                >
+                  <div className={"flex flex-col justify-between h-full p-4"}>
+                    <div>
+                      <h3 className={"text-3xl text-primary font-semibold"}>
+                        {title}
+                      </h3>
+                    </div>
+                    <div>
+                      <Button>Read More</Button>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
       <div className={"max-w-[1200] px-4 py-8 mx-auto"}>

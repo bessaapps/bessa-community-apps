@@ -17,14 +17,20 @@ export default async function sitemap() {
       changeFrequency: "daily",
       priority: 1.0
     },
+    {
+      url: "https://bessaapps.com/launchpad",
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.9
+    },
     ...services?.flatMap(({ slug }: { slug: string }) => ({
       url: `https://bessaapps.com/services/${slug}`,
       lastModified: new Date(),
       changeFrequency: "daily",
-      priority: 0.9
+      priority: 0.8
     })),
     ...articles?.flatMap(({ slug }: { slug: string }) => ({
-      url: `https://bessaapps.com/articles/${slug}`,
+      url: `https://bessaapps.com/launchpad/${slug}`,
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.8
