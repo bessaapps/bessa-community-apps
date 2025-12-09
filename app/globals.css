@@ -194,9 +194,6 @@ h3 {
   font-size: var(--text-xl);
   font-weight: var(--font-weight-bold);
 }
-.wordpress-post > ul {
-  font-weight: var(--font-weight-bold);
-}
 
 .wordpress-post > .wp-block-image > img {
     width: 100%;
