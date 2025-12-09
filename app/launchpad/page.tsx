@@ -12,8 +12,6 @@ export default async function Launchpad() {
     .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=6&_embed")
     .then((response) => response.data)
     .catch((error) => console.error(error));
-  const featuredArticle = articles[0];
-  const featuredArticleTitle = stripHtml(featuredArticle.title.rendered).result;
 
   return (
     <main>
@@ -39,8 +37,8 @@ export default async function Launchpad() {
             return index === 1 ? (
               <div className={"sm:col-span-2 sm:row-span-2"}>
                 <Link
-                  href={`/launchpad/${featuredArticle.slug}`}
-                  title={formatTitle(featuredArticleTitle)}
+                  href={`/launchpad/${article.slug}`}
+                  title={formatTitle(title)}
                 >
                   <div
                     className={
@@ -59,11 +57,11 @@ export default async function Launchpad() {
                             <h3
                               className={"text-4xl text-primary font-semibold"}
                             >
-                              {featuredArticleTitle}
+                              {stripHtml(article.title.rendered).result}
                             </h3>
                           </div>
                           <p className={"hidden sm:block"}>
-                            {stripHtml(featuredArticle.excerpt.rendered).result}
+                            {stripHtml(article.excerpt.rendered).result}
                           </p>
                         </div>
                       </div>
@@ -71,10 +69,11 @@ export default async function Launchpad() {
                       <div className={"relative hidden sm:block"}>
                         <Image
                           src={
-                            featuredArticle._embedded["wp:featuredmedia"][0]
-                              .source_url
+                            article._embedded["wp:featuredmedia"][0].source_url
                           }
-                          alt={formatTitle(featuredArticleTitle)}
+                          alt={formatTitle(
+                            stripHtml(article.title.rendered).result
+                          )}
                           fill
                           objectFit={"cover"}
                         />
