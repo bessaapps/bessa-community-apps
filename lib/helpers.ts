@@ -7,11 +7,13 @@ export const formatTitle = (pageTitle: string) => {
 export const formatMetadata = ({
   metadataTitle,
   metadataDescription,
-  path
+  path,
+  imagePath
 }: {
   metadataTitle: string;
   metadataDescription: string;
   path: string;
+  imagePath?: string;
 }) => {
   return {
     title: metadataTitle,
@@ -24,6 +26,11 @@ export const formatMetadata = ({
       description: metadataDescription,
       url: `${url}${path}`,
       siteName: title,
+      images: [
+        {
+          url: `${url}${imagePath}`
+        }
+      ],
       locale: "en_US",
       type: "website"
     },
@@ -31,7 +38,12 @@ export const formatMetadata = ({
       card: "summary_large_image",
       title: metadataTitle,
       description: metadataDescription,
-      creator: "@getbessa"
+      creator: "@bessaapps",
+      images: [
+        {
+          url: `${url}${imagePath}`
+        }
+      ]
     }
   };
 };
