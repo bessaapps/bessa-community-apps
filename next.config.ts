@@ -18,12 +18,6 @@ const nextConfig: NextConfig = {
         permanent: true
       },
       {
-        source: "/services/mobile",
-        destination:
-          "/services/custom-mobile-app-development-that-drives-growth",
-        permanent: true
-      },
-      {
         source: "/services/app-store-distribution",
         destination:
           "/services/stress-free-app-store-submission-services-that-get-you-approved-fast",
@@ -36,9 +30,9 @@ const nextConfig: NextConfig = {
         permanent: true
       },
       {
-        source: "/services/custom-mobile-app-development",
+        source: "/services/aso-and-seo",
         destination:
-          "/services/custom-mobile-app-development-that-drives-growth",
+          "/services/smarter-aso-and-seo-services-for-mobile-apps-to-increase-rankings-and-conversions",
         permanent: true
       },
       {
