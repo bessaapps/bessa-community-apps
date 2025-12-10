@@ -15,7 +15,7 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const post = await axios
-    .get(`https://cms.bessaapps.com/wp-json/wp/v2/posts?slug=${slug}`)
+    .get(`https://cms.bessaapps.com/wp-json/wp/v2/posts?slug=${slug}&_embed`)
     .then((response) => response.data?.[0])
     .catch((error) => console.error(error));
 
