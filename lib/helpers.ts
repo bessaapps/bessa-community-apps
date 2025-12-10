@@ -28,7 +28,7 @@ export const formatMetadata = ({
       siteName: title,
       images: [
         {
-          url: `${url}${imagePath}`
+          url: imagePath
         }
       ],
       locale: "en_US",
@@ -41,7 +41,7 @@ export const formatMetadata = ({
       creator: "@bessaapps",
       images: [
         {
-          url: `${url}${imagePath}`
+          url: imagePath
         }
       ]
     }
