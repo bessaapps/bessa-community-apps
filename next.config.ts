@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/services/custom-mobile-app-development-that-drives-growth",
-        destination: "/services/custom-website-design-and-development",
+        destination: "/services/custom-mobile-app-development",
         permanent: true
       },
       {
