@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
         permanent: true
       },
       {
+        source: "/services/custom-mobile-app-development-that-drives-growth",
+        destination: "/services/custom-website-design-and-development",
+        permanent: true
+      },
+      {
         source: "/services/web",
         destination:
           "/services/custom-website-design-and-development-that-powers-your-business",
