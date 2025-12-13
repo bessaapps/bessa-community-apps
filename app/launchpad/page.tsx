@@ -2,10 +2,16 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Me from "@/assets/images/me.png";
 import Image from "next/image";
-import { formatTitle } from "@/lib/helpers";
+import { formatMetadata, formatTitle } from "@/lib/helpers";
 import axios from "axios";
 import { stripHtml } from "string-strip-html";
 import { Post } from "@/lib/definitions";
+
+export const metadata = formatMetadata({
+  metadataTitle: formatTitle("Launchpad"),
+  metadataDescription: "Concept to cross-platform. Your roadmap to launch.",
+  path: "https://bessaapps.com/launchpad"
+});
 
 export default async function Launchpad() {
   const articles = await axios
