@@ -197,4 +197,5 @@ h3 {
 
 .wordpress-post > .wp-block-image > img {
     width: 100%;
+    border-radius: var(--radius-2xl);
 }
