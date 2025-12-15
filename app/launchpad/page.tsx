@@ -41,7 +41,7 @@ export default async function Launchpad() {
             const title = stripHtml(article.title.rendered).result;
 
             return index === 1 ? (
-              <div className={"sm:col-span-2 sm:row-span-2"}>
+              <div key={article.id} className={"sm:col-span-2 sm:row-span-2"}>
                 <Link
                   href={`/launchpad/${article.slug}`}
                   title={formatTitle(title)}
