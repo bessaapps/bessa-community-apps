@@ -15,6 +15,7 @@ import { Badge } from "@/components/ui/badge";
 import Process from "@/components/Process";
 import { stripHtml } from "string-strip-html";
 import { Post } from "@/lib/definitions";
+import { bookingLink } from "@/lib/constants";
 
 const Highlights = ({ list }: { list: string[] }) => {
   return (
@@ -58,10 +59,7 @@ export default async function Home() {
               reality with accessible mobile app development services for ideas
               that deserve momentum.
             </p>
-            <Link
-              href={"https://calendar.app.google/fCR1Xnhv9FUfXznPA"}
-              target={"_blank"}
-            >
+            <Link href={bookingLink} target={"_blank"}>
               <Button size={"lg"}>Start my Project!</Button>
             </Link>
           </div>

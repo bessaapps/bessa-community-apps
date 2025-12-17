@@ -2,6 +2,7 @@ import Link from "next/link";
 import { formatTitle } from "@/lib/helpers";
 import { Button } from "@/components/ui/button";
 import { BsGithub, BsLinkedin, BsTwitterX } from "react-icons/bs";
+import { bookingLink } from "@/lib/constants";
 
 export default function CTA() {
   return (
@@ -20,10 +21,7 @@ export default function CTA() {
               confidence.
             </p>
             <div className={"flex flex-col sm:flex-row gap-4 sm:gap-8 py-4"}>
-              <Link
-                href={"https://calendar.app.google/fCR1Xnhv9FUfXznPA"}
-                target={"_blank"}
-              >
+              <Link href={bookingLink} target={"_blank"}>
                 <Button size={"lg"}>Get Started Now!</Button>
               </Link>
               <div className={"flex items-center sm:gap-1"}>

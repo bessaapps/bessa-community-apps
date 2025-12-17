@@ -7,6 +7,7 @@ import Image from "next/image";
 import { stripHtml } from "string-strip-html";
 import { permanentRedirect } from "next/navigation";
 import Process from "@/components/Process";
+import { bookingLink } from "@/lib/constants";
 
 export async function generateMetadata({
   params
@@ -54,10 +55,7 @@ export default async function CustomerPage({
             {post.title.rendered}
           </h1>
           <div className={"flex gap-4"}>
-            <Link
-              href={"https://calendar.app.google/fCR1Xnhv9FUfXznPA"}
-              target={"_blank"}
-            >
+            <Link href={bookingLink} target={"_blank"}>
               <Button size={"lg"}>Let&apos;s Talk!</Button>
             </Link>
             <Link href={"/"} title={formatTitle("")}>

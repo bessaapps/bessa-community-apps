@@ -7,6 +7,7 @@ import { stripHtml } from "string-strip-html";
 import { permanentRedirect } from "next/navigation";
 import Process from "@/components/Process";
 import Services from "@/components/Services";
+import { bookingLink } from "@/lib/constants";
 
 export async function generateMetadata({
   params
@@ -69,10 +70,7 @@ export default async function ServicePage({
             >
               {title}
             </h1>
-            <Link
-              href={"https://calendar.app.google/fCR1Xnhv9FUfXznPA"}
-              target={"_blank"}
-            >
+            <Link href={bookingLink} target={"_blank"}>
               <Button size={"lg"}>Book a FREE Call!</Button>
             </Link>
           </div>
