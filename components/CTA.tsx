@@ -38,7 +38,7 @@ export default function CTA() {
               <Link href={"https://x.com/bessaapps"}>
                 <BsTwitterX className={"text-2xl text-muted-foreground"} />
               </Link>
-              <Link href={"https://www.linkedin.com/in/topherjamesknoll"}>
+              <Link href={"https://linkedin.com/company/bessaapps"}>
                 <BsLinkedin className={"text-2xl text-muted-foreground"} />
               </Link>
               <Link href={"https://github.com/bessaapps"}>

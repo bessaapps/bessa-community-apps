@@ -16,6 +16,7 @@ import Process from "@/components/Process";
 import { stripHtml } from "string-strip-html";
 import { Post } from "@/lib/definitions";
 import { bookingLink } from "@/lib/constants";
+import { Graph } from "schema-dts";
 
 const Highlights = ({ list }: { list: string[] }) => {
   return (
@@ -42,8 +43,66 @@ export default async function Home() {
     .then((response) => response.data)
     .catch((error) => console.error(error));
 
+  const graph: Graph = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: "Bessa Community Apps",
+        url: "https://bessaapps.com",
+        logo: "https://bessaapps.com/logo.png",
+        sameAs: [
+          "https://x.com/bessaapps",
+          "https://linkedin.com/company/bessaapps",
+          "https://github.com/bessaapps"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://bessaapps.com"
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Works",
+            item: "https://bessapps.com/#works"
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "About",
+            item: "https://bessaapps.com/#about"
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
+            name: "Contact",
+            item: "https://bessaapps.com/#contact"
+          },
+          {
+            "@type": "ListItem",
+            position: 5,
+            name: "Launchpad",
+            item: "https://bessaapps.com/launchpad"
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(graph).replace(/</g, "\\u003c")
+        }}
+      />
       <div className={"max-w-[1200] px-4 pt-16 pb-32 mx-auto"}>
         <div className={"max-w-7xl mx-auto px-4 py-16 sm:py-32"}>
           <div className={"flex flex-col gap-4 max-w-full"}>
