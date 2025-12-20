@@ -51,9 +51,17 @@ export default async function ArticlePage({
   const jsonLd: WithContext<BlogPosting> = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    name: formatTitle(title),
+    headline: formatTitle(title),
     image: post._embedded["wp:featuredmedia"][0].source_url,
-    description: excerpt
+    description: excerpt,
+    publisher: {
+      "@type": "Organization",
+      name: "Bessa Community Apps",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://bessaapps.com/logo.png"
+      }
+    }
   };
 
   return (

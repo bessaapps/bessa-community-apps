@@ -8,7 +8,7 @@ import { permanentRedirect } from "next/navigation";
 import Process from "@/components/Process";
 import Services from "@/components/Services";
 import { bookingLink } from "@/lib/constants";
-import { ProfessionalService, WithContext } from "schema-dts";
+import { Service, WithContext } from "schema-dts";
 
 export async function generateMetadata({
   params
@@ -48,12 +48,19 @@ export default async function ServicePage({
   const title = stripHtml(post.title.rendered).result;
   const excerpt = stripHtml(post.excerpt.rendered).result;
 
-  const jsonLd: WithContext<ProfessionalService> = {
+  const jsonLd: WithContext<Service> = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "Service",
+    serviceType: "Custom Mobile App Development",
+    provider: {
+      "@type": "Organization",
+      name: "Bessa Community Apps"
+    },
+    areaServed: "Worldwide",
     name: formatTitle(title),
     image: post._embedded["wp:featuredmedia"][0].source_url,
-    description: excerpt
+    description: excerpt,
+    url: "http://bessaapps.com"
   };
 
   return (
