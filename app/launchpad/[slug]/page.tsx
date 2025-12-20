@@ -8,6 +8,7 @@ import { permanentRedirect } from "next/navigation";
 import Process from "@/components/Process";
 import Services from "@/components/Services";
 import { bookingLink } from "@/lib/constants";
+import { BlogPosting, WithContext } from "schema-dts";
 
 export async function generateMetadata({
   params
@@ -45,9 +46,24 @@ export default async function ArticlePage({
   if (!post?.id) permanentRedirect("/");
 
   const title = stripHtml(post.title.rendered).result;
+  const excerpt = stripHtml(post.excerpt.rendered).result;
+
+  const jsonLd: WithContext<BlogPosting> = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    name: formatTitle(title),
+    image: post._embedded["wp:featuredmedia"][0].source_url,
+    description: excerpt
+  };
 
   return (
-    <>
+    <section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
+        }}
+      />
       <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
         <div className={"grid sm:grid-cols-2 gap-4"}>
           <div
@@ -89,6 +105,6 @@ export default async function ArticlePage({
       </div>
       <Services sectionHeading={"Services"} />
       <Process />
-    </>
+    </section>
   );
 }
