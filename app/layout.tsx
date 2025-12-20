@@ -30,10 +30,12 @@ export default function RootLayout({
       >
         <div className={"h-full max-h-screen grid grid-rows-[auto_1fr]"}>
           <TopNavigation />
-          <div className={"overflow-y-scroll"}>
-            {children}
-            <CTA />
-          </div>
+          <main>
+            <div className={"overflow-y-scroll"}>
+              {children}
+              <CTA />
+            </div>
+          </main>
         </div>
         <Clock />
         <Weather />

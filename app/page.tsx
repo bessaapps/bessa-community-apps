@@ -43,7 +43,7 @@ export default async function Home() {
     .catch((error) => console.error(error));
 
   return (
-    <main>
+    <section>
       <div className={"max-w-[1200] px-4 pt-16 pb-32 mx-auto"}>
         <div className={"max-w-7xl mx-auto px-4 py-16 sm:py-32"}>
           <div className={"flex flex-col gap-4 max-w-full"}>
@@ -328,6 +328,6 @@ export default async function Home() {
           </Link>
         </div>
       </div>
-    </main>
+    </section>
   );
 }
