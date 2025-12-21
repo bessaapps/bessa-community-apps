@@ -15,7 +15,9 @@ export const metadata = formatMetadata({
 
 export default async function Launchpad() {
   const articles = await axios
-    .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=6&_embed")
+    .get(
+      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=6&per_page=20&_embed"
+    )
     .then((response) => response.data)
     .catch((error) => console.error(error));
 

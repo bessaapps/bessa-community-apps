@@ -30,6 +30,13 @@ const nextConfig: NextConfig = {
         destination:
           "/services/seo-and-aso-services-that-boost-visibility-and-downloads",
         permanent: true
+      },
+      {
+        source:
+          "/launchpad/why-you-should-hire-a-mobile-app-developer-instead-of-using-a-no-code-builder",
+        destination:
+          "/launchpad/before-you-hire-a-mobile-app-developer-know-this",
+        permanent: true
       }
     ];
   }
