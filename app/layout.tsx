@@ -45,7 +45,6 @@ export default function RootLayout({
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
       )}
       <Script
-        nowprocket
         nitro-exclude
         type={"text/javascript"}
         id={"sa-dynamic-optimization"}
