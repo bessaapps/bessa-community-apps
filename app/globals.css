@@ -147,8 +147,8 @@
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
 
-  --animate-text: text 5s ease-in-out infinite;
-  @keyframes text {
+  --animate-text: animate-text 5s ease-in-out infinite;
+  @keyframes animate-text {
     0%,
     100% {
       background-size: 400% 400%;
@@ -196,11 +196,11 @@ h3 {
 }
 
 .wordpress-post > ul {
-    list-style: disc;
-    padding-left: 1rem;
+  list-style: disc;
+  padding-left: 1rem;
 }
 
 .wordpress-post > .wp-block-image > img {
-    width: 100%;
-    border-radius: var(--radius-2xl);
+  width: 100%;
+  border-radius: var(--radius-2xl);
 }

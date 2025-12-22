@@ -119,7 +119,9 @@ export default async function Home() {
               that deserve momentum.
             </p>
             <Link href={bookingLink} target={"_blank"}>
-              <Button size={"lg"}>Start my Project!</Button>
+              <Button size={"lg"} className={"cursor-pointer hover:scale-110"}>
+                Start my Project!
+              </Button>
             </Link>
           </div>
         </div>
