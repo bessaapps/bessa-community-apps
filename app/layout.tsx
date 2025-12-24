@@ -1,6 +1,6 @@
 import "./globals.css";
 import CTA from "@/components/CTA";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { formatMetadata, formatTitle } from "@/lib/helpers";
 import { description, url } from "@/lib/constants";
 import { Space_Grotesk, Inter } from "next/font/google";
@@ -41,7 +41,7 @@ export default function RootLayout({
         <Weather />
       </body>
       {process.env.NODE_ENV !== "development" && (
-        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
       )}
     </html>
   );
