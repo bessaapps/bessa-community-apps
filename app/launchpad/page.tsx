@@ -53,9 +53,7 @@ export default async function Launchpad() {
                       "bg-card aspect-square rounded-2xl overflow-hidden"
                     }
                   >
-                    <div
-                      className={"h-full grid grid-cols-2 grid-rows-2 gap-4"}
-                    >
+                    <div className={"h-full grid grid-cols-2 grid-rows-2"}>
                       <div className={"col-span-2 p-4"}>
                         <div className={"flex flex-col gap-4"}>
                           <div>
@@ -103,9 +101,14 @@ export default async function Launchpad() {
                 >
                   <div className={"flex flex-col justify-between h-full p-4"}>
                     <div>
-                      <h3 className={"text-3xl text-primary font-semibold"}>
-                        {title}
-                      </h3>
+                      <div>
+                        {index === 0 && (
+                          <p className={"font-bold hidden sm:block"}>Latest</p>
+                        )}
+                        <h3 className={"text-4xl text-primary font-semibold"}>
+                          {stripHtml(article.title.rendered).result}
+                        </h3>
+                      </div>
                     </div>
                     <div>
                       <Button>Read More</Button>
