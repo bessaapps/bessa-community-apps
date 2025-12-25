@@ -23,7 +23,7 @@ export default async function sitemap() {
       url: "https://bessaapps.com/launchpad",
       lastModified: new Date(),
       changeFrequency: "daily",
-      priority: 0.9
+      priority: 0.8
     },
     ...services?.flatMap(({ slug }: { slug: string }) => ({
       url: `https://bessaapps.com/services/${slug}`,
