@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@tailwind utilities;
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -147,7 +149,22 @@
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
 
+  --animate-intro-text:
+    blur-in 1s ease-in-out, animate-text 5s ease-in-out infinite;
+
   --animate-text: animate-text 5s ease-in-out infinite;
+
+  @keyframes blur-in {
+    from {
+      opacity: 0;
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0px);
+    }
+  }
+
   @keyframes animate-text {
     0%,
     100% {
@@ -186,7 +203,7 @@ h3 {
 }
 
 .wordpress-post > p > a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .wordpress-post > h2 {
   color: var(--color-muted-foreground);

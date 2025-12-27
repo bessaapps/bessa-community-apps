@@ -108,12 +108,16 @@ export default async function Home() {
           <div className={"flex flex-col gap-4 max-w-full"}>
             <h1
               className={
-                "animate-text text-5xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-tr from-muted-foreground via-primary to-foreground font-bold leading-[1.1] sm:max-w-[75%]"
+                "animate-intro-text text-5xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-tr from-muted-foreground via-primary to-foreground font-bold leading-[1.1] sm:max-w-[75%]"
               }
             >
               Your app idea is great. Now what?
             </h1>
-            <p className={"text-2xl sm:max-w-[66%] mb-8"}>
+            <p
+              className={
+                "animate-intro-text delay-100 text-2xl sm:max-w-[66%] mb-8"
+              }
+            >
               Stop dreaming and start launching. Turn your bold concepts into
               reality with accessible mobile app development services for ideas
               that deserve momentum.
