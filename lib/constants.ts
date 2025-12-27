@@ -1,4 +1,4 @@
-export const keyword = "Mobile App Development Services";
+export const keyword = "Startup App Development";
 export const title = "Bessa Community Apps";
 export const url = "https://bessaapps.com";
 export const description =
