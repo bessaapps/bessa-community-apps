@@ -82,7 +82,7 @@ export default async function ServicePage({
               src={post._embedded["wp:featuredmedia"][0].source_url}
               alt={formatTitle(title)}
               fill
-              objectFit={"cover"}
+              className={"object-cover"}
             />
           </div>
           <div className={"flex flex-col justify-center gap-8"}>

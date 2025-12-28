@@ -15,7 +15,7 @@ export default function TopNavigation() {
       <div className={"flex items-center justify-between gap-8"}>
         <Link href={"/"} title={formatTitle("")}>
           <div className={"w-[4rem]"}>
-            <Image src={Logo} alt={formatTitle("")} objectFit={"fit"} />
+            <Image src={Logo} alt={formatTitle("")} className={"object-fill"} />
           </div>
         </Link>
         <div className={"flex gap-4"}>

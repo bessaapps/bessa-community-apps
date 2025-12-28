@@ -81,7 +81,7 @@ export default async function Launchpad() {
                             stripHtml(article.title.rendered).result
                           )}
                           fill
-                          objectFit={"cover"}
+                          className={"object-cover"}
                         />
                       </div>
                     </div>
