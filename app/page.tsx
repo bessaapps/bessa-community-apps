@@ -125,7 +125,11 @@ export default async function Home() {
                 </span>
               ))}
             </h1>
-            <p className={"text-2xl sm:max-w-[66%] mb-8"}>
+            <p
+              className={
+                "text-secondary-foreground text-2xl sm:max-w-[66%] mb-8"
+              }
+            >
               {subheading.split(" ").map((word: string, index: number) => (
                 <span
                   key={index}
@@ -184,7 +188,7 @@ export default async function Home() {
                 />
               </div>
             </Link>
-            <h3 className={"font-semibold text-xl"}>
+            <p className={"font-semibold"}>
               <Link
                 href={"https://apps.apple.com/us/app/learn-as-400/id6751155402"}
                 title={"AS/400 App"}
@@ -192,7 +196,7 @@ export default async function Home() {
               >
                 AS/400 App
               </Link>
-            </h3>
+            </p>
             <div className={"flex gap-4 flex-wrap"}>
               <Badge>Expo</Badge>
               <Badge>React Native</Badge>
@@ -212,7 +216,7 @@ export default async function Home() {
                 className={"hover:scale-125 duration-200"}
               />
             </Link>
-            <h3 className={"font-semibold text-xl"}>
+            <p className={"font-semibold"}>
               <Link
                 href={"https://getbessa.com"}
                 title={"Bessa | Gay Social Media App"}
@@ -220,7 +224,7 @@ export default async function Home() {
               >
                 Bessa
               </Link>
-            </h3>
+            </p>
             <div className={"flex gap-4 flex-wrap"}>
               <Badge>Expo</Badge>
               <Badge>React Native</Badge>
@@ -243,7 +247,7 @@ export default async function Home() {
                 className={"hover:scale-125 duration-200"}
               />
             </Link>
-            <h3 className={"font-semibold text-xl"}>
+            <p className={"font-semibold"}>
               <Link
                 href={"https://getresumemint.com"}
                 title={"Resume Mint"}
@@ -251,7 +255,7 @@ export default async function Home() {
               >
                 Resume Mint
               </Link>
-            </h3>
+            </p>
             <div className={"flex gap-4 flex-wrap"}>
               <Badge>Next.js</Badge>
               <Badge>React.js</Badge>

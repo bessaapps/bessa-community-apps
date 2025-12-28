@@ -160,13 +160,10 @@ h3 {
   text-decoration: underline;
 }
 .wordpress-post > h2 {
-  color: var(--color-muted-foreground);
   font-size: var(--text-2xl);
-  font-weight: var(--font-weight-bold);
 }
 .wordpress-post > h3 {
   font-size: var(--text-xl);
-  font-weight: var(--font-weight-bold);
 }
 .wordpress-post > ul {
   list-style: disc;
