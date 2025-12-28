@@ -34,6 +34,10 @@ const Highlights = ({ list }: { list: string[] }) => {
 };
 
 export default async function Home() {
+  const heading = "Your app idea is great. Now what?";
+  const subheading =
+    "Stop dreaming and start launching. Turn your bold concepts into reality with accessible mobile app development services for ideas that deserve momentum.";
+
   const services = await axios
     .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2")
     .then((response) => response.data)
@@ -108,22 +112,42 @@ export default async function Home() {
           <div className={"flex flex-col gap-4 max-w-full"}>
             <h1
               className={
-                "animate-intro-text text-5xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-tr from-muted-foreground via-primary to-foreground font-bold leading-[1.1] sm:max-w-[75%]"
+                "text-primary text-5xl sm:text-7xl font-bold leading-[1.1] sm:max-w-[75%]"
               }
             >
-              Your app idea is great. Now what?
+              {heading.split(" ").map((word: string, index: number) => (
+                <span
+                  key={index}
+                  className={`opacity-0 animate-blur-in-fade-in`}
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  {word}{" "}
+                </span>
+              ))}
             </h1>
-            <p
-              className={
-                "animate-intro-text delay-100 text-2xl sm:max-w-[66%] mb-8"
-              }
-            >
-              Stop dreaming and start launching. Turn your bold concepts into
-              reality with accessible mobile app development services for ideas
-              that deserve momentum.
+            <p className={"text-2xl sm:max-w-[66%] mb-8"}>
+              {subheading.split(" ").map((word: string, index: number) => (
+                <span
+                  key={index}
+                  className={`opacity-0 animate-blur-in-fade-in`}
+                  style={{
+                    animationDelay: `${heading.split(" ").length * 100 + index * 50}ms`
+                  }}
+                >
+                  {word}{" "}
+                </span>
+              ))}
             </p>
             <Link href={bookingLink} target={"_blank"}>
-              <Button size={"lg"} className={"cursor-pointer hover:scale-110"}>
+              <Button
+                size={"lg"}
+                className={
+                  "opacity-0 animate-blur-in-fade-in cursor-pointer hover:scale-110"
+                }
+                style={{
+                  animationDelay: `${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 500}ms`
+                }}
+              >
                 Start my Project!
               </Button>
             </Link>
