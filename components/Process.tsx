@@ -1,6 +1,3 @@
-import GradientHeading from "@/components/GradientHeading";
-import { Fragment } from "react";
-
 export default function Process() {
   const processes = [
     {
@@ -33,41 +30,33 @@ export default function Process() {
     }
   ];
 
-  return (
-    <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
-      <div className={"max-w-full sm:max-w-[66%]"}>
-        <GradientHeading>A Simple Path from Idea to Launch</GradientHeading>
-        <p className={"py-8"}>
-          As a mobile app developer, I use a clear, collaborative process that
-          makes mobile app development services feel approachable instead of
-          overwhelming. Every project moves through four stages, Discovery,
-          Design, Build, and Distribution, each crafted to keep you informed and
-          confident. From defining your vision, to prototyping your product, to
-          building intuitive cross-platform experiences, to navigating the App
-          Store and Play Store submission process, this workflow ensures your
-          app launches smoothly and grows with purpose.
-        </p>
-      </div>
-      <div className={"grid sm:grid-cols-4 gap-4"}>
-        {processes?.map((process, index) => (
-          <Fragment key={index}>
-            <div />
-            <h2 className={"text-muted-foreground font-bold text-xl pt-1"}>
-              {process.heading}
-            </h2>
-            <div className={"sm:col-span-2"}>
-              <p className={"mb-4"}>{process.text}</p>
-              <ul className={"flex flex-col gap-2"}>
-                {process.steps.map((step) => (
-                  <li key={step} className={"flex items-center gap-2"}>
-                    <span className={"text-lg font-semibold"}>{step}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Fragment>
-        ))}
+  return processes?.map((process, index) => (
+    <div key={index} className={"max-w-[1000] px-4 py-32 mx-auto"}>
+      <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
+        <div>
+          <div className={"flex items-center gap-4"}>
+            <span style={{ color: `var(--chart-${index + 1})` }}>&diams;</span>
+            <h2 className={"text-4xl font-bold"}>{process.heading}</h2>
+          </div>
+        </div>
+        <div className={"flex flex-col gap-6"}>
+          <p>
+            I provide a comprehensive end-to-end process that guides you from
+            initial ideation all the way to successful app distribution. Expand
+            your digital presence with custom cross-platform apps for iOS,
+            Android, and the web, fully optimized for search visibility and
+            performance.
+          </p>
+          <p className={"text-center"}>&darr;</p>
+          <div className={"flex flex-col gap-2"}>
+            {process.steps.map((step) => (
+              <p key={step} className={"text-lg font-semibold text-center"}>
+                {step}
+              </p>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
-  );
+  ));
 }

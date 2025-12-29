@@ -8,7 +8,7 @@ import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import { formatTitle } from "@/lib/helpers";
 import GradientHeading from "@/components/GradientHeading";
-import { AiOutlineArrowRight, AiOutlineCheck } from "react-icons/ai";
+import { AiOutlineArrowRight } from "react-icons/ai";
 import axios from "axios";
 import { Badge } from "@/components/ui/badge";
 import Process from "@/components/Process";
@@ -16,21 +16,6 @@ import { stripHtml } from "string-strip-html";
 import { Post } from "@/lib/definitions";
 import { bookingLink } from "@/lib/constants";
 import { Graph } from "schema-dts";
-
-const Highlights = ({ list }: { list: string[] }) => {
-  return (
-    <ul className={"flex flex-col gap-2"}>
-      {list?.map((item: string, index: number) => (
-        <li key={index} className={"flex items-center gap-2"}>
-          <span className={"text-xl"}>
-            <AiOutlineCheck />
-          </span>
-          <span className={"text-xl font-semibold"}>{item}</span>
-        </li>
-      ))}
-    </ul>
-  );
-};
 
 export default async function Home() {
   const heading = "Your app idea is great. Now what?";
@@ -42,7 +27,9 @@ export default async function Home() {
     .then((response) => response.data)
     .catch((error) => console.error(error));
   const articles = await axios
-    .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=6")
+    .get(
+      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=6&per_page=2"
+    )
     .then((response) => response.data)
     .catch((error) => console.error(error));
 
@@ -212,7 +199,6 @@ export default async function Home() {
       </div>
       <Process />
       <div className={"max-w-[1000] px-4 py-32 mx-auto"} id={"works"}>
-        <SectionHeading>Selected Works</SectionHeading>
         <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
           <div className={"flex flex-col gap-4"}>
             <Link
@@ -302,28 +288,6 @@ export default async function Home() {
               <Badge>MongoDB</Badge>
             </div>
           </div>
-          <div className={"hidden sm:block"} />
-          <div className={"sm:col-span-2 flex flex-col gap-4 pt-8"}>
-            <GradientHeading>
-              Mobile App Development Services that turn Real Ideas into Real
-              Impact
-            </GradientHeading>
-            <Highlights
-              list={[
-                "iOS, Android, and Web",
-                "Designed for Clarity",
-                "Scalable Architecture for Long-Term Growth"
-              ]}
-            />
-            <p>
-              I deliver human-centered mobile app development services without
-              the jargon. Whether it&apos;s custom app development, startup app
-              solutions, or ongoing app scaling and maintenance, every build is
-              crafted to feel intuitive, polished, and ready to grow with your
-              vision. I make technology feel simple, approachable, and genuinely
-              helpful for the people who use it.
-            </p>
-          </div>
         </div>
       </div>
       <div className={"max-w-[1000] px-4 py-32 mx-auto"} id={"about"}>
@@ -362,8 +326,8 @@ export default async function Home() {
       </div>
       <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
         <SectionHeading>Launchpad</SectionHeading>
-        <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
-          {articles.slice(0, 3).map((article: Post) => {
+        <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
+          {articles.map((article: Post) => {
             const title = stripHtml(article.title.rendered).result;
 
             return (
