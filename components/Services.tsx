@@ -19,7 +19,7 @@ export default async function Services({
     .catch((error) => console.error(error));
 
   return (
-    <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
+    <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
       <SectionHeading>{sectionHeading}</SectionHeading>
       <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
         {services

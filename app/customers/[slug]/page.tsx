@@ -42,14 +42,14 @@ export default async function CustomerPage({
 
   return (
     <>
-      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
+      <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
         <div className={"flex flex-col gap-4 max-w-full sm:max-w-[75%]"}>
           <div className={"w-24 aspect-square"}>
             <Image src={Logo} alt={formatTitle(post.title.rendered)} />
           </div>
           <h1
             className={
-              "animate-text text-4xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-tr from-muted-foreground via-primary to-foreground font-bold leading-[1.1] sm:max-w-[75%]"
+              "text-4xl sm:text-7xl font-bold leading-[1.1] sm:max-w-[75%]"
             }
           >
             {post.title.rendered}
@@ -64,7 +64,7 @@ export default async function CustomerPage({
           </div>
         </div>
       </div>
-      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
+      <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
         <div className={"flex flex-col gap-4"}>
           <div
             dangerouslySetInnerHTML={{ __html: post.content.rendered }}

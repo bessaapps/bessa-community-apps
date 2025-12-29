@@ -23,12 +23,12 @@ export default async function Home() {
     "Turn your concept into reality with end-to-end startup app development, delivering custom cross-platform solutions for startups, organizations, and communities.";
 
   const services = await axios
-    .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2")
+    .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&_embed")
     .then((response) => response.data)
     .catch((error) => console.error(error));
   const articles = await axios
     .get(
-      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=6&per_page=2"
+      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=6&per_page=2&_embed"
     )
     .then((response) => response.data)
     .catch((error) => console.error(error));
@@ -149,7 +149,11 @@ export default async function Home() {
             animationDelay: `${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 2000}ms`
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+          <div
+            className={
+              "absolute inset-0 bg-gradient-to-t from-background to-transparent"
+            }
+          />
         </div>
       </div>
       <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
@@ -180,16 +184,23 @@ export default async function Home() {
               >
                 <div
                   className={
-                    "bg-card aspect-square rounded-2xl overflow-hidden"
+                    "relative bg-card aspect-square rounded-2xl overflow-hidden bg-cover bg-center"
                   }
+                  style={{
+                    backgroundImage: `url(\'${service._embedded["wp:featuredmedia"][0].source_url}\')`
+                  }}
                 >
-                  <div className={"flex flex-col justify-between h-full p-4"}>
-                    <div>
-                      <p className={"text-primary font-semibold"}>{title}</p>
-                    </div>
-                    <div>
-                      <Button>Learn More</Button>
-                    </div>
+                  <div
+                    className={
+                      "h-full inset-0 bg-gradient-to-b from-transparent to-card"
+                    }
+                  />
+                  <div
+                    className={
+                      "absolute top-0 flex flex-col justify-end h-full p-4"
+                    }
+                  >
+                    <p className={"text-primary font-semibold"}>{title}</p>
                   </div>
                 </div>
               </Link>
@@ -338,16 +349,23 @@ export default async function Home() {
               >
                 <div
                   className={
-                    "bg-card aspect-square rounded-2xl overflow-hidden"
+                    "relative bg-card aspect-square rounded-2xl overflow-hidden bg-cover bg-center"
                   }
+                  style={{
+                    backgroundImage: `url(\'${article._embedded["wp:featuredmedia"][0].source_url}\')`
+                  }}
                 >
-                  <div className={"flex flex-col justify-between h-full p-4"}>
-                    <div>
-                      <p className={"text-primary font-semibold"}>{title}</p>
-                    </div>
-                    <div>
-                      <Button>Read the Article</Button>
-                    </div>
+                  <div
+                    className={
+                      "h-full inset-0 bg-gradient-to-b from-transparent to-card"
+                    }
+                  />
+                  <div
+                    className={
+                      "absolute top-0 flex flex-col justify-end h-full p-4"
+                    }
+                  >
+                    <p className={"text-primary font-semibold"}>{title}</p>
                   </div>
                 </div>
               </Link>

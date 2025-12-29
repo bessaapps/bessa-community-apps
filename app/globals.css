@@ -117,19 +117,6 @@
       filter: blur(0px);
     }
   }
-
-  --animate-text: animate-text 5s ease-in-out infinite;
-  @keyframes animate-text {
-    0%,
-    100% {
-      background-size: 400% 400%;
-      background-position: left;
-    }
-    50% {
-      background-size: 400% 400%;
-      background-position: right;
-    }
-  }
 }
 
 @layer base {

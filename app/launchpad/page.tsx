@@ -23,11 +23,11 @@ export default async function Launchpad() {
 
   return (
     <main>
-      <div className={"px-4 py-8"}>
+      <div className={"px-4 py-32"}>
         <div className={"flex flex-col gap-4"}>
           <h1
             className={
-              "animate-text text-center text-5xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-tr from-muted-foreground via-primary to-foreground font-bold"
+              "animate-blur-in-fade-in text-center text-5xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-tr from-muted-foreground via-primary to-foreground font-bold"
             }
           >
             Launchpad
@@ -37,7 +37,7 @@ export default async function Launchpad() {
           </p>
         </div>
       </div>
-      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+      <div className={"max-w-[1000] px-4 py-8 mx-auto"}>
         <div className={"grid sm:grid-cols-3 gap-4"}>
           {articles.map((article: Post, index: number) => {
             const title = stripHtml(article.title.rendered).result;
@@ -120,7 +120,7 @@ export default async function Launchpad() {
           })}
         </div>
       </div>
-      <div className={"max-w-[1200] px-4 py-8 mx-auto"}>
+      <div className={"max-w-[1000] px-4 py-8 mx-auto"}>
         <div className={"grid sm:grid-cols-3 gap-4"}>
           <div />
           <div className={"bg-card aspect-[8/10] rounded-2xl"}>
