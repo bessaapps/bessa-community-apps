@@ -7,7 +7,6 @@ import Me from "@/assets/images/me.png";
 import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import { formatTitle } from "@/lib/helpers";
-import GradientHeading from "@/components/GradientHeading";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import axios from "axios";
 import { Badge } from "@/components/ui/badge";
@@ -122,7 +121,7 @@ export default async function Home() {
         }}
       />
       <div className={"px-4 mx-auto"}>
-        <div className={"max-w-[1000] mx-auto px-4 py-16 sm:py-32"}>
+        <div className={"max-w-[1000] mx-auto px-4 pt-24 sm:pt-32 pb-12"}>
           <div className={"flex flex-col gap-4 max-w-full"}>
             <h1
               className={
@@ -184,7 +183,7 @@ export default async function Home() {
           />
         </div>
       </div>
-      <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
+      <div className={"max-w-[1000] px-4 pb-32 mx-auto"}>
         <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
           <h2 className={"text-4xl font-bold"}>
             From Concept to Cross-Platform
@@ -265,36 +264,25 @@ export default async function Home() {
         </div>
       </div>
       <div className={"max-w-[1000] px-4 py-32 mx-auto"} id={"about"}>
-        <SectionHeading>Hi, there!</SectionHeading>
-        <div className={"grid sm:grid-cols-4 gap-4"}>
-          <div className={"bg-card aspect-[8/10] rounded-2xl"}>
-            <div className={"flex flex-col justify-between h-full p-4"}>
-              <h3 className={"font-semibold text-primary"}>I&apos;m Topher</h3>
-              <div className={"flex flex-col gap-4"}>
-                <p className={"text-primary"}>
-                  Ten years of bringing ideas to life through mobile and web
-                  apps, solving real problems and building solutions that
-                  support communities.
-                </p>
-                <Link
-                  href={"mailto:topher@bessaapps.com"}
-                  title={formatTitle("")}
-                >
-                  <Button>Let&apos;s Talk!</Button>
-                </Link>
-              </div>
-            </div>
+        <div className={"grid sm:grid-cols-4 gap-8 sm:gap-4 mx-4 mb-8"}>
+          <div className={"sm:col-span-2 flex flex-col gap-4 justify-center"}>
+            <h2 className={"text-4xl font-bold"}>I&apos;m Topher</h2>
+            <p>
+              <span className={"font-bold"}>
+                A passionate community builder.
+              </span>{" "}
+              Specializing in startup app development, I empower innovators,
+              organizations, and communities to transform their bold ideas into
+              impactful cross-platform solutions that function seamlessly across
+              iOS, Android, and the web. My end-to-end process guides you
+              confidently from initial ideation all the way to launch.
+            </p>
+            <Link href={"mailto:topher@bessaapps.com"} title={formatTitle("")}>
+              <Button>Let&apos;s Talk!</Button>
+            </Link>
           </div>
           <div className={"rounded-2xl overflow-hidden"}>
             <Image src={Me} alt={formatTitle("")} />
-          </div>
-          <div className={"hidden sm:block col-span-2"} />
-          <div className={"hidden sm:block col-span-2"} />
-          <div className={"sm:col-span-2"}>
-            <GradientHeading>
-              Meet your mobile app developer: part builder, part guide, part
-              community connector.
-            </GradientHeading>
           </div>
         </div>
       </div>

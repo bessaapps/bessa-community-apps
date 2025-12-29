@@ -21,7 +21,7 @@ export default async function Services({
   return (
     <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
       <SectionHeading>{sectionHeading}</SectionHeading>
-      <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
+      <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
         {services
           .filter((service: Post) => service.id !== hiddenId)
           .map((service: Post) => {

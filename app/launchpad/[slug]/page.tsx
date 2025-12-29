@@ -94,16 +94,11 @@ export default async function ArticlePage({
           </div>
         </div>
       </div>
-      <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
-        <div className={"grid sm:grid-cols-4 gap-4"}>
-          <div className={"hidden sm:block"} />
-          <div className={"sm:col-span-2 flex flex-col gap-4"}>
-            <div
-              dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-              className={"flex flex-col gap-4 wordpress-post"}
-            />
-          </div>
-        </div>
+      <div className={"max-w-[900] px-4 py-32 mx-auto"}>
+        <div
+          dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+          className={"flex flex-col gap-4 wordpress-post"}
+        />
       </div>
       <Services sectionHeading={"Services"} />
       <Process />

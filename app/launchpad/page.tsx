@@ -23,7 +23,7 @@ export default async function Launchpad() {
 
   return (
     <main>
-      <div className={"px-4 py-32"}>
+      <div className={"px-4 py-24 sm:py-32"}>
         <div className={"flex flex-col gap-4"}>
           <h1
             className={

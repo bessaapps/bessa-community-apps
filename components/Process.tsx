@@ -31,7 +31,7 @@ export default function Process() {
   ];
 
   return processes?.map((process, index) => (
-    <div key={index} className={"max-w-[1000] px-4 py-32 mx-auto"}>
+    <div key={index} className={"max-w-[1000] px-4 py-8 mx-auto"}>
       <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
         <div>
           <div className={"flex items-center gap-4"}>
