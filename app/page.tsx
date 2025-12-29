@@ -22,6 +22,34 @@ export default async function Home() {
   const subheading =
     "Turn your concept into reality with end-to-end startup app development, delivering custom cross-platform solutions for startups, organizations, and communities.";
 
+  const works = [
+    {
+      name: "AS/400 App",
+      href: "https://as400app.com",
+      image: Work1,
+      tags: ["Expo", "React Native", "Strapi"]
+    },
+    {
+      name: "Bessa",
+      href: "https://getbessa.com",
+      image: Work2,
+      tags: [
+        "Expo",
+        "React Native",
+        "Express.js",
+        "Node.js",
+        "Websockets",
+        "MongoDB"
+      ]
+    },
+    {
+      name: "Resume Mint",
+      href: "https://getresumemint.com",
+      image: Work3,
+      tags: ["Next.js", "React.js", "MongoDB"]
+    }
+  ];
+
   const services = await axios
     .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&_embed")
     .then((response) => response.data)
@@ -211,94 +239,29 @@ export default async function Home() {
       <Process />
       <div className={"max-w-[1000] px-4 py-32 mx-auto"} id={"works"}>
         <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
-          <div className={"flex flex-col gap-4"}>
-            <Link
-              href={"https://apps.apple.com/us/app/learn-as-400/id6751155402"}
-              title={"AS/400 App"}
-              target={"_blank"}
-            >
-              <div className={"rounded-2xl overflow-hidden"}>
-                <Image
-                  src={Work1}
-                  alt={formatTitle("")}
-                  className={"hover:scale-125 duration-200"}
-                />
+          {works.map(({ name, href, image, tags }, index: number) => (
+            <div key={index} className={"flex flex-col gap-4"}>
+              <Link href={href} title={name} target={"_blank"}>
+                <div className={"bg-card rounded-2xl overflow-hidden"}>
+                  <Image
+                    src={image}
+                    alt={formatTitle(name)}
+                    className={"hover:scale-125 duration-200"}
+                  />
+                </div>
+              </Link>
+              <p className={"font-semibold"}>
+                <Link href={href} title={"AS/400 App"} target={"_blank"}>
+                  {name}
+                </Link>
+              </p>
+              <div className={"flex gap-4 flex-wrap"}>
+                {tags.map((tag: string, index: number) => (
+                  <Badge key={index}>{tag}</Badge>
+                ))}
               </div>
-            </Link>
-            <p className={"font-semibold"}>
-              <Link
-                href={"https://apps.apple.com/us/app/learn-as-400/id6751155402"}
-                title={"AS/400 App"}
-                target={"_blank"}
-              >
-                AS/400 App
-              </Link>
-            </p>
-            <div className={"flex gap-4 flex-wrap"}>
-              <Badge>Expo</Badge>
-              <Badge>React Native</Badge>
-              <Badge>Strapi</Badge>
             </div>
-          </div>
-          <div className={"flex flex-col gap-4"}>
-            <Link
-              href={"https://getbessa.com"}
-              title={"Bessa | Gay Social Media App"}
-              target={"_blank"}
-              className={"rounded-2xl overflow-hidden"}
-            >
-              <Image
-                src={Work2}
-                alt={formatTitle("")}
-                className={"hover:scale-125 duration-200"}
-              />
-            </Link>
-            <p className={"font-semibold"}>
-              <Link
-                href={"https://getbessa.com"}
-                title={"Bessa | Gay Social Media App"}
-                target={"_blank"}
-              >
-                Bessa
-              </Link>
-            </p>
-            <div className={"flex gap-4 flex-wrap"}>
-              <Badge>Expo</Badge>
-              <Badge>React Native</Badge>
-              <Badge>Express.js</Badge>
-              <Badge>Node.js</Badge>
-              <Badge>Websockets</Badge>
-              <Badge>MongoDB</Badge>
-            </div>
-          </div>
-          <div className={"flex flex-col gap-4"}>
-            <Link
-              href={"https://getresumemint.com"}
-              title={"Resume Mint"}
-              target={"_blank"}
-              className={"rounded-2xl overflow-hidden"}
-            >
-              <Image
-                src={Work3}
-                alt={formatTitle("")}
-                className={"hover:scale-125 duration-200"}
-              />
-            </Link>
-            <p className={"font-semibold"}>
-              <Link
-                href={"https://getresumemint.com"}
-                title={"Resume Mint"}
-                target={"_blank"}
-              >
-                Resume Mint
-              </Link>
-            </p>
-            <div className={"flex gap-4 flex-wrap"}>
-              <Badge>Next.js</Badge>
-              <Badge>React.js</Badge>
-              <Badge>MongoDB</Badge>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
       <div className={"max-w-[1000] px-4 py-32 mx-auto"} id={"about"}>
