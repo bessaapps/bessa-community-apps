@@ -10,7 +10,7 @@ export default function CTA() {
       <div
         className={"flex flex-col justify-center h-full bg-primary rounded-2xl"}
       >
-        <div className={"max-w-[1200] mx-auto py-16 sm:py-32 px-4"}>
+        <div className={"max-w-[1000] mx-auto py-16 sm:py-32 px-4"}>
           <div>
             <div className={"text-background text-6xl leading-[1.2] mb-4"}>
               Tell me about your Idea__

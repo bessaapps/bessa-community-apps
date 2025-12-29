@@ -34,7 +34,7 @@ export default function Process() {
   ];
 
   return (
-    <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
+    <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
       <div className={"max-w-full sm:max-w-[66%]"}>
         <GradientHeading>A Simple Path from Idea to Launch</GradientHeading>
         <p className={"py-8"}>

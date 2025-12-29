@@ -106,8 +106,8 @@ export default async function Home() {
           __html: JSON.stringify(graph).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"max-w-[1200] px-4 mx-auto"}>
-        <div className={"max-w-7xl mx-auto px-4 py-16 sm:py-32"}>
+      <div className={"px-4 mx-auto"}>
+        <div className={"max-w-[1000] mx-auto px-4 py-16 sm:py-32"}>
           <div className={"flex flex-col gap-4 max-w-full"}>
             <h1
               className={
@@ -124,7 +124,7 @@ export default async function Home() {
                 </span>
               ))}
             </h1>
-            <p className={"text-primary text-xl sm:max-w-[66%] mb-8"}>
+            <p className={"text-primary text-xl sm:max-w-[50%] mb-8"}>
               {subheading.split(" ").map((word: string, index: number) => (
                 <span
                   key={index}
@@ -158,14 +158,60 @@ export default async function Home() {
           }
           style={{
             backgroundImage: "url('/hero.png')",
-            height: 766,
+            aspectRatio: 1.547,
             animationDelay: `${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 2000}ms`
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
         </div>
       </div>
-      <div className={"max-w-[1200] px-4 py-32 mx-auto"} id={"works"}>
+      <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
+        <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
+          <h2 className={"text-4xl font-bold"}>
+            From Concept to Cross-Platform
+          </h2>
+          <p>
+            I provide a comprehensive end-to-end process that guides you from
+            initial ideation all the way to successful app distribution. Expand
+            your digital presence with custom cross-platform apps for iOS,
+            Android, and the web, fully optimized for search visibility and
+            performance.{" "}
+            <Link href={bookingLink} className={"font-semibold"}>
+              Start Here &rarr;
+            </Link>
+          </p>
+        </div>
+        <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
+          {services?.map((service: Post) => {
+            const title = stripHtml(service.title.rendered).result;
+
+            return (
+              <Link
+                key={service.id}
+                href={`/services/${service.slug}`}
+                title={formatTitle(title)}
+              >
+                <div
+                  className={
+                    "bg-card aspect-square rounded-2xl overflow-hidden"
+                  }
+                >
+                  <div className={"flex flex-col justify-between h-full p-4"}>
+                    <div>
+                      <p className={"text-primary font-semibold"}>{title}</p>
+                    </div>
+                    <div>
+                      <Button>Learn More</Button>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+      <Process />
+      <div className={"max-w-[1000] px-4 py-32 mx-auto"} id={"works"}>
         <SectionHeading>Selected Works</SectionHeading>
         <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
           <div className={"flex flex-col gap-4"}>
@@ -280,63 +326,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
-        <SectionHeading>Services</SectionHeading>
-        <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
-          {services?.map((service: Post) => {
-            const title = stripHtml(service.title.rendered).result;
-
-            return (
-              <Link
-                key={service.id}
-                href={`/services/${service.slug}`}
-                title={formatTitle(title)}
-              >
-                <div
-                  className={
-                    "bg-card aspect-square rounded-2xl overflow-hidden"
-                  }
-                >
-                  <div className={"flex flex-col justify-between h-full p-4"}>
-                    <div>
-                      <p className={"text-primary font-semibold"}>{title}</p>
-                    </div>
-                    <div>
-                      <Button>Learn More</Button>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
-          <div className={"row-span-2"} />
-          <div className={"flex flex-col gap-4 sm:col-span-3 pt-8"}>
-            <GradientHeading>
-              Clear, Approachable Solutions for Founders, Teams, and
-              Organizations
-            </GradientHeading>
-            <Highlights
-              list={[
-                "Mobile App Development for iOS & Android",
-                "Web Apps & Websites",
-                "Growth Focused Optimization",
-                "App Store & Play Store Distribution"
-              ]}
-            />
-            <p className={"col-span-2"}>
-              As a mobile app developer, my goal is to make mobile app
-              development services feel simple, human, and collaborative. Every
-              offering, whether it&apos;s custom app development or startup app
-              solutions, is built around clarity, communication, and
-              craftsmanship. Instead of drowning you in complex jargon, I guide
-              you through each step so your product moves from idea to launch
-              with confidence.
-            </p>
-          </div>
-        </div>
-      </div>
-      <Process />
-      <div className={"max-w-[1200] px-4 py-32 mx-auto"} id={"about"}>
+      <div className={"max-w-[1000] px-4 py-32 mx-auto"} id={"about"}>
         <SectionHeading>Hi, there!</SectionHeading>
         <div className={"grid sm:grid-cols-4 gap-4"}>
           <div className={"bg-card aspect-[8/10] rounded-2xl"}>
@@ -370,7 +360,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div className={"max-w-[1200] px-4 py-32 mx-auto"}>
+      <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
         <SectionHeading>Launchpad</SectionHeading>
         <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
           {articles.slice(0, 3).map((article: Post) => {
