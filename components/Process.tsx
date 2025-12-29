@@ -40,13 +40,7 @@ export default function Process() {
           </div>
         </div>
         <div className={"flex flex-col gap-6"}>
-          <p>
-            I provide a comprehensive end-to-end process that guides you from
-            initial ideation all the way to successful app distribution. Expand
-            your digital presence with custom cross-platform apps for iOS,
-            Android, and the web, fully optimized for search visibility and
-            performance.
-          </p>
+          <p>{process.text}</p>
           <p className={"text-center"}>&darr;</p>
           <div className={"flex flex-col gap-2"}>
             {process.steps.map((step) => (
