@@ -11,24 +11,34 @@ export default function TopNavigation() {
   ];
 
   return (
-    <div className={"w-full max-w-[1200] px-4 py-2 mx-auto"}>
-      <div className={"flex items-center justify-between gap-8"}>
-        <Link href={"/"} title={formatTitle("")}>
-          <div className={"w-[4rem]"}>
-            <Image src={Logo} alt={formatTitle("")} className={"object-fill"} />
+    <div
+      className={
+        "w-full fixed top-0 z-10 border-b-[1] border-b-accent backdrop-filter backdrop-blur"
+      }
+    >
+      <div className={"w-full max-w-[1000] px-4 py-2 mx-auto"}>
+        <div className={"flex items-center justify-between gap-8"}>
+          <Link href={"/"} title={formatTitle("")}>
+            <div className={"w-[3rem]"}>
+              <Image
+                src={Logo}
+                alt={formatTitle("")}
+                className={"object-fill"}
+              />
+            </div>
+          </Link>
+          <div className={"flex gap-4"}>
+            {links.map(({ href, anchor }: { href: string; anchor: string }) => (
+              <Link
+                key={href}
+                href={href}
+                title={formatTitle(anchor)}
+                className={"font-bold hover:underline"}
+              >
+                {anchor}
+              </Link>
+            ))}
           </div>
-        </Link>
-        <div className={"flex gap-4"}>
-          {links.map(({ href, anchor }: { href: string; anchor: string }) => (
-            <Link
-              key={href}
-              href={href}
-              title={formatTitle(anchor)}
-              className={"font-bold hover:underline"}
-            >
-              {anchor}
-            </Link>
-          ))}
         </div>
       </div>
     </div>

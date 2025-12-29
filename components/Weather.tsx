@@ -24,7 +24,7 @@ export default function Weather() {
 
   return (
     <>
-      <p className={"text-xs fixed top-0 left-[50%] hidden sm:block"}>
+      <p className={"text-xs fixed top-0 left-[50%] hidden sm:block z-20"}>
         Las Vegas&nbsp;&nbsp;|&nbsp;&nbsp;{isDaytime ? "☀︎" : "⏾"}{" "}
         {shortForecast}
       </p>
