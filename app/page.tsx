@@ -5,7 +5,6 @@ import Work2 from "@/assets/images/mockups/work-2.png";
 import Work3 from "@/assets/images/mockups/work-3.png";
 import Me from "@/assets/images/me.png";
 import Image from "next/image";
-import { SiAndroid, SiApple } from "react-icons/si";
 import SectionHeading from "@/components/SectionHeading";
 import { formatTitle } from "@/lib/helpers";
 import GradientHeading from "@/components/GradientHeading";
@@ -36,7 +35,7 @@ const Highlights = ({ list }: { list: string[] }) => {
 export default async function Home() {
   const heading = "Your app idea is great. Now what?";
   const subheading =
-    "Stop dreaming and start launching. Turn your bold concepts into reality with accessible mobile app development services for ideas that deserve momentum.";
+    "Turn your concept into reality with end-to-end startup app development, delivering custom cross-platform solutions for startups, organizations, and communities.";
 
   const services = await axios
     .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2")
@@ -107,12 +106,12 @@ export default async function Home() {
           __html: JSON.stringify(graph).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"max-w-[1200] px-4 pt-16 pb-32 mx-auto"}>
+      <div className={"max-w-[1200] px-4 mx-auto"}>
         <div className={"max-w-7xl mx-auto px-4 py-16 sm:py-32"}>
           <div className={"flex flex-col gap-4 max-w-full"}>
             <h1
               className={
-                "text-primary text-5xl sm:text-7xl font-bold leading-[1.1] sm:max-w-[75%]"
+                "text-foreground text-5xl sm:text-7xl font-bold leading-[1.1] sm:max-w-[75%]"
               }
             >
               {heading.split(" ").map((word: string, index: number) => (
@@ -125,11 +124,7 @@ export default async function Home() {
                 </span>
               ))}
             </h1>
-            <p
-              className={
-                "text-secondary-foreground text-2xl sm:max-w-[66%] mb-8"
-              }
-            >
+            <p className={"text-primary text-xl sm:max-w-[66%] mb-8"}>
               {subheading.split(" ").map((word: string, index: number) => (
                 <span
                   key={index}
@@ -149,7 +144,7 @@ export default async function Home() {
                   "opacity-0 animate-blur-in-fade-in cursor-pointer hover:scale-110"
                 }
                 style={{
-                  animationDelay: `${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 500}ms`
+                  animationDelay: `${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 1000}ms`
                 }}
               >
                 Start my Project!
@@ -157,18 +152,17 @@ export default async function Home() {
             </Link>
           </div>
         </div>
-        <div className={"flex justify-center gap-4"}>
-          <SiApple
-            size={"6rem"}
-            color={"var(--color-foreground)"}
-            className={"animate-bounce"}
-            style={{ animationDelay: ".85s" }}
-          />
-          <SiAndroid
-            size={"6rem"}
-            color={"var(--color-foreground)"}
-            className={"animate-bounce"}
-          />
+        <div
+          className={
+            "opacity-0 animate-blur-in-fade-in relative bg-cover bg-center"
+          }
+          style={{
+            backgroundImage: "url('/hero.png')",
+            height: 766,
+            animationDelay: `${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 2000}ms`
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
         </div>
       </div>
       <div className={"max-w-[1200] px-4 py-32 mx-auto"} id={"works"}>
