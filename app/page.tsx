@@ -5,7 +5,6 @@ import Work2 from "@/assets/images/mockups/work-2.png";
 import Work3 from "@/assets/images/mockups/work-3.png";
 import Me from "@/assets/images/me.png";
 import Image from "next/image";
-import SectionHeading from "@/components/SectionHeading";
 import { formatTitle } from "@/lib/helpers";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import axios from "axios";
@@ -264,7 +263,7 @@ export default async function Home() {
         </div>
       </div>
       <div className={"max-w-[1000] px-4 py-32 mx-auto"} id={"about"}>
-        <div className={"grid sm:grid-cols-4 gap-8 sm:gap-4 mx-4 mb-8"}>
+        <div className={"grid sm:grid-cols-3 gap-8 sm:gap-4 mx-4 mb-8"}>
           <div className={"sm:col-span-2 flex flex-col gap-4 justify-center"}>
             <h2 className={"text-4xl font-bold"}>I&apos;m Topher</h2>
             <p>
@@ -287,7 +286,15 @@ export default async function Home() {
         </div>
       </div>
       <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
-        <SectionHeading>Launchpad</SectionHeading>
+        <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
+          <h2 className={"text-4xl font-bold"}>Launchpad</h2>
+          <p>
+            Designed for innovators and organizations stuck in the ideation
+            stage, Launchpad provides the clear path you need to move past
+            uncertainty. It’s time to stop dreaming and start launching your
+            custom cross-platform solution.
+          </p>
+        </div>
         <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
           {articles.map((article: Post) => {
             const title = stripHtml(article.title.rendered).result;
