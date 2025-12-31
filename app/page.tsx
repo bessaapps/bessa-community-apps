@@ -184,7 +184,11 @@ export default async function Home() {
       </div>
       <div className={"max-w-[1000] px-4 pb-32 mx-auto"}>
         <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
-          <h2 className={"text-4xl font-bold"}>
+          <h2
+            className={
+              "text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-foreground to-primary-foreground"
+            }
+          >
             From Concept to Cross-Platform
           </h2>
           <p>
@@ -265,7 +269,13 @@ export default async function Home() {
       <div className={"max-w-[1000] px-4 py-32 mx-auto"} id={"about"}>
         <div className={"grid sm:grid-cols-3 gap-8 sm:gap-4 mx-4 mb-8"}>
           <div className={"sm:col-span-2 flex flex-col gap-4 justify-center"}>
-            <h2 className={"text-4xl font-bold"}>I&apos;m Topher</h2>
+            <h2
+              className={
+                "text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-foreground to-primary-foreground"
+              }
+            >
+              I&apos;m Topher
+            </h2>
             <p>
               <span className={"font-bold"}>
                 A passionate community builder.
@@ -287,7 +297,13 @@ export default async function Home() {
       </div>
       <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
         <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
-          <h2 className={"text-4xl font-bold"}>Launchpad</h2>
+          <h2
+            className={
+              "text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-foreground to-primary-foreground"
+            }
+          >
+            Launchpad
+          </h2>
           <p>
             Designed for innovators and organizations stuck in the ideation
             stage, Launchpad provides the clear path you need to move past

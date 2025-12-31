@@ -35,8 +35,19 @@ export default function Process() {
       <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
         <div>
           <div className={"flex items-center gap-4"}>
-            <span style={{ color: `var(--chart-${index + 1})` }}>&diams;</span>
-            <h2 className={"text-4xl font-bold"}>{process.heading}</h2>
+            <span
+              className={"text-4xl"}
+              style={{ color: `var(--chart-${index + 1})` }}
+            >
+              &middot;
+            </span>
+            <h2
+              className={
+                "text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-foreground to-primary-foreground"
+              }
+            >
+              {process.heading}
+            </h2>
           </div>
         </div>
         <div className={"flex flex-col gap-6"}>
