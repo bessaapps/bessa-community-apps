@@ -6,6 +6,7 @@ import { formatMetadata, formatTitle } from "@/lib/helpers";
 import axios from "axios";
 import { stripHtml } from "string-strip-html";
 import { Post } from "@/lib/definitions";
+import BlurInText from "@/components/BlurInText";
 
 export const metadata = formatMetadata({
   metadataTitle: formatTitle("Launchpad"),
@@ -25,15 +26,13 @@ export default async function Launchpad() {
     <main>
       <div className={"px-4 py-24 sm:py-32"}>
         <div className={"flex flex-col gap-4"}>
-          <h1
-            className={
-              "animate-blur-in-fade-in text-center text-5xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-tr from-muted-foreground via-primary to-foreground font-bold"
-            }
-          >
-            Launchpad
+          <h1 className={"text-center text-5xl sm:text-7xl font-bold"}>
+            <BlurInText>Launchpad</BlurInText>
           </h1>
           <p className={"text-xl text-center"}>
-            Concept to cross-platform. Your roadmap to launch.
+            <BlurInText offset={100} multiplier={50}>
+              Concept to cross-platform. Your roadmap to launch.
+            </BlurInText>
           </p>
         </div>
       </div>

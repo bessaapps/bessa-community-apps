@@ -9,6 +9,7 @@ import Process from "@/components/Process";
 import Services from "@/components/Services";
 import { bookingLink } from "@/lib/constants";
 import { BlogPosting, WithContext } from "schema-dts";
+import BlurInText from "@/components/BlurInText";
 
 export async function generateMetadata({
   params
@@ -72,7 +73,7 @@ export default async function ArticlePage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
+      <div className={"max-w-[1000] px-4 pt-32 mx-auto"}>
         <div className={"grid sm:grid-cols-2 gap-4"}>
           <div
             className={
@@ -87,7 +88,9 @@ export default async function ArticlePage({
             />
           </div>
           <div className={"flex flex-col justify-center gap-8"}>
-            <h1 className={"text-4xl sm:text-6xl font-bold"}>{title}</h1>
+            <h1 className={"text-4xl sm:text-6xl font-bold"}>
+              <BlurInText>{title}</BlurInText>
+            </h1>
             <Link href={bookingLink} target={"_blank"}>
               <Button size={"lg"}>Book a FREE Call!</Button>
             </Link>
