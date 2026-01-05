@@ -253,26 +253,30 @@ export default async function Home() {
                   />
                 </div>
               </Link>
-              <p className={"text-primary font-semibold"}>
-                <Link href={href} title={"AS/400 App"} target={"_blank"}>
-                  {name}
-                </Link>
-              </p>
-              <p>
-                {tags.map((tag: string, index: number) => (
-                  <span key={index}>
-                    {tag}
-                    {index < tags.length - 1 && <span> &middot; </span>}
-                  </span>
-                ))}
-              </p>
+              <div>
+                <p className={"text-primary font-semibold"}>
+                  <Link href={href} title={"AS/400 App"} target={"_blank"}>
+                    {name}
+                  </Link>
+                </p>
+                <p>
+                  {tags.map((tag: string, index: number) => (
+                    <span key={index}>
+                      {tag}
+                      {index < tags.length - 1 && <span> &middot; </span>}
+                    </span>
+                  ))}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </div>
       <div className={"max-w-[1000] px-4 py-32 mx-auto"} id={"about"}>
-        <div className={"grid sm:grid-cols-3 gap-8 sm:gap-4 mx-4 mb-8"}>
-          <div className={"sm:col-span-2 flex flex-col gap-4 justify-center"}>
+        <div className={"grid sm:grid-cols-3 gap-8 sm:gap-4 mb-8"}>
+          <div
+            className={"sm:col-span-2 flex flex-col gap-4 justify-center p-4"}
+          >
             <h2
               className={
                 "text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-foreground to-primary-foreground"

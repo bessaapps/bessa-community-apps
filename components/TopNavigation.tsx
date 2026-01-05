@@ -33,7 +33,7 @@ export default function TopNavigation() {
                 key={href}
                 href={href}
                 title={formatTitle(anchor)}
-                className={"font-bold hover:underline"}
+                className={"text-primary font-bold hover:underline"}
               >
                 {anchor}
               </Link>

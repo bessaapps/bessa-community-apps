@@ -6,50 +6,53 @@ import { bookingLink } from "@/lib/constants";
 
 export default function CTA() {
   return (
-    <div className={"h-full p-4"} id={"contact"}>
+    <div className={"min-h-[calc(100vh-64px)] flex p-4"} id={"contact"}>
       <div
-        className={"flex flex-col justify-center h-full bg-primary rounded-2xl"}
+        className={
+          "bg-primary flex grow items-center justify-center rounded-2xl"
+        }
       >
-        <div className={"max-w-[1000] mx-auto py-16 sm:py-32 px-4"}>
-          <div>
-            <div className={"text-background text-6xl leading-[1.2] mb-4"}>
-              Tell me about your Idea__
-            </div>
-            <p className={"text-secondary sm:text-xl"}>
-              Reach out to share what you&apos;re building, and I&apos;ll help
-              you simplify the process and move from concept to launch with
-              confidence.
-            </p>
-            <div className={"flex flex-col sm:flex-row gap-4 sm:gap-8 py-4"}>
-              <Link href={bookingLink} target={"_blank"}>
-                <Button variant={"secondary"} size={"lg"}>
-                  Get Started Now!
-                </Button>
-              </Link>
-              <div className={"flex items-center text-secondary sm:gap-1"}>
-                <p className={"font-bold sm:text-2xl"}>topher</p>
-                <p className={"font-bold sm:text-3xl "}>@</p>
-                <p className={"font-bold sm:text-2xl"}>bessaapps.com</p>
-              </div>
-            </div>
-            <div className={"flex justify-end gap-4 mb-4"}>
-              <Link href={"https://x.com/bessaapps"}>
-                <BsTwitterX className={"text-2xl text-muted"} />
-              </Link>
-              <Link href={"https://linkedin.com/company/bessaapps"}>
-                <BsLinkedin className={"text-2xl text-muted"} />
-              </Link>
-              <Link href={"https://github.com/bessaapps"}>
-                <BsGithub className={"text-2xl text-muted"} />
-              </Link>
-            </div>
-            <p className={"text-right text-muted"}>
-              &copy; Copyright{" "}
-              <Link href={"/"} title={formatTitle("")}>
-                Bessa Community Apps, LLC
-              </Link>
-            </p>
+        <div className={"max-w-[1000] py-16 sm:py-32 px-4"}>
+          <div
+            className={
+              "text-background text-4xl sm:text-6xl leading-[1.2] mb-4"
+            }
+          >
+            Stop dreaming, start launching.
           </div>
+          <p className={"text-secondary sm:text-xl"}>
+            Ready to transform your vision into a cross-platform reality? Book a
+            call to discuss your project goals, timelines, and how we can bring
+            your app to life on iOS, Android, and the web.
+          </p>
+          <div className={"flex flex-col gap-4 py-8"}>
+            <Link href={bookingLink} target={"_blank"}>
+              <Button variant={"secondary"} size={"lg"}>
+                Book a Call
+              </Button>
+            </Link>
+            <p className={"text-secondary"}>topher@bessaapps.com</p>
+          </div>
+          <div className={"flex justify-end gap-4 mb-4"}>
+            <Link href={"https://x.com/bessaapps"} target={"_blank"}>
+              <BsTwitterX className={"text-xl text-muted"} />
+            </Link>
+            <Link
+              href={"https://linkedin.com/company/bessaapps"}
+              target={"_blank"}
+            >
+              <BsLinkedin className={"text-xl text-muted"} />
+            </Link>
+            <Link href={"https://github.com/bessaapps"} target={"_blank"}>
+              <BsGithub className={"text-xl text-muted"} />
+            </Link>
+          </div>
+          <p className={"text-sm text-right accent-muted"}>
+            &copy; Copyright{" "}
+            <Link href={"/"} title={formatTitle("")}>
+              Bessa Community Apps, LLC
+            </Link>
+          </p>
         </div>
       </div>
     </div>
