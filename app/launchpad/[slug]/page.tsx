@@ -1,15 +1,14 @@
 import { formatMetadata, formatTitle } from "@/lib/helpers";
 import axios from "axios";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { stripHtml } from "string-strip-html";
 import { permanentRedirect } from "next/navigation";
 import Process from "@/components/Process";
 import Services from "@/components/Services";
-import { bookingLink } from "@/lib/constants";
 import { BlogPosting, WithContext } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
+import dayjs from "dayjs";
 
 export async function generateMetadata({
   params
@@ -73,31 +72,34 @@ export default async function ArticlePage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"max-w-[1000] px-4 pt-32 mx-auto"}>
-        <div className={"grid sm:grid-cols-2 gap-4"}>
-          <div
-            className={
-              "hidden sm:block relative aspect-square rounded-2xl overflow-hidden"
-            }
-          >
-            <Image
-              src={post._embedded["wp:featuredmedia"][0].source_url}
-              alt={formatTitle(title)}
-              fill
-              className={"object-cover"}
-            />
+      <div className={"max-w-[900] px-4 pt-32 mx-auto"}>
+        <div className={"flex flex-col gap-8 mb-16"}>
+          <Link href={"/launchpad"}>
+            <p className={"text-primary text-center"}>
+              <BlurInText>Launchpad</BlurInText>
+            </p>
+          </Link>
+          <h1 className={"text-4xl sm:text-6xl font-bold text-center"}>
+            <BlurInText>{title}</BlurInText>
+          </h1>
+          <div className={"flex justify-center"}>
+            <div
+              className={
+                "w-125 relative aspect-square rounded-2xl overflow-hidden"
+              }
+            >
+              <Image
+                src={post._embedded["wp:featuredmedia"][0].source_url}
+                alt={formatTitle(title)}
+                fill
+                className={"object-cover"}
+              />
+            </div>
           </div>
-          <div className={"flex flex-col justify-center gap-8"}>
-            <h1 className={"text-4xl sm:text-6xl font-bold"}>
-              <BlurInText>{title}</BlurInText>
-            </h1>
-            <Link href={bookingLink} target={"_blank"}>
-              <Button size={"lg"}>Book a FREE Call!</Button>
-            </Link>
-          </div>
+          <p className={"text-primary text-sm text-center"}>
+            Topher &middot; {dayjs(post.modified).format("MMMM DD, YYYY")}
+          </p>
         </div>
-      </div>
-      <div className={"max-w-[900] px-4 py-32 mx-auto"}>
         <div
           dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           className={"flex flex-col gap-4 wordpress-post"}

@@ -55,7 +55,10 @@ export default function Process() {
           <p className={"text-center"}>&darr;</p>
           <div className={"flex flex-col gap-2"}>
             {process.steps.map((step) => (
-              <p key={step} className={"text-lg font-semibold text-center"}>
+              <p
+                key={step}
+                className={"text-primary text-lg font-semibold text-center"}
+              >
                 {step}
               </p>
             ))}

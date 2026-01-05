@@ -57,7 +57,7 @@
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-foreground: var(--color-neutral-500);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -128,6 +128,14 @@
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary);
+}
 h1 {
   font-family: var(--font-space-grotesk), "sans-serif";
 }

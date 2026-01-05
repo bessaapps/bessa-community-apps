@@ -8,7 +8,6 @@ import Image from "next/image";
 import { formatTitle } from "@/lib/helpers";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import axios from "axios";
-import { Badge } from "@/components/ui/badge";
 import Process from "@/components/Process";
 import { stripHtml } from "string-strip-html";
 import { Post } from "@/lib/definitions";
@@ -126,12 +125,12 @@ export default async function Home() {
           <div className={"flex flex-col gap-4 max-w-full"}>
             <h1
               className={
-                "text-foreground text-5xl sm:text-7xl font-bold leading-[1.1] sm:max-w-[75%]"
+                "text-5xl sm:text-7xl font-bold leading-[1.1] sm:max-w-[75%]"
               }
             >
               <BlurInText>{heading}</BlurInText>
             </h1>
-            <p className={"text-primary text-xl sm:max-w-[50%] mb-8"}>
+            <p className={"text-xl sm:max-w-[50%] mb-8"}>
               <BlurInText
                 offset={heading.split(" ").length * 100}
                 multiplier={50}
@@ -173,11 +172,7 @@ export default async function Home() {
       </div>
       <div className={"max-w-[1000] px-4 pb-32 mx-auto"}>
         <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
-          <h2
-            className={
-              "text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-foreground to-primary-foreground"
-            }
-          >
+          <h2 className={"text-4xl font-bold"}>
             From Concept to Cross-Platform
           </h2>
           <p>
@@ -186,7 +181,7 @@ export default async function Home() {
             your digital presence with custom cross-platform apps for iOS,
             Android, and the web, fully optimized for search visibility and
             performance.{" "}
-            <Link href={bookingLink} className={"font-semibold"}>
+            <Link href={bookingLink} className={"text-primary font-semibold"}>
               Start Here &rarr;
             </Link>
           </p>
@@ -229,6 +224,23 @@ export default async function Home() {
       </div>
       <Process />
       <div className={"max-w-[1000] px-4 py-32 mx-auto"} id={"works"}>
+        <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
+          <h2
+            className={
+              "text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-foreground to-primary-foreground"
+            }
+          >
+            From Bold Concepts to Live Apps
+          </h2>
+          <p>
+            See how I help innovators and organizations break through the
+            ideation stage to build custom, cross-platform solutions that work
+            beautifully on iOS, Android, and the web.{" "}
+            <Link href={bookingLink} className={"text-primary font-semibold"}>
+              Start Here &rarr;
+            </Link>
+          </p>
+        </div>
         <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
           {works.map(({ name, href, image, tags }, index: number) => (
             <div key={index} className={"flex flex-col gap-4"}>
@@ -241,16 +253,19 @@ export default async function Home() {
                   />
                 </div>
               </Link>
-              <p className={"font-semibold"}>
+              <p className={"text-primary font-semibold"}>
                 <Link href={href} title={"AS/400 App"} target={"_blank"}>
                   {name}
                 </Link>
               </p>
-              <div className={"flex gap-4 flex-wrap"}>
+              <p>
                 {tags.map((tag: string, index: number) => (
-                  <Badge key={index}>{tag}</Badge>
+                  <span key={index}>
+                    {tag}
+                    {index < tags.length - 1 && <span> &middot; </span>}
+                  </span>
                 ))}
-              </div>
+              </p>
             </div>
           ))}
         </div>
@@ -266,7 +281,7 @@ export default async function Home() {
               I&apos;m Topher
             </h2>
             <p>
-              <span className={"font-bold"}>
+              <span className={"text-primary font-bold"}>
                 A passionate community builder.
               </span>{" "}
               Specializing in startup app development, I empower innovators,
