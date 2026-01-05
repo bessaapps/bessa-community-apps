@@ -15,6 +15,7 @@ import { Post } from "@/lib/definitions";
 import { bookingLink } from "@/lib/constants";
 import { Graph } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
+import ArticleCard from "@/components/ArticleCard";
 
 export default async function Home() {
   const heading = "Your app idea is great. Now what?";
@@ -300,39 +301,9 @@ export default async function Home() {
           </p>
         </div>
         <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
-          {articles.map((article: Post) => {
-            const title = stripHtml(article.title.rendered).result;
-
-            return (
-              <Link
-                key={article.id}
-                href={`/launchpad/${article.slug}`}
-                title={formatTitle(title)}
-              >
-                <div
-                  className={
-                    "relative bg-card aspect-square rounded-2xl overflow-hidden bg-cover bg-center"
-                  }
-                  style={{
-                    backgroundImage: `url(\'${article._embedded["wp:featuredmedia"][0].source_url}\')`
-                  }}
-                >
-                  <div
-                    className={
-                      "h-full inset-0 bg-gradient-to-b from-transparent to-card"
-                    }
-                  />
-                  <div
-                    className={
-                      "absolute top-0 flex flex-col justify-end h-full p-4"
-                    }
-                  >
-                    <p className={"text-primary font-semibold"}>{title}</p>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
+          {articles.map((article: Post) => (
+            <ArticleCard key={article.id} article={article} />
+          ))}
           <Link href={"/launchpad"} title={formatTitle("Launchpad")}>
             <div
               className={
