@@ -159,13 +159,13 @@ export default async function Home() {
           }
           style={{
             backgroundImage: "url('/hero.png')",
-            aspectRatio: 1.547,
+            aspectRatio: 4987 / 2528,
             animationDelay: `${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 2000}ms`
           }}
         >
           <div
             className={
-              "absolute inset-0 bg-gradient-to-t from-background to-transparent"
+              "absolute inset-0 bg-linear-to-t from-background to-transparent"
             }
           />
         </div>
@@ -206,7 +206,7 @@ export default async function Home() {
                 >
                   <div
                     className={
-                      "h-full inset-0 bg-gradient-to-b from-transparent to-card"
+                      "h-full inset-0 bg-linear-to-b from-transparent to-card"
                     }
                   />
                   <div
@@ -225,11 +225,7 @@ export default async function Home() {
       <Process />
       <div className={"max-w-[1000] px-4 py-32 mx-auto"} id={"works"}>
         <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
-          <h2
-            className={
-              "text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-foreground to-primary-foreground"
-            }
-          >
+          <h2 className={"text-4xl font-bold"}>
             From Bold Concepts to Live Apps
           </h2>
           <p>
@@ -277,13 +273,7 @@ export default async function Home() {
           <div
             className={"sm:col-span-2 flex flex-col gap-4 justify-center p-4"}
           >
-            <h2
-              className={
-                "text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-foreground to-primary-foreground"
-              }
-            >
-              I&apos;m Topher
-            </h2>
+            <h2 className={"text-4xl font-bold"}>I&apos;m Topher</h2>
             <p>
               <span className={"text-primary font-bold"}>
                 A passionate community builder.
@@ -305,13 +295,7 @@ export default async function Home() {
       </div>
       <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
         <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
-          <h2
-            className={
-              "text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-foreground to-primary-foreground"
-            }
-          >
-            Launchpad
-          </h2>
+          <h2 className={"text-4xl font-bold"}>Launchpad</h2>
           <p>
             Designed for innovators and organizations stuck in the ideation
             stage, Launchpad provides the clear path you need to move past
