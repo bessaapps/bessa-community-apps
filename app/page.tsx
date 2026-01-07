@@ -153,22 +153,22 @@ export default async function Home() {
             </Link>
           </div>
         </div>
+      </div>
+      <div
+        className={
+          "opacity-0 animate-blur-in-fade-in relative bg-cover bg-center"
+        }
+        style={{
+          backgroundImage: "url('/hero.png')",
+          aspectRatio: 4987 / 2528,
+          animationDelay: `${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 2000}ms`
+        }}
+      >
         <div
           className={
-            "opacity-0 animate-blur-in-fade-in relative bg-cover bg-center"
+            "absolute inset-0 bg-linear-to-t from-background to-transparent"
           }
-          style={{
-            backgroundImage: "url('/hero.png')",
-            aspectRatio: 4987 / 2528,
-            animationDelay: `${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 2000}ms`
-          }}
-        >
-          <div
-            className={
-              "absolute inset-0 bg-linear-to-t from-background to-transparent"
-            }
-          />
-        </div>
+        />
       </div>
       <div className={"max-w-[1000] px-4 pb-32 mx-auto"}>
         <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
