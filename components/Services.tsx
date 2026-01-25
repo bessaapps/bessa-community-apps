@@ -30,7 +30,7 @@ export default async function Services({
             return (
               <Link
                 key={service.id}
-                href={`/services/${service.slug}`}
+                href={`/${service.slug}`}
                 title={formatTitle(title)}
               >
                 <div className={"bg-card aspect-square rounded-2xl p-4"}>

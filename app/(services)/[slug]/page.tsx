@@ -27,7 +27,7 @@ export async function generateMetadata({
   return formatMetadata({
     metadataTitle: formatTitle(title),
     metadataDescription: excerpt,
-    path: `/services/${post.slug}`,
+    path: `/${post.slug}`,
     imagePath: post._embedded["wp:featuredmedia"][0].source_url
   });
 }

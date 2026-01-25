@@ -193,7 +193,7 @@ export default async function Home() {
             return (
               <Link
                 key={service.id}
-                href={`/services/${service.slug}`}
+                href={`/${service.slug}`}
                 title={formatTitle(title)}
               >
                 <div

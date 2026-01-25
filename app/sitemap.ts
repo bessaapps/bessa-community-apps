@@ -26,7 +26,7 @@ export default async function sitemap() {
       priority: 0.8
     },
     ...services?.flatMap(({ slug }: { slug: string }) => ({
-      url: `https://bessaapps.com/services/${slug}`,
+      url: `https://bessaapps.com/${slug}`,
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.8
