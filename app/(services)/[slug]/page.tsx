@@ -71,11 +71,11 @@ export default async function ServicePage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
-        <div className={"grid sm:grid-cols-2 gap-4"}>
+      <div className={"max-w-[500] px-4 py-32 mx-auto"}>
+        <div className={"flex flex-col items-center gap-8"}>
           <div
             className={
-              "hidden sm:block relative aspect-square rounded-2xl overflow-hidden"
+              "w-50 relative aspect-square rounded-2xl overflow-hidden"
             }
           >
             <Image
@@ -85,12 +85,12 @@ export default async function ServicePage({
               className={"object-cover"}
             />
           </div>
-          <div className={"flex flex-col justify-center gap-8"}>
-            <h1 className={"text-4xl sm:text-6xl font-bold"}>{title}</h1>
-            <Link href={bookingLink} target={"_blank"}>
-              <Button size={"lg"}>Book a FREE Call!</Button>
-            </Link>
-          </div>
+          <h1 className={"text-4xl sm:text-6xl font-bold text-center"}>
+            {title}
+          </h1>
+          <Link href={bookingLink} target={"_blank"}>
+            <Button size={"lg"}>Get Started</Button>
+          </Link>
         </div>
       </div>
       <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
