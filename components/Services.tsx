@@ -20,7 +20,7 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
           return (
             <Link
               key={service.id}
-              href={`/services/${service.slug}`}
+              href={`/${service.slug}`}
               title={formatTitle(title)}
             >
               <div

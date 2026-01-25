@@ -7,35 +7,19 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/services/custom-mobile-app-development",
-        destination: "/services/custom-mobile-app-development-for-your-vision",
+        source: "/services/custom-mobile-app-development-for-your-vision",
+        destination: "/mobile-app-development",
+        permanent: true
+      },
+      {
+        source: "/services/app-store-submission-services-for-ios-android",
+        destination: "/app-store-submission",
         permanent: true
       },
       {
         source:
-          "/services/custom-website-design-and-development-that-powers-your-business",
-        destination:
-          "/services/website-development-services-that-drive-results",
-        permanent: true
-      },
-      {
-        source:
-          "/services/stress-free-app-store-submission-services-that-get-you-approved-fast",
-        destination: "/services/app-store-submission-services-for-ios-android",
-        permanent: true
-      },
-      {
-        source:
-          "/services/smarter-aso-and-seo-services-for-mobile-apps-to-increase-rankings-and-conversions",
-        destination:
           "/services/seo-and-aso-services-that-boost-visibility-and-downloads",
-        permanent: true
-      },
-      {
-        source:
-          "/launchpad/why-you-should-hire-a-mobile-app-developer-instead-of-using-a-no-code-builder",
-        destination:
-          "/launchpad/before-you-hire-a-mobile-app-developer-know-this",
+        destination: "/app-store-optimization",
         permanent: true
       }
     ];
