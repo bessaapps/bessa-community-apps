@@ -6,7 +6,7 @@ import Image from "next/image";
 import { stripHtml } from "string-strip-html";
 import { permanentRedirect } from "next/navigation";
 import Process from "@/components/Process";
-import Services from "@/components/Services";
+import ServicesSection from "@/components/ServicesSection";
 import { bookingLink } from "@/lib/constants";
 import { Service, WithContext } from "schema-dts";
 
@@ -104,7 +104,7 @@ export default async function ServicePage({
           </div>
         </div>
       </div>
-      <Services sectionHeading={"More Services"} hiddenId={post.id} />
+      <ServicesSection sectionHeading={"More Services"} hiddenId={post.id} />
       <Process />
     </section>
   );

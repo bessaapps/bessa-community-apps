@@ -9,12 +9,12 @@ import { formatTitle } from "@/lib/helpers";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import axios from "axios";
 import Process from "@/components/Process";
-import { stripHtml } from "string-strip-html";
 import { Post } from "@/lib/definitions";
 import { bookingLink } from "@/lib/constants";
 import { Graph } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
 import ArticleCard from "@/components/ArticleCard";
+import Services from "@/components/Services";
 
 export default async function Home() {
   const heading = "Your app idea is great. Now what?";
@@ -49,10 +49,6 @@ export default async function Home() {
     }
   ];
 
-  const services = await axios
-    .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&_embed")
-    .then((response) => response.data)
-    .catch((error) => console.error(error));
   const articles = await axios
     .get(
       "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=6&per_page=2&_embed"
@@ -186,41 +182,7 @@ export default async function Home() {
             </Link>
           </p>
         </div>
-        <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
-          {services?.map((service: Post) => {
-            const title = stripHtml(service.title.rendered).result;
-
-            return (
-              <Link
-                key={service.id}
-                href={`/services/${service.slug}`}
-                title={formatTitle(title)}
-              >
-                <div
-                  className={
-                    "relative bg-card aspect-square rounded-2xl overflow-hidden bg-cover bg-center"
-                  }
-                  style={{
-                    backgroundImage: `url(\'${service._embedded["wp:featuredmedia"][0].source_url}\')`
-                  }}
-                >
-                  <div
-                    className={
-                      "h-full inset-0 bg-linear-to-b from-transparent to-card"
-                    }
-                  />
-                  <div
-                    className={
-                      "absolute top-0 flex flex-col justify-end h-full p-4"
-                    }
-                  >
-                    <p className={"text-primary font-semibold"}>{title}</p>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+        <Services />
       </div>
       <Process />
       <div className={"max-w-[1000] px-4 py-32 mx-auto"} id={"works"}>

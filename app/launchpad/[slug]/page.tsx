@@ -5,7 +5,7 @@ import Image from "next/image";
 import { stripHtml } from "string-strip-html";
 import { permanentRedirect } from "next/navigation";
 import Process from "@/components/Process";
-import Services from "@/components/Services";
+import ServicesSection from "@/components/ServicesSection";
 import { BlogPosting, WithContext } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
 import dayjs from "dayjs";
@@ -105,7 +105,7 @@ export default async function ArticlePage({
           className={"flex flex-col gap-4 wordpress-post"}
         />
       </div>
-      <Services sectionHeading={"Services"} />
+      <ServicesSection sectionHeading={"Services"} />
       <Process />
     </section>
   );
