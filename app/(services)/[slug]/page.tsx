@@ -88,21 +88,22 @@ export default async function ServicePage({
           <h1 className={"text-4xl sm:text-6xl font-bold text-center"}>
             {title}
           </h1>
+          <p>
+            <div
+              dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
+              className={"text-xl text-center"}
+            />
+          </p>
           <Link href={bookingLink} target={"_blank"}>
             <Button size={"lg"}>Get Started</Button>
           </Link>
         </div>
       </div>
       <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
-        <div className={"grid sm:grid-cols-4 gap-4"}>
-          <div className={"hidden sm:block"} />
-          <div className={"sm:col-span-2 flex flex-col gap-4"}>
-            <div
-              dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-              className={"flex flex-col gap-4 wordpress-post"}
-            />
-          </div>
-        </div>
+        <div
+          dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+          className={"flex flex-col gap-4 service-wordpress-content"}
+        />
       </div>
       <ServicesSection sectionHeading={"More Services"} hiddenId={post.id} />
       <Process />

@@ -151,6 +151,9 @@ h3 {
   color: var(--color-secondary-foreground);
 }
 
+.service-wordpress-content > p > strong {
+  color: var(--primary)
+}
 .wordpress-post > p > a {
   text-decoration: underline;
 }
