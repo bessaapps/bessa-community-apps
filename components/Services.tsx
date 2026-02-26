@@ -3,6 +3,7 @@ import Link from "next/link";
 import { formatTitle } from "@/lib/helpers";
 import axios from "axios";
 import { Post } from "@/lib/definitions";
+import Image from "next/image";
 
 export default async function Services({ hiddenId }: { hiddenId?: number }) {
   const services = await axios
@@ -25,20 +26,22 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
             >
               <div
                 className={
-                  "relative bg-card aspect-square rounded-2xl overflow-hidden bg-cover bg-center"
+                  "relative w-full aspect-square rounded-2xl overflow-hidden"
                 }
-                style={{
-                  backgroundImage: `url(\'${service._embedded["wp:featuredmedia"][0].source_url}\')`
-                }}
               >
+                <Image
+                  src={service._embedded["wp:featuredmedia"][0].source_url}
+                  alt={formatTitle(title)}
+                  fill
+                />
                 <div
                   className={
-                    "h-full inset-0 bg-linear-to-b from-transparent to-card"
+                    "absolute inset-0 bg-linear-to-b from-transparent to-card"
                   }
                 />
                 <div
                   className={
-                    "absolute top-0 flex flex-col justify-end h-full p-4"
+                    "absolute bg-transparent top-0 flex flex-col justify-end h-full p-4"
                   }
                 >
                   <p className={"text-primary font-semibold"}>{title}</p>
