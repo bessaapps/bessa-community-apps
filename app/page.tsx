@@ -15,6 +15,7 @@ import { Graph } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
 import ArticleCard from "@/components/ArticleCard";
 import Services from "@/components/Services";
+import Hero from "@/assets/images/hero.png";
 
 export default async function Home() {
   const heading = "Your app idea is great. Now what?";
@@ -151,15 +152,13 @@ export default async function Home() {
         </div>
       </div>
       <div
-        className={
-          "opacity-0 animate-blur-in-fade-in relative bg-cover bg-center"
-        }
+        className={"opacity-0 animate-blur-in-fade-in relative "}
         style={{
-          backgroundImage: "url('/hero.png')",
           aspectRatio: 4987 / 2528,
           animationDelay: `${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 2000}ms`
         }}
       >
+        <Image src={Hero} alt={formatTitle("")} fill />
         <div
           className={
             "absolute inset-0 bg-linear-to-t from-background to-transparent"
