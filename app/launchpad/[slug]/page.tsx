@@ -102,7 +102,9 @@ export default async function ArticlePage({
         </div>
         <div
           dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-          className={"flex flex-col gap-4 wordpress-post"}
+          className={
+            "flex flex-col gap-4 [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-muted-foreground [&_a]:underline [&_ul]:list-disc [&_ul]:pl-8 [&_blockquote]:pl-8 [&_blockquote]:border-l-2"
+          }
         />
       </div>
       <ServicesSection sectionHeading={"Services"} />
