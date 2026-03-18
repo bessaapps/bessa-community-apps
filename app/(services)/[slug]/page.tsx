@@ -100,7 +100,9 @@ export default async function ServicePage({
       <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
         <div
           dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-          className={"flex flex-col gap-4 service-wordpress-content"}
+          className={
+            "flex flex-col gap-4 service-wordpress-content [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-muted-foreground [&_a]:underline [&_ul]:list-disc [&_ul]:pl-8"
+          }
         />
       </div>
       <ServicesSection sectionHeading={"More Services"} hiddenId={post.id} />
