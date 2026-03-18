@@ -72,7 +72,7 @@ export default async function ArticlePage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"max-w-[900] px-4 pt-32 mx-auto"}>
+      <div className={"max-w-[1000] px-4 pt-32 mx-auto"}>
         <div className={"flex flex-col gap-8 mb-16"}>
           <Link href={"/launchpad"}>
             <p className={"text-primary text-center"}>
@@ -90,7 +90,7 @@ export default async function ArticlePage({
             >
               <Image
                 src={post._embedded["wp:featuredmedia"][0].source_url}
-                alt={formatTitle(title)}
+                alt={post._embedded["wp:featuredmedia"][0].alt_text}
                 fill
                 className={"object-cover"}
               />
@@ -103,7 +103,7 @@ export default async function ArticlePage({
         <div
           dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           className={
-            "flex flex-col gap-4 [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-muted-foreground [&_a]:underline [&_ul]:list-disc [&_ul]:pl-8 [&_blockquote]:pl-8 [&_blockquote]:border-l-2"
+            "flex flex-col gap-4 [&_h2]:text-2xl [&_h3]:text-xl [&_strong]:text-muted-foreground [&_a]:text-muted-foreground [&_a]:underline [&_ul]:list-disc [&_ul]:pl-8 [&_blockquote]:italic [&_blockquote]:border-l-2 [&_blockquote]:pl-8"
           }
         />
       </div>

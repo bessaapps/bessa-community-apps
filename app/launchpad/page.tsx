@@ -52,7 +52,7 @@ export default async function Launchpad() {
       <div className={"max-w-[1000] px-4 py-8 mx-auto"}>
         <div className={"grid sm:grid-cols-3 gap-4"}>
           <div />
-          <div className={"bg-card aspect-[8/10] rounded-2xl"}>
+          <div className={"bg-card aspect-8/10 rounded-2xl"}>
             <div className={"flex flex-col justify-between h-full p-4"}>
               <h3 className={"text-4xl font-semibold text-primary"}>
                 About the Author
