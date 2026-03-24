@@ -33,14 +33,7 @@ export default async function Home() {
       name: "Bessa",
       href: "https://getbessa.com",
       image: Work2,
-      tags: [
-        "Expo",
-        "React Native",
-        "Express.js",
-        "Node.js",
-        "Websockets",
-        "MongoDB"
-      ]
+      tags: ["Expo", "React Native", "Bun", "Websockets", "Postgres"]
     },
     {
       name: "Resume Mint",
@@ -53,6 +46,13 @@ export default async function Home() {
   const articles = await axios
     .get(
       "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=6&per_page=2&_embed"
+    )
+    .then((response) => response.data)
+    .catch((error) => console.error(error));
+
+  const playbooks = await axios
+    .get(
+      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=7&per_page=2&_embed"
     )
     .then((response) => response.data)
     .catch((error) => console.error(error));
@@ -254,7 +254,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
+      <div className={"max-w-[1000] flex flex-col gap-4 px-4 py-32 mx-auto"}>
         <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
           <h2 className={"text-4xl font-bold"}>Launchpad</h2>
           <p>
@@ -263,6 +263,18 @@ export default async function Home() {
             uncertainty. It’s time to stop dreaming and start launching your
             custom cross-platform solution.
           </p>
+        </div>
+        <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
+          <div
+            className={
+              "bg-card aspect-square rounded-2xl overflow-hidden flex items-center justify-center"
+            }
+          >
+            <h3>Playbooks:</h3>
+          </div>
+          {playbooks.map((playbook: Post) => (
+            <ArticleCard key={playbook.id} article={playbook} />
+          ))}
         </div>
         <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
           {articles.map((article: Post) => (
@@ -277,7 +289,7 @@ export default async function Home() {
               <div
                 className={"flex items-center gap-4 text-primary font-semibold"}
               >
-                <p>See All</p>
+                <p>See All Articles</p>
                 <AiOutlineArrowRight className={"text-3xl"} />
               </div>
             </div>
