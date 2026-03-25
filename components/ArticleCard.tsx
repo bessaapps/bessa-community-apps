@@ -20,7 +20,8 @@ export default function ArticleCard({ article }: { article: Post }) {
           src={article._embedded["wp:featuredmedia"][0].source_url}
           alt={formatTitle(title)}
           fill
-          objectFit={"cover"}
+          style={{ objectFit: "cover" }}
+          sizes={"640px"}
         />
         <div
           className={"absolute inset-0 bg-linear-to-b from-transparent to-card"}
