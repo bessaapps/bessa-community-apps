@@ -24,7 +24,7 @@ export default async function Launchpad() {
 
   const playbooks = await axios
     .get(
-      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=7&per_page=2&_embed"
+      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=7&per_page=3&_embed"
     )
     .then((response) => response.data)
     .catch((error) => console.error(error));
