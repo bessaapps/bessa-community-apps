@@ -16,10 +16,10 @@ export default function TopNavigation() {
         "w-full fixed top-0 z-10 border-b-[1] border-b-accent backdrop-filter backdrop-blur"
       }
     >
-      <div className={"w-full max-w-[1000] px-4 py-2 mx-auto"}>
+      <div className={"w-full max-w-[1300] px-4 py-2 mx-auto"}>
         <div className={"flex items-center justify-between gap-8"}>
           <Link href={"/"} title={formatTitle("")}>
-            <div className={"w-[3rem]"}>
+            <div className={"w-12"}>
               <Image
                 src={Logo}
                 alt={formatTitle("")}

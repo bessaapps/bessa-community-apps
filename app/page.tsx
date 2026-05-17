@@ -17,10 +17,17 @@ import ArticleCard from "@/components/ArticleCard";
 import Services from "@/components/Services";
 import Hero from "@/assets/images/hero.png";
 
+/* SEO */
+
+// Keyword: custom mobile app development services, KD: 4, SV: 2K
+// Supporting keyword: mobile app development services, KD: 26, SV: 9.8K
+// Supporting keyword: custom application development, KD: 9, SV: 2.9K
+
 export default async function Home() {
-  const heading = "Your app idea is great. Now what?";
+  // const heading = "Your app idea is great. Now what?";
+  const heading = "Custom Mobile App Development Services";
   const subheading =
-    "Turn your concept into reality with end-to-end startup app development, delivering custom cross-platform solutions for startups, organizations, and communities.";
+    "Your app idea is great. Now what? I provide custom mobile app development services that transform bold concepts into powerful cross-platform solutions for startups, organizations, and communities.";
 
   const works = [
     {
@@ -118,7 +125,7 @@ export default async function Home() {
         }}
       />
       <div className={"px-4 mx-auto"}>
-        <div className={"max-w-[1000] mx-auto px-4 pt-24 sm:pt-32 pb-12"}>
+        <div className={"max-w-[1300] mx-auto px-4 pt-24 sm:pt-32 pb-12"}>
           <div className={"flex flex-col gap-4 max-w-full"}>
             <h1
               className={
@@ -165,7 +172,7 @@ export default async function Home() {
           }
         />
       </div>
-      <div className={"max-w-[1000] px-4 pb-32 mx-auto"}>
+      <div className={"max-w-[1300] px-4 pb-32 mx-auto"}>
         <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
           <h2 className={"text-4xl font-bold"}>
             From Concept to Cross-Platform
@@ -184,7 +191,7 @@ export default async function Home() {
         <Services />
       </div>
       <Process />
-      <div className={"max-w-[1000] px-4 py-32 mx-auto"} id={"works"}>
+      <div className={"max-w-[1300] px-4 py-32 mx-auto"} id={"works"}>
         <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
           <h2 className={"text-4xl font-bold"}>
             From Bold Concepts to Live Apps
@@ -229,7 +236,7 @@ export default async function Home() {
           ))}
         </div>
       </div>
-      <div className={"max-w-[1000] px-4 py-32 mx-auto"} id={"about"}>
+      <div className={"max-w-[1300] px-4 py-32 mx-auto"} id={"about"}>
         <div className={"grid sm:grid-cols-3 gap-8 sm:gap-4 mb-8"}>
           <div
             className={"sm:col-span-2 flex flex-col gap-4 justify-center p-4"}
@@ -254,7 +261,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div className={"max-w-[1000] flex flex-col gap-4 px-4 py-32 mx-auto"}>
+      <div className={"max-w-[1300] flex flex-col gap-4 px-4 py-32 mx-auto"}>
         <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
           <h2 className={"text-4xl font-bold"}>Launchpad</h2>
           <p>
