@@ -1,7 +1,7 @@
 import { keyword, title, url } from "@/lib/constants";
 
 export const formatTitle = (pageTitle: string) => {
-  return [...(pageTitle ? [pageTitle] : []), title, keyword].join(" | ");
+  return [...(pageTitle ? [pageTitle] : []), keyword, title].join(" | ");
 };
 
 export const formatMetadata = ({
