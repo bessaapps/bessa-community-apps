@@ -20,7 +20,6 @@ import Hero from "@/assets/images/hero.png";
 /* SEO */
 
 // Keyword: custom mobile app development services, KD: 4, SV: 2K
-// Supporting keyword: mobile app development services, KD: 26, SV: 9.8K
 // Supporting keyword: custom application development, KD: 9, SV: 2.9K
 
 export default async function Home() {
@@ -175,14 +174,18 @@ export default async function Home() {
       <div className={"max-w-[1300] px-4 pb-32 mx-auto"}>
         <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
           <h2 className={"text-4xl font-bold"}>
-            From Concept to Cross-Platform
+            Your Partner for End-to-End Custom Mobile App Development Services
           </h2>
           <p>
-            I provide a comprehensive end-to-end process that guides you from
-            initial ideation all the way to successful app distribution. Expand
-            your digital presence with custom cross-platform apps for iOS,
-            Android, and the web, fully optimized for search visibility and
-            performance.{" "}
+            Whether you are an innovator with a bold concept, an organization
+            seeking internal tools, or a community aiming to foster connection,
+            Bessa Community Apps provides the roadmap to move you past the
+            initial stage of feeling immobilized. I offer expert custom mobile
+            app development services that transform your vision into a
+            high-performance, cross-platform reality across iOS, Android, and
+            the web. By blending creativity with a logical, end-to-end process,
+            my custom application development ensures your project moves
+            seamlessly from ideation to successful app store distribution.{" "}
             <Link href={bookingLink} className={"text-primary font-semibold"}>
               Start Here &rarr;
             </Link>
@@ -194,12 +197,18 @@ export default async function Home() {
       <div className={"max-w-[1300] px-4 py-32 mx-auto"} id={"works"}>
         <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
           <h2 className={"text-4xl font-bold"}>
-            From Bold Concepts to Live Apps
+            Crafting the Future of Custom Application Development
           </h2>
           <p>
-            See how I help innovators and organizations break through the
-            ideation stage to build custom, cross-platform solutions that work
-            beautifully on iOS, Android, and the web.{" "}
+            Every great project begins with a vision. Here&apos;s how I bridge
+            the gap between a bold idea and a functional reality. Through my
+            custom mobile app development services, I&apos;ve helped startups,
+            non-profits, and local communities overcome the hurdle of technical
+            complexity to launch high-performance, cross-platform tools. Here
+            are some highlights of my commitment to custom application
+            development that is not only modern and high-tech but also deeply
+            human-centered, providing the scalable digital infrastructure your
+            organization needs to grow and thrive.{" "}
             <Link href={bookingLink} className={"text-primary font-semibold"}>
               Start Here &rarr;
             </Link>
