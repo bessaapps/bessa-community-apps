@@ -255,11 +255,12 @@ export default async function Home() {
               <span className={"text-primary font-bold"}>
                 A passionate community builder.
               </span>{" "}
-              Specializing in startup app development, I empower innovators,
-              organizations, and communities to transform their bold ideas into
-              impactful cross-platform solutions that function seamlessly across
-              iOS, Android, and the web. My end-to-end process guides you
-              confidently from initial ideation all the way to launch.
+              Specializing in custom mobile app development services, I empower
+              innovators, organizations, and communities to transform their bold
+              ideas into impactful cross-platform solutions that function
+              seamlessly across iOS, Android, and the web. My end-to-end process
+              guides you confidently from initial ideation all the way to
+              launch.
             </p>
             <Link href={"mailto:topher@bessaapps.com"} title={formatTitle("")}>
               <Button>Let&apos;s Talk!</Button>
@@ -276,8 +277,8 @@ export default async function Home() {
           <p>
             Designed for innovators and organizations stuck in the ideation
             stage, Launchpad provides the clear path you need to move past
-            uncertainty. It’s time to stop dreaming and start launching your
-            custom cross-platform solution.
+            uncertainty. It&apos;s time to stop dreaming and start launching
+            your custom cross-platform solution.
           </p>
         </div>
         <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
