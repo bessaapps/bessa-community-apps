@@ -1,8 +1,7 @@
 import { keyword, title, url } from "@/lib/constants";
 
-export const formatTitle = (pageTitle: string) => {
-  return [...(pageTitle ? [pageTitle] : []), keyword, title].join(" - ");
-};
+export const formatTitle = (pageTitle: string) =>
+  `${pageTitle || keyword} - ${title}`;
 
 export const formatMetadata = ({
   metadataTitle,
