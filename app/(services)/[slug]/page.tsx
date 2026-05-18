@@ -71,13 +71,15 @@ export default async function ServicePage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"max-w-[500] px-4 py-32 mx-auto"}>
-        <div className={"flex flex-col items-center gap-8"}>
-          <div
-            className={
-              "w-50 relative aspect-square rounded-2xl overflow-hidden"
-            }
-          >
+      <div className={"px-4 mx-auto"}>
+        <div className={"max-w-[800] mx-auto px-4 pt-24 sm:pt-32 pb-12"}>
+          <h1 className={"text-4xl sm:text-6xl font-bold mb-4"}>{title}</h1>
+          <Link href={bookingLink} target={"_blank"} rel={"nofollow"}>
+            <Button size={"lg"}>Get Started</Button>
+          </Link>
+        </div>
+        <div className={"max-w-[1300] mx-auto px-4 pt-12 sm:pt-16 pb-12"}>
+          <div className={"relative aspect-[1.4] rounded-2xl overflow-hidden"}>
             <Image
               src={post._embedded["wp:featuredmedia"][0].source_url}
               alt={formatTitle(title)}
@@ -85,19 +87,9 @@ export default async function ServicePage({
               className={"object-cover"}
             />
           </div>
-          <h1 className={"text-4xl sm:text-6xl font-bold text-center"}>
-            {title}
-          </h1>
-          <div
-            dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
-            className={"text-xl text-center"}
-          />
-          <Link href={bookingLink} target={"_blank"} rel={"nofollow"}>
-            <Button size={"lg"}>Get Started</Button>
-          </Link>
         </div>
       </div>
-      <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
+      <div className={"max-w-[800] px-4 py-32 mx-auto"}>
         <div
           dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           className={
