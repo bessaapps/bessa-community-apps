@@ -17,7 +17,7 @@ export default function ArticleCard({ article }: { article: Post }) {
         className={"relative w-full aspect-square rounded-2xl overflow-hidden"}
       >
         <Image
-          src={article._embedded["wp:featuredmedia"][0].source_url}
+          src={article?._embedded?.["wp:featuredmedia"]?.[0]?.source_url}
           alt={formatTitle(title)}
           fill
           style={{ objectFit: "cover" }}
