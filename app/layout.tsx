@@ -8,12 +8,6 @@ import Clock from "@/components/Clock";
 import Weather from "@/components/Weather";
 import TopNavigation from "@/components/TopNavigation";
 
-/* SEO */
-
-// Keyword: custom mobile app development services, KD: 4, SV: 2K
-// Supporting keyword: mobile app development services, KD: 26, SV: 9.8K
-// Supporting keyword: custom application development, KD: 9, SV: 2.9K
-
 const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk" });
 
 const inter = Inter({ variable: "--font-inter" });
