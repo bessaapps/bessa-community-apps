@@ -92,7 +92,7 @@ export default async function ServicePage({
             dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
             className={"text-xl text-center"}
           />
-          <Link href={bookingLink} target={"_blank"}>
+          <Link href={bookingLink} target={"_blank"} rel={"nofollow"}>
             <Button size={"lg"}>Get Started</Button>
           </Link>
         </div>

@@ -141,7 +141,7 @@ export default async function Home() {
                 {subheading}
               </BlurInText>
             </p>
-            <Link href={bookingLink} target={"_blank"}>
+            <Link href={bookingLink} target={"_blank"} rel={"nofollow"}>
               <Button
                 size={"lg"}
                 className={
@@ -186,7 +186,12 @@ export default async function Home() {
             the web. By blending creativity with a logical, end-to-end process,
             my custom application development ensures your project moves
             seamlessly from ideation to successful app store distribution.{" "}
-            <Link href={bookingLink} className={"text-primary font-semibold"}>
+            <Link
+              href={bookingLink}
+              target={"_blank"}
+              rel={"nofollow"}
+              className={"text-primary font-semibold"}
+            >
               Start Here &rarr;
             </Link>
           </p>
@@ -209,7 +214,12 @@ export default async function Home() {
             development that is not only modern and high-tech but also deeply
             human-centered, providing the scalable digital infrastructure your
             organization needs to grow and thrive.{" "}
-            <Link href={bookingLink} className={"text-primary font-semibold"}>
+            <Link
+              href={bookingLink}
+              target={"_blank"}
+              rel={"nofollow"}
+              className={"text-primary font-semibold"}
+            >
               Start Here &rarr;
             </Link>
           </p>

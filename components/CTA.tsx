@@ -26,7 +26,7 @@ export default function CTA() {
             your app to life on iOS, Android, and the web.
           </p>
           <div className={"flex flex-col gap-4 py-8"}>
-            <Link href={bookingLink} target={"_blank"}>
+            <Link href={bookingLink} target={"_blank"} rel={"nofollow"}>
               <Button variant={"secondary"} size={"lg"}>
                 Book a Call
               </Button>
