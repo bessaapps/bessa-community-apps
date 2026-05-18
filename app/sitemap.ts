@@ -37,6 +37,7 @@ export default async function sitemap() {
       changeFrequency: "daily",
       priority: 0.9
     }))
+
     // ...playbooks?.flatMap(({ slug }: { slug: string }) => ({
     //   url: `https://bessaapps.com/launchpad/${slug}`,
     //   lastModified: new Date(),
