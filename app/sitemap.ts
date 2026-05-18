@@ -25,29 +25,29 @@ export default async function sitemap() {
       changeFrequency: "daily",
       priority: 1.0
     },
-    {
-      url: "https://bessaapps.com/launchpad",
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.8
-    },
+    // {
+    //   url: "https://bessaapps.com/launchpad",
+    //   lastModified: new Date(),
+    //   changeFrequency: "daily",
+    //   priority: 0.8
+    // },
     ...services?.flatMap(({ slug }: { slug: string }) => ({
       url: `https://bessaapps.com/${slug}`,
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.9
-    })),
-    ...playbooks?.flatMap(({ slug }: { slug: string }) => ({
-      url: `https://bessaapps.com/launchpad/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.7
-    })),
-    ...articles?.flatMap(({ slug }: { slug: string }) => ({
-      url: `https://bessaapps.com/launchpad/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.6
     }))
+    // ...playbooks?.flatMap(({ slug }: { slug: string }) => ({
+    //   url: `https://bessaapps.com/launchpad/${slug}`,
+    //   lastModified: new Date(),
+    //   changeFrequency: "daily",
+    //   priority: 0.7
+    // })),
+    // ...articles?.flatMap(({ slug }: { slug: string }) => ({
+    //   url: `https://bessaapps.com/launchpad/${slug}`,
+    //   lastModified: new Date(),
+    //   changeFrequency: "daily",
+    //   priority: 0.6
+    // }))
   ];
 }
