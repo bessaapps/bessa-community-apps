@@ -27,18 +27,23 @@ export default function TopNavigation() {
               />
             </div>
           </Link>
-          <div className={"flex gap-4"}>
-            {links.map(({ href, anchor }: { href: string; anchor: string }) => (
-              <Link
-                key={href}
-                href={href}
-                title={formatTitle(anchor)}
-                className={"text-primary font-bold hover:underline"}
-              >
-                {anchor}
-              </Link>
-            ))}
-          </div>
+          <nav>
+            <ul className={"flex gap-4"}>
+              {links.map(
+                ({ href, anchor }: { href: string; anchor: string }) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      title={formatTitle(anchor)}
+                      className={"text-primary font-bold hover:underline"}
+                    >
+                      {anchor}
+                    </Link>
+                  </li>
+                )
+              )}
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
