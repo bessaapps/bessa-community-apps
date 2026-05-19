@@ -40,9 +40,9 @@ export default function RootLayout({
         <Clock />
         <Weather />
       </body>
-      {process.env.NODE_ENV !== "development" && (
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
-      )}
+      {/*{process.env.NODE_ENV !== "development" && (*/}
+      {/*  <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />*/}
+      {/*)}*/}
     </html>
   );
 }
