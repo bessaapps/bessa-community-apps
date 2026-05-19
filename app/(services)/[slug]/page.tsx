@@ -25,7 +25,7 @@ export async function generateMetadata({
   const excerpt = stripHtml(post.excerpt.rendered).result;
 
   return formatMetadata({
-    metadataTitle: formatTitle(title),
+    metadataTitle: title,
     metadataDescription: excerpt,
     path: `/${post.slug}`,
     imagePath: post._embedded["wp:featuredmedia"][0].source_url
@@ -51,16 +51,16 @@ export default async function ServicePage({
   const jsonLd: WithContext<Service> = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Custom Mobile App Development",
+    serviceType: title,
     provider: {
       "@type": "Organization",
       name: "Bessa Community Apps"
     },
     areaServed: "Worldwide",
-    name: formatTitle(title),
+    name: title,
     image: post._embedded["wp:featuredmedia"][0].source_url,
     description: excerpt,
-    url: "http://bessaapps.com"
+    url: `http://bessaapps.com/${slug}`
   };
 
   return (
