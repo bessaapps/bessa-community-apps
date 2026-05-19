@@ -93,7 +93,7 @@ export default async function ServicePage({
         <div
           dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           className={
-            "flex flex-col gap-4 [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-muted-foreground [&_a]:underline [&_ul]:list-disc [&_ul]:pl-8"
+            "flex flex-col gap-4 [&_strong]:text-muted-foreground [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-muted-foreground [&_a]:underline [&_ul]:list-disc [&_ul]:pl-8"
           }
         />
       </div>

@@ -44,7 +44,9 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
                     "absolute bg-transparent top-0 flex flex-col justify-end h-full p-4"
                   }
                 >
-                  <p className={"text-primary font-semibold"}>{title}</p>
+                  <p className={"text-primary font-semibold sm:w-3/4"}>
+                    {title}
+                  </p>
                 </div>
               </div>
             </Link>
