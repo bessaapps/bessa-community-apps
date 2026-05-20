@@ -51,7 +51,7 @@ export default async function Home() {
 
   const articles = await axios
     .get(
-      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=6&per_page=2&_embed"
+      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=2&_embed"
     )
     .then((response) => response.data)
     .catch((error) => console.error(error));
