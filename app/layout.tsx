@@ -6,6 +6,7 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import Clock from "@/components/Clock";
 import Weather from "@/components/Weather";
 import TopNavigation from "@/components/TopNavigation";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk" });
 
@@ -39,11 +40,9 @@ export default function RootLayout({
         <Clock />
         <Weather />
       </body>
-
-      {/* todo: fix: */}
-      {/*{process.env.NODE_ENV !== "development" && (*/}
-      {/*  <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />*/}
-      {/*)}*/}
+      {process.env.NODE_ENV !== "development" && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
+      )}
     </html>
   );
 }
