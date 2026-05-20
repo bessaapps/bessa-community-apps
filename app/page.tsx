@@ -134,7 +134,11 @@ export default async function Home() {
                 {subheading}
               </BlurInText>
             </p>
-            <Link href={bookingLink} target={"_blank"} rel={"nofollow"}>
+            <Link
+              href={bookingLink}
+              target={"_blank"}
+              rel={"noopener noreferrer"}
+            >
               <Button
                 size={"lg"}
                 className={
@@ -182,7 +186,7 @@ export default async function Home() {
             <Link
               href={bookingLink}
               target={"_blank"}
-              rel={"nofollow"}
+              rel={"noopener noreferrer"}
               className={"text-primary font-semibold"}
             >
               Start Here &rarr;
@@ -210,7 +214,7 @@ export default async function Home() {
             <Link
               href={bookingLink}
               target={"_blank"}
-              rel={"nofollow"}
+              rel={"noopener noreferrer"}
               className={"text-primary font-semibold"}
             >
               Start Here &rarr;
@@ -220,7 +224,12 @@ export default async function Home() {
         <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
           {works.map(({ name, href, image, tags }, index: number) => (
             <div key={index} className={"flex flex-col gap-4"}>
-              <Link href={href} title={name} target={"_blank"}>
+              <Link
+                href={href}
+                title={name}
+                target={"_blank"}
+                rel={"noopener noreferrer"}
+              >
                 <div className={"bg-card rounded-2xl overflow-hidden"}>
                   <Image
                     src={image}
@@ -231,7 +240,12 @@ export default async function Home() {
               </Link>
               <div>
                 <p className={"text-primary font-semibold"}>
-                  <Link href={href} title={"AS/400 App"} target={"_blank"}>
+                  <Link
+                    href={href}
+                    title={"AS/400 App"}
+                    target={"_blank"}
+                    rel={"noopener noreferrer"}
+                  >
                     {name}
                   </Link>
                 </p>

@@ -74,7 +74,11 @@ export default async function ServicePage({
       <div className={"px-4 mx-auto"}>
         <div className={"max-w-[800] mx-auto px-4 pt-24 sm:pt-32 pb-12"}>
           <h1 className={"text-4xl sm:text-6xl font-bold mb-4"}>{title}</h1>
-          <Link href={bookingLink} target={"_blank"} rel={"nofollow"}>
+          <Link
+            href={bookingLink}
+            target={"_blank"}
+            rel={"noopener noreferrer"}
+          >
             <Button size={"lg"}>Get Started</Button>
           </Link>
         </div>

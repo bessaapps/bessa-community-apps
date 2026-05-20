@@ -26,7 +26,11 @@ export default function CTA() {
             your app to life on iOS, Android, and the web.
           </p>
           <div className={"flex flex-col gap-4 py-8"}>
-            <Link href={bookingLink} target={"_blank"} rel={"nofollow"}>
+            <Link
+              href={bookingLink}
+              target={"_blank"}
+              rel={"noopener noreferrer"}
+            >
               <Button variant={"secondary"} size={"lg"}>
                 Book a Call
               </Button>
@@ -34,17 +38,26 @@ export default function CTA() {
             <p className={"text-secondary"}>topher@bessaapps.com</p>
           </div>
           <div className={"flex justify-end gap-4 mb-4"}>
-            <Link href={"https://x.com/bessaapps"} target={"_blank"}>
-              <BsTwitterX className={"text-xl text-muted"} />
-            </Link>
             <Link
               href={"https://linkedin.com/company/bessaapps"}
               target={"_blank"}
+              rel={"noopener noreferrer"}
             >
               <BsLinkedin className={"text-xl text-muted"} />
             </Link>
-            <Link href={"https://github.com/bessaapps"} target={"_blank"}>
+            <Link
+              href={"https://github.com/bessaapps"}
+              target={"_blank"}
+              rel={"noopener noreferrer"}
+            >
               <BsGithub className={"text-xl text-muted"} />
+            </Link>
+            <Link
+              href={"https://x.com/bessaapps"}
+              target={"_blank"}
+              rel={"noopener noreferrer"}
+            >
+              <BsTwitterX className={"text-xl text-muted"} />
             </Link>
           </div>
           <p className={"text-sm text-right accent-muted"}>
