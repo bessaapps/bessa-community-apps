@@ -31,7 +31,7 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
               >
                 <Image
                   src={service._embedded["wp:featuredmedia"][0].source_url}
-                  alt={formatTitle(title)}
+                  alt={service?._embedded["wp:featuredmedia"][0]?.alt_text}
                   fill
                 />
                 <div

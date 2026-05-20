@@ -1,6 +1,5 @@
 import "./globals.css";
 import CTA from "@/components/CTA";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { formatMetadata, formatTitle } from "@/lib/helpers";
 import { description, url } from "@/lib/constants";
 import { Space_Grotesk, Inter } from "next/font/google";

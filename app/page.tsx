@@ -56,13 +56,6 @@ export default async function Home() {
     .then((response) => response.data)
     .catch((error) => console.error(error));
 
-  const playbooks = await axios
-    .get(
-      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=7&per_page=3&_embed"
-    )
-    .then((response) => response.data)
-    .catch((error) => console.error(error));
-
   const graph: Graph = {
     "@context": "https://schema.org",
     "@graph": [
@@ -281,48 +274,40 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div className={"max-w-[1300] flex flex-col gap-4 px-4 py-32 mx-auto"}>
-        <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
-          <h2 className={"text-4xl font-bold"}>Launchpad</h2>
-          <p>
-            Designed for innovators and organizations stuck in the ideation
-            stage, Launchpad provides the clear path you need to move past
-            uncertainty. It&apos;s time to stop dreaming and start launching
-            your custom cross-platform solution.
-          </p>
-        </div>
-        <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
-          <div
-            className={
-              "bg-card aspect-square rounded-2xl overflow-hidden flex items-center justify-center"
-            }
-          >
-            <h3>Playbooks:</h3>
+      {!!articles?.length && (
+        <div className={"max-w-[1300] flex flex-col gap-4 px-4 py-32 mx-auto"}>
+          <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
+            <h2 className={"text-4xl font-bold"}>Launchpad</h2>
+            <p>
+              Designed for innovators and organizations stuck in the ideation
+              stage, Launchpad provides the clear path you need to move past
+              uncertainty. It&apos;s time to stop dreaming and start launching
+              your custom cross-platform solution.
+            </p>
           </div>
-          {(playbooks || []).map((playbook: Post) => (
-            <ArticleCard key={playbook.id} article={playbook} />
-          ))}
-        </div>
-        <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
-          {(articles || []).map((article: Post) => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
-          <Link href={"/launchpad"} title={formatTitle("Launchpad")}>
-            <div
-              className={
-                "bg-card aspect-square rounded-2xl overflow-hidden flex items-center justify-center"
-              }
-            >
+          <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
+            {articles.map((article: Post) => (
+              <ArticleCard key={article.id} article={article} />
+            ))}
+            <Link href={"/launchpad"} title={formatTitle("Launchpad")}>
               <div
-                className={"flex items-center gap-4 text-primary font-semibold"}
+                className={
+                  "bg-card aspect-square rounded-2xl overflow-hidden flex items-center justify-center"
+                }
               >
-                <p>See All Articles</p>
-                <AiOutlineArrowRight className={"text-3xl"} />
+                <div
+                  className={
+                    "flex items-center gap-4 text-primary font-semibold"
+                  }
+                >
+                  <p>See All Articles</p>
+                  <AiOutlineArrowRight className={"text-3xl"} />
+                </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }
