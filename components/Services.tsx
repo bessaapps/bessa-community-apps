@@ -11,9 +11,11 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
     .then((response) => response.data)
     .catch((error) => console.error(error));
 
+  if (!services?.length) return;
+
   return (
-    <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
-      {(services || [])
+    <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
+      {services
         .filter((service: Post) => service.id !== hiddenId)
         .map((service: Post) => {
           const title = stripHtml(service.title.rendered).result;
