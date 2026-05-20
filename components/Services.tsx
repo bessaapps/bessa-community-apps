@@ -8,16 +8,12 @@ import Image from "next/image";
 export default async function Services({ hiddenId }: { hiddenId?: number }) {
   const services = await axios
     .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&_embed")
-    .then((response) => response.data || [])
-    .catch((error) => {
-      console.error(error);
-
-      return [];
-    });
+    .then((response) => response.data)
+    .catch((error) => console.error(error));
 
   return (
     <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
-      {services
+      {(services || [])
         .filter((service: Post) => service.id !== hiddenId)
         .map((service: Post) => {
           const title = stripHtml(service.title.rendered).result;

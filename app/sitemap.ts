@@ -5,18 +5,18 @@ export default async function sitemap() {
     .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2")
     .then((response) => response.data)
     .catch((error) => console.error(error));
-  const articles = await axios
-    .get(
-      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=6&per_page=20"
-    )
-    .then((response) => response.data)
-    .catch((error) => console.error(error));
-  const playbooks = await axios
-    .get(
-      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=7&per_page=20"
-    )
-    .then((response) => response.data)
-    .catch((error) => console.error(error));
+  // todo: const articles = await axios
+  //   .get(
+  //     "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=6&per_page=20"
+  //   )
+  //   .then((response) => response.data)
+  //   .catch((error) => console.error(error));
+  // const playbooks = await axios
+  //   .get(
+  //     "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=7&per_page=20"
+  //   )
+  //   .then((response) => response.data)
+  //   .catch((error) => console.error(error));
 
   return [
     {
