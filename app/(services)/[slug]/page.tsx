@@ -1,4 +1,4 @@
-import { formatMetadata, formatTitle } from "@/lib/helpers";
+import { formatMetadata } from "@/lib/helpers";
 import axios from "axios";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -82,7 +82,7 @@ export default async function ServicePage({
           <div className={"relative aspect-[1.4] rounded-2xl overflow-hidden"}>
             <Image
               src={post._embedded["wp:featuredmedia"][0].source_url}
-              alt={formatTitle(title)}
+              alt={post._embedded["wp:featuredmedia"][0].alt_text}
               fill
               className={"object-cover"}
             />
