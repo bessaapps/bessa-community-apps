@@ -17,13 +17,7 @@ import ArticleCard from "@/components/ArticleCard";
 import Services from "@/components/Services";
 import Hero from "@/assets/images/hero.png";
 
-/* SEO */
-
-// Keyword: custom mobile app development services, KD: 4, SV: 2K
-// Supporting keyword: custom application development, KD: 9, SV: 2.9K
-
 export default async function Home() {
-  // const heading = "Your app idea is great. Now what?";
   const heading =
     "Custom Application Development for Innovators & Organizations";
   const subheading =
