@@ -24,9 +24,10 @@ import Hero from "@/assets/images/hero.png";
 
 export default async function Home() {
   // const heading = "Your app idea is great. Now what?";
-  const heading = "Custom Mobile App Development Services";
+  const heading =
+    "Custom Application Development for Innovators & Organizations";
   const subheading =
-    "Your app idea is great. Now what? I provide custom mobile app development services that transform bold concepts into powerful cross-platform solutions for startups, organizations, and communities.";
+    "Your app idea is great. Now what? I provide custom application development services that transform bold concepts into powerful cross-platform solutions for startups, organizations, and communities.";
 
   const works = [
     {
@@ -272,7 +273,7 @@ export default async function Home() {
               <span className={"text-primary font-bold"}>
                 A passionate community builder.
               </span>{" "}
-              Specializing in custom mobile app development services, I empower
+              Specializing in custom application development, I empower
               innovators, organizations, and communities to transform their bold
               ideas into impactful cross-platform solutions that function
               seamlessly across iOS, Android, and the web. My end-to-end process
