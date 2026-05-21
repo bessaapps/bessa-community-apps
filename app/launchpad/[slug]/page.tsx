@@ -1,4 +1,4 @@
-import { formatMetadata, formatTitle } from "@/lib/helpers";
+import { formatMetadata } from "@/lib/helpers";
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,6 +9,7 @@ import ServicesSection from "@/components/ServicesSection";
 import { BlogPosting, WithContext } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
 import dayjs from "dayjs";
+import Me from "@/assets/images/me.png";
 
 export async function generateMetadata({
   params
@@ -25,9 +26,9 @@ export async function generateMetadata({
   const excerpt = stripHtml(post.excerpt.rendered).result;
 
   return formatMetadata({
-    metadataTitle: formatTitle(title),
+    metadataTitle: title,
     metadataDescription: excerpt,
-    path: `/articles/${post.slug}`,
+    path: `/launchpad/${post.slug}`,
     imagePath: post._embedded["wp:featuredmedia"][0].source_url
   });
 }
@@ -51,16 +52,12 @@ export default async function ArticlePage({
   const jsonLd: WithContext<BlogPosting> = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    headline: formatTitle(title),
+    headline: title,
     image: post._embedded["wp:featuredmedia"][0].source_url,
     description: excerpt,
     publisher: {
       "@type": "Organization",
-      name: "Bessa Community Apps",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://bessaapps.com/logo.png"
-      }
+      name: "Bessa Community Apps"
     }
   };
 
@@ -72,34 +69,49 @@ export default async function ArticlePage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"max-w-[1000] px-4 pt-32 mx-auto"}>
-        <div className={"flex flex-col gap-8 mb-16"}>
+      <div className={"px-4 mx-auto"}>
+        <div
+          className={
+            "max-w-[800] mx-auto flex flex-col gap-4 px-4 pt-24 sm:pt-32 pb-12"
+          }
+        >
           <Link href={"/launchpad"}>
-            <p className={"text-primary text-center"}>
+            <p className={"text-primary uppercase"}>
               <BlurInText>Launchpad</BlurInText>
             </p>
           </Link>
-          <h1 className={"text-4xl sm:text-6xl font-bold text-center"}>
+          <h1 className={"text-4xl sm:text-6xl font-bold"}>
             <BlurInText>{title}</BlurInText>
           </h1>
-          <div className={"flex justify-center"}>
-            <div
-              className={
-                "w-125 relative aspect-square rounded-2xl overflow-hidden"
-              }
-            >
-              <Image
-                src={post._embedded["wp:featuredmedia"][0].source_url}
-                alt={post._embedded["wp:featuredmedia"][0].alt_text}
-                fill
-                className={"object-cover"}
-              />
+          <div className={"flex items-center gap-4"}>
+            <div className={"w-12 rounded-full aspect-square overflow-hidden"}>
+              <Image src={Me} alt={"Author Profile Picture"} />
+            </div>
+            <div>
+              <p className={"text-primary font-bold"}>Topher</p>
+              <p className={"text-primary text-sm"}>
+                {dayjs(post.modified).format("MMMM DD, YYYY")}&nbsp;&mdash;{" "}
+                {Math.ceil(
+                  stripHtml(post?.content?.rendered).result.split(" ").length /
+                    225
+                )}{" "}
+                min read
+              </p>
             </div>
           </div>
-          <p className={"text-primary text-sm text-center"}>
-            Topher &middot; {dayjs(post.modified).format("MMMM DD, YYYY")}
-          </p>
         </div>
+        <div className={"max-w-[1300] mx-auto px-4 pt-12 sm:pt-16 pb-12"}>
+          <div className={"relative aspect-[1.4] rounded-2xl overflow-hidden"}>
+            <Image
+              src={post._embedded["wp:featuredmedia"][0].source_url}
+              alt={post._embedded["wp:featuredmedia"][0].alt_text}
+              fill
+              className={"object-cover"}
+            />
+          </div>
+        </div>
+      </div>
+      <div className={"max-w-[800] px-4 py-32 mx-auto"}>
         <div
           dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           className={
