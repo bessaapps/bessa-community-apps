@@ -28,19 +28,31 @@ export default async function Home() {
       name: "AS/400 App",
       href: "https://as400app.com",
       image: Work1,
-      tags: ["Expo", "React Native", "Strapi"]
+      tags: [
+        "Expo",
+        "React Native",
+        "React Native Reanimated",
+        "In-App Purchases",
+        "Strapi"
+      ]
     },
     {
       name: "Bessa",
       href: "https://getbessa.com",
       image: Work2,
-      tags: ["Expo", "React Native", "Bun", "Websockets", "Postgres"]
+      tags: [
+        "Expo",
+        "React Native",
+        "Lottie",
+        "Websockets",
+        "Push Notifications",
+        "Postgres"
+      ]
     },
     {
-      name: "Resume Mint",
-      href: "https://getresumemint.com",
+      name: "CommuniVol",
       image: Work3,
-      tags: ["Next.js", "React.js", "MongoDB"]
+      tags: ["Expo", "React Native", "MongoDB"]
     }
   ];
 
@@ -219,12 +231,22 @@ export default async function Home() {
         <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
           {works.map(({ name, href, image, tags }, index: number) => (
             <div key={index} className={"flex flex-col gap-4"}>
-              <Link
-                href={href}
-                title={name}
-                target={"_blank"}
-                rel={"noopener noreferrer"}
-              >
+              {href ? (
+                <Link
+                  href={href}
+                  title={name}
+                  target={"_blank"}
+                  rel={"noopener noreferrer"}
+                >
+                  <div className={"bg-card rounded-2xl overflow-hidden"}>
+                    <Image
+                      src={image}
+                      alt={formatTitle(name)}
+                      className={"hover:scale-125 duration-200"}
+                    />
+                  </div>
+                </Link>
+              ) : (
                 <div className={"bg-card rounded-2xl overflow-hidden"}>
                   <Image
                     src={image}
@@ -232,17 +254,21 @@ export default async function Home() {
                     className={"hover:scale-125 duration-200"}
                   />
                 </div>
-              </Link>
+              )}
               <div>
                 <p className={"text-primary font-semibold"}>
-                  <Link
-                    href={href}
-                    title={"AS/400 App"}
-                    target={"_blank"}
-                    rel={"noopener noreferrer"}
-                  >
-                    {name}
-                  </Link>
+                  {href ? (
+                    <Link
+                      href={href}
+                      title={"AS/400 App"}
+                      target={"_blank"}
+                      rel={"noopener noreferrer"}
+                    >
+                      {name}
+                    </Link>
+                  ) : (
+                    name
+                  )}
                 </p>
                 <p>
                   {tags.map((tag: string, index: number) => (
