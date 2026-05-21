@@ -10,21 +10,15 @@ import ArticleCard from "@/components/ArticleCard";
 
 export const metadata = formatMetadata({
   metadataTitle: formatTitle("Launchpad"),
-  metadataDescription: "Concept to cross-platform. Your roadmap to launch.",
+  metadataDescription:
+    "Stop dreaming; start launching. The Launchpad blog helps innovators move past feeling immobilized with custom application development and a clear path forward.",
   path: "https://bessaapps.com/launchpad"
 });
 
 export default async function Launchpad() {
   const articles = await axios
     .get(
-      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=6&per_page=20&_embed"
-    )
-    .then((response) => response.data)
-    .catch((error) => console.error(error));
-
-  const playbooks = await axios
-    .get(
-      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=7&per_page=3&_embed"
+      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=20&_embed"
     )
     .then((response) => response.data)
     .catch((error) => console.error(error));
@@ -41,20 +35,6 @@ export default async function Launchpad() {
               Concept to cross-platform. Your roadmap to launch.
             </BlurInText>
           </p>
-        </div>
-      </div>
-      <div className={"max-w-[1000] px-4 py-8 mx-auto"}>
-        <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
-          <div
-            className={
-              "bg-card aspect-square rounded-2xl overflow-hidden flex items-center justify-center"
-            }
-          >
-            <h3>Playbooks:</h3>
-          </div>
-          {playbooks.map((playbook: Post) => (
-            <ArticleCard key={playbook.id} article={playbook} />
-          ))}
         </div>
       </div>
       <div className={"max-w-[1000] px-4 py-8 mx-auto"}>
