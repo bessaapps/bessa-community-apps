@@ -119,6 +119,7 @@ export default async function ServicePage({
         />
       </div>
       <ServicesSection sectionHeading={"More Services"} hiddenId={post.id} />
+
       <Process />
     </section>
   );
