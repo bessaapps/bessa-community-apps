@@ -4,12 +4,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { stripHtml } from "string-strip-html";
-import { permanentRedirect } from "next/navigation";
 import Process from "@/components/Process";
 import ServicesSection from "@/components/ServicesSection";
 import { bookingLink } from "@/lib/constants";
 import { Service, WithContext } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
+import { Post } from "@/lib/definitions";
 
 export async function generateMetadata({
   params
@@ -33,18 +33,30 @@ export async function generateMetadata({
   });
 }
 
+export async function generateStaticParams() {
+  try {
+    const { data } = await axios
+      .get<Post[]>("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2")
+      .then((response) => response);
+
+    return data.map((post) => ({
+      slug: post.slug
+    }));
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 export default async function ServicePage({
   params
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
   const post = await axios
     .get(`https://cms.bessaapps.com/wp-json/wp/v2/posts?slug=${slug}&_embed`)
     .then((response) => response.data?.[0])
     .catch((error) => console.error(error));
-
-  if (!post?.id) permanentRedirect("/");
 
   const title = stripHtml(post.title.rendered).result;
   const excerpt = stripHtml(post.excerpt.rendered).result;

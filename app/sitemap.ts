@@ -6,9 +6,7 @@ export default async function sitemap() {
     .then((response) => response.data)
     .catch((error) => console.error(error));
   const articles = await axios
-    .get(
-      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=20"
-    )
+    .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3")
     .then((response) => response.data)
     .catch((error) => console.error(error));
 

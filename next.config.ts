@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",
   images: {
-    remotePatterns: [new URL("https://cms.bessaapps.com/**")]
+    unoptimized: true
   },
   async redirects() {
     return [];
