@@ -7,6 +7,8 @@ import axios from "axios";
 import { Post } from "@/lib/definitions";
 import BlurInText from "@/components/BlurInText";
 import ArticleCard from "@/components/ArticleCard";
+import { Blog, WithContext } from "schema-dts";
+import { url } from "@/lib/constants";
 
 export const metadata = formatMetadata({
   metadataTitle: formatTitle("Launchpad"),
@@ -23,8 +25,31 @@ export default async function Launchpad() {
     .then((response) => response.data)
     .catch((error) => console.error(error));
 
+  const jsonLd: WithContext<Blog> = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    headline: "Launchpad",
+    description:
+      "Stop dreaming; start launching. The Launchpad blog helps innovators move past feeling immobilized with custom application development and a clear path forward.",
+    url: `${url}/launchpad`,
+    publisher: {
+      "@type": "Organization",
+      name: "Bessa Community Apps",
+      logo: {
+        "@type": "ImageObject",
+        url: `${url}/logo.png`
+      }
+    }
+  };
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
+        }}
+      />
       <div className={"px-4 py-24 sm:py-32"}>
         <div className={"flex flex-col gap-4"}>
           <h1 className={"text-center text-5xl sm:text-7xl font-bold"}>
