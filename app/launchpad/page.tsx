@@ -8,7 +8,7 @@ import { Post } from "@/lib/definitions";
 import BlurInText from "@/components/BlurInText";
 import ArticleCard from "@/components/ArticleCard";
 import { Blog, WithContext } from "schema-dts";
-import { url } from "@/lib/constants";
+import { bookingLink, url } from "@/lib/constants";
 
 export const metadata = formatMetadata({
   metadataTitle: formatTitle("Launchpad"),
@@ -18,6 +18,9 @@ export const metadata = formatMetadata({
 });
 
 export default async function Launchpad() {
+  const subheading =
+    "Your go-to blog for turning bold ideas into impactful digital products through expert custom application development. Whether you are an innovator or an organization, I provide the clear, non-intimidating path forward you needto stop dreaming and start launching.";
+
   const articles = await axios
     .get(
       "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=20&_embed"
@@ -52,13 +55,41 @@ export default async function Launchpad() {
       />
       <div className={"px-4 py-24 sm:py-32"}>
         <div className={"flex flex-col gap-4"}>
-          <h1 className={"text-center text-5xl sm:text-7xl font-bold"}>
-            <BlurInText>Launchpad</BlurInText>
-          </h1>
-          <p className={"text-xl text-center"}>
-            <BlurInText offset={100} multiplier={50}>
-              Concept to cross-platform. Your roadmap to launch.
-            </BlurInText>
+          <p className={"text-xl w-[1000] mx-auto"}>
+            <div className={"flex flex-col gap-4 max-w-full"}>
+              <h1
+                className={
+                  "text-5xl sm:text-7xl font-bold leading-[1.1] sm:max-w-[75%]"
+                }
+              >
+                <BlurInText>Launchpad</BlurInText>
+              </h1>
+              <p className={"text-xl sm:max-w-[50%] mb-8"}>
+                <BlurInText
+                  offset={"launchpad".split(" ").length * 100}
+                  multiplier={50}
+                >
+                  {subheading}
+                </BlurInText>
+              </p>
+              <Link
+                href={bookingLink}
+                target={"_blank"}
+                rel={"noopener noreferrer"}
+              >
+                <Button
+                  size={"lg"}
+                  className={
+                    "opacity-0 animate-blur-in-fade-in cursor-pointer hover:scale-110"
+                  }
+                  style={{
+                    animationDelay: `${"launchpad".split(" ").length * 100 + subheading.split(" ").length * 50 + 1000}ms`
+                  }}
+                >
+                  Start my Project!
+                </Button>
+              </Link>
+            </div>
           </p>
         </div>
       </div>
@@ -85,9 +116,10 @@ export default async function Launchpad() {
               </h3>
               <div className={"flex flex-col gap-4"}>
                 <p className={"text-primary"}>
-                  Ten years of bringing ideas to life through mobile and web
-                  apps, solving real problems and building solutions that
-                  support communities.
+                  Specializing in custom application development, I help
+                  innovators and communities transform their bold ideas into
+                  impactful, cross-platform realities. I offer an empathetic,
+                  end-to-end process from concept to app store distribution.
                 </p>
                 <Link
                   href={"mailto:topher@bessaapps.com"}
