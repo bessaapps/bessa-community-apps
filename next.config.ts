@@ -1,8 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    unoptimized: true
+  async redirects() {
+    return [
+      {
+        source:
+          "/articles/more-than-a-group-chat-why-custom-mobile-app-development-empowers-communities",
+        destination: "/",
+        permanent: true
+      }
+    ];
   }
 };
 
