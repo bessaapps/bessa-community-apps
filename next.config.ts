@@ -9,7 +9,7 @@ const urls = {
   "/services/app-store-distribution": "/app-publishing-services",
   "/services/app-store-distribution-services": "/app-publishing-services",
   "/services/website-development-services-that-drive-results": "/",
-  "services/stress-free-app-store-submission-services-that-get-you-approved-fast":
+  "/services/stress-free-app-store-submission-services-that-get-you-approved-fast":
     "/app-publishing-services",
   "/services/custom-mobile-app-development": "/cross-platform-app-development",
   "/services/": "/",
