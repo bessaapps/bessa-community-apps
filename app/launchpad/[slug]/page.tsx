@@ -9,7 +9,7 @@ import { BlogPosting, WithContext } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
 import dayjs from "dayjs";
 import Me from "@/assets/images/me.png";
-import { Post } from "@/lib/definitions";
+import { permanentRedirect } from "next/navigation";
 
 export async function generateMetadata({
   params
@@ -33,22 +33,6 @@ export async function generateMetadata({
   });
 }
 
-export async function generateStaticParams() {
-  try {
-    const { data } = await axios
-      .get<Post[]>("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3")
-      .then((response) => response);
-
-    return data.map((post) => ({
-      slug: post.slug
-    }));
-  } catch (error) {
-    console.error(error);
-
-    return [];
-  }
-}
-
 export default async function ArticlePage({
   params
 }: {
@@ -59,6 +43,8 @@ export default async function ArticlePage({
     .get(`https://cms.bessaapps.com/wp-json/wp/v2/posts?slug=${slug}&_embed`)
     .then((response) => response.data?.[0])
     .catch((error) => console.error(error));
+
+  if (!post?.id) return permanentRedirect("/launchpad");
 
   const title = stripHtml(post.title.rendered).result;
   const excerpt = stripHtml(post.excerpt.rendered).result;
