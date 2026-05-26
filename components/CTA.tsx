@@ -31,7 +31,11 @@ export default function CTA() {
               target={"_blank"}
               rel={"noopener noreferrer"}
             >
-              <Button variant={"secondary"} size={"lg"}>
+              <Button
+                variant={"secondary"}
+                size={"lg"}
+                className={"cursor-pointer hover:scale-110"}
+              >
                 Book a Call
               </Button>
             </Link>

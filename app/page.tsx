@@ -317,7 +317,9 @@ export default async function Home() {
               launch.
             </p>
             <Link href={"mailto:topher@bessaapps.com"} title={formatTitle("")}>
-              <Button>Let&apos;s Talk!</Button>
+              <Button className={"cursor-pointer hover:scale-110"}>
+                Let&apos;s Talk!
+              </Button>
             </Link>
           </div>
           <div className={"rounded-2xl overflow-hidden"}>
