@@ -114,7 +114,7 @@ export default async function ArticlePage({
             </div>
           </div>
         </div>
-        <div className={"max-w-[1300] mx-auto px-4 pt-12 sm:pt-16 pb-12"}>
+        <div className={"max-w-[1300] mx-auto pt-12 sm:pt-16 pb-12"}>
           <div className={"relative aspect-[1.4] rounded-2xl overflow-hidden"}>
             <Image
               src={post._embedded["wp:featuredmedia"][0].source_url}
@@ -125,7 +125,7 @@ export default async function ArticlePage({
           </div>
         </div>
       </div>
-      <div className={"max-w-[800] px-4 py-32 mx-auto"}>
+      <div className={"max-w-[800] px-4 mx-auto py-32"}>
         <div
           dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           className={

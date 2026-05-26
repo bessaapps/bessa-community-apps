@@ -55,7 +55,7 @@ export default async function Launchpad() {
       />
       <div className={"px-4 py-24 sm:py-32"}>
         <div className={"flex flex-col gap-4"}>
-          <p className={"text-xl w-[1000] mx-auto"}>
+          <div className={"text-xl w-[1000] mx-auto"}>
             <div className={"flex flex-col gap-4 max-w-full"}>
               <h1
                 className={
@@ -90,10 +90,10 @@ export default async function Launchpad() {
                 </Button>
               </Link>
             </div>
-          </p>
+          </div>
         </div>
       </div>
-      <div className={"max-w-[1000] px-4 py-8 mx-auto"}>
+      <div className={"max-w-[1000] py-8 mx-auto"}>
         <div className={"grid sm:grid-cols-3 gap-4"}>
           {articles.map((article: Post, index: number) =>
             index === 1 ? (
