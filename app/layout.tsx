@@ -7,6 +7,7 @@ import Clock from "@/components/Clock";
 import Weather from "@/components/Weather";
 import TopNavigation from "@/components/TopNavigation";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 
 const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk" });
 
@@ -41,7 +42,14 @@ export default function RootLayout({
         <Weather />
       </body>
       {process.env.NODE_ENV !== "development" && (
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
+        <>
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
+          <Script
+            src={"https://analytics.ahrefs.com/analytics.js"}
+            data-key={"3mOIblmw6vrADXOMbB0XGg"}
+            async
+          />
+        </>
       )}
     </html>
   );
