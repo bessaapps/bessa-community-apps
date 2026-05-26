@@ -142,9 +142,6 @@ h1 {
 h2 {
   font-family: var(--font-space-grotesk), "sans-serif";
 }
-h3 {
-  font-family: var(--font-space-grotesk), "sans-serif";
-}
 
 ::selection {
   background-color: var(--color-secondary);
