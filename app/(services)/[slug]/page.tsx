@@ -82,7 +82,9 @@ export default async function ServicePage({
             target={"_blank"}
             rel={"noopener noreferrer"}
           >
-            <Button size={"lg"}>Get Started</Button>
+            <Button size={"lg"} className={"cursor-pointer hover:scale-110"}>
+              Get Started
+            </Button>
           </Link>
         </div>
         <div className={"max-w-[1300] mx-auto px-4 pt-12 sm:pt-16 pb-12"}>
@@ -100,7 +102,7 @@ export default async function ServicePage({
         <div
           dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           className={
-            "flex flex-col gap-4 [&_strong]:text-muted-foreground [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-muted-foreground [&_a]:underline [&_ul]:list-disc [&_ul]:pl-8 [&_img]:rounded-2xl"
+            "flex flex-col gap-4 [&_strong]:text-muted-foreground [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-muted-foreground [&_a]:underline [&_ul]:list-disc [&_ul]:pl-8 [&_img]:rounded-2xl [&_blockquote]:italic [&_blockquote]:border-l-2 [&_blockquote]:sm:w-6/8 [&_blockquote]:pl-8"
           }
         />
       </div>
