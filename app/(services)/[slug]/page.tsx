@@ -33,21 +33,21 @@ export async function generateMetadata({
   });
 }
 
-export async function generateStaticParams() {
-  try {
-    const { data } = await axios
-      .get<Post[]>("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2")
-      .then((response) => response);
-
-    return data.map((post) => ({
-      slug: post.slug
-    }));
-  } catch (error) {
-    console.error(error);
-
-    return [];
-  }
-}
+// export async function generateStaticParams() {
+//   try {
+//     const { data } = await axios
+//       .get<Post[]>("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2")
+//       .then((response) => response);
+//
+//     return data.map((post) => ({
+//       slug: post.slug
+//     }));
+//   } catch (error) {
+//     console.error(error);
+//
+//     return [];
+//   }
+// }
 
 export default async function ServicePage({
   params
