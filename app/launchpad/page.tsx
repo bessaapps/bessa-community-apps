@@ -53,85 +53,87 @@ export default async function Launchpad() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"px-4 py-24 sm:py-32"}>
-        <div className={"flex flex-col gap-4"}>
-          <div className={"text-xl w-[1000] mx-auto"}>
-            <div className={"flex flex-col gap-4 max-w-full"}>
-              <h1
-                className={
-                  "text-5xl sm:text-7xl font-bold leading-[1.1] sm:max-w-[75%]"
-                }
-              >
-                <BlurInText>Launchpad</BlurInText>
-              </h1>
-              <p className={"text-xl sm:max-w-[50%] mb-8"}>
-                <BlurInText
-                  offset={"launchpad".split(" ").length * 100}
-                  multiplier={50}
-                >
-                  {subheading}
-                </BlurInText>
-              </p>
-              <Link
-                href={bookingLink}
-                target={"_blank"}
-                rel={"noopener noreferrer"}
-              >
-                <Button
-                  size={"lg"}
+      <div className={"max-w-[1300] px-4 mx-auto"}>
+        <div className={"py-24 sm:py-32"}>
+          <div className={"flex flex-col gap-4"}>
+            <div className={"text-xl"}>
+              <div className={"flex flex-col gap-4 max-w-full"}>
+                <h1
                   className={
-                    "opacity-0 animate-blur-in-fade-in cursor-pointer hover:scale-110"
+                    "text-5xl sm:text-7xl font-bold leading-[1.1] sm:max-w-[75%]"
                   }
-                  style={{
-                    animationDelay: `${"launchpad".split(" ").length * 100 + subheading.split(" ").length * 50 + 1000}ms`
-                  }}
                 >
-                  Start my Project!
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className={"max-w-[1000] py-8 mx-auto"}>
-        <div className={"grid sm:grid-cols-3 gap-4"}>
-          {articles.map((article: Post, index: number) =>
-            index === 1 ? (
-              <div key={index} className={"sm:col-span-2 sm:row-span-2"}>
-                <ArticleCard article={article} />
-              </div>
-            ) : (
-              <ArticleCard key={index} article={article} />
-            )
-          )}
-        </div>
-      </div>
-      <div className={"max-w-[1000] px-4 py-8 mx-auto"}>
-        <div className={"grid sm:grid-cols-3 gap-4"}>
-          <div />
-          <div className={"bg-card aspect-8/10 rounded-2xl"}>
-            <div className={"flex flex-col justify-between h-full p-4"}>
-              <h3 className={"text-4xl font-semibold text-primary"}>
-                About the Author
-              </h3>
-              <div className={"flex flex-col gap-4"}>
-                <p className={"text-primary"}>
-                  Specializing in custom application development, I help
-                  innovators and communities transform their bold ideas into
-                  impactful, cross-platform realities. I offer an empathetic,
-                  end-to-end process from concept to app store distribution.
+                  <BlurInText>Launchpad</BlurInText>
+                </h1>
+                <p className={"text-xl sm:max-w-[50%] mb-8"}>
+                  <BlurInText
+                    offset={"launchpad".split(" ").length * 100}
+                    multiplier={50}
+                  >
+                    {subheading}
+                  </BlurInText>
                 </p>
                 <Link
-                  href={"mailto:topher@bessaapps.com"}
-                  title={formatTitle("")}
+                  href={bookingLink}
+                  target={"_blank"}
+                  rel={"noopener noreferrer"}
                 >
-                  <Button>Let&apos;s Talk!</Button>
+                  <Button
+                    size={"lg"}
+                    className={
+                      "opacity-0 animate-blur-in-fade-in cursor-pointer hover:scale-110"
+                    }
+                    style={{
+                      animationDelay: `${"launchpad".split(" ").length * 100 + subheading.split(" ").length * 50 + 1000}ms`
+                    }}
+                  >
+                    Start my Project!
+                  </Button>
                 </Link>
               </div>
             </div>
           </div>
-          <div className={"rounded-2xl overflow-hidden"}>
-            <Image src={Me} alt={formatTitle("")} />
+        </div>
+        <div className={"py-24 sm:py-32"}>
+          <div className={"grid sm:grid-cols-3 gap-4"}>
+            {articles.map((article: Post, index: number) =>
+              index === 1 ? (
+                <div key={index} className={"sm:col-span-2 sm:row-span-2"}>
+                  <ArticleCard article={article} />
+                </div>
+              ) : (
+                <ArticleCard key={index} article={article} />
+              )
+            )}
+          </div>
+        </div>
+        <div className={"py-24 sm:py-32"}>
+          <div className={"grid sm:grid-cols-3 gap-4"}>
+            <div />
+            <div className={"bg-card aspect-8/10 rounded-2xl"}>
+              <div className={"flex flex-col justify-between h-full p-4"}>
+                <h3 className={"text-4xl font-semibold text-primary"}>
+                  About the Author
+                </h3>
+                <div className={"flex flex-col gap-4"}>
+                  <p className={"text-primary"}>
+                    Specializing in custom application development, I help
+                    innovators and communities transform their bold ideas into
+                    impactful, cross-platform realities. I offer an empathetic,
+                    end-to-end process from concept to app store distribution.
+                  </p>
+                  <Link
+                    href={"mailto:topher@bessaapps.com"}
+                    title={formatTitle("")}
+                  >
+                    <Button>Let&apos;s Talk!</Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className={"rounded-2xl overflow-hidden"}>
+              <Image src={Me} alt={formatTitle("")} />
+            </div>
           </div>
         </div>
       </div>
