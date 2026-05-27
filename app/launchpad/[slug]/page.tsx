@@ -10,6 +10,8 @@ import BlurInText from "@/components/BlurInText";
 import dayjs from "dayjs";
 import Me from "@/assets/images/me.png";
 import { permanentRedirect } from "next/navigation";
+import { bookingLink } from "@/lib/constants";
+import { Button } from "@/components/ui/button";
 
 export async function generateMetadata({
   params
@@ -83,7 +85,14 @@ export default async function ArticlePage({
           <h1 className={"text-4xl sm:text-6xl font-bold"}>
             <BlurInText>{title}</BlurInText>
           </h1>
-          <div className={"flex items-center gap-4"}>
+          <div
+            className={
+              "flex items-center gap-4 opacity-0 animate-blur-in-fade-in "
+            }
+            style={{
+              animationDelay: `${100 + title.split(" ").length * 50 + 1000}ms`
+            }}
+          >
             <div className={"w-12 rounded-full aspect-square overflow-hidden"}>
               <Image src={Me} alt={"Author Profile Picture"} />
             </div>
@@ -98,6 +107,16 @@ export default async function ArticlePage({
                 min read
               </p>
             </div>
+            <Link
+              href={bookingLink}
+              target={"_blank"}
+              rel={"noopener noreferrer"}
+              className={"ml-auto"}
+            >
+              <Button size={"lg"} className={"cursor-pointer hover:scale-110"}>
+                Start my Project!
+              </Button>
+            </Link>
           </div>
         </div>
         <div className={"max-w-[1300] mx-auto pt-12 sm:pt-16 pb-12"}>
