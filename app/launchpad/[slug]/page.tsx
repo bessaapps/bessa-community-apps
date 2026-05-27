@@ -13,6 +13,7 @@ import { permanentRedirect } from "next/navigation";
 import { bookingLink, url } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import ShareButtons from "@/components/ShareButtons";
+import FAQ from "@/components/FAQ";
 
 export async function generateMetadata({
   params
@@ -148,6 +149,7 @@ export default async function ArticlePage({
         </div>
         <ServicesSection sectionHeading={"Services"} />
         <Process />
+        <FAQ />
       </div>
     </section>
   );

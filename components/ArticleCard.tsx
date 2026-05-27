@@ -24,7 +24,9 @@ export default function ArticleCard({ article }: { article: Post }) {
           sizes={"640px"}
         />
         <div
-          className={"absolute inset-0 bg-linear-to-b from-transparent to-card"}
+          className={
+            "absolute inset-0 bg-linear-to-b from-transparent to-background"
+          }
         />
         <div
           className={

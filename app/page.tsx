@@ -17,6 +17,7 @@ import ArticleCard from "@/components/ArticleCard";
 import Services from "@/components/Services";
 import Hero from "@/assets/images/hero.png";
 import FAQ from "@/components/FAQ";
+import { Card } from "@/components/ui/card";
 
 export default async function Home() {
   const heading =
@@ -241,22 +242,22 @@ export default async function Home() {
                     target={"_blank"}
                     rel={"noopener noreferrer"}
                   >
-                    <div className={"bg-card rounded-2xl overflow-hidden"}>
+                    <Card className={"border-0 rounded-2xl overflow-hidden"}>
                       <Image
                         src={image}
                         alt={formatTitle(name)}
                         className={"hover:scale-125 duration-200"}
                       />
-                    </div>
+                    </Card>
                   </Link>
                 ) : (
-                  <div className={"bg-card rounded-2xl overflow-hidden"}>
+                  <Card className={"border-0 rounded-2xl overflow-hidden"}>
                     <Image
                       src={image}
                       alt={formatTitle(name)}
                       className={"hover:scale-125 duration-200"}
                     />
-                  </div>
+                  </Card>
                 )}
                 <div className={"px-4"}>
                   <p className={"text-primary font-semibold"}>
@@ -336,7 +337,7 @@ export default async function Home() {
               <Link href={"/launchpad"} title={formatTitle("Launchpad")}>
                 <div
                   className={
-                    "bg-card aspect-square rounded-2xl overflow-hidden flex items-center justify-center"
+                    "aspect-square rounded-2xl overflow-hidden flex items-center justify-center"
                   }
                 >
                   <div

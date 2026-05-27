@@ -11,6 +11,7 @@ import { Service, WithContext } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
 import { permanentRedirect } from "next/navigation";
 import { Card } from "@/components/ui/card";
+import FAQ from "@/components/FAQ";
 
 export async function generateMetadata({
   params
@@ -113,6 +114,7 @@ export default async function ServicePage({
       </div>
       <ServicesSection sectionHeading={"More Services"} hiddenId={post.id} />
       <Process />
+      <FAQ />
     </section>
   );
 }
