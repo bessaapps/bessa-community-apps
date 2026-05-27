@@ -111,10 +111,10 @@ export default async function ServicePage({
             "flex flex-col gap-4 [&_strong]:text-muted-foreground [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-muted-foreground [&_a]:underline [&_ul]:list-disc [&_ul]:pl-8 [&_img]:rounded-2xl [&_blockquote]:italic [&_blockquote]:border-l-2 [&_blockquote]:sm:w-6/8 [&_blockquote]:pl-8"
           }
         />
+        <ServicesSection sectionHeading={"More Services"} hiddenId={post.id} />
+        <Process />
+        <FAQ />
       </div>
-      <ServicesSection sectionHeading={"More Services"} hiddenId={post.id} />
-      <Process />
-      <FAQ />
     </section>
   );
 }
