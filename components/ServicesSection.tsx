@@ -9,8 +9,10 @@ export default function ServicesSection({
   hiddenId?: number;
 }) {
   return (
-    <div className={"max-w-[1000] px-4 py-32 mx-auto"}>
-      <SectionHeading>{sectionHeading}</SectionHeading>
+    <div className={"my-32"}>
+      <div className={"px-4"}>
+        <SectionHeading>{sectionHeading}</SectionHeading>
+      </div>
       <Services hiddenId={hiddenId} />
     </div>
   );

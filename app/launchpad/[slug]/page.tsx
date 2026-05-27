@@ -71,11 +71,9 @@ export default async function ArticlePage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"px-4 mx-auto"}>
+      <div className={"max-w-[1300] px-4 mx-auto"}>
         <div
-          className={
-            "max-w-[800] mx-auto flex flex-col gap-4 px-4 pt-24 sm:pt-32 pb-12"
-          }
+          className={"max-w-[800] mx-auto flex flex-col gap-4 my-24 sm:my-32"}
         >
           <Link href={"/launchpad"}>
             <p className={"text-primary uppercase"}>
@@ -111,7 +109,7 @@ export default async function ArticlePage({
               href={bookingLink}
               target={"_blank"}
               rel={"noopener noreferrer"}
-              className={"ml-auto"}
+              className={"ml-auto my-8"}
             >
               <Button size={"lg"} className={"cursor-pointer hover:scale-110"}>
                 Start my Project!
@@ -119,7 +117,7 @@ export default async function ArticlePage({
             </Link>
           </div>
         </div>
-        <div className={"max-w-[1300] mx-auto pt-12 sm:pt-16 pb-12"}>
+        <div>
           <div className={"relative aspect-[1.4] rounded-2xl overflow-hidden"}>
             <Image
               src={post._embedded["wp:featuredmedia"][0].source_url}
@@ -129,17 +127,17 @@ export default async function ArticlePage({
             />
           </div>
         </div>
+        <div className={"max-w-[800] mx-auto py-32"}>
+          <div
+            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+            className={
+              "flex flex-col gap-4 [&_strong]:text-muted-foreground [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-muted-foreground [&_a]:underline [&_ul]:list-disc [&_ul]:pl-8 [&_img]:rounded-2xl [&_blockquote]:italic [&_blockquote]:border-l-2 [&_blockquote]:sm:w-6/8 [&_blockquote]:pl-8"
+            }
+          />
+        </div>
+        <ServicesSection sectionHeading={"Services"} />
+        <Process />
       </div>
-      <div className={"max-w-[800] px-4 mx-auto py-32"}>
-        <div
-          dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-          className={
-            "flex flex-col gap-4 [&_strong]:text-muted-foreground [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-muted-foreground [&_a]:underline [&_ul]:list-disc [&_ul]:pl-8 [&_img]:rounded-2xl [&_blockquote]:italic [&_blockquote]:border-l-2 [&_blockquote]:sm:w-6/8 [&_blockquote]:pl-8"
-          }
-        />
-      </div>
-      <ServicesSection sectionHeading={"Services"} />
-      <Process />
     </section>
   );
 }
