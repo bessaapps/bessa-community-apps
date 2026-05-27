@@ -4,14 +4,14 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { stripHtml } from "string-strip-html";
-import Process from "@/components/Process";
+import ProcessSection from "../../../components/ProcessSection";
 import ServicesSection from "@/components/ServicesSection";
 import { bookingLink } from "@/lib/constants";
 import { Service, WithContext } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
 import { permanentRedirect } from "next/navigation";
 import { Card } from "@/components/ui/card";
-import FAQ from "@/components/FAQ";
+import FAQSection from "../../../components/FAQSection";
 
 export async function generateMetadata({
   params
@@ -112,8 +112,8 @@ export default async function ServicePage({
           }
         />
         <ServicesSection sectionHeading={"More Services"} hiddenId={post.id} />
-        <Process />
-        <FAQ />
+        <ProcessSection />
+        <FAQSection />
       </div>
     </section>
   );

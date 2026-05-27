@@ -1,4 +1,4 @@
-export default function Process() {
+export default function ProcessSection() {
   const processes = [
     {
       heading: "Discovery",

@@ -8,7 +8,7 @@ import Image from "next/image";
 import { formatTitle } from "@/lib/helpers";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import axios from "axios";
-import Process from "@/components/Process";
+import ProcessSection from "../components/ProcessSection";
 import { Post } from "@/lib/definitions";
 import { bookingLink } from "@/lib/constants";
 import { Graph } from "schema-dts";
@@ -16,7 +16,7 @@ import BlurInText from "@/components/BlurInText";
 import ArticleCard from "@/components/ArticleCard";
 import Services from "@/components/Services";
 import Hero from "@/assets/images/hero.png";
-import FAQ from "@/components/FAQ";
+import FAQSection from "../components/FAQSection";
 import { Card } from "@/components/ui/card";
 
 export default async function Home() {
@@ -206,7 +206,7 @@ export default async function Home() {
           </div>
           <Services />
         </div>
-        <Process />
+        <ProcessSection />
         <div className={"py-32"} id={"works"}>
           <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
             <h2 className={"text-4xl font-bold"}>
@@ -318,7 +318,7 @@ export default async function Home() {
             </div>
           </div>
         </div>
-        <FAQ />
+        <FAQSection />
         {!!articles?.length && (
           <div className={"py-32"}>
             <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>

@@ -3,7 +3,7 @@ import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
 import { stripHtml } from "string-strip-html";
-import Process from "@/components/Process";
+import ProcessSection from "../../../components/ProcessSection";
 import ServicesSection from "@/components/ServicesSection";
 import { BlogPosting, WithContext } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
@@ -13,7 +13,7 @@ import { permanentRedirect } from "next/navigation";
 import { bookingLink, url } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import ShareButtons from "@/components/ShareButtons";
-import FAQ from "@/components/FAQ";
+import FAQSection from "../../../components/FAQSection";
 
 export async function generateMetadata({
   params
@@ -148,8 +148,8 @@ export default async function ArticlePage({
           </div>
         </div>
         <ServicesSection sectionHeading={"Services"} />
-        <Process />
-        <FAQ />
+        <ProcessSection />
+        <FAQSection />
       </div>
     </section>
   );

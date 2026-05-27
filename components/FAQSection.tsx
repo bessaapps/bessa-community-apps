@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { FAQPage, WithContext } from "schema-dts";
 
-export default function FAQ() {
+export default function FAQSection() {
   const jsonLd: WithContext<FAQPage> = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
