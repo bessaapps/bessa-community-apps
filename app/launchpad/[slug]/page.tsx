@@ -10,8 +10,9 @@ import BlurInText from "@/components/BlurInText";
 import dayjs from "dayjs";
 import Me from "@/assets/images/me.png";
 import { permanentRedirect } from "next/navigation";
-import { bookingLink } from "@/lib/constants";
+import { bookingLink, url } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
+import ShareButtons from "@/components/ShareButtons";
 
 export async function generateMetadata({
   params
@@ -116,6 +117,10 @@ export default async function ArticlePage({
               </Button>
             </Link>
           </div>
+          <ShareButtons
+            url={`${url}/launchpad/${post.slug}`}
+            title={post.title.rendered}
+          />
         </div>
         <div>
           <div className={"relative aspect-[1.4] rounded-2xl overflow-hidden"}>
