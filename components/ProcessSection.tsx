@@ -35,13 +35,7 @@ export default function ProcessSection() {
       <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
         <div>
           <div className={"flex items-center gap-4"}>
-            <h2
-              className={
-                "text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-foreground to-primary-foreground"
-              }
-            >
-              {process.heading}
-            </h2>
+            <h3 className={"text-3xl font-bold"}>{process.heading}</h3>
           </div>
         </div>
         <div className={"flex flex-col gap-6"}>

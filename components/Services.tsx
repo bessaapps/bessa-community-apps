@@ -1,10 +1,10 @@
 import { stripHtml } from "string-strip-html";
 import Link from "next/link";
-import { formatTitle } from "@/lib/helpers";
 import axios from "axios";
 import { Post } from "@/lib/definitions";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 export default async function Services({ hiddenId }: { hiddenId?: number }) {
   const services = await axios
@@ -12,21 +12,20 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
     .then((response) => response.data)
     .catch((error) => console.error(error));
 
+  const filteredServices = services.filter(
+    (service: Post) => service.id !== hiddenId
+  );
+
   if (!services?.length) return;
 
   return (
-    <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
-      {services
-        .filter((service: Post) => service.id !== hiddenId)
-        .map((service: Post) => {
+    <>
+      <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
+        {filteredServices.slice(0, 3).map((service: Post) => {
           const title = stripHtml(service.title.rendered).result;
 
           return (
-            <Link
-              key={service.id}
-              href={`/${service.slug}`}
-              title={formatTitle(title)}
-            >
+            <Link key={service.id} href={`/${service.slug}`} title={title}>
               <Card
                 className={
                   "border-0 relative w-full aspect-square rounded-2xl overflow-hidden"
@@ -55,6 +54,37 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
             </Link>
           );
         })}
-    </div>
+      </div>
+      <div className={"grid grid-cols-1 sm:grid-cols-2 gap-4"}>
+        <div />
+        <div>
+          <div className={"py-8"}>
+            {filteredServices
+              .slice(3, filteredServices.length)
+              .map((service: Post, index: number) => {
+                const title = stripHtml(service.title.rendered).result;
+
+                return (
+                  <>
+                    <Link
+                      key={service.id}
+                      href={`/${service.slug}`}
+                      title={title}
+                    >
+                      <p className={"text-primary font-semibold sm:w-3/4"}>
+                        {title}
+                      </p>
+                    </Link>
+                    {index !==
+                      filteredServices.slice(3, filteredServices.length)
+                        .length -
+                        1 && <Separator className={"my-4"} />}
+                  </>
+                );
+              })}
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
