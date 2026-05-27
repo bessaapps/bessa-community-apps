@@ -10,18 +10,13 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import axios from "axios";
 import Process from "@/components/Process";
 import { Post } from "@/lib/definitions";
-import { bookingLink, faqs } from "@/lib/constants";
+import { bookingLink } from "@/lib/constants";
 import { Graph } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
 import ArticleCard from "@/components/ArticleCard";
 import Services from "@/components/Services";
 import Hero from "@/assets/images/hero.png";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from "@/components/ui/accordion";
+import FAQ from "@/components/FAQ";
 
 export default async function Home() {
   const heading =
@@ -117,16 +112,6 @@ export default async function Home() {
             item: "https://bessaapps.com/launchpad"
           }
         ]
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: Object.entries(faqs).map(
-          ([key, value]: [string, string]) => ({
-            "@type": "Question",
-            name: key,
-            acceptedAnswer: { "@type": "Answer", text: value }
-          })
-        )
       }
     ]
   };
@@ -332,20 +317,7 @@ export default async function Home() {
             </div>
           </div>
         </div>
-        <div className={"py-32"}>
-          <div className={"mx-4"}>
-            <Accordion type={"multiple"}>
-              {Object.entries(faqs).map(
-                ([key, value]: [string, string], index: number) => (
-                  <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger>{key}</AccordionTrigger>
-                    <AccordionContent>{value}</AccordionContent>
-                  </AccordionItem>
-                )
-              )}
-            </Accordion>
-          </div>
-        </div>
+        <FAQ />
         {!!articles?.length && (
           <div className={"py-32"}>
             <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
