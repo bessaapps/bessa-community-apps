@@ -18,23 +18,23 @@ export default function ShareButtons({
 }) {
   return (
     <div className={"flex gap-2"}>
-      <RedditShareButton url={url} title={title}>
-        <Button size={"sm"} className={"cursor-pointer"}>
-          <BsReddit />
-        </Button>
-      </RedditShareButton>
-      <TwitterShareButton url={url} title={title}>
-        <Button size={"sm"} className={"cursor-pointer"}>
-          <BsTwitterX />
-        </Button>
-      </TwitterShareButton>
       <LinkedinShareButton url={url}>
-        <Button size={"sm"} className={"cursor-pointer"}>
+        <Button className={"cursor-pointer"}>
           <BsLinkedin />
         </Button>
       </LinkedinShareButton>
+      <TwitterShareButton url={url} title={title}>
+        <Button className={"cursor-pointer"}>
+          <BsTwitterX />
+        </Button>
+      </TwitterShareButton>
+      <RedditShareButton url={url} title={title}>
+        <Button className={"cursor-pointer"}>
+          <BsReddit />
+        </Button>
+      </RedditShareButton>
       <EmailShareButton url={url} subject={title}>
-        <Button size={"sm"} className={"cursor-pointer"}>
+        <Button className={"cursor-pointer"}>
           <BsSend />
         </Button>
       </EmailShareButton>

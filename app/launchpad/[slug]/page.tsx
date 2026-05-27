@@ -82,11 +82,13 @@ export default async function ArticlePage({
             </p>
           </Link>
           <h1 className={"text-4xl sm:text-6xl font-bold"}>
-            <BlurInText>{title}</BlurInText>
+            <BlurInText offset={100} multiplier={50}>
+              {title}
+            </BlurInText>
           </h1>
           <div
             className={
-              "flex items-center gap-4 opacity-0 animate-blur-in-fade-in "
+              "flex items-center gap-4 opacity-0 animate-blur-in-fade-in"
             }
             style={{
               animationDelay: `${100 + title.split(" ").length * 50 + 1000}ms`
@@ -117,10 +119,6 @@ export default async function ArticlePage({
               </Button>
             </Link>
           </div>
-          <ShareButtons
-            url={`${url}/launchpad/${post.slug}`}
-            title={post.title.rendered}
-          />
         </div>
         <div>
           <div className={"relative aspect-[1.4] rounded-2xl overflow-hidden"}>
@@ -133,12 +131,20 @@ export default async function ArticlePage({
           </div>
         </div>
         <div className={"max-w-[800] mx-auto py-32"}>
-          <div
-            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-            className={
-              "flex flex-col gap-4 [&_strong]:text-muted-foreground [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-muted-foreground [&_a]:underline [&_ul]:list-disc [&_ul]:pl-8 [&_img]:rounded-2xl [&_blockquote]:italic [&_blockquote]:border-l-2 [&_blockquote]:sm:w-6/8 [&_blockquote]:pl-8"
-            }
-          />
+          <div className={"flex flex-col gap-8"}>
+            <div
+              dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+              className={
+                "flex flex-col gap-4 [&_strong]:text-muted-foreground [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-muted-foreground [&_a]:underline [&_ul]:list-disc [&_ul]:pl-8 [&_img]:rounded-2xl [&_blockquote]:italic [&_blockquote]:border-l-2 [&_blockquote]:sm:w-6/8 [&_blockquote]:pl-8"
+              }
+            />
+            <div className={"flex justify-end"}>
+              <ShareButtons
+                url={`${url}/launchpad/${post.slug}`}
+                title={post.title.rendered}
+              />
+            </div>
+          </div>
         </div>
         <ServicesSection sectionHeading={"Services"} />
         <Process />
