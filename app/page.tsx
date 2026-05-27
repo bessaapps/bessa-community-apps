@@ -139,8 +139,8 @@ export default async function Home() {
           __html: JSON.stringify(graph).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"px-4 mx-auto"}>
-        <div className={"max-w-[1300] mx-auto px-4 pt-24 sm:pt-32 pb-12"}>
+      <div className={"max-w-[1300] px-4 mx-auto"}>
+        <div className={"py-24 sm:py-32"}>
           <div className={"flex flex-col gap-4 max-w-full"}>
             <h1
               className={
@@ -191,69 +191,80 @@ export default async function Home() {
           }
         />
       </div>
-      <div className={"max-w-[1300] px-4 pb-32 mx-auto"}>
-        <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
-          <h2 className={"text-4xl font-bold"}>
-            Your Partner for End-to-End Custom Mobile App Development Services
-          </h2>
-          <p>
-            Whether you are an innovator with a bold concept, an organization
-            seeking internal tools, or a community aiming to foster connection,
-            Bessa Community Apps provides the roadmap to move you past the
-            initial stage of feeling immobilized. I offer expert custom mobile
-            app development services that transform your vision into a
-            high-performance, cross-platform reality across iOS, Android, and
-            the web. By blending creativity with a logical, end-to-end process,
-            my custom application development ensures your project moves
-            seamlessly from ideation to successful app store distribution.{" "}
-            <Link
-              href={bookingLink}
-              target={"_blank"}
-              rel={"noopener noreferrer"}
-              className={"text-primary font-semibold"}
-            >
-              Start Here &rarr;
-            </Link>
-          </p>
+      <div className={"max-w-[1300] px-4 mx-auto"}>
+        <div className={"py-32"}>
+          <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
+            <h2 className={"text-4xl font-bold"}>
+              Your Partner for End-to-End Custom Mobile App Development Services
+            </h2>
+            <p>
+              Whether you are an innovator with a bold concept, an organization
+              seeking internal tools, or a community aiming to foster
+              connection, Bessa Community Apps provides the roadmap to move you
+              past the initial stage of feeling immobilized. I offer expert
+              custom mobile app development services that transform your vision
+              into a high-performance, cross-platform reality across iOS,
+              Android, and the web. By blending creativity with a logical,
+              end-to-end process, my custom application development ensures your
+              project moves seamlessly from ideation to successful app store
+              distribution.{" "}
+              <Link
+                href={bookingLink}
+                target={"_blank"}
+                rel={"noopener noreferrer"}
+                className={"text-primary font-semibold"}
+              >
+                Start Here &rarr;
+              </Link>
+            </p>
+          </div>
+          <Services />
         </div>
-        <Services />
-      </div>
-      <Process />
-      <div className={"max-w-[1300] px-4 py-32 mx-auto"} id={"works"}>
-        <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
-          <h2 className={"text-4xl font-bold"}>
-            Crafting the Future of Custom Application Development
-          </h2>
-          <p>
-            Every great project begins with a vision. Here&apos;s how I bridge
-            the gap between a bold idea and a functional reality. Through my
-            custom mobile app development services, I&apos;ve helped startups,
-            non-profits, and local communities overcome the hurdle of technical
-            complexity to launch high-performance, cross-platform tools. Here
-            are some highlights of my commitment to custom application
-            development that is not only modern and high-tech but also deeply
-            human-centered, providing the scalable digital infrastructure your
-            organization needs to grow and thrive.{" "}
-            <Link
-              href={bookingLink}
-              target={"_blank"}
-              rel={"noopener noreferrer"}
-              className={"text-primary font-semibold"}
-            >
-              Start Here &rarr;
-            </Link>
-          </p>
-        </div>
-        <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
-          {works.map(({ name, href, image, tags }, index: number) => (
-            <div key={index} className={"flex flex-col gap-4"}>
-              {href ? (
-                <Link
-                  href={href}
-                  title={name}
-                  target={"_blank"}
-                  rel={"noopener noreferrer"}
-                >
+        <Process />
+        <div className={"py-32"} id={"works"}>
+          <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
+            <h2 className={"text-4xl font-bold"}>
+              Crafting the Future of Custom Application Development
+            </h2>
+            <p>
+              Every great project begins with a vision. Here&apos;s how I bridge
+              the gap between a bold idea and a functional reality. Through my
+              custom mobile app development services, I&apos;ve helped startups,
+              non-profits, and local communities overcome the hurdle of
+              technical complexity to launch high-performance, cross-platform
+              tools. Here are some highlights of my commitment to custom
+              application development that is not only modern and high-tech but
+              also deeply human-centered, providing the scalable digital
+              infrastructure your organization needs to grow and thrive.{" "}
+              <Link
+                href={bookingLink}
+                target={"_blank"}
+                rel={"noopener noreferrer"}
+                className={"text-primary font-semibold"}
+              >
+                Start Here &rarr;
+              </Link>
+            </p>
+          </div>
+          <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
+            {works.map(({ name, href, image, tags }, index: number) => (
+              <div key={index} className={"flex flex-col gap-4"}>
+                {href ? (
+                  <Link
+                    href={href}
+                    title={name}
+                    target={"_blank"}
+                    rel={"noopener noreferrer"}
+                  >
+                    <div className={"bg-card rounded-2xl overflow-hidden"}>
+                      <Image
+                        src={image}
+                        alt={formatTitle(name)}
+                        className={"hover:scale-125 duration-200"}
+                      />
+                    </div>
+                  </Link>
+                ) : (
                   <div className={"bg-card rounded-2xl overflow-hidden"}>
                     <Image
                       src={image}
@@ -261,118 +272,115 @@ export default async function Home() {
                       className={"hover:scale-125 duration-200"}
                     />
                   </div>
-                </Link>
-              ) : (
-                <div className={"bg-card rounded-2xl overflow-hidden"}>
-                  <Image
-                    src={image}
-                    alt={formatTitle(name)}
-                    className={"hover:scale-125 duration-200"}
-                  />
+                )}
+                <div className={"px-4"}>
+                  <p className={"text-primary font-semibold"}>
+                    {href ? (
+                      <Link
+                        href={href}
+                        title={"AS/400 App"}
+                        target={"_blank"}
+                        rel={"noopener noreferrer"}
+                      >
+                        {name}
+                      </Link>
+                    ) : (
+                      name
+                    )}
+                  </p>
+                  <p>
+                    {tags.map((tag: string, index: number) => (
+                      <span key={index}>
+                        {tag}
+                        {index < tags.length - 1 && <span> &middot; </span>}
+                      </span>
+                    ))}
+                  </p>
                 </div>
-              )}
-              <div>
-                <p className={"text-primary font-semibold"}>
-                  {href ? (
-                    <Link
-                      href={href}
-                      title={"AS/400 App"}
-                      target={"_blank"}
-                      rel={"noopener noreferrer"}
-                    >
-                      {name}
-                    </Link>
-                  ) : (
-                    name
-                  )}
-                </p>
-                <p>
-                  {tags.map((tag: string, index: number) => (
-                    <span key={index}>
-                      {tag}
-                      {index < tags.length - 1 && <span> &middot; </span>}
-                    </span>
-                  ))}
-                </p>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className={"max-w-[1300] px-4 py-32 mx-auto"} id={"about"}>
-        <div className={"grid sm:grid-cols-3 gap-8 sm:gap-4 mb-8"}>
-          <div
-            className={"sm:col-span-2 flex flex-col gap-4 justify-center p-4"}
-          >
-            <h2 className={"text-4xl font-bold"}>I&apos;m Topher</h2>
-            <p>
-              <span className={"text-primary font-bold"}>
-                A passionate community builder.
-              </span>{" "}
-              Specializing in custom application development, I empower
-              innovators, organizations, and communities to transform their bold
-              ideas into impactful cross-platform solutions that function
-              seamlessly across iOS, Android, and the web. My end-to-end process
-              guides you confidently from initial ideation all the way to
-              launch.
-            </p>
-            <Link href={"mailto:topher@bessaapps.com"} title={formatTitle("")}>
-              <Button className={"cursor-pointer hover:scale-110"}>
-                Let&apos;s Talk!
-              </Button>
-            </Link>
-          </div>
-          <div className={"rounded-2xl overflow-hidden"}>
-            <Image src={Me} alt={formatTitle("")} />
-          </div>
-        </div>
-      </div>
-      <div className={"max-w-[1300] px-4 py-32 mx-auto"}>
-        <Accordion type={"multiple"}>
-          {Object.entries(faqs).map(
-            ([key, value]: [string, string], index: number) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger>{key}</AccordionTrigger>
-                <AccordionContent>{value}</AccordionContent>
-              </AccordionItem>
-            )
-          )}
-        </Accordion>
-      </div>
-      {!!articles?.length && (
-        <div className={"max-w-[1300] flex flex-col gap-4 px-4 py-32 mx-auto"}>
-          <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
-            <h2 className={"text-4xl font-bold"}>Launchpad</h2>
-            <p>
-              Designed for innovators and organizations stuck in the ideation
-              stage, Launchpad provides the clear path you need to move past
-              uncertainty. It&apos;s time to stop dreaming and start launching
-              your custom cross-platform solution.
-            </p>
-          </div>
-          <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
-            {articles.map((article: Post) => (
-              <ArticleCard key={article.id} article={article} />
             ))}
-            <Link href={"/launchpad"} title={formatTitle("Launchpad")}>
-              <div
-                className={
-                  "bg-card aspect-square rounded-2xl overflow-hidden flex items-center justify-center"
-                }
+          </div>
+        </div>
+        <div className={"py-32"} id={"about"}>
+          <div className={"grid sm:grid-cols-3 gap-8 sm:gap-4 mb-8"}>
+            <div
+              className={"sm:col-span-2 flex flex-col gap-4 justify-center p-4"}
+            >
+              <h2 className={"text-4xl font-bold"}>I&apos;m Topher</h2>
+              <p>
+                <span className={"text-primary font-bold"}>
+                  A passionate community builder.
+                </span>{" "}
+                Specializing in custom application development, I empower
+                innovators, organizations, and communities to transform their
+                bold ideas into impactful cross-platform solutions that function
+                seamlessly across iOS, Android, and the web. My end-to-end
+                process guides you confidently from initial ideation all the way
+                to launch.
+              </p>
+              <Link
+                href={"mailto:topher@bessaapps.com"}
+                title={formatTitle("")}
               >
+                <Button className={"cursor-pointer hover:scale-110"}>
+                  Let&apos;s Talk!
+                </Button>
+              </Link>
+            </div>
+            <div className={"rounded-2xl overflow-hidden"}>
+              <Image src={Me} alt={formatTitle("")} />
+            </div>
+          </div>
+        </div>
+        <div className={"py-32"}>
+          <div className={"mx-4"}>
+            <Accordion type={"multiple"}>
+              {Object.entries(faqs).map(
+                ([key, value]: [string, string], index: number) => (
+                  <AccordionItem key={index} value={`item-${index}`}>
+                    <AccordionTrigger>{key}</AccordionTrigger>
+                    <AccordionContent>{value}</AccordionContent>
+                  </AccordionItem>
+                )
+              )}
+            </Accordion>
+          </div>
+        </div>
+        {!!articles?.length && (
+          <div className={"py-32"}>
+            <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
+              <h2 className={"text-4xl font-bold"}>Launchpad</h2>
+              <p>
+                Designed for innovators and organizations stuck in the ideation
+                stage, Launchpad provides the clear path you need to move past
+                uncertainty. It&apos;s time to stop dreaming and start launching
+                your custom cross-platform solution.
+              </p>
+            </div>
+            <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
+              {articles.map((article: Post) => (
+                <ArticleCard key={article.id} article={article} />
+              ))}
+              <Link href={"/launchpad"} title={formatTitle("Launchpad")}>
                 <div
                   className={
-                    "flex items-center gap-4 text-primary font-semibold"
+                    "bg-card aspect-square rounded-2xl overflow-hidden flex items-center justify-center"
                   }
                 >
-                  <p>See All Articles</p>
-                  <AiOutlineArrowRight className={"text-3xl"} />
+                  <div
+                    className={
+                      "flex items-center gap-4 text-primary font-semibold"
+                    }
+                  >
+                    <p>See All Articles</p>
+                    <AiOutlineArrowRight className={"text-3xl"} />
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </section>
   );
 }

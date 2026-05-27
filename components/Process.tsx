@@ -31,19 +31,13 @@ export default function Process() {
   ];
 
   return processes?.map((process, index) => (
-    <div key={index} className={"max-w-[1000] px-4 py-8 mx-auto"}>
+    <div key={index} className={"py-8"}>
       <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
         <div>
           <div className={"flex items-center gap-4"}>
-            <span
-              className={"text-4xl"}
-              style={{ color: `var(--chart-${index + 1})` }}
-            >
-              &middot;
-            </span>
             <h2
               className={
-                "text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-foreground to-primary-foreground"
+                "text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-foreground to-primary-foreground"
               }
             >
               {process.heading}

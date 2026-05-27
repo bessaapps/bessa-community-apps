@@ -12,7 +12,7 @@ export default function CTA() {
           "bg-primary flex grow items-center justify-center rounded-2xl"
         }
       >
-        <div className={"max-w-[1300] py-16 sm:py-32 px-4"}>
+        <div className={"max-w-[1300] py-16 sm:py-32 px-4 sm:px-8"}>
           <div
             className={
               "text-background text-4xl sm:text-6xl leading-[1.2] mb-4"

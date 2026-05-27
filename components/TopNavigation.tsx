@@ -11,41 +11,44 @@ export default function TopNavigation() {
   ];
 
   return (
-    <div
-      className={
-        "w-full fixed top-0 z-10 border-b-[1] border-b-accent backdrop-filter backdrop-blur"
-      }
-    >
-      <div className={"w-full max-w-[1300] px-4 py-2 mx-auto"}>
-        <div className={"flex items-center justify-between gap-8"}>
-          <Link href={"/"} title={formatTitle("")}>
-            <div className={"w-12"}>
-              <Image
-                src={Logo}
-                alt={formatTitle("")}
-                className={"object-fill"}
-              />
-            </div>
-          </Link>
-          <nav>
-            <ul className={"flex gap-4"}>
-              {links.map(
-                ({ href, anchor }: { href: string; anchor: string }) => (
-                  <li key={href}>
-                    <Link
-                      href={href}
-                      title={formatTitle(anchor)}
-                      className={"text-primary font-bold hover:underline"}
-                    >
-                      {anchor}
-                    </Link>
-                  </li>
-                )
-              )}
-            </ul>
-          </nav>
+    <>
+      <div
+        className={
+          "w-full fixed top-0 z-10 border-b-[1] border-b-accent backdrop-filter backdrop-blur"
+        }
+      >
+        <div className={"w-full max-w-[1300] px-4 py-2 mx-auto"}>
+          <div className={"flex items-center justify-between gap-8"}>
+            <Link href={"/"} title={formatTitle("")}>
+              <div className={"w-12"}>
+                <Image
+                  src={Logo}
+                  alt={formatTitle("")}
+                  className={"object-fill"}
+                />
+              </div>
+            </Link>
+            <nav>
+              <ul className={"flex gap-4"}>
+                {links.map(
+                  ({ href, anchor }: { href: string; anchor: string }) => (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        title={formatTitle(anchor)}
+                        className={"text-primary font-bold hover:underline"}
+                      >
+                        {anchor}
+                      </Link>
+                    </li>
+                  )
+                )}
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
-    </div>
+      <div className={"h-16.25"} />
+    </>
   );
 }
