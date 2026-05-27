@@ -8,11 +8,7 @@ export default function ArticleCard({ article }: { article: Post }) {
   const title = stripHtml(article.title.rendered).result;
 
   return (
-    <Link
-      key={article.id}
-      href={`/launchpad/${article.slug}`}
-      title={formatTitle(title)}
-    >
+    <Link key={article.id} href={`/launchpad/${article.slug}`} title={title}>
       <div
         className={"relative w-full aspect-square rounded-2xl overflow-hidden"}
       >
