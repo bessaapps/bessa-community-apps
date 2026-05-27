@@ -4,6 +4,7 @@ import { formatTitle } from "@/lib/helpers";
 import axios from "axios";
 import { Post } from "@/lib/definitions";
 import Image from "next/image";
+import { Card } from "@/components/ui/card";
 
 export default async function Services({ hiddenId }: { hiddenId?: number }) {
   const services = await axios
@@ -26,9 +27,9 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
               href={`/${service.slug}`}
               title={formatTitle(title)}
             >
-              <div
+              <Card
                 className={
-                  "relative w-full aspect-square rounded-2xl overflow-hidden"
+                  "border-0 relative w-full aspect-square rounded-2xl overflow-hidden"
                 }
               >
                 <Image
@@ -38,7 +39,7 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
                 />
                 <div
                   className={
-                    "absolute inset-0 bg-linear-to-b from-transparent to-card"
+                    "absolute inset-0 bg-linear-to-b from-transparent to-background"
                   }
                 />
                 <div
@@ -50,7 +51,7 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
                     {title}
                   </p>
                 </div>
-              </div>
+              </Card>
             </Link>
           );
         })}
