@@ -3,7 +3,6 @@ import Link from "next/link";
 import axios from "axios";
 import { Post } from "@/lib/definitions";
 import Image from "next/image";
-import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
 export default async function Services({ hiddenId }: { hiddenId?: number }) {
@@ -26,9 +25,9 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
 
           return (
             <Link key={service.id} href={`/${service.slug}`} title={title}>
-              <Card
+              <div
                 className={
-                  "border-0 relative w-full aspect-square rounded-2xl overflow-hidden"
+                  "relative w-full aspect-square rounded-2xl overflow-hidden"
                 }
               >
                 <Image
@@ -50,7 +49,7 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
                     {title}
                   </p>
                 </div>
-              </Card>
+              </div>
             </Link>
           );
         })}

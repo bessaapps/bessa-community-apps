@@ -14,7 +14,6 @@ import { bookingLink, url } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import ShareButtons from "@/components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";
-import { Card } from "@/components/ui/card";
 
 export async function generateMetadata({
   params
@@ -123,18 +122,14 @@ export default async function ArticlePage({
           </div>
         </div>
         <div>
-          <Card
-            className={
-              "relative border-0 aspect-[1.4] rounded-2xl overflow-hidden"
-            }
-          >
+          <div className={"relative aspect-[1.4] rounded-2xl overflow-hidden"}>
             <Image
               src={post._embedded["wp:featuredmedia"][0].source_url}
               alt={post._embedded["wp:featuredmedia"][0].alt_text}
               fill
               className={"object-cover"}
             />
-          </Card>
+          </div>
         </div>
         <div className={"max-w-[800] mx-auto py-32"}>
           <div className={"flex flex-col gap-8"}>
