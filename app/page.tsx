@@ -17,7 +17,6 @@ import ArticleCard from "@/components/ArticleCard";
 import Services from "@/components/Services";
 import Hero from "@/assets/images/hero.png";
 import FAQSection from "../components/FAQSection";
-import { Card } from "@/components/ui/card";
 
 export default async function Home() {
   const heading =
@@ -242,22 +241,22 @@ export default async function Home() {
                     target={"_blank"}
                     rel={"noopener noreferrer"}
                   >
-                    <Card className={"border-0 rounded-2xl overflow-hidden"}>
+                    <div className={"bg-card rounded-2xl overflow-hidden"}>
                       <Image
                         src={image}
                         alt={formatTitle(name)}
                         className={"hover:scale-125 duration-200"}
                       />
-                    </Card>
+                    </div>
                   </Link>
                 ) : (
-                  <Card className={"border-0 rounded-2xl overflow-hidden"}>
+                  <div className={"bg-card rounded-2xl overflow-hidden"}>
                     <Image
                       src={image}
                       alt={formatTitle(name)}
                       className={"hover:scale-125 duration-200"}
                     />
-                  </Card>
+                  </div>
                 )}
                 <div className={"px-4"}>
                   <p className={"text-primary font-semibold"}>

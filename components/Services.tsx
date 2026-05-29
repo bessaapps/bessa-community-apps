@@ -65,7 +65,7 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
                 const title = stripHtml(service.title.rendered).result;
 
                 return (
-                  <>
+                  <div key={index}>
                     <Link
                       key={service.id}
                       href={`/${service.slug}`}
@@ -79,7 +79,7 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
                       filteredServices.slice(3, filteredServices.length)
                         .length -
                         1 && <Separator className={"my-4"} />}
-                  </>
+                  </div>
                 );
               })}
           </div>
