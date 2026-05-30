@@ -77,7 +77,7 @@ export default async function ArticlePage({
         <div
           className={"max-w-[800] mx-auto flex flex-col gap-4 my-24 sm:my-32"}
         >
-          <Link href={"/launchpad"}>
+          <Link href={"/launchpad"} title={"Launchpad - Bessa Community Apps"}>
             <p className={"text-primary uppercase"}>
               <BlurInText>Launchpad</BlurInText>
             </p>
