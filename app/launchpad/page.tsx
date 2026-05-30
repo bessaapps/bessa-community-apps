@@ -19,7 +19,7 @@ export const metadata = formatMetadata({
 
 export default async function Launchpad() {
   const subheading =
-    "Your go-to blog for turning bold ideas into impactful digital products through expert custom application development. Whether you are an innovator or an organization, I provide the clear, non-intimidating path forward you needto stop dreaming and start launching.";
+    "Your go-to blog for turning bold ideas into impactful digital products through expert custom application development. Whether you are an innovator or an organization, I provide the clear, non-intimidating path forward you need to stop dreaming and start launching.";
 
   const articles = await axios
     .get(
@@ -31,10 +31,12 @@ export default async function Launchpad() {
   const jsonLd: WithContext<Blog> = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    headline: "Launchpad",
-    description:
-      "Stop dreaming; start launching. The Launchpad blog helps innovators move past feeling immobilized with custom application development and a clear path forward.",
+    name: "Launchpad",
     url: `${url}/launchpad`,
+    description:
+      "Stop dreaming, start launching. I guide innovators and organizations through custom app development with a clear, non-intimidating path to digital success.",
+    about:
+      "Custom application development, cross-platform mobile apps, digital product ideation, and app distribution strategies for innovators and organizations.",
     publisher: {
       "@type": "Organization",
       name: "Bessa Community Apps",
@@ -42,7 +44,8 @@ export default async function Launchpad() {
         "@type": "ImageObject",
         url: `${url}/logo.png`
       }
-    }
+    },
+    inLanguage: "en-US"
   };
 
   return (
