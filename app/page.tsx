@@ -5,7 +5,6 @@ import Work2 from "@/assets/images/mockups/work-2.png";
 import Work3 from "@/assets/images/mockups/work-3.png";
 import Me from "@/assets/images/me.png";
 import Image from "next/image";
-import { formatTitle } from "@/lib/helpers";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import axios from "axios";
 import ProcessSection from "../components/ProcessSection";
@@ -309,10 +308,7 @@ export default async function Home() {
                 process guides you confidently from initial ideation all the way
                 to launch.
               </p>
-              <Link
-                href={"mailto:topher@bessaapps.com"}
-                title={formatTitle("")}
-              >
+              <Link href={"mailto:topher@bessaapps.com"}>
                 <Button className={"cursor-pointer hover:scale-110"}>
                   Let&apos;s Talk!
                 </Button>
@@ -344,7 +340,10 @@ export default async function Home() {
               {articles.map((article: Post) => (
                 <ArticleCard key={article.id} article={article} />
               ))}
-              <Link href={"/launchpad"} title={formatTitle("Launchpad")}>
+              <Link
+                href={"/launchpad"}
+                title={"Launchpad: The App Builder's Guide"}
+              >
                 <div
                   className={
                     "aspect-square rounded-2xl overflow-hidden flex items-center justify-center"

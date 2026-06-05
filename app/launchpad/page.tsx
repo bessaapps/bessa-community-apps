@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Me from "@/assets/images/me.png";
 import Image from "next/image";
-import { formatMetadata, formatTitle } from "@/lib/helpers";
+import { formatMetadata } from "@/lib/helpers";
 import axios from "axios";
 import { Post } from "@/lib/definitions";
 import BlurInText from "@/components/BlurInText";
@@ -11,7 +11,7 @@ import { Blog, WithContext } from "schema-dts";
 import { bookingLink, url } from "@/lib/constants";
 
 export const metadata = formatMetadata({
-  metadataTitle: formatTitle("Launchpad"),
+  metadataTitle: "Launchpad: The App Builder's Guide",
   metadataDescription:
     "Stop dreaming; start launching. The Launchpad blog helps innovators move past feeling immobilized with custom application development and a clear path forward.",
   path: "https://bessaapps.com/launchpad"
@@ -125,10 +125,7 @@ export default async function Launchpad() {
                     impactful, cross-platform realities. I offer an empathetic,
                     end-to-end process from concept to app store distribution.
                   </p>
-                  <Link
-                    href={"mailto:topher@bessaapps.com"}
-                    title={formatTitle("")}
-                  >
+                  <Link href={"mailto:topher@bessaapps.com"}>
                     <Button>Let&apos;s Talk!</Button>
                   </Link>
                 </div>

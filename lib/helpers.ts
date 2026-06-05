@@ -1,7 +1,4 @@
-import { keyword, title, url } from "@/lib/constants";
-
-export const formatTitle = (pageTitle: string) =>
-  `${pageTitle || keyword} - ${title}`;
+import { title, url } from "@/lib/constants";
 
 export const formatMetadata = ({
   metadataTitle,

@@ -1,7 +1,7 @@
 import Logo from "@/assets/images/logo.png";
 import Image from "next/image";
-import { formatTitle } from "@/lib/helpers";
 import Link from "next/link";
+import { keyword, title } from "@/lib/constants";
 
 export default function TopNavigation() {
   const links = [
@@ -19,7 +19,7 @@ export default function TopNavigation() {
       >
         <div className={"w-full max-w-[1300] px-4 py-2 mx-auto"}>
           <div className={"flex items-center justify-between gap-8"}>
-            <Link href={"/"} title={formatTitle("")}>
+            <Link href={"/"} title={`${keyword} - ${title}`}>
               <div className={"w-12"}>
                 <Image
                   src={Logo}
@@ -37,7 +37,7 @@ export default function TopNavigation() {
                     <li key={href}>
                       <Link
                         href={href}
-                        title={formatTitle(anchor)}
+                        title={anchor}
                         className={"text-primary font-bold hover:underline"}
                       >
                         {anchor}

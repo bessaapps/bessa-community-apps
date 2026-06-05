@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { formatTitle } from "@/lib/helpers";
 import { Button } from "@/components/ui/button";
 import { BsGithub, BsLinkedin, BsTwitterX } from "react-icons/bs";
-import { bookingLink } from "@/lib/constants";
+import { bookingLink, keyword, title } from "@/lib/constants";
 
 export default function CTA() {
   return (
@@ -66,7 +65,7 @@ export default function CTA() {
           </div>
           <p className={"text-sm text-right accent-muted"}>
             &copy; Copyright{" "}
-            <Link href={"/"} title={formatTitle("")}>
+            <Link href={"/"} title={`${keyword} - ${title}`}>
               Bessa Community Apps, LLC
             </Link>
           </p>

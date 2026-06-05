@@ -1,7 +1,7 @@
 import "./globals.css";
 import CTA from "@/components/CTA";
-import { formatMetadata, formatTitle } from "@/lib/helpers";
-import { description, url } from "@/lib/constants";
+import { formatMetadata } from "@/lib/helpers";
+import { description, keyword, title, url } from "@/lib/constants";
 import { Space_Grotesk, Inter } from "next/font/google";
 import Clock from "@/components/Clock";
 import Weather from "@/components/Weather";
@@ -13,7 +13,7 @@ const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk" });
 const inter = Inter({ variable: "--font-inter" });
 
 export const metadata = formatMetadata({
-  metadataTitle: formatTitle(""),
+  metadataTitle: `${keyword} - ${title}`,
   metadataDescription: description,
   path: url
 });
