@@ -169,7 +169,13 @@ export default async function Home() {
           animationDelay: `${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 2000}ms`
         }}
       >
-        <Image src={Hero} alt={formatTitle("")} fill />
+        <Image
+          src={Hero}
+          alt={
+            "3D Apple App Store and Google Play Store icons on a dark background, representing custom mobile app development services for iOS and Android."
+          }
+          fill
+        />
         <div
           className={
             "absolute inset-0 bg-linear-to-t from-background to-transparent"
@@ -244,7 +250,7 @@ export default async function Home() {
                     <div className={"bg-card rounded-2xl overflow-hidden"}>
                       <Image
                         src={image}
-                        alt={formatTitle(name)}
+                        alt={name}
                         className={"hover:scale-125 duration-200"}
                       />
                     </div>
@@ -253,7 +259,7 @@ export default async function Home() {
                   <div className={"bg-card rounded-2xl overflow-hidden"}>
                     <Image
                       src={image}
-                      alt={formatTitle(name)}
+                      alt={name}
                       className={"hover:scale-125 duration-200"}
                     />
                   </div>
@@ -313,7 +319,12 @@ export default async function Home() {
               </Link>
             </div>
             <div className={"rounded-2xl overflow-hidden"}>
-              <Image src={Me} alt={formatTitle("")} />
+              <Image
+                src={Me}
+                alt={
+                  "Headshot of a smiling developer with glasses and a mustache, an expert providing custom mobile app development services."
+                }
+              />
             </div>
           </div>
         </div>
