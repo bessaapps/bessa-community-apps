@@ -96,7 +96,12 @@ export default async function ArticlePage({
             }}
           >
             <div className={"w-12 rounded-full aspect-square overflow-hidden"}>
-              <Image src={Me} alt={"Author Profile Picture"} />
+              <Image
+                src={Me}
+                alt={
+                  "Headshot of a smiling developer with glasses and a mustache, an expert providing custom mobile app development services."
+                }
+              />
             </div>
             <div>
               <p className={"text-primary font-bold"}>Topher</p>

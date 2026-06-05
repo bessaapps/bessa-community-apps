@@ -1,4 +1,3 @@
-import { formatTitle } from "@/lib/helpers";
 import Link from "next/link";
 import { Post } from "@/lib/definitions";
 import { stripHtml } from "string-strip-html";
@@ -14,7 +13,7 @@ export default function ArticleCard({ article }: { article: Post }) {
       >
         <Image
           src={article?._embedded?.["wp:featuredmedia"]?.[0]?.source_url}
-          alt={formatTitle(title)}
+          alt={article?._embedded?.["wp:featuredmedia"]?.[0]?.alt_text}
           fill
           style={{ objectFit: "cover" }}
           sizes={"640px"}

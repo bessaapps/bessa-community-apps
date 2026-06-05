@@ -135,7 +135,12 @@ export default async function Launchpad() {
               </div>
             </div>
             <div className={"rounded-2xl overflow-hidden"}>
-              <Image src={Me} alt={formatTitle("")} />
+              <Image
+                src={Me}
+                alt={
+                  "Headshot of a smiling developer with glasses and a mustache, an expert providing custom mobile app development services."
+                }
+              />
             </div>
           </div>
         </div>
