@@ -9,7 +9,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import axios from "axios";
 import ProcessSection from "../components/ProcessSection";
 import { Post } from "@/lib/definitions";
-import { bookingLink } from "@/lib/constants";
+import { bookingLink, title } from "@/lib/constants";
 import { Graph } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
 import ArticleCard from "@/components/ArticleCard";
@@ -18,10 +18,8 @@ import Hero from "@/assets/images/hero.png";
 import FAQSection from "../components/FAQSection";
 
 export default async function Home() {
-  const heading =
-    "Custom Application Development for Innovators & Organizations";
   const subheading =
-    "Your app idea is great. Now what? I provide custom application development services that transform bold concepts into powerful cross-platform solutions for startups, organizations, and communities.";
+    "Partnering with forward-thinking innovators, organizations, and communities to build cross-platform apps that drive real-world change. And, specializing in end-to-end engineering solutions designed for maximum impact.";
 
   const works = [
     {
@@ -127,15 +125,13 @@ export default async function Home() {
         <div className={"py-24 sm:py-32"}>
           <div className={"flex flex-col gap-4 max-w-full"}>
             <h1
-              className={
-                "text-5xl sm:text-7xl font-bold leading-[1.1] sm:max-w-[75%]"
-              }
+              className={"text-5xl font-bold leading-[1.1] sm:max-w-[66.66%]"}
             >
-              <BlurInText>{heading}</BlurInText>
+              <BlurInText>{title}</BlurInText>
             </h1>
-            <p className={"text-xl sm:max-w-[50%] mb-8"}>
+            <p className={"text-xl sm:max-w-[66.66%] mb-8"}>
               <BlurInText
-                offset={heading.split(" ").length * 100}
+                offset={title.split(" ").length * 100}
                 multiplier={50}
               >
                 {subheading}
@@ -152,7 +148,7 @@ export default async function Home() {
                   "opacity-0 animate-blur-in-fade-in cursor-pointer hover:scale-110"
                 }
                 style={{
-                  animationDelay: `${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 1000}ms`
+                  animationDelay: `${title.split(" ").length * 100 + subheading.split(" ").length * 50 + 1000}ms`
                 }}
               >
                 Start my Project!
@@ -165,7 +161,7 @@ export default async function Home() {
         className={"opacity-0 animate-blur-in-fade-in relative "}
         style={{
           aspectRatio: 4987 / 2528,
-          animationDelay: `${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 2000}ms`
+          animationDelay: `${title.split(" ").length * 100 + subheading.split(" ").length * 50 + 2000}ms`
         }}
       >
         <Image
