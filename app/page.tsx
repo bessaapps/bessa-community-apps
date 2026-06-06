@@ -19,7 +19,7 @@ import FAQSection from "../components/FAQSection";
 
 export default async function Home() {
   const subheading =
-    "Partnering with forward-thinking innovators, organizations, and communities to build cross-platform apps that drive real-world change. And, specializing in end-to-end engineering solutions designed for maximum impact.";
+    "Partnering with forward-thinking innovators, organizations, and communities through expert mobile development and consulting to build cross-platform apps that drive real-world change. Specializing in end-to-end engineering solutions designed for maximum impact.";
 
   const works = [
     {
@@ -181,19 +181,20 @@ export default async function Home() {
         <div className={"py-32"}>
           <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
             <h2 className={"text-4xl font-bold"}>
-              Your Partner for End-to-End Custom Mobile App Development Services
+              Comprehensive Mobile Development and Consulting Services{" "}
             </h2>
             <p>
-              Whether you are an innovator with a bold concept, an organization
-              seeking internal tools, or a community aiming to foster
-              connection, Bessa Community Apps provides the roadmap to move you
-              past the initial stage of feeling immobilized. I offer expert
-              custom mobile app development services that transform your vision
-              into a high-performance, cross-platform reality across iOS,
-              Android, and the web. By blending creativity with a logical,
-              end-to-end process, my custom application development ensures your
-              project moves seamlessly from ideation to successful app store
-              distribution.{" "}
+              Through comprehensive mobile development and consulting, I guide
+              your project through every stage of the software lifecycle. The
+              foundation is robust, cross-platform app development, engineered
+              to deliver flawless performance across iOS and Android devices. To
+              ensure a successful market entry, I manage the technical
+              intricacies of app store publishing, seamlessly navigating both
+              Apple and Google review guidelines to get your product live.
+              Post-launch, I provide data-driven app marketing strategies to
+              accelerate user acquisition and visibility, alongside continuous
+              app maintenance to guarantee long-term security, smooth feature
+              updates, and optimal scaling as your user base grows.{" "}
               <Link
                 href={bookingLink}
                 target={"_blank"}
@@ -213,15 +214,13 @@ export default async function Home() {
               Crafting the Future of Custom Application Development
             </h2>
             <p>
-              Every great project begins with a vision. Here&apos;s how I bridge
-              the gap between a bold idea and a functional reality. Through my
-              custom mobile app development services, I&apos;ve helped startups,
-              non-profits, and local communities overcome the hurdle of
-              technical complexity to launch high-performance, cross-platform
-              tools. Here are some highlights of my commitment to custom
-              application development that is not only modern and high-tech but
-              also deeply human-centered, providing the scalable digital
-              infrastructure your organization needs to grow and thrive.{" "}
+              Through comprehensive mobile development and consulting, I've
+              helped startups, non-profits, and local communities overcome the
+              hurdle of technical complexity to launch high-performance,
+              cross-platform tools. Here are some highlights of my commitment to
+              custom application development that is not only modern and
+              high-tech but also deeply human-centered, providing the scalable
+              digital infrastructure your organization needs to grow and thrive.{" "}
               <Link
                 href={bookingLink}
                 target={"_blank"}
@@ -297,12 +296,15 @@ export default async function Home() {
                 <span className={"text-primary font-bold"}>
                   A passionate community builder.
                 </span>{" "}
-                Specializing in custom application development, I empower
-                innovators, organizations, and communities to transform their
-                bold ideas into impactful cross-platform solutions that function
-                seamlessly across iOS, Android, and the web. My end-to-end
-                process guides you confidently from initial ideation all the way
-                to launch.
+                As a software engineer, my work goes beyond just writing code;
+                it is about fostering connection. I specialize in impactful,
+                cross-platform mobile development and consulting because I am
+                deeply passionate about building digital spaces that bring
+                people together. Whether I&apos;m partnering with local
+                grassroots organizations or global innovators, my goal is to
+                deliver end-to-end solutions that do not just function
+                flawlessly, but actually empower, engage, and uplift the
+                communities they serve.
               </p>
               <Link href={"mailto:topher@bessaapps.com"}>
                 <Button className={"cursor-pointer hover:scale-110"}>
