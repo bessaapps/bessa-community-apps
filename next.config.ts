@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const urls = {
+  "/mobile-app-development": "/cross-platform-app-development",
+  "/launchpad/custom-mobile-app-development-for-startups": "/launchpad",
   "/articles/more-than-a-group-chat-why-custom-mobile-app-development-empowers-communities":
     "/launchpad",
   "/articles/why-custom-mobile-apps-are-the-secret-to-empowering-modern-communities":
