@@ -5,6 +5,7 @@ import Image from "next/image";
 
 export default function ArticleCard({ article }: { article: Post }) {
   const title = stripHtml(article.title.rendered).result;
+  const excerpt = stripHtml(article.excerpt.rendered).result;
 
   return (
     <Link key={article.id} href={`/launchpad/${article.slug}`} title={title}>
@@ -29,6 +30,7 @@ export default function ArticleCard({ article }: { article: Post }) {
           }
         >
           <p className={"text-primary font-semibold"}>{title}</p>
+          <p className={"line-clamp-2"}>{excerpt}</p>
         </div>
       </div>
     </Link>
