@@ -39,7 +39,11 @@ export default function TopNavigation() {
         }
       >
         <div className={"w-full max-w-[1300] px-4 py-2 mx-auto"}>
-          <div className={"flex items-center justify-between gap-8"}>
+          <div
+            className={
+              "flex items-center justify-between sm:justify-start gap-8"
+            }
+          >
             <Link href={"/"} title={`${keyword} - ${title}`}>
               <div className={"w-12"}>
                 <Image
