@@ -5,7 +5,7 @@ import { description, title, url } from "@/lib/constants";
 import { Space_Grotesk, Inter } from "next/font/google";
 import Clock from "@/components/Clock";
 import Weather from "@/components/Weather";
-import TopNavigation from "@/components/TopNavigation";
+import TopNavigation from "../components/navigation/TopNavigation";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk" });

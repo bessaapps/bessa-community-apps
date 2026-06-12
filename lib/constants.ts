@@ -6,6 +6,13 @@ export const description =
 
 export const bookingLink = "https://calendar.app.google/uGBwb7WfWXLUgSU6A";
 
+export const LINKS = [
+  { href: "/#works", anchor: "Works" },
+  { href: "/#about", anchor: "About" },
+  { href: "/#contact", anchor: "Contact" },
+  { href: "/launchpad", anchor: "Blog" }
+];
+
 export const faqs = {
   "What does your mobile development and consulting process look like?":
     "Your app idea is great. Now what? Many individuals and organizations initially feel immobilized. They have a mobile app concept but struggle with how to transform it into a truly impactful product. My mobile development and consulting approach offers an end-to-end process, from ideation to app distribution. I specialize in guiding innovators, organizations, and communities from initial ideation all the way through to launch. Best of all, I make the mobile app development process feel non-intimidating.",

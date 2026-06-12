@@ -8,15 +8,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { AiOutlineMenu } from "react-icons/ai";
 import Link from "next/link";
+import { LINKS } from "@/lib/constants";
 
 export default function TopNavigationDropdownMenu() {
-  const LINKS = [
-    { href: "/#works", anchor: "Works" },
-    { href: "/#about", anchor: "About" },
-    { href: "/#contact", anchor: "Contact" },
-    { href: "/launchpad", anchor: "Blog" }
-  ];
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className={"cursor-pointer"}>

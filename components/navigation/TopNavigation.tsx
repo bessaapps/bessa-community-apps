@@ -1,10 +1,29 @@
-import Logo from "@/assets/images/logo.png";
+"use client";
+
+import Logo from "../../assets/images/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { keyword, title } from "@/lib/constants";
-import TopNavigationDropdownMenu from "@/components/TopNavigationDropdownMenu";
+import TopNavigationDropdownMenu from "./TopNavigationDropdownMenu";
+import TopNavigationNavigationMenu from "./TopNavigationNavigationMenu";
+import { Post } from "@/lib/definitions";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function TopNavigation() {
+  const [articles, setArticles] = useState<Post[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      await axios
+        .get(
+          "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=4&_embed"
+        )
+        .then((response) => setArticles(response.data))
+        .catch((error) => console.error(error));
+    })();
+  }, []);
+
   return (
     <>
       <div
@@ -25,7 +44,12 @@ export default function TopNavigation() {
                 />
               </div>
             </Link>
-            <TopNavigationDropdownMenu />
+            <div className={"hidden sm:block"}>
+              <TopNavigationNavigationMenu articles={articles} />
+            </div>
+            <div className={"sm:hidden"}>
+              <TopNavigationDropdownMenu />
+            </div>
           </div>
         </div>
       </div>
