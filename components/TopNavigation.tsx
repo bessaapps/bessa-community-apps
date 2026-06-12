@@ -2,14 +2,9 @@ import Logo from "@/assets/images/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { keyword, title } from "@/lib/constants";
+import TopNavigationDropdownMenu from "@/components/TopNavigationDropdownMenu";
 
 export default function TopNavigation() {
-  const links = [
-    { href: "/#works", anchor: "Works" },
-    { href: "/#about", anchor: "About" },
-    { href: "#contact", anchor: "Contact" }
-  ];
-
   return (
     <>
       <div
@@ -30,23 +25,7 @@ export default function TopNavigation() {
                 />
               </div>
             </Link>
-            <nav>
-              <ul className={"flex gap-4"}>
-                {links.map(
-                  ({ href, anchor }: { href: string; anchor: string }) => (
-                    <li key={href}>
-                      <Link
-                        href={href}
-                        title={anchor}
-                        className={"text-primary font-bold hover:underline"}
-                      >
-                        {anchor}
-                      </Link>
-                    </li>
-                  )
-                )}
-              </ul>
-            </nav>
+            <TopNavigationDropdownMenu />
           </div>
         </div>
       </div>
