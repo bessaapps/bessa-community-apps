@@ -24,7 +24,7 @@ export default function Weather() {
 
   return (
     <>
-      <div className={"fixed top-0 left-0 w-full h-full z-10"}>
+      <div className={"fixed top-0 left-0 w-full z-10"}>
         <div className={"max-w-[1300] mx-auto flex justify-end"}>
           <p className={"text-xs hidden sm:block z-20"}>
             Las Vegas&nbsp;&nbsp;|&nbsp;&nbsp;{isDaytime ? "☀︎" : "⏾"}{" "}
