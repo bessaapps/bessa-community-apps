@@ -12,14 +12,30 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Post } from "@/lib/definitions";
 import { stripHtml } from "string-strip-html";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-export default function TopNavigationNavigationMenu({
-  services,
-  articles
-}: {
-  services: Post[];
-  articles: Post[];
-}) {
+export default function TopNavigationNavigationMenu() {
+  const [services, setServices] = useState<Post[]>([]);
+  const [articles, setArticles] = useState<Post[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      await axios
+        .get(
+          "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&per_page=3&_embed"
+        )
+        .then((response) => setServices(response.data))
+        .catch((error) => console.error(error));
+      await axios
+        .get(
+          "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=4&_embed"
+        )
+        .then((response) => setArticles(response.data))
+        .catch((error) => console.error(error));
+    })();
+  }, []);
+
   return (
     <NavigationMenu>
       <NavigationMenuList>
