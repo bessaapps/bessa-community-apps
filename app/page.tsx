@@ -6,7 +6,6 @@ import Work3 from "@/assets/images/mockups/work-3.png";
 import Me from "@/assets/images/me.png";
 import Image from "next/image";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import axios from "axios";
 import ProcessSection from "../components/ProcessSection";
 import { Post } from "@/lib/definitions";
 import { bookingLink, title } from "@/lib/constants";
@@ -54,12 +53,11 @@ export default async function Home() {
     }
   ];
 
-  const articles = await axios
-    .get(
-      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=3&_embed"
-    )
-    .then((response) => response.data)
-    .catch((error) => console.error(error));
+  const res = await fetch(
+    "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=3&_embed",
+    { next: { revalidate: 3600 } }
+  );
+  const articles = await res.json();
 
   const graph: Graph = {
     "@context": "https://schema.org",
@@ -214,7 +212,7 @@ export default async function Home() {
               Crafting the Future of Custom Application Development
             </h2>
             <p>
-              Through comprehensive mobile development and consulting, I've
+              Through comprehensive mobile development and consulting, I&apos;ve
               helped startups, non-profits, and local communities overcome the
               hurdle of technical complexity to launch high-performance,
               cross-platform tools. Here are some highlights of my commitment to
