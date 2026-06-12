@@ -11,10 +11,17 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function TopNavigation() {
+  const [services, setServices] = useState<Post[]>([]);
   const [articles, setArticles] = useState<Post[]>([]);
 
   useEffect(() => {
     (async () => {
+      await axios
+        .get(
+          "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&per_page=3&_embed"
+        )
+        .then((response) => setServices(response.data))
+        .catch((error) => console.error(error));
       await axios
         .get(
           "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=4&_embed"
@@ -45,7 +52,10 @@ export default function TopNavigation() {
               </div>
             </Link>
             <div className={"hidden sm:block"}>
-              <TopNavigationNavigationMenu articles={articles} />
+              <TopNavigationNavigationMenu
+                articles={articles}
+                services={services}
+              />
             </div>
             <div className={"sm:hidden"}>
               <TopNavigationDropdownMenu />
