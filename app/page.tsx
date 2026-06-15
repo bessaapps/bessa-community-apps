@@ -53,11 +53,11 @@ export default async function Home() {
     }
   ];
 
-  const res = await fetch(
+  const response = await fetch(
     "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=3&_embed",
     { next: { revalidate: 3600 } }
   );
-  const articles = await res.json();
+  const articles = await response.json();
 
   const graph: Graph = {
     "@context": "https://schema.org",

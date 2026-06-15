@@ -1,5 +1,4 @@
 import { formatMetadata } from "@/lib/helpers";
-import axios from "axios";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -18,19 +17,21 @@ export async function generateMetadata({
   params: { slug: string };
 }) {
   const { slug } = await params;
-  const post = await axios
-    .get(`https://cms.bessaapps.com/wp-json/wp/v2/posts?slug=${slug}&_embed`)
-    .then((response) => response.data?.[0])
-    .catch((error) => console.error(error));
+  const response = await fetch(
+    `https://cms.bessaapps.com/wp-json/wp/v2/posts?slug=${slug}&_embed`,
+    { next: { revalidate: 3600 } }
+  );
+  const services = await response.json();
+  const service = services?.[0];
 
-  const title = stripHtml(post.title.rendered).result;
-  const excerpt = stripHtml(post.excerpt.rendered).result;
+  const title = stripHtml(service.title.rendered).result;
+  const excerpt = stripHtml(service.excerpt.rendered).result;
 
   return formatMetadata({
     metadataTitle: title,
     metadataDescription: excerpt,
-    path: `/${post.slug}`,
-    imagePath: post._embedded["wp:featuredmedia"][0].source_url
+    path: `/${service.slug}`,
+    imagePath: service._embedded["wp:featuredmedia"][0].source_url
   });
 }
 
@@ -40,15 +41,17 @@ export default async function ServicePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = await axios
-    .get(`https://cms.bessaapps.com/wp-json/wp/v2/posts?slug=${slug}&_embed`)
-    .then((response) => response.data?.[0])
-    .catch((error) => console.error(error));
+  const response = await fetch(
+    `https://cms.bessaapps.com/wp-json/wp/v2/posts?slug=${slug}&_embed`,
+    { next: { revalidate: 3600 } }
+  );
+  const services = await response.json();
+  const service = services?.[0];
 
-  if (!post?.id) return permanentRedirect("/");
+  if (!service?.id) return permanentRedirect("/");
 
-  const title = stripHtml(post.title.rendered).result;
-  const excerpt = stripHtml(post.excerpt.rendered).result;
+  const title = stripHtml(service.title.rendered).result;
+  const excerpt = stripHtml(service.excerpt.rendered).result;
 
   const jsonLd: WithContext<Service> = {
     "@context": "https://schema.org",
@@ -60,7 +63,7 @@ export default async function ServicePage({
     },
     areaServed: "Worldwide",
     name: title,
-    image: post._embedded["wp:featuredmedia"][0].source_url,
+    image: service._embedded["wp:featuredmedia"][0].source_url,
     description: excerpt,
     url: `http://bessaapps.com/${slug}`
   };
@@ -91,8 +94,8 @@ export default async function ServicePage({
         <div className={"max-w-[1300] mx-auto px-4 pt-12 sm:pt-16 pb-12"}>
           <div className={"relative aspect-[1.4] rounded-2xl overflow-hidden"}>
             <Image
-              src={post._embedded["wp:featuredmedia"][0].source_url}
-              alt={post._embedded["wp:featuredmedia"][0].alt_text}
+              src={service._embedded["wp:featuredmedia"][0].source_url}
+              alt={service._embedded["wp:featuredmedia"][0].alt_text}
               className={"object-cover"}
               fill
             />
@@ -101,12 +104,15 @@ export default async function ServicePage({
       </div>
       <div className={"max-w-[800] px-4 py-32 mx-auto"}>
         <div
-          dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+          dangerouslySetInnerHTML={{ __html: service.content.rendered }}
           className={
             "flex flex-col gap-4 [&_strong]:text-muted-foreground [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-muted-foreground [&_a]:underline [&_ul]:list-disc [&_ul]:pl-8 [&_img]:rounded-2xl [&_blockquote]:italic [&_blockquote]:border-l-2 [&_blockquote]:sm:w-6/8 [&_blockquote]:pl-8"
           }
         />
-        <ServicesSection sectionHeading={"More Services"} hiddenId={post.id} />
+        <ServicesSection
+          sectionHeading={"More Services"}
+          hiddenId={service.id}
+        />
         <ProcessSection />
         <FAQSection />
       </div>
