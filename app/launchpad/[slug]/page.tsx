@@ -8,7 +8,6 @@ import { BlogPosting, WithContext } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
 import dayjs from "dayjs";
 import Me from "@/assets/images/me.png";
-import { permanentRedirect } from "next/navigation";
 import { bookingLink, url } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import ShareButtons from "@/components/ShareButtons";
@@ -50,8 +49,6 @@ export default async function ArticlePage({
   );
   const posts = await response.json();
   const post = posts?.[0];
-
-  if (!post?.id) return permanentRedirect("/launchpad");
 
   const title = stripHtml(post.title.rendered).result;
   const excerpt = stripHtml(post.excerpt.rendered).result;

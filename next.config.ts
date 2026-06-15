@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
 const urls = {
+  "/services/seo-and-aso-services-that-boost-visibility-and-downloads":
+    "/mobile-app-marketing",
+  "/services/custom-mobile-app-development-for-your-vision":
+    "/cross-platform-app-development",
+  "/services/app-store-submission-services-for-ios-android":
+    "/services/app-publishing-services",
   "/mobile-app-development": "/cross-platform-app-development",
   "/launchpad/custom-mobile-app-development-for-startups": "/launchpad",
   "/articles/more-than-a-group-chat-why-custom-mobile-app-development-empowers-communities":

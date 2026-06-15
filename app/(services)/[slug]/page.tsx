@@ -8,7 +8,6 @@ import ServicesSection from "@/components/ServicesSection";
 import { bookingLink } from "@/lib/constants";
 import { Service, WithContext } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
-import { permanentRedirect } from "next/navigation";
 import FAQSection from "../../../components/FAQSection";
 
 export async function generateMetadata({
@@ -47,8 +46,6 @@ export default async function ServicePage({
   );
   const services = await response.json();
   const service = services?.[0];
-
-  if (!service?.id) return permanentRedirect("/");
 
   const title = stripHtml(service.title.rendered).result;
   const excerpt = stripHtml(service.excerpt.rendered).result;
