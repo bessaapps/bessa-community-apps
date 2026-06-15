@@ -1,6 +1,4 @@
 User-Agent: *
 Allow: /
-Disallow: /_next/static/
-Disallow: /cdn-cgi/
 
 Sitemap: https://bessaapps.com/sitemap.xml
