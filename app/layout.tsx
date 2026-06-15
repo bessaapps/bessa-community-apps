@@ -41,14 +41,7 @@ export default function RootLayout({
         <Weather />
       </body>
       {process.env.NODE_ENV !== "development" && (
-        <>
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
-          <script
-            src={"https://analytics.ahrefs.com/analytics.js"}
-            data-key={"3mOIblmw6vrADXOMbB0XGg"}
-            async
-          />
-        </>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
       )}
     </html>
   );
