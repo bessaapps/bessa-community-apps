@@ -1,8 +1,6 @@
 import axios from "axios";
 import { Post } from "@/lib/definitions";
 
-export const dynamic = "force-static";
-
 export default async function sitemap() {
   const services = await axios
     .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2")
