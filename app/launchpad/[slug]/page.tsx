@@ -66,7 +66,7 @@ export default async function ArticlePage({
   };
 
   return (
-    <section>
+    <article>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -104,9 +104,14 @@ export default async function ArticlePage({
               />
             </div>
             <div>
-              <p className={"text-primary font-bold"}>Topher</p>
+              <p className={"text-primary font-bold"}>
+                Topher, Software Engineer
+              </p>
               <p className={"text-primary text-sm"}>
-                {dayjs(post.modified).format("MMMM DD, YYYY")}&nbsp;&mdash;{" "}
+                <time dateTime={dayjs(post.modified).format("YYYY-MM-DD")}>
+                  {dayjs(post.modified).format("MMMM DD, YYYY")}
+                  &nbsp;&mdash;{" "}
+                </time>
                 {Math.ceil(
                   stripHtml(post?.content?.rendered).result.split(" ").length /
                     225
@@ -156,6 +161,6 @@ export default async function ArticlePage({
         <ProcessSection />
         <FAQSection />
       </div>
-    </section>
+    </article>
   );
 }

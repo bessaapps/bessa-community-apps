@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Post } from "@/lib/definitions";
 
 export const dynamic = "force-static";
 
@@ -25,15 +26,15 @@ export default async function sitemap() {
       changeFrequency: "daily",
       priority: 0.8
     },
-    ...services?.flatMap(({ slug }: { slug: string }) => ({
+    ...services?.flatMap(({ slug }: Post) => ({
       url: `https://bessaapps.com/${slug}`,
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.9
     })),
-    ...articles?.flatMap(({ slug }: { slug: string }) => ({
+    ...articles?.flatMap(({ slug, modified }: Post) => ({
       url: `https://bessaapps.com/launchpad/${slug}`,
-      lastModified: new Date(),
+      lastModified: modified,
       changeFrequency: "daily",
       priority: 0.6
     }))
