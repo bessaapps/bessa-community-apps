@@ -1,5 +1,4 @@
 import { formatMetadata } from "@/lib/helpers";
-import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
 import { stripHtml } from "string-strip-html";
@@ -21,10 +20,12 @@ export async function generateMetadata({
   params: { slug: string };
 }) {
   const { slug } = await params;
-  const post = await axios
-    .get(`https://cms.bessaapps.com/wp-json/wp/v2/posts?slug=${slug}&_embed`)
-    .then((response) => response.data?.[0])
-    .catch((error) => console.error(error));
+  const response = await fetch(
+    `https://cms.bessaapps.com/wp-json/wp/v2/posts?slug=${slug}&_embed`,
+    { next: { revalidate: 3600 } }
+  );
+  const posts = await response.json();
+  const post = posts?.[0];
 
   const title = stripHtml(post.title.rendered).result;
   const excerpt = stripHtml(post.excerpt.rendered).result;
@@ -43,10 +44,12 @@ export default async function ArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = await axios
-    .get(`https://cms.bessaapps.com/wp-json/wp/v2/posts?slug=${slug}&_embed`)
-    .then((response) => response.data?.[0])
-    .catch((error) => console.error(error));
+  const response = await fetch(
+    `https://cms.bessaapps.com/wp-json/wp/v2/posts?slug=${slug}&_embed`,
+    { next: { revalidate: 3600 } }
+  );
+  const posts = await response.json();
+  const post = posts?.[0];
 
   if (!post?.id) return permanentRedirect("/launchpad");
 

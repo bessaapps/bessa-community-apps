@@ -3,7 +3,6 @@ import Link from "next/link";
 import Me from "@/assets/images/me.png";
 import Image from "next/image";
 import { formatMetadata } from "@/lib/helpers";
-import axios from "axios";
 import { Post } from "@/lib/definitions";
 import BlurInText from "@/components/BlurInText";
 import ArticleCard from "@/components/ArticleCard";
@@ -21,12 +20,12 @@ export default async function Launchpad() {
   const subheading =
     "Your go-to blog for turning bold ideas into impactful digital products through expert custom application development. Whether you are an innovator or an organization, I provide the clear, non-intimidating path forward you need to stop dreaming and start launching.";
 
-  const articles = await axios
-    .get(
-      "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=20&_embed"
-    )
-    .then((response) => response.data)
-    .catch((error) => console.error(error));
+  const response = await fetch(
+    "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=20&_embed",
+    { next: { revalidate: 3600 } }
+  );
+
+  const articles = await response.json();
 
   const jsonLd: WithContext<Blog> = {
     "@context": "https://schema.org",

@@ -1,25 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 export default function Weather() {
   const [shortForecast, setShortForecast] = useState("");
   const [isDaytime, setIsDaytime] = useState("");
 
   useEffect(() => {
-    axios
-      .get("https://api.weather.gov/gridpoints/VEF/123,97/forecast/hourly", {
-        headers: {
-          "User-Agent": "BessaCommunityApps (topher@bessaapps.com)",
-          Accept: "application/ld+json"
-        }
-      })
-      .then((response) => {
-        setShortForecast(response.data?.periods?.[0]?.shortForecast);
-        setIsDaytime(response.data?.periods?.[0]?.isDaytime);
-      })
-      .catch((error) => console.error(error));
+    (async () => {
+      const response = await fetch(
+        "https://api.weather.gov/gridpoints/VEF/123,97/forecast/hourly"
+      );
+      const data = await response.json();
+
+      setShortForecast(data?.properties?.periods?.[0]?.shortForecast);
+      setIsDaytime(data?.properties?.periods?.[0]?.isDaytime);
+    })();
   }, []);
 
   return (
