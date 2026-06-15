@@ -1,15 +1,15 @@
 import { stripHtml } from "string-strip-html";
 import Link from "next/link";
-import axios from "axios";
 import { Post } from "@/lib/definitions";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 
 export default async function Services({ hiddenId }: { hiddenId?: number }) {
-  const services = await axios
-    .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&_embed")
-    .then((response) => response.data)
-    .catch((error) => console.error(error));
+  const response = await fetch(
+    "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&_embed",
+    { next: { revalidate: 3600 } }
+  );
+  const services = await response.json();
 
   const filteredServices = services.filter(
     (service: Post) => service.id !== hiddenId

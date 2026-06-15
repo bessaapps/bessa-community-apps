@@ -13,7 +13,6 @@ import {
 import { Post } from "@/lib/definitions";
 import { stripHtml } from "string-strip-html";
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 export default function TopNavigationNavigationMenu() {
   const [services, setServices] = useState<Post[]>([]);
@@ -21,18 +20,17 @@ export default function TopNavigationNavigationMenu() {
 
   useEffect(() => {
     (async () => {
-      await axios
-        .get(
-          "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&per_page=3&_embed"
-        )
-        .then((response) => setServices(response.data))
-        .catch((error) => console.error(error));
-      await axios
-        .get(
-          "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=4&_embed"
-        )
-        .then((response) => setArticles(response.data))
-        .catch((error) => console.error(error));
+      const servicesResponse = await fetch(
+        "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&per_page=3&_embed",
+        { next: { revalidate: 3600 } }
+      );
+      const services = await servicesResponse.json();
+      setServices(services);
+      const articlesResponse = await fetch(
+        "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=4&_embed"
+      );
+      const articles = await articlesResponse.json();
+      setArticles(articles);
     })();
   }, []);
 
@@ -44,7 +42,7 @@ export default function TopNavigationNavigationMenu() {
           <NavigationMenuContent>
             <ul className={"w-96"}>
               <nav>
-                {LINKS.slice(0, 3).map(({ href, anchor }) => (
+                {LINKS.map(({ href, anchor }) => (
                   <NavigationMenuLink key={href} asChild>
                     <Link href={href} title={anchor}>
                       <div className={"flex flex-col gap-1 text-sm"}>

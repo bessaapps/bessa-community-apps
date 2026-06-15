@@ -176,7 +176,7 @@ export default async function Home() {
         />
       </div>
       <div className={"max-w-[1300] px-4 mx-auto"}>
-        <div className={"py-32"}>
+        <div className={"py-32"} id={"services"}>
           <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
             <h2 className={"text-4xl font-bold"}>
               Comprehensive Mobile Development and Consulting Services{" "}

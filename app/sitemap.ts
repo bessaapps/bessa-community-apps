@@ -1,15 +1,16 @@
-import axios from "axios";
 import { Post } from "@/lib/definitions";
 
 export default async function sitemap() {
-  const services = await axios
-    .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2")
-    .then((response) => response.data)
-    .catch((error) => console.error(error));
-  const articles = await axios
-    .get("https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3")
-    .then((response) => response.data)
-    .catch((error) => console.error(error));
+  const servicesResponse = await fetch(
+    "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2",
+    { next: { revalidate: 3600 } }
+  );
+  const services = await servicesResponse.json();
+  const articlesResponse = await fetch(
+    "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3",
+    { next: { revalidate: 3600 } }
+  );
+  const articles = await articlesResponse.json();
 
   return [
     {

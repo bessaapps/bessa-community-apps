@@ -7,6 +7,7 @@ export const description =
 export const bookingLink = "https://calendar.app.google/uGBwb7WfWXLUgSU6A";
 
 export const LINKS = [
+  { href: "/#services", anchor: "Services" },
   { href: "/#works", anchor: "Works" },
   { href: "/#about", anchor: "About" },
   { href: "/#contact", anchor: "Contact" },
