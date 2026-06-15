@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
 const urls = {
+  "/launchpad/app-idea-validation-to-fail-fast-and-win-big": "/launchpad",
+  "/launchpad/cross-platform-development-for-startups-that-save-scale":
+    "/launchpad",
+  "/launchpad/startup-app-development-guide-for-non-coders": "/launchpad",
+  "/launchpad/web-app-and-website-development-why-you-shouldnt-choose-between-browser-and-mobile":
+    "/launchpad",
   "/services/seo-and-aso-services-that-boost-visibility-and-downloads":
     "/mobile-app-marketing",
   "/services/custom-mobile-app-development-for-your-vision":
