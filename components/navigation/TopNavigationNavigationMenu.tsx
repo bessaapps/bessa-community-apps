@@ -21,7 +21,7 @@ export default function TopNavigationNavigationMenu() {
   useEffect(() => {
     (async () => {
       const servicesResponse = await fetch(
-        "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&_embed",
+        "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&per_page=4&_embed",
         { next: { revalidate: 3600 } }
       );
       const services = await servicesResponse.json();
