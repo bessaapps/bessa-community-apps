@@ -6,7 +6,7 @@ const urls = {
   "/services/custom-mobile-app-development-for-your-vision":
     "/cross-platform-app-development",
   "/services/app-store-submission-services-for-ios-android":
-    "/services/app-publishing-services",
+    "/app-publishing-services",
   "/mobile-app-development": "/cross-platform-app-development",
   "/articles/more-than-a-group-chat-why-custom-mobile-app-development-empowers-communities":
     "/launchpad",
