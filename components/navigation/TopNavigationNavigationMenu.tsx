@@ -21,7 +21,7 @@ export default function TopNavigationNavigationMenu() {
   useEffect(() => {
     (async () => {
       const servicesResponse = await fetch(
-        "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&per_page=3&_embed",
+        "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&_embed",
         { next: { revalidate: 3600 } }
       );
       const services = await servicesResponse.json();
@@ -61,25 +61,20 @@ export default function TopNavigationNavigationMenu() {
           <NavigationMenuTrigger>Services</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className={"w-125 grid grid-cols-2 gap-2"}>
-              {services.map((service: Post) => {
-                const title = stripHtml(service.title.rendered).result;
-                const excerpt = stripHtml(service.excerpt.rendered).result;
-
-                return (
+              <div>
+                {services.map((service: Post) => (
                   <NavigationMenuLink key={service.id} asChild>
-                    <Link href={`/${service.slug}`} title={title}>
-                      <div className={"flex flex-col gap-1 text-sm"}>
-                        <div className={"leading-none font-medium"}>
-                          {title}
-                        </div>
-                        <div className={"line-clamp-2 text-muted-foreground"}>
-                          {excerpt}
-                        </div>
+                    <Link
+                      href={`/${service.slug}`}
+                      title={stripHtml(service.title.rendered).result}
+                    >
+                      <div className={"text-sm leading-none font-medium"}>
+                        {service?.acf?.short_title}
                       </div>
                     </Link>
                   </NavigationMenuLink>
-                );
-              })}
+                ))}
+              </div>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>

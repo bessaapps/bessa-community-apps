@@ -77,7 +77,16 @@ export default async function ServicePage({
         }}
       />
       <div className={"px-4 mx-auto"}>
-        <div className={"max-w-[800] mx-auto px-4 pt-24 sm:pt-32 pb-12"}>
+        <div
+          className={
+            "max-w-[800] flex flex-col gap-4 mx-auto px-4 pt-24 sm:pt-32 pb-12"
+          }
+        >
+          <Link href={"/launchpad"} title={"Launchpad - Bessa Community Apps"}>
+            <p className={"text-primary uppercase"}>
+              <BlurInText>{service.acf.short_title || ""}</BlurInText>
+            </p>
+          </Link>
           <h1 className={"text-4xl sm:text-6xl font-bold mb-4"}>
             <BlurInText>{title}</BlurInText>
           </h1>
