@@ -11,7 +11,7 @@ export const LINKS = [
   { href: "/#works", anchor: "Works" },
   { href: "/#about", anchor: "About" },
   { href: "/#contact", anchor: "Contact" },
-  { href: "/launchpad", anchor: "Blog" }
+  { href: "/launchpad", anchor: "Launchpad" }
 ];
 
 export const faqs = {

@@ -27,7 +27,7 @@ export default function TopNavigationNavigationMenu() {
       const services = await servicesResponse.json();
       setServices(services);
       const articlesResponse = await fetch(
-        "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=4&_embed"
+        "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=6&_embed"
       );
       const articles = await articlesResponse.json();
       setArticles(articles);
@@ -38,7 +38,7 @@ export default function TopNavigationNavigationMenu() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Learn More</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Explore</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className={"w-96"}>
               <nav>
@@ -60,7 +60,7 @@ export default function TopNavigationNavigationMenu() {
         <NavigationMenuItem className={"flex"}>
           <NavigationMenuTrigger>Services</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className={"grid w-100 gap-2 md:w-125 md:grid-cols-2"}>
+            <ul className={"w-125 grid grid-cols-2 gap-2"}>
               {services.map((service: Post) => {
                 const title = stripHtml(service.title.rendered).result;
                 const excerpt = stripHtml(service.excerpt.rendered).result;
@@ -84,9 +84,9 @@ export default function TopNavigationNavigationMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className={"flex"}>
-          <NavigationMenuTrigger>Articles</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Learn</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className={"grid w-100 gap-2 md:w-125 md:grid-cols-2"}>
+            <ul className={"w-125 grid grid-cols-2 gap-2"}>
               {articles.map((article: Post) => {
                 const title = stripHtml(article.title.rendered).result;
                 const excerpt = stripHtml(article.excerpt.rendered).result;
