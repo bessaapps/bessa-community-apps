@@ -1,12 +1,6 @@
 import type { NextConfig } from "next";
 
 const urls = {
-  "/launchpad/app-idea-validation-to-fail-fast-and-win-big": "/launchpad",
-  "/launchpad/cross-platform-development-for-startups-that-save-scale":
-    "/launchpad",
-  "/launchpad/startup-app-development-guide-for-non-coders": "/launchpad",
-  "/launchpad/web-app-and-website-development-why-you-shouldnt-choose-between-browser-and-mobile":
-    "/launchpad",
   "/services/seo-and-aso-services-that-boost-visibility-and-downloads":
     "/mobile-app-marketing",
   "/services/custom-mobile-app-development-for-your-vision":
@@ -14,7 +8,6 @@ const urls = {
   "/services/app-store-submission-services-for-ios-android":
     "/services/app-publishing-services",
   "/mobile-app-development": "/cross-platform-app-development",
-  "/launchpad/custom-mobile-app-development-for-startups": "/launchpad",
   "/articles/more-than-a-group-chat-why-custom-mobile-app-development-empowers-communities":
     "/launchpad",
   "/articles/why-custom-mobile-apps-are-the-secret-to-empowering-modern-communities":

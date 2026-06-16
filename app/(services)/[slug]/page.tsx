@@ -9,6 +9,7 @@ import { bookingLink } from "@/lib/constants";
 import { Service, WithContext } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
 import FAQSection from "../../../components/FAQSection";
+import { permanentRedirect } from "next/navigation";
 
 export async function generateMetadata({
   params
@@ -46,6 +47,8 @@ export default async function ServicePage({
   );
   const services = await response.json();
   const service = services?.[0];
+
+  if (!service?.id) return permanentRedirect("/");
 
   const title = stripHtml(service.title.rendered).result;
   const excerpt = stripHtml(service.excerpt.rendered).result;

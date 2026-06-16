@@ -12,6 +12,7 @@ import { bookingLink, url } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import ShareButtons from "@/components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";
+import { permanentRedirect } from "next/navigation";
 
 export async function generateMetadata({
   params
@@ -49,6 +50,8 @@ export default async function ArticlePage({
   );
   const posts = await response.json();
   const post = posts?.[0];
+
+  if (!post?.id) return permanentRedirect("/launchpad");
 
   const title = stripHtml(post.title.rendered).result;
   const excerpt = stripHtml(post.excerpt.rendered).result;
