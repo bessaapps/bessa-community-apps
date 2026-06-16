@@ -31,7 +31,7 @@ export async function generateMetadata({
   const excerpt = stripHtml(post.excerpt.rendered).result;
 
   return formatMetadata({
-    metadataTitle: title,
+    metadataTitle: post?.acf?.meta_title || title,
     metadataDescription: excerpt,
     path: `/launchpad/${post.slug}`,
     imagePath: post._embedded["wp:featuredmedia"][0].source_url
@@ -59,7 +59,7 @@ export default async function ArticlePage({
   const jsonLd: WithContext<BlogPosting> = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    headline: title,
+    headline: post?.acf?.meta_title || title,
     image: post._embedded["wp:featuredmedia"][0].source_url,
     description: excerpt,
     publisher: {
@@ -155,7 +155,7 @@ export default async function ArticlePage({
             <div className={"flex justify-end"}>
               <ShareButtons
                 url={`${url}/launchpad/${post.slug}`}
-                title={post.title.rendered}
+                title={post?.acf?.meta_title || title}
               />
             </div>
           </div>
