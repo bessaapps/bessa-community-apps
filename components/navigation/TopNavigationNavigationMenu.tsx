@@ -15,11 +15,18 @@ import { stripHtml } from "string-strip-html";
 import { useEffect, useState } from "react";
 
 export default function TopNavigationNavigationMenu() {
+  const [markets, setMarkets] = useState<Post[]>([]);
   const [services, setServices] = useState<Post[]>([]);
   const [articles, setArticles] = useState<Post[]>([]);
 
   useEffect(() => {
     (async () => {
+      const marketsResponse = await fetch(
+        "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=10&_embed",
+        { next: { revalidate: 3600 } }
+      );
+      const markets = await marketsResponse.json();
+      setMarkets(markets);
       const servicesResponse = await fetch(
         "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2&per_page=4&_embed",
         { next: { revalidate: 3600 } }
@@ -58,9 +65,25 @@ export default function TopNavigationNavigationMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className={"flex"}>
-          <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className={"w-125 grid grid-cols-2 gap-2"}>
+              <div className={"px-2 text-sm uppercase"}>Markets</div>
+              <div className={"px-2 text-sm uppercase"}>Services</div>
+              <div>
+                {markets.map((market: Post) => (
+                  <NavigationMenuLink key={market.id} asChild>
+                    <Link
+                      href={`/${market.slug}`}
+                      title={stripHtml(market.title.rendered).result}
+                    >
+                      <div className={"text-sm leading-none font-medium"}>
+                        {market.acf.short_title}
+                      </div>
+                    </Link>
+                  </NavigationMenuLink>
+                ))}
+              </div>
               <div>
                 {services.map((service: Post) => (
                   <NavigationMenuLink key={service.id} asChild>
@@ -69,7 +92,7 @@ export default function TopNavigationNavigationMenu() {
                       title={stripHtml(service.title.rendered).result}
                     >
                       <div className={"text-sm leading-none font-medium"}>
-                        {service?.acf?.short_title}
+                        {service.acf.short_title}
                       </div>
                     </Link>
                   </NavigationMenuLink>
