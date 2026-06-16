@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Work1 from "@/assets/images/mockups/work-1.png";
 import Work2 from "@/assets/images/mockups/work-2.png";
-import Work3 from "@/assets/images/mockups/work-3.png";
 import Me from "@/assets/images/me.png";
 import Image from "next/image";
 import { AiOutlineArrowRight } from "react-icons/ai";
@@ -20,7 +19,7 @@ export default async function Home() {
   const subheading =
     "Partnering with forward-thinking innovators, organizations, and communities through expert mobile development and consulting to build cross-platform apps that drive real-world change. Specializing in end-to-end engineering solutions designed for maximum impact.";
 
-  const works = [
+  const WORKS = [
     {
       name: "AS/400 App",
       href: "https://as400app.com",
@@ -45,11 +44,6 @@ export default async function Home() {
         "Push Notifications",
         "Postgres"
       ]
-    },
-    {
-      name: "CommuniVol",
-      image: Work3,
-      tags: ["Expo", "React Native", "MongoDB"]
     }
   ];
 
@@ -229,58 +223,49 @@ export default async function Home() {
               </Link>
             </p>
           </div>
-          <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
-            {works.map(({ name, href, image, tags }, index: number) => (
-              <div key={index} className={"flex flex-col gap-4"}>
-                {href ? (
-                  <Link
-                    href={href}
-                    title={name}
-                    target={"_blank"}
-                    rel={"noopener noreferrer"}
+          <div className={"grid grid-cols-1 sm:grid-cols-2 gap-4"}>
+            {WORKS.map(({ name, href, image, tags }) => (
+              <Link
+                key={href}
+                href={href}
+                title={name}
+                target={"_blank"}
+                rel={"noopener noreferrer"}
+              >
+                <div
+                  className={
+                    "relative w-full aspect-square rounded-2xl overflow-hidden"
+                  }
+                >
+                  <Image
+                    src={image}
+                    alt={name}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes={"412px"}
+                  />
+                  <div
+                    className={
+                      "absolute inset-0 bg-linear-to-b from-transparent to-background"
+                    }
+                  />
+                  <div
+                    className={
+                      "absolute bg-transparent top-0 flex flex-col justify-end h-full p-4"
+                    }
                   >
-                    <div className={"bg-card rounded-2xl overflow-hidden"}>
-                      <Image
-                        src={image}
-                        alt={name}
-                        className={"hover:scale-125 duration-200"}
-                      />
-                    </div>
-                  </Link>
-                ) : (
-                  <div className={"bg-card rounded-2xl overflow-hidden"}>
-                    <Image
-                      src={image}
-                      alt={name}
-                      className={"hover:scale-125 duration-200"}
-                    />
+                    <p className={"text-primary font-semibold"}>{name}</p>
+                    <p>
+                      {tags.map((tag: string, index: number) => (
+                        <span key={index}>
+                          {tag}
+                          {index < tags.length - 1 && <span> &middot; </span>}
+                        </span>
+                      ))}
+                    </p>{" "}
                   </div>
-                )}
-                <div className={"px-4"}>
-                  <p className={"text-primary font-semibold"}>
-                    {href ? (
-                      <Link
-                        href={href}
-                        title={"AS/400 App"}
-                        target={"_blank"}
-                        rel={"noopener noreferrer"}
-                      >
-                        {name}
-                      </Link>
-                    ) : (
-                      name
-                    )}
-                  </p>
-                  <p>
-                    {tags.map((tag: string, index: number) => (
-                      <span key={index}>
-                        {tag}
-                        {index < tags.length - 1 && <span> &middot; </span>}
-                      </span>
-                    ))}
-                  </p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
