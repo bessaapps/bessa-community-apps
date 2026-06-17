@@ -8,7 +8,8 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle
 } from "@/components/ui/navigation-menu";
 import { Post } from "@/lib/definitions";
 import { stripHtml } from "string-strip-html";
@@ -44,26 +45,6 @@ export default function TopNavigationNavigationMenu() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Explore</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className={"w-96"}>
-              <nav>
-                {LINKS.map(({ href, anchor }) => (
-                  <NavigationMenuLink key={href} asChild>
-                    <Link href={href} title={anchor}>
-                      <div className={"flex flex-col gap-1 text-sm"}>
-                        <div className={"leading-none font-medium"}>
-                          {anchor}
-                        </div>
-                      </div>
-                    </Link>
-                  </NavigationMenuLink>
-                ))}
-              </nav>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
         <NavigationMenuItem className={"flex"}>
           <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -127,6 +108,16 @@ export default function TopNavigationNavigationMenu() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        {LINKS.map(({ href, anchor }) => (
+          <NavigationMenuItem
+            key={href}
+            className={navigationMenuTriggerStyle()}
+          >
+            <NavigationMenuLink asChild>
+              <Link href={href}>{anchor}</Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        ))}
       </NavigationMenuList>
     </NavigationMenu>
   );
