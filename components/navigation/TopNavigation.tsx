@@ -4,7 +4,7 @@ import Logo from "../../assets/images/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { keyword, title } from "@/lib/constants";
-import TopNavigationDropdownMenu from "./TopNavigationDropdownMenu";
+import TopNavigationSheet from "./TopNavigationSheet";
 import TopNavigationNavigationMenu from "./TopNavigationNavigationMenu";
 
 export default function TopNavigation() {
@@ -25,8 +25,7 @@ export default function TopNavigation() {
               <div className={"w-12"}>
                 <Image
                   src={Logo}
-                  height={48}
-                  width={48}
+                  sizes={"48px"}
                   alt={
                     "Bessa Community Apps company logo with abstract concentric lines, representing a provider of custom mobile app development services."
                   }
@@ -38,7 +37,7 @@ export default function TopNavigation() {
               <TopNavigationNavigationMenu />
             </div>
             <div className={"sm:hidden"}>
-              <TopNavigationDropdownMenu />
+              <TopNavigationSheet />
             </div>
           </div>
         </div>

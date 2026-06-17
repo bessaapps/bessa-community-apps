@@ -7,7 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useEffect, useState } from "react";
 import { Post } from "@/lib/definitions";
 
-export default function TopNavigationDropdownMenu() {
+export default function TopNavigationSheet() {
   const [isOpen, setIsOpen] = useState(false);
   const [markets, setMarkets] = useState<Post[]>([]);
   const [services, setServices] = useState<Post[]>([]);
@@ -31,7 +31,7 @@ export default function TopNavigationDropdownMenu() {
 
   return (
     <Sheet open={isOpen}>
-      <SheetTrigger onClick={() => setIsOpen(true)}>
+      <SheetTrigger onClick={() => setIsOpen(true)} aria-label={"Menu"}>
         <AiOutlineMenu size={24} />
       </SheetTrigger>
       <SheetContent
