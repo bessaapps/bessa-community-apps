@@ -76,10 +76,10 @@ export default async function ServicePage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"px-4 mx-auto"}>
+      <div className={"max-w-[1300] px-4 mx-auto"}>
         <div
           className={
-            "max-w-[800] flex flex-col gap-4 mx-auto px-4 pt-24 sm:pt-32 pb-12"
+            "max-w-[800] flex flex-col gap-4 mx-auto pt-24 sm:pt-32 pb-12"
           }
         >
           <Link href={"/launchpad"} title={"Launchpad - Bessa Community Apps"}>
@@ -100,7 +100,7 @@ export default async function ServicePage({
             </Button>
           </Link>
         </div>
-        <div className={"max-w-[1300] mx-auto px-4 pt-12 sm:pt-16 pb-12"}>
+        <div className={"max-w-[1300] mx-auto pt-12 sm:pt-16 pb-12"}>
           <div className={"relative aspect-[1.4] rounded-2xl overflow-hidden"}>
             <Image
               src={service._embedded["wp:featuredmedia"][0].source_url}
@@ -110,14 +110,14 @@ export default async function ServicePage({
             />
           </div>
         </div>
-      </div>
-      <div className={"max-w-[800] px-4 py-32 mx-auto"}>
-        <div
-          dangerouslySetInnerHTML={{ __html: service.content.rendered }}
-          className={
-            "flex flex-col gap-4 [&_strong]:text-muted-foreground [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-muted-foreground [&_a]:underline [&_ul]:list-disc [&_ul]:pl-8 [&_img]:rounded-2xl [&_blockquote]:italic [&_blockquote]:border-l-2 [&_blockquote]:sm:w-6/8 [&_blockquote]:pl-8"
-          }
-        />
+        <div className={"max-w-[800] py-32 mx-auto"}>
+          <div
+            dangerouslySetInnerHTML={{ __html: service.content.rendered }}
+            className={
+              "flex flex-col gap-4 [&_strong]:text-muted-foreground [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-muted-foreground [&_a]:underline [&_ul]:list-disc [&_ul]:pl-8 [&_img]:rounded-2xl [&_blockquote]:italic [&_blockquote]:border-l-2 [&_blockquote]:sm:w-6/8 [&_blockquote]:pl-8"
+            }
+          />
+        </div>
         <ServicesSection
           sectionHeading={"More Services"}
           hiddenId={service.id}
