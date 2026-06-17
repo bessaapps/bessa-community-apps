@@ -1,4 +1,4 @@
-import { faqs } from "@/lib/constants";
+import { FAQS } from "@/lib/constants";
 import {
   Accordion,
   AccordionContent,
@@ -11,7 +11,7 @@ export default function FAQSection() {
   const jsonLd: WithContext<FAQPage> = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: Object.entries(faqs).map(([key, value]: [string, string]) => ({
+    mainEntity: Object.entries(FAQS).map(([key, value]: [string, string]) => ({
       "@type": "Question",
       name: key,
       acceptedAnswer: { "@type": "Answer", text: value }
@@ -29,7 +29,7 @@ export default function FAQSection() {
       <div className={"py-32"}>
         <div className={"mx-4"}>
           <Accordion type={"multiple"}>
-            {Object.entries(faqs).map(
+            {Object.entries(FAQS).map(
               ([key, value]: [string, string], index: number) => (
                 <AccordionItem key={index} value={`item-${index}`}>
                   <AccordionTrigger>{key}</AccordionTrigger>
