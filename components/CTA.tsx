@@ -43,6 +43,7 @@ export default function CTA() {
           <div className={"flex justify-end gap-4 mb-4"}>
             <Link
               href={"https://linkedin.com/company/bessaapps"}
+              title={"LinkedIn"}
               target={"_blank"}
               rel={"noopener noreferrer"}
             >
@@ -50,6 +51,7 @@ export default function CTA() {
             </Link>
             <Link
               href={"https://github.com/bessaapps"}
+              title={"GitHub"}
               target={"_blank"}
               rel={"noopener noreferrer"}
             >
@@ -57,6 +59,7 @@ export default function CTA() {
             </Link>
             <Link
               href={"https://x.com/bessaapps"}
+              title={"X"}
               target={"_blank"}
               rel={"noopener noreferrer"}
             >
