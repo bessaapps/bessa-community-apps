@@ -28,7 +28,7 @@ export async function generateMetadata({
   const excerpt = stripHtml(service.excerpt.rendered).result;
 
   return formatMetadata({
-    metadataTitle: title,
+    metadataTitle: service?.acf?.meta_title || title,
     metadataDescription: excerpt,
     path: `/${service.slug}`,
     imagePath: service._embedded["wp:featuredmedia"][0].source_url
@@ -56,13 +56,13 @@ export default async function ServicePage({
   const jsonLd: WithContext<Service> = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: title,
+    serviceType: service?.acf?.meta_title || title,
     provider: {
       "@type": "Organization",
       name: "Bessa Community Apps"
     },
     areaServed: "Worldwide",
-    name: title,
+    name: service?.acf?.meta_title || title,
     image: service._embedded["wp:featuredmedia"][0].source_url,
     description: excerpt,
     url: `http://bessaapps.com/${slug}`

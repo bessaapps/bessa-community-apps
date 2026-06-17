@@ -1,6 +1,11 @@
 import { Post } from "@/lib/definitions";
 
 export default async function sitemap() {
+  const marketsResponse = await fetch(
+    "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2",
+    { next: { revalidate: 3600 } }
+  );
+  const markets = await marketsResponse.json();
   const servicesResponse = await fetch(
     "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2",
     { next: { revalidate: 3600 } }
@@ -26,6 +31,12 @@ export default async function sitemap() {
       priority: 0.8
     },
     ...services?.flatMap(({ slug }: Post) => ({
+      url: `https://bessaapps.com/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.9
+    })),
+    ...markets?.flatMap(({ slug }: Post) => ({
       url: `https://bessaapps.com/${slug}`,
       lastModified: new Date(),
       changeFrequency: "daily",
