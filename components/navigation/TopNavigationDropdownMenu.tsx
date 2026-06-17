@@ -5,6 +5,12 @@ import Link from "next/link";
 import { LINKS } from "@/lib/constants";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from "@/components/ui/accordion";
 
 export default function TopNavigationDropdownMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +20,34 @@ export default function TopNavigationDropdownMenu() {
       <SheetTrigger onClick={() => setIsOpen(true)}>
         <AiOutlineMenu size={24} />
       </SheetTrigger>
-      <SheetContent className={"p-4"} onBlur={() => setIsOpen(false)}>
+      <SheetContent
+        showCloseButton={false}
+        className={"p-4"}
+        onBlur={() => setIsOpen(false)}
+      >
+        <div className={"mx-4"}>
+          <Accordion type={"single"} collapsible>
+            <AccordionItem value={"item-1"}>
+              <AccordionTrigger>Markets</AccordionTrigger>
+              <AccordionContent>
+                <nav>
+                  <ul>
+                    {LINKS.map(({ href, anchor }) => (
+                      <Link
+                        key={href}
+                        href={href}
+                        title={anchor}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <li className={"text-primary font-medium"}>{anchor}</li>
+                      </Link>
+                    ))}
+                  </ul>
+                </nav>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
         <nav>
           <ul>
             {LINKS.map(({ href, anchor }) => (
