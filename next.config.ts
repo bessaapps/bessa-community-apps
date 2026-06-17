@@ -49,7 +49,9 @@ const urls = {
 };
 
 const nextConfig: NextConfig = {
-  images: { unoptimized: true },
+  images: {
+    remotePatterns: [new URL("https://cms.bessaapps.com/**")]
+  },
   async redirects() {
     return Object.entries(urls).map(([key, value]) => ({
       source: key,
