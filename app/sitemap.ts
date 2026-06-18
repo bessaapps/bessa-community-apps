@@ -24,12 +24,6 @@ export default async function sitemap() {
       changeFrequency: "daily",
       priority: 1.0
     },
-    {
-      url: "https://bessaapps.com/launchpad",
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.8
-    },
     ...services?.flatMap(({ slug }: Post) => ({
       url: `https://bessaapps.com/${slug}`,
       lastModified: new Date(),
@@ -42,11 +36,17 @@ export default async function sitemap() {
       changeFrequency: "daily",
       priority: 0.9
     })),
+    {
+      url: "https://bessaapps.com/launchpad",
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.8
+    },
     ...articles?.flatMap(({ slug, modified }: Post) => ({
       url: `https://bessaapps.com/launchpad/${slug}`,
       lastModified: modified,
       changeFrequency: "daily",
-      priority: 0.6
+      priority: 0.7
     }))
   ];
 }
