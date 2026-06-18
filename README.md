@@ -1,1 +1,1 @@
-Visit [Bessa Community Apps](https://bessaapps.com) online.
+Visit [Bessa Community Apps](https://bessaapps.com).
