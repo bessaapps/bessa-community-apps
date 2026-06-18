@@ -1,6 +1,8 @@
+import type { MetadataRoute } from "next";
 import { Post } from "@/lib/definitions";
+import dayjs from "dayjs";
 
-export default async function sitemap() {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const marketsResponse = await fetch(
     "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=2",
     { next: { revalidate: 3600 } }
@@ -44,7 +46,7 @@ export default async function sitemap() {
     },
     ...articles?.flatMap(({ slug, modified }: Post) => ({
       url: `https://bessaapps.com/launchpad/${slug}`,
-      lastModified: modified,
+      lastModified: dayjs(modified).toISOString(),
       changeFrequency: "daily",
       priority: 0.7
     }))
