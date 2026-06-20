@@ -12,8 +12,8 @@ import { Graph } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
 import ArticleCard from "@/components/ArticleCard";
 import Services from "@/components/Services";
-import Hero from "@/assets/images/hero.png";
 import FAQSection from "../components/FAQSection";
+import Hero from "../components/Hero";
 
 export default async function Home() {
   const subheading =
@@ -149,26 +149,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div
-        className={"opacity-0 animate-blur-in-fade-in relative "}
-        style={{
-          aspectRatio: 4987 / 2528,
-          animationDelay: `${title.split(" ").length * 100 + subheading.split(" ").length * 50 + 2000}ms`
-        }}
-      >
-        <Image
-          src={Hero}
-          alt={
-            "3D Apple App Store and Google Play Store icons on a dark background, representing custom mobile app development services for iOS and Android."
-          }
-          fill
-        />
-        <div
-          className={
-            "absolute inset-0 bg-linear-to-t from-background to-transparent"
-          }
-        />
-      </div>
+      <Hero />
       <div className={"max-w-[1300] px-4 mx-auto"}>
         <div className={"py-32"}>
           <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
