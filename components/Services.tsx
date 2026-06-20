@@ -20,39 +20,41 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
   return (
     <>
       <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
-        {filteredServices.slice(0, 3).map((service: Post) => {
-          const title = stripHtml(service.title.rendered).result;
+        {filteredServices
+          .slice(0, 3)
+          .map(({ id, slug, title, acf, _embedded }: Post) => {
+            const renderedTitle = stripHtml(title.rendered).result;
 
-          return (
-            <Link key={service.id} href={`/${service.slug}`} title={title}>
-              <div
-                className={
-                  "relative w-full aspect-square rounded-2xl overflow-hidden"
-                }
-              >
-                <Image
-                  src={service._embedded["wp:featuredmedia"][0].source_url}
-                  alt={service?._embedded["wp:featuredmedia"][0]?.alt_text}
-                  fill
-                />
+            return (
+              <Link key={id} href={`/${slug}`} title={renderedTitle}>
                 <div
                   className={
-                    "absolute inset-0 bg-linear-to-b from-transparent to-background"
-                  }
-                />
-                <div
-                  className={
-                    "absolute bg-transparent top-0 flex flex-col justify-end h-full p-4"
+                    "relative w-full aspect-square rounded-2xl overflow-hidden"
                   }
                 >
-                  <p className={"text-primary font-semibold sm:w-3/4"}>
-                    {title}
-                  </p>
+                  <Image
+                    src={_embedded["wp:featuredmedia"][0].source_url}
+                    alt={_embedded["wp:featuredmedia"][0]?.alt_text}
+                    fill
+                  />
+                  <div
+                    className={
+                      "absolute inset-0 bg-linear-to-b from-transparent to-background"
+                    }
+                  />
+                  <div
+                    className={
+                      "absolute bg-transparent top-0 flex flex-col justify-end h-full p-4"
+                    }
+                  >
+                    <p className={"text-primary font-semibold"}>
+                      {acf.short_title}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          );
-        })}
+              </Link>
+            );
+          })}
       </div>
       <div className={"grid grid-cols-1 sm:grid-cols-2 gap-4"}>
         <div />
@@ -60,18 +62,14 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
           <div className={"py-8"}>
             {filteredServices
               .slice(3, filteredServices.length)
-              .map((service: Post, index: number) => {
-                const title = stripHtml(service.title.rendered).result;
+              .map(({ id, slug, title, acf }: Post, index: number) => {
+                const titleRendered = stripHtml(title.rendered).result;
 
                 return (
                   <div key={index}>
-                    <Link
-                      key={service.id}
-                      href={`/${service.slug}`}
-                      title={title}
-                    >
+                    <Link key={id} href={`/${slug}`} title={titleRendered}>
                       <p className={"text-primary font-semibold sm:w-3/4"}>
-                        {title}
+                        {acf.short_title}
                       </p>
                     </Link>
                     {index !==

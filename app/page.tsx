@@ -319,7 +319,11 @@ export default async function Home() {
             </div>
             <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
               {articles.map((article: Post) => (
-                <ArticleCard key={article.id} article={article} />
+                <ArticleCard
+                  key={article.id}
+                  article={article}
+                  hasExcerpt={false}
+                />
               ))}
               <Link
                 href={"/launchpad"}
