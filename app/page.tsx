@@ -149,7 +149,9 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <Hero />
+      <Hero
+        animationDelay={`${title.split(" ").length * 100 + subheading.split(" ").length * 50 + 2000}ms`}
+      />
       <div className={"max-w-[1300] px-4 mx-auto"}>
         <div className={"py-32"}>
           <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
