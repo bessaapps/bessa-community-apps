@@ -7,7 +7,7 @@ import Image from "next/image";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import ProcessSection from "../components/ProcessSection";
 import { Post } from "@/lib/definitions";
-import { bookingLink, title } from "@/lib/constants";
+import { bookingLink } from "@/lib/constants";
 import { Graph } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
 import ArticleCard from "@/components/ArticleCard";
@@ -16,8 +16,9 @@ import FAQSection from "../components/FAQSection";
 import Hero from "../components/Hero";
 
 export default async function Home() {
+  const heading = "From Impactful Concept to App Store Launch";
   const subheading =
-    "Partnering with forward-thinking innovators, organizations, and communities through expert mobile development and consulting to build cross-platform apps that drive real-world change. Specializing in end-to-end engineering solutions designed for maximum impact.";
+    "Helping innovators, organizations, and communities build and publish their forward-thinking projects to both the Apple App Store and Google Play.";
 
   const WORKS = [
     {
@@ -116,14 +117,12 @@ export default async function Home() {
       <div className={"max-w-[1300] px-4 mx-auto"}>
         <div className={"py-24 sm:py-32"}>
           <div className={"flex flex-col gap-4 max-w-full"}>
-            <h1
-              className={"text-5xl font-bold leading-[1.1] sm:max-w-[66.66%]"}
-            >
-              <BlurInText>{title}</BlurInText>
+            <h1 className={"text-5xl font-bold leading-[1.1] sm:max-w-[49%]"}>
+              <BlurInText>{heading}</BlurInText>
             </h1>
             <p className={"text-xl sm:max-w-[66.66%] mb-8"}>
               <BlurInText
-                offset={title.split(" ").length * 100}
+                offset={heading.split(" ").length * 100}
                 multiplier={50}
               >
                 {subheading}
@@ -140,7 +139,7 @@ export default async function Home() {
                   "opacity-0 animate-blur-in-fade-in cursor-pointer hover:scale-110"
                 }
                 style={{
-                  animationDelay: `${title.split(" ").length * 100 + subheading.split(" ").length * 50 + 1000}ms`
+                  animationDelay: `${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 1000}ms`
                 }}
               >
                 Start my Project!
@@ -150,14 +149,12 @@ export default async function Home() {
         </div>
       </div>
       <Hero
-        animationDelay={`${title.split(" ").length * 100 + subheading.split(" ").length * 50 + 2000}ms`}
+        animationDelay={`${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 2000}ms`}
       />
       <div className={"max-w-[1300] px-4 mx-auto"}>
         <div className={"py-32"}>
           <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
-            <h2 className={"text-4xl font-bold"}>
-              Comprehensive Mobile Development and Consulting Services{" "}
-            </h2>
+            <h2 className={"text-4xl font-bold"}>Services</h2>
             <p>
               Through comprehensive mobile development and consulting, I guide
               your project through every stage of the software lifecycle. The
@@ -185,9 +182,7 @@ export default async function Home() {
         <ProcessSection />
         <div className={"py-32"} id={"works"}>
           <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
-            <h2 className={"text-4xl font-bold"}>
-              Crafting the Future of Custom Application Development
-            </h2>
+            <h2 className={"text-4xl font-bold"}>Pinned Projects</h2>
             <p>
               Through comprehensive mobile development and consulting, I&apos;ve
               helped startups, non-profits, and local communities overcome the

@@ -35,7 +35,7 @@ export default function ProcessSection() {
       <div className={"grid sm:grid-cols-2 gap-4 mb-8"}>
         <div>
           <div className={"flex items-center gap-4"}>
-            <h3 className={"text-3xl font-bold"}>{process.heading}</h3>
+            <h3 className={"text-xl font-bold"}>{process.heading}</h3>
           </div>
         </div>
         <div className={"flex flex-col gap-6"}>
@@ -45,7 +45,7 @@ export default function ProcessSection() {
             {process.steps.map((step) => (
               <p
                 key={step}
-                className={"text-primary text-lg font-semibold text-center"}
+                className={"text-primary font-semibold text-center"}
               >
                 {step}
               </p>

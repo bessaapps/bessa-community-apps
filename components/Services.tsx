@@ -23,10 +23,10 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
         {filteredServices
           .slice(0, 3)
           .map(({ id, slug, title, acf, _embedded }: Post) => {
-            const renderedTitle = stripHtml(title.rendered).result;
+            const titleRendered = stripHtml(title.rendered).result;
 
             return (
-              <Link key={id} href={`/${slug}`} title={renderedTitle}>
+              <Link key={id} href={`/${slug}`} title={titleRendered}>
                 <div
                   className={
                     "relative w-full aspect-square rounded-2xl overflow-hidden"
@@ -47,9 +47,9 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
                       "absolute bg-transparent top-0 flex flex-col justify-end h-full p-4"
                     }
                   >
-                    <p className={"text-primary font-semibold"}>
+                    <h3 className={"text-primary text-xl font-semibold"}>
                       {acf.short_title}
-                    </p>
+                    </h3>
                   </div>
                 </div>
               </Link>
@@ -68,8 +68,11 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
                 return (
                   <div key={index}>
                     <Link key={id} href={`/${slug}`} title={titleRendered}>
-                      <p className={"text-primary font-semibold sm:w-3/4"}>
-                        {acf.short_title}
+                      <p className={"line-clamp-1"}>
+                        <span className={"text-primary font-semibold"}>
+                          {acf.short_title}:
+                        </span>{" "}
+                        {titleRendered}
                       </p>
                     </Link>
                     {index !==
