@@ -186,39 +186,35 @@ export default async function Home() {
                 title={name}
                 target={"_blank"}
                 rel={"noopener noreferrer"}
+                className={
+                  "bg-card relative max-w-full h-full aspect-square rounded-2xl"
+                }
               >
+                <Image
+                  src={image}
+                  alt={name}
+                  className={"h-full w-full object-contain p-8 sm:p-16"}
+                  sizes={"(max-width: 640px) 375px, 626px"}
+                />
                 <div
                   className={
-                    "relative w-full aspect-square rounded-2xl overflow-hidden"
+                    "absolute inset-0 bg-linear-to-b from-transparent to-background"
+                  }
+                />
+                <div
+                  className={
+                    "absolute bg-transparent top-0 flex flex-col justify-end h-full p-4"
                   }
                 >
-                  <Image
-                    src={image}
-                    alt={name}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    sizes={"412px"}
-                  />
-                  <div
-                    className={
-                      "absolute inset-0 bg-linear-to-b from-transparent to-background"
-                    }
-                  />
-                  <div
-                    className={
-                      "absolute bg-transparent top-0 flex flex-col justify-end h-full p-4"
-                    }
-                  >
-                    <p className={"text-primary font-semibold"}>{name}</p>
-                    <p>
-                      {tags.map((tag: string, index: number) => (
-                        <span key={index}>
-                          {tag}
-                          {index < tags.length - 1 && <span> &middot; </span>}
-                        </span>
-                      ))}
-                    </p>{" "}
-                  </div>
+                  <p className={"text-primary font-semibold"}>{name}</p>
+                  <p>
+                    {tags.map((tag: string, index: number) => (
+                      <span key={index}>
+                        {tag}
+                        {index < tags.length - 1 && <span> &middot; </span>}
+                      </span>
+                    ))}
+                  </p>
                 </div>
               </Link>
             ))}
