@@ -80,6 +80,7 @@ export default function ProcessSection() {
                     src={process.image}
                     alt={process.heading}
                     className={"h-full w-full object-contain"}
+                    sizes={"(max-width: 640px) 241px, 74px"}
                   />
                 </div>
                 <div className={"col-span-3 flex items-center"}>
