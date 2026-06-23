@@ -1,7 +1,7 @@
 import Play from "@/assets/images/play.png";
 import AppStore from "@/assets/images/app-store.png";
-import Apple from "@/assets/images/ios.png";
 import Android from "@/assets/images/android.png";
+import Apple from "@/assets/images/ios.png";
 import Image from "next/image";
 
 export default function Hero({ animationDelay }: { animationDelay: string }) {
@@ -29,7 +29,7 @@ export default function Hero({ animationDelay }: { animationDelay: string }) {
           }
         >
           <div className={"basis-1/4"}>
-            <Image src={Apple} alt={"iOS Logo"} />
+            <Image src={Android} alt={"Android Logo"} />
           </div>
         </div>
         <div
@@ -38,7 +38,7 @@ export default function Hero({ animationDelay }: { animationDelay: string }) {
           }
         >
           <div className={"basis-1/4"}>
-            <Image src={Android} alt={"Android Logo"} />
+            <Image src={Apple} alt={"iOS Logo"} />
           </div>
         </div>
       </div>
