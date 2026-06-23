@@ -13,7 +13,11 @@ export default function Hero({ animationDelay }: { animationDelay: string }) {
       >
         <div className={"flex col-start-1 row-start-1"}>
           <div className={"basis-5/8"}>
-            <Image src={AppStore} alt={"Apple App Store Logo"} />
+            <Image
+              src={AppStore}
+              alt={"Apple App Store Logo"}
+              loading={"eager"}
+            />
           </div>
         </div>
         <div

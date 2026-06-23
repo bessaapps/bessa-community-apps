@@ -46,23 +46,51 @@ export default function ProcessSection() {
     }
   ];
 
-  return PROCESSES?.map((process, index) => (
-    <div key={index} className={"py-8"}>
-      <div className={"grid grid-cols-4 gap-4"}>
-        <div className={"aspect-square flex items-center justify-center p-8"}>
-          <Image
-            src={process.image}
-            alt={process.heading}
-            className={"h-full w-full object-contain"}
-          />
+  return (
+    <>
+      <div className={"py-32"}>
+        <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
+          <h2 className={"text-4xl font-bold"}>Process</h2>
+          {/*<p>*/}
+          {/*  Get your quality app that works beautifully on iOS, Android, and*/}
+          {/*  web. I&apos;ll help you all the way from validating your idea to*/}
+          {/*  publishing it to the app stores, help you with everything in*/}
+          {/*  between, test your app, keep your app secure, snappy, and*/}
+          {/*  up-to-date, and solve any technical issues that may come up.{" "}*/}
+          {/*  <Link*/}
+          {/*    href={bookingLink}*/}
+          {/*    target={"_blank"}*/}
+          {/*    rel={"noopener noreferrer"}*/}
+          {/*    className={"text-primary font-semibold"}*/}
+          {/*  >*/}
+          {/*    Start Here &rarr;*/}
+          {/*  </Link>*/}
+          {/*</p>*/}
         </div>
-        <div className={"col-span-3 flex items-center"}>
-          <div className={"p-4"}>
-            <h3 className={"text-xl font-bold mb-4"}>{process.heading}</h3>
-            <p>{process.text}</p>
+        {PROCESSES?.map((process, index) => (
+          <div key={index} className={"py-8"}>
+            <div className={"grid grid-cols-4 gap-4"}>
+              <div
+                className={"aspect-square flex items-center justify-center p-8"}
+              >
+                <Image
+                  src={process.image}
+                  alt={process.heading}
+                  className={"h-full w-full object-contain"}
+                />
+              </div>
+              <div className={"col-span-3 flex items-center"}>
+                <div className={"p-4"}>
+                  <h3 className={"text-xl font-bold mb-4"}>
+                    {process.heading}
+                  </h3>
+                  <p>{process.text}</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
-    </div>
-  ));
+    </>
+  );
 }
