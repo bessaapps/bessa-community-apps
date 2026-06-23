@@ -16,9 +16,9 @@ import FAQSection from "../components/FAQSection";
 import Hero from "../components/Hero";
 
 export default async function Home() {
-  const heading = "From Impactful Concept to App Store Launch";
-  const subheading =
-    "Helping innovators, organizations, and communities build and publish their forward-thinking projects to both the Apple App Store and Google Play.";
+  const HEADING = "From Impactful Concept to App Store Launch";
+  const SUBHEADING =
+    "Building and publishing revolutionary cross-platform apps to the Apple App Store and Google Play for innovators, organizations, and communities.";
 
   const WORKS = [
     {
@@ -115,17 +115,17 @@ export default async function Home() {
         }}
       />
       <div className={"max-w-[1300] px-4 mx-auto"}>
-        <div className={"py-24 sm:py-32"}>
+        <div className={"py-24 sm:py-16"}>
           <div className={"flex flex-col gap-4 max-w-full"}>
             <h1 className={"text-5xl font-bold leading-[1.1] sm:max-w-[49%]"}>
-              <BlurInText>{heading}</BlurInText>
+              <BlurInText>{HEADING}</BlurInText>
             </h1>
-            <p className={"text-xl sm:max-w-[66.66%] mb-8"}>
+            <p className={"text-xl sm:max-w-[40%] mb-8"}>
               <BlurInText
-                offset={heading.split(" ").length * 100}
+                offset={HEADING.split(" ").length * 100}
                 multiplier={50}
               >
-                {subheading}
+                {SUBHEADING}
               </BlurInText>
             </p>
             <Link
@@ -139,7 +139,7 @@ export default async function Home() {
                   "opacity-0 animate-blur-in-fade-in cursor-pointer hover:scale-110"
                 }
                 style={{
-                  animationDelay: `${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 1000}ms`
+                  animationDelay: `${HEADING.split(" ").length * 100 + SUBHEADING.split(" ").length * 50 + 1000}ms`
                 }}
               >
                 Start my Project!
@@ -149,24 +149,18 @@ export default async function Home() {
         </div>
       </div>
       <Hero
-        animationDelay={`${heading.split(" ").length * 100 + subheading.split(" ").length * 50 + 2000}ms`}
+        animationDelay={`${HEADING.split(" ").length * 100 + SUBHEADING.split(" ").length * 50 + 2000}ms`}
       />
       <div className={"max-w-[1300] px-4 mx-auto"}>
         <div className={"py-32"}>
           <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
             <h2 className={"text-4xl font-bold"}>Services</h2>
             <p>
-              Through comprehensive mobile development and consulting, I guide
-              your project through every stage of the software lifecycle. The
-              foundation is robust, cross-platform app development, engineered
-              to deliver flawless performance across iOS and Android devices. To
-              ensure a successful market entry, I manage the technical
-              intricacies of app store publishing, seamlessly navigating both
-              Apple and Google review guidelines to get your product live.
-              Post-launch, I provide data-driven app marketing strategies to
-              accelerate user acquisition and visibility, alongside continuous
-              app maintenance to guarantee long-term security, smooth feature
-              updates, and optimal scaling as your user base grows.{" "}
+              Get your quality app that works beautifully on iOS, Android, and
+              web. I&apos;ll help you all the way from validating your idea to
+              publishing it to the app stores, help you with everything in
+              between, test your app, keep your app secure, snappy, and
+              up-to-date, and tackle any technical issues that may come up.{" "}
               <Link
                 href={bookingLink}
                 target={"_blank"}
