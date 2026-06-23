@@ -151,7 +151,7 @@ export default async function Home() {
       <HeroSection
         animationDelay={`${HEADING.split(" ").length * 100 + SUBHEADING.split(" ").length * 50 + 2000}ms`}
       />
-      <div className={"max-w-[1300] px-4 mx-auto"}>
+      <div className={"max-w-[1300] sm:px-4 mx-auto"}>
         <div className={"py-32"}>
           <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
             <h2 className={"text-4xl font-bold"}>Services</h2>
@@ -161,14 +161,16 @@ export default async function Home() {
               publishing it to the app stores, help you with everything in
               between, test your app, keep your app secure, snappy, and
               up-to-date, and solve any technical issues that may come up.{" "}
-              <Link
-                href={bookingLink}
-                target={"_blank"}
-                rel={"noopener noreferrer"}
-                className={"text-primary font-semibold"}
-              >
-                Start Here &rarr;
-              </Link>
+              <span className={"text-nowrap"}>
+                <Link
+                  href={bookingLink}
+                  target={"_blank"}
+                  rel={"noopener noreferrer"}
+                  className={"text-primary font-semibold"}
+                >
+                  Start Here &rarr;
+                </Link>
+              </span>
             </p>
           </div>
           <Services />

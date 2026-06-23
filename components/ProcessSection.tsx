@@ -67,29 +67,33 @@ export default function ProcessSection() {
           {/*  </Link>*/}
           {/*</p>*/}
         </div>
-        {PROCESSES?.map((process, index) => (
-          <div key={index} className={"py-8"}>
-            <div className={"grid grid-cols-4 gap-4"}>
-              <div
-                className={"aspect-square flex items-center justify-center p-8"}
-              >
-                <Image
-                  src={process.image}
-                  alt={process.heading}
-                  className={"h-full w-full object-contain"}
-                />
-              </div>
-              <div className={"col-span-3 flex items-center"}>
-                <div className={"p-4"}>
-                  <h3 className={"text-xl font-bold mb-4"}>
-                    {process.heading}
-                  </h3>
-                  <p>{process.text}</p>
+        <div className={"mx-4 sm:mx-0"}>
+          {PROCESSES?.map((process, index) => (
+            <div key={index} className={"py-8"}>
+              <div className={"grid grid-cols-4 gap-4"}>
+                <div
+                  className={
+                    "max-w-full h-full aspect-square flex items-center justify-center sm:p-8"
+                  }
+                >
+                  <Image
+                    src={process.image}
+                    alt={process.heading}
+                    className={"h-full w-full object-contain"}
+                  />
+                </div>
+                <div className={"col-span-3 flex items-center"}>
+                  <div className={"sm:px-4"}>
+                    <h3 className={"text-xl font-bold mb-4"}>
+                      {process.heading}
+                    </h3>
+                    <p>{process.text}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );

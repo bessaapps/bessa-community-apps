@@ -60,7 +60,7 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
       <div className={"grid grid-cols-1 sm:grid-cols-2 gap-4"}>
         <div />
         <div>
-          <div className={"py-8"}>
+          <div className={"px-4 py-8"}>
             {filteredServices
               .slice(3, filteredServices.length)
               .map(({ id, slug, title, acf }: Post, index: number) => {
