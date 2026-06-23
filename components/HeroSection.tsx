@@ -20,8 +20,7 @@ export default function HeroSection({
             <Image
               src={AppStore}
               alt={"Apple App Store Logo"}
-              priority
-              fetchPriority={"high"}
+              sizes={"(max-width: 640px) 100vw, 800px"}
             />
           </div>
         </div>
