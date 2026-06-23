@@ -175,26 +175,7 @@ export default async function Home() {
         </div>
         <ProcessSection />
         <div className={"py-32"} id={"works"}>
-          <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
-            <h2 className={"text-4xl font-bold"}>Pinned Projects</h2>
-            <p>
-              Through comprehensive mobile development and consulting, I&apos;ve
-              helped startups, non-profits, and local communities overcome the
-              hurdle of technical complexity to launch high-performance,
-              cross-platform tools. Here are some highlights of my commitment to
-              custom application development that is not only modern and
-              high-tech but also deeply human-centered, providing the scalable
-              digital infrastructure your organization needs to grow and thrive.{" "}
-              <Link
-                href={bookingLink}
-                target={"_blank"}
-                rel={"noopener noreferrer"}
-                className={"text-primary font-semibold"}
-              >
-                Start Here &rarr;
-              </Link>
-            </p>
-          </div>
+          <h2 className={"text-4xl font-bold mx-4 mb-8"}>Pinned Projects</h2>
           <div className={"grid grid-cols-1 sm:grid-cols-2 gap-4"}>
             {WORKS.map(({ name, href, image, tags }) => (
               <Link
