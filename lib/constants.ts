@@ -18,7 +18,7 @@ export const FAQS = {
   "Do you offer local mobile development and consulting for businesses in Las Vegas, Nevada?":
     "Yes! While I am based in Las Vegas, Nevada, I provide mobile development and consulting for partners nationwide. I work primarily with three groups of people: innovators (entrepreneurs) for building and scaling digital solutions; organizations (non-profits, businesses, and education) for internal/external customizable app solutions; and communities for fostering connection, coordinating events, and collective action. No matter where you are, I expand clients’ digital presence with cross-platform apps for iOS, Android, and the web.",
   "How much does mobile development and consulting cost?":
-    "To keep things transparent for clients in the ideation and concept generation stage, the total cost of a project generally starts at $1,500-$3,000. My hourly rate is $50.",
+    "To keep things transparent for clients in the ideation and concept generation stage, my hourly rate is $50.",
   "Why should I choose Bessa Community Apps for mobile development and consulting?":
     "Stop dreaming, start launching. I understand that uncertainty, coupled with a lack of familiarity with mobile development and app distribution, often makes people hesitant to proceed. I stand out in mobile development and consulting because I'm both creative and logical, and I keep my services empathetic and inclusive. I don't just build software; I create apps that work beautifully across iOS, Android, and the web, and are built to grow.",
   "Do you have resources for those just starting to explore mobile development and consulting?":
