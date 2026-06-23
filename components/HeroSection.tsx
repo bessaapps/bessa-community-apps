@@ -21,6 +21,8 @@ export default function HeroSection({
               src={AppStore}
               alt={"Apple App Store Logo"}
               sizes={"(max-width: 640px) 100vw, 800px"}
+              fetchPriority={"high"}
+              priority
             />
           </div>
         </div>
@@ -28,7 +30,11 @@ export default function HeroSection({
           className={"flex justify-end col-start-1 row-start-1 pt-20 sm:pt-65"}
         >
           <div className={"basis-1/2"}>
-            <Image src={Play} alt={"Google Play Logo"} />
+            <Image
+              src={Play}
+              alt={"Google Play Logo"}
+              sizes={"(max-width: 640px) 100vw, 640px"}
+            />
           </div>
         </div>
         <div
@@ -37,7 +43,11 @@ export default function HeroSection({
           }
         >
           <div className={"basis-1/4"}>
-            <Image src={Android} alt={"Android Logo"} />
+            <Image
+              src={Android}
+              alt={"Android Logo"}
+              sizes={"(max-width: 640px) 100vw, 310px"}
+            />
           </div>
         </div>
         <div
@@ -46,7 +56,11 @@ export default function HeroSection({
           }
         >
           <div className={"basis-1/4"}>
-            <Image src={Apple} alt={"iOS Logo"} />
+            <Image
+              src={Apple}
+              alt={"iOS Logo"}
+              sizes={"(max-width: 640px) 100vw, 305px"}
+            />
           </div>
         </div>
       </div>
