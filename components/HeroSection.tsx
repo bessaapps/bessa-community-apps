@@ -17,7 +17,12 @@ export default function HeroSection({
       >
         <div className={"flex col-start-1 row-start-1"}>
           <div className={"basis-5/8"}>
-            <Image src={AppStore} alt={"Apple App Store Logo"} priority />
+            <Image
+              src={AppStore}
+              alt={"Apple App Store Logo"}
+              priority
+              fetchPriority={"high"}
+            />
           </div>
         </div>
         <div
