@@ -13,7 +13,7 @@ import BlurInText from "@/components/BlurInText";
 import ArticleCard from "@/components/ArticleCard";
 import Services from "@/components/Services";
 import FAQSection from "../components/FAQSection";
-import Hero from "../components/Hero";
+import HeroSection from "../components/HeroSection";
 
 export default async function Home() {
   const HEADING = "From Impactful Concept to App Store Launch";
@@ -148,7 +148,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <Hero
+      <HeroSection
         animationDelay={`${HEADING.split(" ").length * 100 + SUBHEADING.split(" ").length * 50 + 2000}ms`}
       />
       <div className={"max-w-[1300] px-4 mx-auto"}>

@@ -4,7 +4,11 @@ import Android from "@/assets/images/android.png";
 import Apple from "@/assets/images/ios.png";
 import Image from "next/image";
 
-export default function Hero({ animationDelay }: { animationDelay: string }) {
+export default function HeroSection({
+  animationDelay
+}: {
+  animationDelay: string;
+}) {
   return (
     <>
       <div
@@ -13,11 +17,7 @@ export default function Hero({ animationDelay }: { animationDelay: string }) {
       >
         <div className={"flex col-start-1 row-start-1"}>
           <div className={"basis-5/8"}>
-            <Image
-              src={AppStore}
-              alt={"Apple App Store Logo"}
-              loading={"eager"}
-            />
+            <Image src={AppStore} alt={"Apple App Store Logo"} priority />
           </div>
         </div>
         <div
