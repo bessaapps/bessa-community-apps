@@ -8,58 +8,52 @@ import Maintenance from "@/assets/images/process/maintenance.png";
 import Image from "next/image";
 
 export default function ProcessSection() {
-  const processes = [
+  const PROCESSES = [
     {
       heading: "Discovery",
-      text: "This is where every great app begins. This stage includes open discussion to understand your goals, in-depth research to identify opportunities, and clear scope definition to set the foundation for success. By aligning vision and strategy from the start, this phase ensures that development moves forward with focus, efficiency, and confidence.",
+      text: "The first step provides us with a roadmap to success. We’ll clarify your goals, research the market, and define the scope of work. With vision and the latest tools, we’ll see your app get successfully published to the Apple App Store and Google Play.",
       image: Discovery
     },
     {
       heading: "Design",
-      text: "This will bring your app to life visually with a clear style guide and prototypes. This stage defines the look, feel, and flow of your product, ensuring consistency across every screen and a seamless user experience. By combining creativity with usability, this phase lays the groundwork for an app that is both visually stunning and intuitive to navigate.",
+      text: "We all love a stunning visual layout and experience that just makes sense. I'll build you a style guide, mockups, and user flows to make your app a dream to use, accessible, and geared towards meeting your goals. Users will be encouraged to sign up immediately.",
       image: Design
     },
     {
       heading: "Build",
-      text: "Here Ideas will take shape and come to life. During this stage, layouts are crafted for clarity and usability, functionality is built to deliver seamless performance, and content is integrated to create a polished, engaging experience. Every detail is handled with precision to ensure the final product reflects your vision and meets the highest standards of quality.",
+      text: "Roll out the red carpet; this is your big idea! I’ll incorporate the core functionality you originally envisioned for the app. I’ll help you build your app that solves your customers’ real-world problems.",
       image: Build
     },
     {
       heading: "Quality Assurance",
-      text: "Here Ideas will take shape and come to life. During this stage, layouts are crafted for clarity and usability, functionality is built to deliver seamless performance, and content is integrated to create a polished, engaging experience. Every detail is handled with precision to ensure the final product reflects your vision and meets the highest standards of quality.",
+      text: "An app that delivers on its promise will sell more. We’ll make sure the user experience is as it should be and that the functionality you advertise works flawlessly. This will help your app get good reviews and rank on the charts after you launch.",
       image: QualityAssurance
     },
     {
       heading: "Distribution",
-      text: "The final state ensures your app reaches the world with impact. This stage includes preparing your app for launch and managing submission to app stores, handling requirements and guidelines with expertise. By streamlining the process, the distribution phase makes your app accessible to users quickly and positions it for maximum visibility and success.",
+      text: "This is what we’ve been waiting for! We’ll gather the materials needed to submit your app to the app stores. I’ll then make any edits needed to pass the review processes before submitting to both the Apple App Store and Google Play. Now you can circulate your revolutionary new app and earn proceeds through both stores.",
       image: Distribution
     },
     {
       heading: "Marketing",
-      text: "The final state ensures your app reaches the world with impact. This stage includes preparing your app for launch and managing submission to app stores, handling requirements and guidelines with expertise. By streamlining the process, the distribution phase makes your app accessible to users quickly and positions it for maximum visibility and success.",
+      text: "Let’s make sure your launch party is a success! I’ll help curate your app store listing and marketing materials to help you get the most traffic to your listing and your app in the hands of the people who need it most.",
       image: Marketing
     },
     {
       heading: "Maintenance",
-      text: "The final state ensures your app reaches the world with impact. This stage includes preparing your app for launch and managing submission to app stores, handling requirements and guidelines with expertise. By streamlining the process, the distribution phase makes your app accessible to users quickly and positions it for maximum visibility and success.",
+      text: "We can’t stop there! Now we’ll analyze feedback from reviews and user analytics metrics. I’ll also provide the latest updates, improvements, and bug fixes based on what your users want and are experiencing.",
       image: Maintenance
     }
   ];
 
-  return null;
-
-  return processes?.map((process, index) => (
+  return PROCESSES?.map((process, index) => (
     <div key={index} className={"py-8"}>
       <div className={"grid grid-cols-4 gap-4"}>
-        <div
-          className={
-            "w-full max-w-full h-full max-h-full aspect-square flex items-center justify-center"
-          }
-        >
+        <div className={"aspect-square flex items-center justify-center p-8"}>
           <Image
             src={process.image}
             alt={process.heading}
-            style={{ height: "100%", width: "100%", objectFit: "contain" }}
+            className={"h-full w-full object-contain"}
           />
         </div>
         <div className={"col-span-3 flex items-center"}>

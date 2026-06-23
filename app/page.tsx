@@ -160,7 +160,7 @@ export default async function Home() {
               web. I&apos;ll help you all the way from validating your idea to
               publishing it to the app stores, help you with everything in
               between, test your app, keep your app secure, snappy, and
-              up-to-date, and tackle any technical issues that may come up.{" "}
+              up-to-date, and solve any technical issues that may come up.{" "}
               <Link
                 href={bookingLink}
                 target={"_blank"}
