@@ -5,7 +5,8 @@ import { bookingLink, url } from "@/lib/constants";
 
 export const metadata = formatMetadata({
   metadataTitle: "Contact",
-  metadataDescription: "", // todo: finish
+  metadataDescription:
+    "Start your cross-platform mobile app with a call, email, or by downloading the non-disclosure agreement.",
   path: `${url}/contact`
 });
 
@@ -27,6 +28,8 @@ export default function ContactPage() {
       {
         "@type": "ContactPage",
         name: "Contact",
+        description:
+          "Start your cross-platform mobile app with a call, email, or by downloading the non-disclosure agreement.",
         url: `${url}/contact`,
         datePublished: new Date().toISOString(),
         dateModified: new Date().toISOString()
@@ -42,7 +45,10 @@ export default function ContactPage() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"max-w-[1300] px-8 mx-auto"}>
+      <div
+        className={"max-w-[1300] px-8 mx-auto"}
+        style={{ minHeight: "calc(100vh - 65px)" }}
+      >
         <div className={"py-24 sm:py-16"}>
           <div className={"flex flex-col gap-2"}>
             <h1 className={"text-5xl font-bold leading-[1.1] mb-2"}>Contact</h1>
@@ -73,7 +79,7 @@ export default function ContactPage() {
                 rel={"noopener noreferrer"}
                 className={"text-primary font-semibold"}
               >
-                Non-Disclosure Agreement &darr;
+                Non-Disclosure Agreement &rarr;
               </Link>
             </p>
           </div>
