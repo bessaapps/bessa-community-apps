@@ -64,11 +64,18 @@ export default function ContactPage() {
                 Email me &rarr;
               </Link>
             </p>
-            {/*todo: <p>*/}
-            {/*  <Link href={""} className={"text-primary font-semibold"}>*/}
-            {/*    Non-Disclosure Agreement &darr;*/}
-            {/*  </Link>*/}
-            {/*</p>*/}
+            <p>
+              <Link
+                href={
+                  "https://www.jotform.com/sign/261745910908059/invite/01kvxkwmcheed4c02314dd1d29"
+                }
+                target={"_blank"}
+                rel={"noopener noreferrer"}
+                className={"text-primary font-semibold"}
+              >
+                Non-Disclosure Agreement &darr;
+              </Link>
+            </p>
           </div>
         </div>
       </div>
