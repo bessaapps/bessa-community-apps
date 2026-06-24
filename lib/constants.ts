@@ -1,15 +1,13 @@
 export const keyword = "Mobile Development and Consulting";
 export const title = "Mobile Development and Consulting for Impactful Apps";
 export const url = "https://bessaapps.com";
-export const description =
-  "Stop dreaming, start launching with my custom application development. I guide you end-to-end, from concept to app store for iOS, Android, and web.";
 
 export const bookingLink = "https://calendar.app.google/uGBwb7WfWXLUgSU6A";
 
 export const LINKS = [
   { href: "/#works", anchor: "Works" },
   { href: "/#about", anchor: "About" },
-  { href: "/#contact", anchor: "Contact" }
+  { href: "/contact", anchor: "Contact" }
 ];
 
 export const FAQS = {

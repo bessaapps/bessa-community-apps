@@ -54,7 +54,7 @@ export default async function Home() {
   );
   const articles = await response.json();
 
-  const graph: Graph = {
+  const jsonLd: Graph = {
     "@context": "https://schema.org",
     "@graph": [
       {
@@ -111,7 +111,7 @@ export default async function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(graph).replace(/</g, "\\u003c")
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
       <div className={"max-w-[1300] px-4 mx-auto"}>

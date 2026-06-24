@@ -13,7 +13,7 @@ export const metadata = formatMetadata({
   metadataTitle: "Launchpad: The App Builder's Guide",
   metadataDescription:
     "Stop dreaming; start launching. The Launchpad blog helps innovators move past feeling immobilized with custom application development and a clear path forward.",
-  path: "https://bessaapps.com/launchpad"
+  path: `${url}/launchpad`
 });
 
 export default async function Launchpad() {
@@ -56,13 +56,13 @@ export default async function Launchpad() {
         }}
       />
       <div className={"max-w-[1300] px-4 mx-auto"}>
-        <div className={"py-24 sm:py-32"}>
+        <div className={"py-24 sm:py-16"}>
           <div className={"flex flex-col gap-4"}>
             <div className={"text-xl"}>
               <div className={"flex flex-col gap-4 max-w-full"}>
                 <h1
                   className={
-                    "text-5xl sm:text-7xl font-bold leading-[1.1] sm:max-w-[75%]"
+                    "text-5xl sm:text-5xl font-bold leading-[1.1] sm:max-w-[75%]"
                   }
                 >
                   <BlurInText>Launchpad</BlurInText>

@@ -1,7 +1,7 @@
 import "./globals.css";
 import CTA from "@/components/CTA";
 import { formatMetadata } from "@/lib/helpers";
-import { description, url } from "@/lib/constants";
+import { url } from "@/lib/constants";
 import { Space_Grotesk, Inter } from "next/font/google";
 import Clock from "@/components/Clock";
 import Weather from "@/components/Weather";
@@ -14,7 +14,8 @@ const inter = Inter({ variable: "--font-inter" });
 
 export const metadata = formatMetadata({
   metadataTitle: "Bessa Community Apps",
-  metadataDescription: description,
+  metadataDescription:
+    "Building and publishing revolutionary cross-platform apps to the Apple App Store and Google Play for innovators, organizations, and communities.",
   path: url
 });
 
