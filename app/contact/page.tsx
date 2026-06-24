@@ -64,11 +64,11 @@ export default function ContactPage() {
                 Email me &rarr;
               </Link>
             </p>
-            <p>
-              <Link href={""} className={"text-primary font-semibold"}>
-                Non-Disclosure Agreement &darr;
-              </Link>
-            </p>
+            {/*todo: <p>*/}
+            {/*  <Link href={""} className={"text-primary font-semibold"}>*/}
+            {/*    Non-Disclosure Agreement &darr;*/}
+            {/*  </Link>*/}
+            {/*</p>*/}
           </div>
         </div>
       </div>
