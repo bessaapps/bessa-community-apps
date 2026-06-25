@@ -4,7 +4,7 @@ import { Graph } from "schema-dts";
 import { bookingLink, url } from "@/lib/constants";
 
 export const metadata = formatMetadata({
-  metadataTitle: "Contact",
+  metadataTitle: "Contact Bessa Community Apps",
   metadataDescription:
     "Start your cross-platform mobile app with a call, email, or by downloading the non-disclosure agreement.",
   path: `${url}/contact`
@@ -27,7 +27,7 @@ export default function ContactPage() {
       },
       {
         "@type": "ContactPage",
-        name: "Contact",
+        name: "Contact Bessa Community Apps",
         description:
           "Start your cross-platform mobile app with a call, email, or by downloading the non-disclosure agreement.",
         url: `${url}/contact`,
