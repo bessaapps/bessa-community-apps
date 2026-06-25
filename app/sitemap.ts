@@ -49,6 +49,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: dayjs(modified).toISOString(),
       changeFrequency: "daily",
       priority: 0.7
-    }))
+    })),
+    {
+      url: "https://bessaapps.com/contact",
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.6
+    }
   ];
 }
