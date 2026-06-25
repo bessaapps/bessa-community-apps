@@ -7,8 +7,8 @@ import Image from "next/image";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import ProcessSection from "../components/ProcessSection";
 import { Post } from "@/lib/definitions";
-import { bookingLink } from "@/lib/constants";
-import { Graph } from "schema-dts";
+import { bookingLink, FAQS, LINKS } from "@/lib/constants";
+import { Graph, ListItem, Question } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
 import ArticleCard from "@/components/ArticleCard";
 import Services from "@/components/Services";
@@ -58,17 +58,6 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        name: "Bessa Community Apps",
-        url: "https://bessaapps.com",
-        logo: "https://bessaapps.com/logo.png",
-        sameAs: [
-          "https://x.com/bessaapps",
-          "https://linkedin.com/company/bessaapps",
-          "https://github.com/bessaapps"
-        ]
-      },
-      {
         "@type": "BreadcrumbList",
         itemListElement: [
           {
@@ -77,24 +66,14 @@ export default async function Home() {
             name: "Home",
             item: "https://bessaapps.com"
           },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Works",
-            item: "https://bessapps.com/#works"
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: "About",
-            item: "https://bessaapps.com/#about"
-          },
-          {
-            "@type": "ListItem",
-            position: 4,
-            name: "Contact",
-            item: "https://bessaapps.com/#contact"
-          },
+          ...LINKS.map(
+            ({ href, anchor }, index): ListItem => ({
+              "@type": "ListItem",
+              position: index + 2,
+              name: anchor,
+              item: `https://bessaapps.com/${href}`
+            })
+          ),
           {
             "@type": "ListItem",
             position: 5,
@@ -102,6 +81,16 @@ export default async function Home() {
             item: "https://bessaapps.com/launchpad"
           }
         ]
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: Object.entries(FAQS).map(
+          ([key, value]): Question => ({
+            "@type": "Question",
+            name: key,
+            acceptedAnswer: { "@type": "Answer", text: value }
+          })
+        )
       }
     ]
   };
