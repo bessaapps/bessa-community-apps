@@ -58,6 +58,17 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "FAQPage",
+        mainEntity: Object.entries(FAQS).map(
+          ([key, value]): Question => ({
+            "@type": "Question",
+            name: key,
+            acceptedAnswer: { "@type": "Answer", text: value }
+          })
+        )
+      },
+      { "@type": "LocalBusiness", name: "Bessa Community Apps" },
+      {
         "@type": "BreadcrumbList",
         itemListElement: [
           {
@@ -81,16 +92,6 @@ export default async function Home() {
             item: "https://bessaapps.com/launchpad"
           }
         ]
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: Object.entries(FAQS).map(
-          ([key, value]): Question => ({
-            "@type": "Question",
-            name: key,
-            acceptedAnswer: { "@type": "Answer", text: value }
-          })
-        )
       }
     ]
   };
