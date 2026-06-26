@@ -68,6 +68,7 @@ export default async function Home() {
           "@type": "PostalAddress",
           addressLocality: "Las Vegas",
           addressRegion: "NV",
+          postalCode: "89104",
           addressCountry: "US"
         },
         priceRange: "$1500+",
@@ -95,12 +96,12 @@ export default async function Home() {
               "@type": "ListItem",
               position: index + 1,
               name: anchor,
-              item: `https://bessaapps.com/${href}`
+              item: `https://bessaapps.com${href}`
             })
           ),
           {
             "@type": "ListItem",
-            position: LINKS.length + 5,
+            position: LINKS.length + 1,
             name: "Launchpad",
             item: "https://bessaapps.com/launchpad"
           }
