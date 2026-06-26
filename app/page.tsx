@@ -58,6 +58,26 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "ProfessionalService",
+        name: "Bessa Community Apps",
+        url: "https://bessaapps.com",
+        logo: "https://bessaapps.com/logo.png",
+        image: "https://bessaapps.com/logo.png",
+        description: SUBHEADING,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Las Vegas",
+          addressRegion: "NV",
+          addressCountry: "US"
+        },
+        priceRange: "$1500+",
+        sameAs: [
+          "https://x.com/bessaapps",
+          "https://linkedin.com/company/bessaapps",
+          "https://github.com/bessaapps"
+        ]
+      },
+      {
         "@type": "FAQPage",
         mainEntity: Object.entries(FAQS).map(
           ([key, value]): Question => ({
@@ -67,27 +87,20 @@ export default async function Home() {
           })
         )
       },
-      { "@type": "LocalBusiness", name: "Bessa Community Apps" },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: "https://bessaapps.com"
-          },
           ...LINKS.map(
             ({ href, anchor }, index): ListItem => ({
               "@type": "ListItem",
-              position: index + 2,
+              position: index + 1,
               name: anchor,
               item: `https://bessaapps.com/${href}`
             })
           ),
           {
             "@type": "ListItem",
-            position: 5,
+            position: LINKS.length + 5,
             name: "Launchpad",
             item: "https://bessaapps.com/launchpad"
           }
