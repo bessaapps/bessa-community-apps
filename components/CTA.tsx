@@ -38,7 +38,11 @@ export default function CTA() {
                 Book a Call
               </Button>
             </Link>
-            <p className={"text-secondary"}>topher@bessaapps.com</p>
+            <p className={"text-secondary"}>
+              <Link href={"mailto:topher@bessaapps.com"}>
+                topher@bessaapps.com
+              </Link>
+            </p>
           </div>
           <div className={"flex justify-end gap-4 mb-4"}>
             <Link

@@ -7,7 +7,7 @@ import Image from "next/image";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import ProcessSection from "../components/ProcessSection";
 import { Post } from "@/lib/definitions";
-import { bookingLink, FAQS, LINKS } from "@/lib/constants";
+import { bookingLink, FAQS, LINKS, SOCIALS } from "@/lib/constants";
 import { Graph, ListItem, Question } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
 import ArticleCard from "@/components/ArticleCard";
@@ -77,11 +77,7 @@ export default async function Home() {
           addressCountry: "US"
         },
         priceRange: "$1500+",
-        sameAs: [
-          "https://x.com/bessaapps",
-          "https://linkedin.com/company/bessaapps",
-          "https://github.com/bessaapps"
-        ]
+        sameAs: SOCIALS
       },
       {
         "@type": "FAQPage",

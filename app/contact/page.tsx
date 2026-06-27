@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { formatMetadata } from "@/lib/helpers";
 import { Graph } from "schema-dts";
-import { bookingLink, url } from "@/lib/constants";
+import { bookingLink, SOCIALS, url } from "@/lib/constants";
+import { LuMapPin } from "react-icons/lu";
 
 export const metadata = formatMetadata({
   metadataTitle: "Contact Bessa Community Apps",
@@ -19,11 +20,7 @@ export default function ContactPage() {
         name: "Bessa Community Apps",
         url: "https://bessaapps.com",
         logo: "https://bessaapps.com/logo.png",
-        sameAs: [
-          "https://x.com/bessaapps",
-          "https://linkedin.com/company/bessaapps",
-          "https://github.com/bessaapps"
-        ]
+        sameAs: SOCIALS
       },
       {
         "@type": "ContactPage",
@@ -52,6 +49,11 @@ export default function ContactPage() {
         <div className={"py-24 sm:py-16"}>
           <div className={"flex flex-col gap-2"}>
             <h1 className={"text-5xl font-bold leading-[1.1] mb-2"}>Contact</h1>
+            <p className={"text-primary text-xl font-bold"}>Topher</p>
+            <p className={"flex items-center gap-2"}>
+              <LuMapPin />
+              Remote - Las Vegas, NV
+            </p>
             <p>
               <Link
                 href={bookingLink}
