@@ -73,7 +73,7 @@ export default function ProcessSection() {
               <div className={"grid grid-cols-4 gap-4"}>
                 <div
                   className={
-                    "max-w-full h-full aspect-square flex items-center justify-center sm:p-8"
+                    "h-full w-full max-h-full max-w-full aspect-square flex items-center justify-center sm:p-8"
                   }
                 >
                   <Image

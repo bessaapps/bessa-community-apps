@@ -52,6 +52,7 @@ export default async function ServicePage({
 
   const title = stripHtml(service.title.rendered).result;
   const excerpt = stripHtml(service.excerpt.rendered).result;
+  const featuredMedia = service._embedded["wp:featuredmedia"][0];
 
   const jsonLd: WithContext<Service> = {
     "@context": "https://schema.org",
@@ -63,7 +64,7 @@ export default async function ServicePage({
     },
     areaServed: "Worldwide",
     name: service?.acf?.meta_title || title,
-    image: service._embedded["wp:featuredmedia"][0].source_url,
+    image: featuredMedia.source_url,
     description: excerpt,
     url: `http://bessaapps.com/${slug}`
   };
@@ -101,13 +102,21 @@ export default async function ServicePage({
           </Link>
         </div>
         <div className={"max-w-[1300] mx-auto pt-12 sm:pt-16 pb-12"}>
-          <div className={"relative aspect-[1.4] rounded-2xl overflow-hidden"}>
-            <Image
-              src={service._embedded["wp:featuredmedia"][0].source_url}
-              alt={service._embedded["wp:featuredmedia"][0].alt_text}
-              className={"object-cover"}
-              fill
-            />
+          <div className={"bg-card relative aspect-[1.4] rounded-2xl"}>
+            <div
+              className={
+                "h-full w-full max-h-full max-w-full aspect-square flex items-center justify-center p-8"
+              }
+            >
+              <Image
+                src={featuredMedia.source_url}
+                height={featuredMedia.media_details.height}
+                width={featuredMedia.media_details.width}
+                alt={featuredMedia.alt_text}
+                className={"h-full w-full object-contain"}
+                sizes={"(max-width: 640px) 343px, 1268px"}
+              />
+            </div>
           </div>
         </div>
         <div className={"max-w-[800] py-32 mx-auto"}>

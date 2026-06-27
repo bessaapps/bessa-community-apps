@@ -30,7 +30,7 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
                 <div className={"bg-card relative rounded-2xl"}>
                   <div
                     className={
-                      "max-w-full h-full aspect-square rounded-2xl overflow-hidden p-8"
+                      "h-full w-full max-h-full max-w-full aspect-square flex items-center justify-center p-8"
                     }
                   >
                     <Image
@@ -43,7 +43,7 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
                       }
                       alt={_embedded["wp:featuredmedia"][0].alt_text}
                       className={"h-full w-full object-contain"}
-                      sizes={"412px"}
+                      sizes={"(max-width: 640px) ?px, 412px"}
                     />
                   </div>
                   <div
