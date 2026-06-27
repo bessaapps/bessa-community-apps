@@ -24,6 +24,7 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
           .slice(0, 3)
           .map(({ id, slug, title, acf, _embedded }: Post) => {
             const titleRendered = stripHtml(title.rendered).result;
+            const featuredMedia = _embedded["wp:featuredmedia"][0];
 
             return (
               <Link key={id} href={`/${slug}`} title={titleRendered}>
@@ -34,16 +35,12 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
                     }
                   >
                     <Image
-                      src={_embedded["wp:featuredmedia"][0].source_url}
-                      height={
-                        _embedded["wp:featuredmedia"][0].media_details.height
-                      }
-                      width={
-                        _embedded["wp:featuredmedia"][0].media_details.width
-                      }
-                      alt={_embedded["wp:featuredmedia"][0].alt_text}
+                      src={featuredMedia.source_url}
+                      height={featuredMedia.media_details.height}
+                      width={featuredMedia.media_details.width}
+                      alt={featuredMedia.alt_text}
                       className={"h-full w-full object-contain"}
-                      sizes={"(max-width: 640px) ?px, 412px"}
+                      sizes={"(max-width: 640px) 100vw, 412px"}
                     />
                   </div>
                   <div

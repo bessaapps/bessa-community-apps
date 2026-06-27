@@ -21,9 +21,9 @@ export default function ArticleCard({
         <Image
           src={article?._embedded?.["wp:featuredmedia"]?.[0]?.source_url}
           alt={article?._embedded?.["wp:featuredmedia"]?.[0]?.alt_text}
-          fill
           style={{ objectFit: "cover" }}
-          sizes={"640px"}
+          sizes={"(max-width: 640px) 100vw, 640px"}
+          fill
         />
         <div
           className={

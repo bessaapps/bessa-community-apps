@@ -203,7 +203,7 @@ export default async function Home() {
                   src={image}
                   alt={name}
                   className={"h-full w-full object-contain p-8 sm:p-16"}
-                  sizes={"(max-width: 640px) 375px, 626px"}
+                  sizes={"(max-width: 640px) 100vw, 626px"}
                 />
                 <div
                   className={

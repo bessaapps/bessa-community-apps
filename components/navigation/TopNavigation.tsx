@@ -25,10 +25,10 @@ export default function TopNavigation() {
               <div className={"w-12"}>
                 <Image
                   src={Logo}
-                  sizes={"48px"}
                   alt={
                     "Bessa Community Apps company logo with abstract concentric lines, representing a provider of custom mobile app development services."
                   }
+                  sizes={"48px"}
                   className={"object-fill"}
                 />
               </div>

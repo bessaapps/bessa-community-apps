@@ -114,7 +114,7 @@ export default async function ServicePage({
                 width={featuredMedia.media_details.width}
                 alt={featuredMedia.alt_text}
                 className={"h-full w-full object-contain"}
-                sizes={"(max-width: 640px) 343px, 1268px"}
+                sizes={"(max-width: 640px) 100vw, 1268px"}
               />
             </div>
           </div>
