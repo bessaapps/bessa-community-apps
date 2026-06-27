@@ -105,6 +105,14 @@ export default function TopNavigationNavigationMenu() {
                   </NavigationMenuLink>
                 );
               })}
+              <NavigationMenuLink asChild>
+                <Link
+                  href={"/launchpad"}
+                  title={"Launchpad: The App Builder's Guide"}
+                >
+                  Read More &rarr;
+                </Link>
+              </NavigationMenuLink>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
