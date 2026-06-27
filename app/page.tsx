@@ -14,6 +14,11 @@ import ArticleCard from "@/components/ArticleCard";
 import Services from "@/components/Services";
 import FAQSection from "../components/FAQSection";
 import HeroSection from "../components/HeroSection";
+import {
+  TbBrandJavascript,
+  TbBrandNodejs,
+  TbBrandTypescript
+} from "react-icons/tb";
 
 export default async function Home() {
   const HEADING = "From Impactful Concept to App Store Launch";
@@ -247,6 +252,11 @@ export default async function Home() {
                   Let&apos;s get started!
                 </Button>
               </Link>
+              <div className={"flex gap-2"}>
+                <TbBrandTypescript />
+                <TbBrandJavascript />
+                <TbBrandNodejs />
+              </div>
             </div>
             <div className={"rounded-2xl overflow-hidden"}>
               <Image
