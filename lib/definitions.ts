@@ -4,6 +4,12 @@ export interface Post {
   title: { rendered: string };
   excerpt: { rendered: string };
   modified: string;
-  _embedded: { "wp:featuredmedia": { source_url: string; alt_text: string }[] };
+  _embedded: {
+    "wp:featuredmedia": {
+      source_url: string;
+      alt_text: string;
+      media_details: { height: number; width: number };
+    }[];
+  };
   acf: { meta_title: string; short_title: string };
 }

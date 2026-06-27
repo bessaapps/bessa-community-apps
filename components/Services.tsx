@@ -27,17 +27,25 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
 
             return (
               <Link key={id} href={`/${slug}`} title={titleRendered}>
-                <div
-                  className={
-                    "relative w-full aspect-square rounded-2xl overflow-hidden"
-                  }
-                >
-                  <Image
-                    src={_embedded["wp:featuredmedia"][0].source_url}
-                    alt={_embedded["wp:featuredmedia"][0]?.alt_text}
-                    sizes={"412px"}
-                    fill
-                  />
+                <div className={"bg-card relative rounded-2xl"}>
+                  <div
+                    className={
+                      "max-w-full h-full aspect-square rounded-2xl overflow-hidden p-8"
+                    }
+                  >
+                    <Image
+                      src={_embedded["wp:featuredmedia"][0].source_url}
+                      height={
+                        _embedded["wp:featuredmedia"][0].media_details.height
+                      }
+                      width={
+                        _embedded["wp:featuredmedia"][0].media_details.width
+                      }
+                      alt={_embedded["wp:featuredmedia"][0].alt_text}
+                      className={"h-full w-full object-contain"}
+                      sizes={"412px"}
+                    />
+                  </div>
                   <div
                     className={
                       "absolute inset-0 bg-linear-to-b from-transparent to-background"
@@ -67,8 +75,8 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
                 const titleRendered = stripHtml(title.rendered).result;
 
                 return (
-                  <div key={index}>
-                    <Link key={id} href={`/${slug}`} title={titleRendered}>
+                  <div key={id}>
+                    <Link href={`/${slug}`} title={titleRendered}>
                       <p className={"line-clamp-1"}>
                         <span className={"text-primary font-semibold"}>
                           {acf.short_title}:
