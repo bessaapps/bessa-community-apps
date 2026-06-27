@@ -36,7 +36,7 @@ export default function ProcessSection() {
     },
     {
       heading: "Marketing",
-      text: "Let’s make sure your launch party is a success! I’ll help curate your app store listing and marketing materials to help you get the most traffic to your listing and your app in the hands of the people who need it most.",
+      text: "Let’s make sure your launch party is a success! I’ll help curate your app store listing and marketing materials to drive the most traffic to your listing and put your app in the hands of the people who need it most.",
       image: Marketing
     },
     {
@@ -80,7 +80,7 @@ export default function ProcessSection() {
                     src={process.image}
                     alt={process.heading}
                     className={"h-full w-full object-contain"}
-                    sizes={"(max-width: 640px) 241px, 74px"}
+                    sizes={"(max-width: 640px) 74px, 241px"}
                   />
                 </div>
                 <div className={"col-span-3 flex items-center"}>

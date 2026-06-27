@@ -234,19 +234,17 @@ export default async function Home() {
                 <span className={"text-primary font-bold"}>
                   A passionate community builder.
                 </span>{" "}
-                As a software engineer, my work goes beyond just writing code;
-                it is about fostering connection. I specialize in impactful,
-                cross-platform mobile development and consulting because I am
-                deeply passionate about building digital spaces that bring
-                people together. Whether I&apos;m partnering with local
-                grassroots organizations or global innovators, my goal is to
-                deliver end-to-end solutions that do not just function
-                flawlessly, but actually empower, engage, and uplift the
-                communities they serve.
+                I care deeply about keeping online and real-life communities
+                important to our culture thriving and protected. Web and mobile
+                apps are a great way to connect people in society. So, the
+                technology we build together can support, advance, and defend
+                important communities. From non-profits to educational
+                institutions and everything in between, we can establish tools
+                to champion and conserve the communities we care about most.
               </p>
               <Link href={"mailto:topher@bessaapps.com"}>
                 <Button className={"cursor-pointer hover:scale-110"}>
-                  Let&apos;s Talk!
+                  Let&apos;s get started!
                 </Button>
               </Link>
             </div>
