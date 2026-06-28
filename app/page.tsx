@@ -9,7 +9,6 @@ import ProcessSection from "../components/ProcessSection";
 import { Post } from "@/lib/definitions";
 import { bookingLink, FAQS, LINKS, SOCIALS } from "@/lib/constants";
 import { Graph, ListItem, Question } from "schema-dts";
-import BlurInText from "@/components/BlurInText";
 import ArticleCard from "@/components/ArticleCard";
 import Services from "@/components/Services";
 import FAQSection from "../components/FAQSection";
@@ -21,7 +20,6 @@ import {
 } from "react-icons/tb";
 
 export default async function Home() {
-  const HEADING = "From Impactful Concept to App Store Launch";
   const SUBHEADING =
     "Building and publishing revolutionary cross-platform apps to the Apple App Store and Google Play for innovators, organizations, and communities.";
 
@@ -119,43 +117,32 @@ export default async function Home() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"max-w-[1300] px-4 mx-auto"}>
-        <div className={"py-24 sm:py-16"}>
-          <div className={"flex flex-col gap-4 max-w-full"}>
-            <h1 className={"text-5xl font-bold leading-[1.1] sm:max-w-[49%]"}>
-              <BlurInText>{HEADING}</BlurInText>
-            </h1>
-            <p className={"text-xl sm:max-w-[40%] mb-8"}>
-              <BlurInText
-                offset={HEADING.split(" ").length * 100}
-                multiplier={50}
-              >
-                {SUBHEADING}
-              </BlurInText>
-            </p>
-            <Link
-              href={bookingLink}
-              target={"_blank"}
-              rel={"noopener noreferrer"}
-            >
-              <Button
-                size={"lg"}
-                className={
-                  "opacity-0 animate-blur-in-fade-in cursor-pointer hover:scale-110"
-                }
-                style={{
-                  animationDelay: `${HEADING.split(" ").length * 100 + SUBHEADING.split(" ").length * 50 + 1000}ms`
-                }}
-              >
-                Start my Project!
-              </Button>
-            </Link>
-          </div>
+      <HeroSection />
+      <div
+        className={
+          "h-screen absolute top-0 right-0 left-0 flex items-center px-4"
+        }
+      >
+        <div className={"flex flex-col gap-4"}>
+          <h1 className={"text-5xl font-bold leading-[1.1] max-w-[575]"}>
+            From Impactful Concept to App Store Launch
+          </h1>
+          <p className={"text-xl max-w-[575] mb-8"}>
+            Building and publishing revolutionary cross-platform apps to the
+            Apple App Store and Google Play for innovators, organizations, and
+            communities.
+          </p>
+          <Link
+            href={bookingLink}
+            target={"_blank"}
+            rel={"noopener noreferrer"}
+          >
+            <Button size={"lg"} className={"cursor-pointer hover:scale-110"}>
+              Start my Project!
+            </Button>
+          </Link>
         </div>
       </div>
-      <HeroSection
-        animationDelay={`${HEADING.split(" ").length * 100 + SUBHEADING.split(" ").length * 50 + 2000}ms`}
-      />
       <div className={"max-w-[1300] px-4 mx-auto"}>
         <div className={"py-32"}>
           <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
