@@ -9,8 +9,12 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <div className={"h-screen px-4"}>
-      <div className={"max-w-1/2 absolute top-1/16 right-0"}>
+    <div className={"relative h-screen px-4"}>
+      <div
+        className={
+          "max-w-1/2 sm:max-w-1/2 absolute bottom-52 sm:top-1/16 right-4 sm:right-16"
+        }
+      >
         <Image
           src={Play}
           alt={"Google Play Logo"}
@@ -19,7 +23,11 @@ export default function HeroSection() {
           priority
         />
       </div>
-      <div className={"max-w-5/8 absolute bottom-0 left-1/8"}>
+      <div
+        className={
+          "max-w-3/4 sm:max-w-5/8 absolute bottom-8 sm:bottom-0 left-1/8"
+        }
+      >
         <Image
           src={AppStore}
           alt={"Apple App Store Logo"}
@@ -28,7 +36,9 @@ export default function HeroSection() {
           priority
         />
       </div>
-      <div className={"max-w-1/4 absolute right-1/16 bottom-1/32"}>
+      <div
+        className={"max-w-1/4 hidden sm:block absolute right-1/16 bottom-1/32"}
+      >
         <Image
           src={Apple}
           alt={"iOS Logo"}
@@ -37,7 +47,7 @@ export default function HeroSection() {
           priority
         />
       </div>
-      <div className={"max-w-3/16 absolute top-1/8 left-1/8"}>
+      <div className={"max-w-3/16 hidden sm:block absolute top-1/8 left-1/8"}>
         <Image
           src={Android}
           alt={"Android Logo"}
