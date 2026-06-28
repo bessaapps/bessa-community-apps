@@ -66,10 +66,10 @@ export default function ProcessSection() {
         <Carousel setApi={setApi}>
           <CarouselContent>
             {PROCESSES.map(({ heading, text, image }, index) => (
-              <CarouselItem key={index} className={"grid grid-cols-4 gap-4"}>
+              <CarouselItem key={index} className={"grid grid-cols-4"}>
                 <div
                   className={
-                    "h-full w-full max-h-full max-w-full aspect-square flex items-center justify-center sm:p-8"
+                    "h-full w-full max-h-full max-w-full aspect-square flex items-center justify-center p-2 sm:p-8"
                   }
                 >
                   <Image
