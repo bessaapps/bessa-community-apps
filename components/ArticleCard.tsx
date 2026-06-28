@@ -32,10 +32,10 @@ export default function ArticleCard({
         />
         <div
           className={
-            "absolute bg-transparent top-0 flex flex-col justify-end h-full p-4"
+            "absolute bg-transparent top-0 flex flex-col justify-between h-full p-4"
           }
         >
-          <p className={"text-primary font-semibold"}>{title}</p>
+          <h2 className={"text-primary text-xl font-semibold"}>{title}</h2>
           {hasExcerpt && <p className={"line-clamp-2"}>{excerpt}</p>}
         </div>
       </div>

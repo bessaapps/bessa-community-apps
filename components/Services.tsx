@@ -50,12 +50,13 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
                   />
                   <div
                     className={
-                      "absolute bg-transparent top-0 flex flex-col justify-end h-full p-4"
+                      "absolute bg-transparent top-0 flex flex-col justify-between h-full p-4"
                     }
                   >
                     <h3 className={"text-primary text-xl font-semibold"}>
                       {acf.short_title}
                     </h3>
+                    <p className={"line-clamp-1"}>{titleRendered}</p>
                   </div>
                 </div>
               </Link>

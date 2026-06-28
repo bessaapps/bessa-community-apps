@@ -190,30 +190,34 @@ export default async function Home() {
         <div className={"py-32"} id={"about"}>
           <div className={"grid sm:grid-cols-3 gap-8 sm:gap-4 mb-8"}>
             <div
-              className={"sm:col-span-2 flex flex-col gap-4 justify-center p-4"}
+              className={
+                "sm:col-span-2 flex flex-col gap-4 justify-between p-4"
+              }
             >
               <h2 className={"text-4xl font-bold"}>I&apos;m Topher</h2>
-              <p>
-                <span className={"text-primary font-bold"}>
-                  A passionate community builder.
-                </span>{" "}
-                I care deeply about keeping online and real-life communities
-                important to our culture thriving and protected. Web and mobile
-                apps are a great way to connect people in society. So, the
-                technology we build together can support, advance, and defend
-                important communities. From non-profits to educational
-                institutions and everything in between, we can establish tools
-                to champion and conserve the communities we care about most.
-              </p>
-              <Link href={"mailto:topher@bessaapps.com"}>
-                <Button className={"cursor-pointer hover:scale-110"}>
-                  Let&apos;s get started!
-                </Button>
-              </Link>
-              <div className={"flex gap-2"}>
-                <TbBrandTypescript />
-                <TbBrandJavascript />
-                <TbBrandNodejs />
+              <div className={"flex flex-col gap-4"}>
+                <p>
+                  <span className={"text-primary font-bold"}>
+                    A passionate community builder.
+                  </span>{" "}
+                  I care deeply about keeping online and real-life communities
+                  important to our culture thriving and protected. Web and
+                  mobile apps are a great way to connect people in society. So,
+                  the technology we build together can support, advance, and
+                  defend important communities. From non-profits to educational
+                  institutions and everything in between, we can establish tools
+                  to champion and conserve the communities we care about most.
+                </p>
+                <Link href={"mailto:topher@bessaapps.com"}>
+                  <Button className={"cursor-pointer hover:scale-110"}>
+                    Let&apos;s get started!
+                  </Button>
+                </Link>
+                <div className={"flex gap-2"}>
+                  <TbBrandTypescript />
+                  <TbBrandJavascript />
+                  <TbBrandNodejs />
+                </div>
               </div>
             </div>
             <div className={"rounded-2xl overflow-hidden"}>
