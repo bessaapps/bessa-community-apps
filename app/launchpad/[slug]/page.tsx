@@ -76,7 +76,7 @@ export default async function ArticlePage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"max-w-[1300] px-4 mx-auto"}>
+      <div className={"max-w-7xl px-4 mx-auto"}>
         <div
           className={"max-w-[800] mx-auto flex flex-col gap-4 my-24 sm:my-32"}
         >

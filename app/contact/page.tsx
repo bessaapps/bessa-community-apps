@@ -43,7 +43,7 @@ export default function ContactPage() {
         }}
       />
       <div
-        className={"max-w-[1300] px-8 mx-auto"}
+        className={"max-w-7xl px-8 mx-auto"}
         style={{ minHeight: "calc(100vh - 65px)" }}
       >
         <div className={"py-24 sm:py-16"}>

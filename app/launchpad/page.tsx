@@ -55,7 +55,7 @@ export default async function Launchpad() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"max-w-[1300] px-4 mx-auto"}>
+      <div className={"max-w-7xl px-4 mx-auto"}>
         <div className={"py-24 sm:py-16"}>
           <div className={"flex flex-col gap-4"}>
             <div className={"text-xl"}>

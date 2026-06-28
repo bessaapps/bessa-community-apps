@@ -118,32 +118,7 @@ export default async function Home() {
         }}
       />
       <HeroSection />
-      <div
-        className={
-          "h-screen absolute top-0 right-0 left-0 flex items-center px-4"
-        }
-      >
-        <div className={"flex flex-col gap-4"}>
-          <h1 className={"text-5xl font-bold leading-[1.1] max-w-[575]"}>
-            From Impactful Concept to App Store Launch
-          </h1>
-          <p className={"text-xl max-w-[575] mb-8"}>
-            Building and publishing revolutionary cross-platform apps to the
-            Apple App Store and Google Play for innovators, organizations, and
-            communities.
-          </p>
-          <Link
-            href={bookingLink}
-            target={"_blank"}
-            rel={"noopener noreferrer"}
-          >
-            <Button size={"lg"} className={"cursor-pointer hover:scale-110"}>
-              Start my Project!
-            </Button>
-          </Link>
-        </div>
-      </div>
-      <div className={"max-w-[1300] px-4 mx-auto"}>
+      <div className={"max-w-7xl px-4 mx-auto"}>
         <div className={"py-32"}>
           <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
             <h2 className={"text-4xl font-bold"}>Services</h2>

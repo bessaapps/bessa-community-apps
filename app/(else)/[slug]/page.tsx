@@ -77,7 +77,7 @@ export default async function ServicePage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"max-w-[1300] px-4 mx-auto"}>
+      <div className={"max-w-7xl px-4 mx-auto"}>
         <div
           className={
             "max-w-[800] flex flex-col gap-4 mx-auto pt-24 sm:pt-32 pb-12"
@@ -101,7 +101,7 @@ export default async function ServicePage({
             </Button>
           </Link>
         </div>
-        <div className={"max-w-[1300] mx-auto pt-12 sm:pt-16 pb-12"}>
+        <div className={"max-w-7xl mx-auto pt-12 sm:pt-16 pb-12"}>
           <div className={"bg-card relative aspect-[1.4] rounded-2xl"}>
             <div
               className={
