@@ -1,3 +1,5 @@
+"use client";
+
 import Discovery from "@/assets/images/process/discovery.png";
 import Design from "@/assets/images/process/design.png";
 import Build from "@/assets/images/process/build.png";
@@ -6,6 +8,15 @@ import Distribution from "@/assets/images/process/distribution.png";
 import Marketing from "@/assets/images/process/marketing.png";
 import Maintenance from "@/assets/images/process/maintenance.png";
 import Image from "next/image";
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem
+} from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 export default function ProcessSection() {
   const PROCESSES = [
@@ -46,54 +57,60 @@ export default function ProcessSection() {
     }
   ];
 
+  const [api, setApi] = useState<CarouselApi>();
+
   return (
     <>
       <div className={"py-32"}>
-        <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
-          <h2 className={"text-4xl font-bold"}>Process</h2>
-          {/*<p>*/}
-          {/*  Get your quality app that works beautifully on iOS, Android, and*/}
-          {/*  web. I&apos;ll help you all the way from validating your idea to*/}
-          {/*  publishing it to the app stores, help you with everything in*/}
-          {/*  between, test your app, keep your app secure, snappy, and*/}
-          {/*  up-to-date, and solve any technical issues that may come up.{" "}*/}
-          {/*  <Link*/}
-          {/*    href={bookingLink}*/}
-          {/*    target={"_blank"}*/}
-          {/*    rel={"noopener noreferrer"}*/}
-          {/*    className={"text-primary font-semibold"}*/}
-          {/*  >*/}
-          {/*    Start Here &rarr;*/}
-          {/*  </Link>*/}
-          {/*</p>*/}
-        </div>
+        <h2 className={"text-4xl font-bold mx-4 mb-8"}>Process</h2>
         <div className={"mx-4 sm:mx-0"}>
-          {PROCESSES?.map((process, index) => (
-            <div key={index} className={"py-8"}>
-              <div className={"grid grid-cols-4 gap-4"}>
-                <div
-                  className={
-                    "h-full w-full max-h-full max-w-full aspect-square flex items-center justify-center sm:p-8"
-                  }
-                >
-                  <Image
-                    src={process.image}
-                    alt={process.heading}
-                    className={"h-full w-full object-contain"}
-                    sizes={"(max-width: 640px) 100vw, 241px"}
-                  />
-                </div>
-                <div className={"col-span-3 flex items-center"}>
-                  <div className={"sm:px-4"}>
-                    <h3 className={"text-xl font-bold mb-4"}>
-                      {process.heading}
-                    </h3>
-                    <p>{process.text}</p>
+          <Carousel setApi={setApi}>
+            <CarouselContent>
+              {PROCESSES.map(({ heading, text, image }, index) => (
+                <CarouselItem key={index} className={"grid grid-cols-4 gap-4"}>
+                  <div
+                    className={
+                      "h-full w-full max-h-full max-w-full aspect-square flex items-center justify-center sm:p-8"
+                    }
+                  >
+                    <Image
+                      src={image}
+                      alt={heading}
+                      className={"h-full w-full object-contain"}
+                      sizes={"(max-width: 640px) 100vw, 241px"}
+                    />
                   </div>
-                </div>
-              </div>
+                  <div className={"col-span-3 flex items-center"}>
+                    <div className={"sm:px-4"}>
+                      <h3 className={"text-xl font-bold mb-4"}>{heading}</h3>
+                      <p>{text}</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+          <div className={"flex justify-between mx-4"}>
+            <div className={"flex gap-1"}>
+              <Button size={"xs"} onClick={() => api?.scrollNext()}>
+                <AiOutlineArrowLeft />
+              </Button>
+              <Button size={"xs"} onClick={() => api?.scrollNext()}>
+                <AiOutlineArrowRight />
+              </Button>
             </div>
-          ))}
+            <div className={"flex gap-1"}>
+              {PROCESSES.map((_, index) => (
+                <Button
+                  key={index}
+                  size={"xs"}
+                  onClick={() => api?.scrollTo(index)}
+                >
+                  {index + 1}
+                </Button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </>
