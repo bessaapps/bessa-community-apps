@@ -5,7 +5,6 @@ import { stripHtml } from "string-strip-html";
 import ProcessSection from "../../../components/sections/ProcessSection";
 import ServicesSection from "../../../components/sections/ServicesSection";
 import { BlogPosting, WithContext } from "schema-dts";
-import BlurInText from "@/components/BlurInText";
 import dayjs from "dayjs";
 import Me from "@/assets/images/me.png";
 import { bookingLink, url } from "@/lib/constants";
@@ -13,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import ShareButtons from "@/components/ShareButtons";
 import FAQSection from "../../../components/sections/FAQSection";
 import { permanentRedirect } from "next/navigation";
+import Section from "@/components/sections/Section";
 
 export async function generateMetadata({
   params
@@ -76,28 +76,13 @@ export default async function ArticlePage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"max-w-7xl px-4 mx-auto"}>
-        <div
-          className={"max-w-[800] mx-auto flex flex-col gap-4 my-24 sm:my-32"}
-        >
+      <Section containerClassName={"pt-[65]"}>
+        <div className={"max-w-3xl px-4 mx-auto flex flex-col gap-4"}>
           <Link href={"/launchpad"} title={"Launchpad - Bessa Community Apps"}>
-            <p className={"text-primary uppercase"}>
-              <BlurInText>Launchpad</BlurInText>
-            </p>
+            <p className={"text-primary uppercase"}>Launchpad</p>
           </Link>
-          <h1 className={"text-4xl sm:text-6xl font-bold"}>
-            <BlurInText offset={100} multiplier={50}>
-              {title}
-            </BlurInText>
-          </h1>
-          <div
-            className={
-              "flex items-center gap-4 opacity-0 animate-blur-in-fade-in"
-            }
-            style={{
-              animationDelay: `${100 + title.split(" ").length * 50 + 1000}ms`
-            }}
-          >
+          <h1 className={"text-4xl sm:text-6xl font-bold"}>{title}</h1>
+          <div className={"flex items-center gap-4"}>
             <div className={"w-12 rounded-full aspect-square overflow-hidden"}>
               <Image
                 src={Me}
@@ -134,17 +119,19 @@ export default async function ArticlePage({
             </Link>
           </div>
         </div>
-        <div>
-          <div className={"relative aspect-[1.4] rounded-2xl overflow-hidden"}>
-            <Image
-              src={post._embedded["wp:featuredmedia"][0].source_url}
-              alt={post._embedded["wp:featuredmedia"][0].alt_text}
-              fill
-              className={"object-cover"}
-            />
-          </div>
+      </Section>
+      <Section>
+        <div className={"relative aspect-[1.4] rounded-2xl overflow-hidden"}>
+          <Image
+            src={post._embedded["wp:featuredmedia"][0].source_url}
+            alt={post._embedded["wp:featuredmedia"][0].alt_text}
+            fill
+            className={"object-cover"}
+          />
         </div>
-        <div className={"max-w-[800] mx-auto py-32"}>
+      </Section>
+      <Section>
+        <div className={"max-w-3xl px-4 mx-auto"}>
           <div className={"flex flex-col gap-8"}>
             <div
               dangerouslySetInnerHTML={{ __html: post.content.rendered }}
@@ -160,10 +147,10 @@ export default async function ArticlePage({
             </div>
           </div>
         </div>
-        <ServicesSection sectionHeading={"Services"} />
-        <ProcessSection />
-        <FAQSection />
-      </div>
+      </Section>
+      <ServicesSection sectionHeading={"Services"} />
+      <ProcessSection />
+      <FAQSection />
     </article>
   );
 }
