@@ -5,20 +5,20 @@ import Work2 from "@/assets/images/mockups/work-2.png";
 import Me from "@/assets/images/me.png";
 import Image from "next/image";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import ProcessSection from "../components/ProcessSection";
+import ProcessSection from "../components/sections/ProcessSection";
 import { Post } from "@/lib/definitions";
 import { bookingLink, FAQS, LINKS, SOCIALS } from "@/lib/constants";
 import { Graph, ListItem, Question } from "schema-dts";
 import ArticleCard from "@/components/ArticleCard";
 import Services from "@/components/Services";
-import FAQSection from "../components/FAQSection";
-import HeroSection from "../components/HeroSection";
+import FAQSection from "../components/sections/FAQSection";
+import HeroSection from "../components/sections/HeroSection";
 import {
   TbBrandJavascript,
   TbBrandNodejs,
   TbBrandTypescript
 } from "react-icons/tb";
-import Section from "@/components/Section";
+import Section from "../components/sections/Section";
 
 export default async function Home() {
   const SUBHEADING =

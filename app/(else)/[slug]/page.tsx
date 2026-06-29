@@ -3,12 +3,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { stripHtml } from "string-strip-html";
-import ProcessSection from "../../../components/ProcessSection";
-import ServicesSection from "@/components/ServicesSection";
+import ProcessSection from "../../../components/sections/ProcessSection";
+import ServicesSection from "../../../components/sections/ServicesSection";
 import { bookingLink } from "@/lib/constants";
 import { Service, WithContext } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
-import FAQSection from "../../../components/FAQSection";
+import FAQSection from "../../../components/sections/FAQSection";
 import { permanentRedirect } from "next/navigation";
 
 export async function generateMetadata({

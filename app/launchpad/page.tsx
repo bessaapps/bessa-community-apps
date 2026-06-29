@@ -5,7 +5,7 @@ import { Post } from "@/lib/definitions";
 import ArticleCard from "@/components/ArticleCard";
 import { Blog, WithContext } from "schema-dts";
 import { bookingLink, url } from "@/lib/constants";
-import Section from "@/components/Section";
+import Section from "../../components/sections/Section";
 
 export const metadata = formatMetadata({
   metadataTitle: "Launchpad: The App Builder's Guide",

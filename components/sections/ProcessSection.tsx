@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import Section from "@/components/Section";
+import Section from "@/components/sections/Section";
 
 export default function ProcessSection() {
   const PROCESSES = [

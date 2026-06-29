@@ -2,8 +2,8 @@ import { formatMetadata } from "@/lib/helpers";
 import Link from "next/link";
 import Image from "next/image";
 import { stripHtml } from "string-strip-html";
-import ProcessSection from "../../../components/ProcessSection";
-import ServicesSection from "@/components/ServicesSection";
+import ProcessSection from "../../../components/sections/ProcessSection";
+import ServicesSection from "../../../components/sections/ServicesSection";
 import { BlogPosting, WithContext } from "schema-dts";
 import BlurInText from "@/components/BlurInText";
 import dayjs from "dayjs";
@@ -11,7 +11,7 @@ import Me from "@/assets/images/me.png";
 import { bookingLink, url } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import ShareButtons from "@/components/ShareButtons";
-import FAQSection from "../../../components/FAQSection";
+import FAQSection from "../../../components/sections/FAQSection";
 import { permanentRedirect } from "next/navigation";
 
 export async function generateMetadata({
