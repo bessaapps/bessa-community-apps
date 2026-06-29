@@ -7,9 +7,9 @@ import ProcessSection from "../../../components/sections/ProcessSection";
 import ServicesSection from "../../../components/sections/ServicesSection";
 import { bookingLink } from "@/lib/constants";
 import { Service, WithContext } from "schema-dts";
-import BlurInText from "@/components/BlurInText";
 import FAQSection from "../../../components/sections/FAQSection";
 import { permanentRedirect } from "next/navigation";
+import Section from "@/components/sections/Section";
 
 export async function generateMetadata({
   params
@@ -77,20 +77,12 @@ export default async function ServicePage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"max-w-7xl px-4 mx-auto"}>
-        <div
-          className={
-            "max-w-[800] flex flex-col gap-4 mx-auto pt-24 sm:pt-32 pb-12"
-          }
-        >
-          <Link href={"/launchpad"} title={"Launchpad - Bessa Community Apps"}>
-            <p className={"text-primary uppercase"}>
-              <BlurInText>{service.acf.short_title || ""}</BlurInText>
-            </p>
-          </Link>
-          <h1 className={"text-4xl sm:text-6xl font-bold mb-4"}>
-            <BlurInText>{title}</BlurInText>
-          </h1>
+      <Section>
+        <div className={"max-w-3xl flex flex-col gap-4 mx-auto"}>
+          <p className={"text-primary uppercase"}>
+            {service.acf.short_title || ""}
+          </p>
+          <h1 className={"text-4xl sm:text-6xl font-bold mb-4"}>{title}</h1>
           <Link
             href={bookingLink}
             target={"_blank"}
@@ -101,25 +93,27 @@ export default async function ServicePage({
             </Button>
           </Link>
         </div>
-        <div className={"max-w-7xl mx-auto pt-12 sm:pt-16 pb-12"}>
-          <div className={"bg-card relative aspect-[1.4] rounded-2xl"}>
-            <div
-              className={
-                "h-full w-full max-h-full max-w-full aspect-square flex items-center justify-center p-8"
-              }
-            >
-              <Image
-                src={featuredMedia.source_url}
-                height={featuredMedia.media_details.height}
-                width={featuredMedia.media_details.width}
-                alt={featuredMedia.alt_text}
-                className={"h-full w-full object-contain"}
-                sizes={"(max-width: 640px) 100vw, 1268px"}
-              />
-            </div>
+      </Section>
+      <Section>
+        <div className={"bg-card relative aspect-[1.4] rounded-2xl"}>
+          <div
+            className={
+              "h-full w-full max-h-full max-w-full aspect-square flex items-center justify-center p-8"
+            }
+          >
+            <Image
+              src={featuredMedia.source_url}
+              height={featuredMedia.media_details.height}
+              width={featuredMedia.media_details.width}
+              alt={featuredMedia.alt_text}
+              className={"h-full w-full object-contain"}
+              sizes={"(max-width: 640px) 100vw, 1268px"}
+            />
           </div>
         </div>
-        <div className={"max-w-[800] py-32 mx-auto"}>
+      </Section>
+      <Section>
+        <div className={"max-w-3xl mx-auto"}>
           <div
             dangerouslySetInnerHTML={{ __html: service.content.rendered }}
             className={
@@ -127,13 +121,10 @@ export default async function ServicePage({
             }
           />
         </div>
-        <ServicesSection
-          sectionHeading={"More Services"}
-          hiddenId={service.id}
-        />
-        <ProcessSection />
-        <FAQSection />
-      </div>
+      </Section>
+      <ServicesSection sectionHeading={"More Services"} hiddenId={service.id} />
+      <ProcessSection />
+      <FAQSection />
     </section>
   );
 }
