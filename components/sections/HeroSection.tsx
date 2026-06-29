@@ -71,9 +71,9 @@ export default function HeroSection() {
             From Impactful Concept to App Store Launch
           </h1>
           <p className={"text-primary text-xl max-w-[575] mb-8"}>
-            Building and publishing revolutionary cross-platform apps to the
-            Apple App Store and Google Play for innovators, organizations, and
-            communities.
+            Building revolutionary cross-platform apps for innovators,
+            organizations, and communities, and publishing them to the Apple App
+            Store and Google Play.
           </p>
           <div>
             <Link
