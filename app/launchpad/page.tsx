@@ -1,13 +1,11 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Me from "@/assets/images/me.png";
-import Image from "next/image";
 import { formatMetadata } from "@/lib/helpers";
 import { Post } from "@/lib/definitions";
-import BlurInText from "@/components/BlurInText";
 import ArticleCard from "@/components/ArticleCard";
 import { Blog, WithContext } from "schema-dts";
 import { bookingLink, url } from "@/lib/constants";
+import Section from "@/components/Section";
 
 export const metadata = formatMetadata({
   metadataTitle: "Launchpad: The App Builder's Guide",
@@ -17,9 +15,6 @@ export const metadata = formatMetadata({
 });
 
 export default async function Launchpad() {
-  const subheading =
-    "Your go-to blog for turning bold ideas into impactful digital products through expert custom application development. Whether you are an innovator or an organization, I provide the clear, non-intimidating path forward you need to stop dreaming and start launching.";
-
   const response = await fetch(
     "https://cms.bessaapps.com/wp-json/wp/v2/posts?categories=3&per_page=20&_embed",
     { next: { revalidate: 3600 } }
@@ -55,47 +50,21 @@ export default async function Launchpad() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <div className={"max-w-7xl px-4 mx-auto"}>
-        <div className={"py-24 sm:py-16"}>
-          <div className={"flex flex-col gap-4"}>
-            <div className={"text-xl"}>
-              <div className={"flex flex-col gap-4 max-w-full"}>
-                <h1
-                  className={
-                    "text-5xl sm:text-5xl font-bold leading-[1.1] sm:max-w-[75%]"
-                  }
-                >
-                  <BlurInText>Launchpad</BlurInText>
-                </h1>
-                <p className={"text-xl sm:max-w-[50%] mb-8"}>
-                  <BlurInText
-                    offset={"launchpad".split(" ").length * 100}
-                    multiplier={50}
-                  >
-                    {subheading}
-                  </BlurInText>
-                </p>
-                <Link
-                  href={bookingLink}
-                  target={"_blank"}
-                  rel={"noopener noreferrer"}
-                >
-                  <Button
-                    size={"lg"}
-                    className={
-                      "opacity-0 animate-blur-in-fade-in cursor-pointer hover:scale-110"
-                    }
-                    style={{
-                      animationDelay: `${"launchpad".split(" ").length * 100 + subheading.split(" ").length * 50 + 1000}ms`
-                    }}
-                  >
-                    Start my Project!
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
+      <Section>
+        <h1 className={"text-5xl font-bold mb-4"}>Launchpad</h1>
+        <p className={"text-xl sm:max-w-[50%] mb-8"}>
+          Your go-to blog for turning bold ideas into impactful digital products
+          through expert custom application development. Whether you are an
+          innovator or an organization, I provide the clear, non-intimidating
+          path forward you need to stop dreaming and start launching.
+        </p>
+        <Link href={bookingLink} target={"_blank"} rel={"noopener noreferrer"}>
+          <Button size={"lg"} className={"cursor-pointer hover:scale-110"}>
+            Start my Project!
+          </Button>
+        </Link>
+      </Section>
+      <Section>
         <div className={"py-24 sm:py-32"}>
           <div className={"grid sm:grid-cols-3 gap-4"}>
             {articles.map((article: Post, index: number) =>
@@ -109,38 +78,7 @@ export default async function Launchpad() {
             )}
           </div>
         </div>
-        <div className={"py-24 sm:py-32"}>
-          <div className={"grid sm:grid-cols-3 gap-4"}>
-            <div />
-            <div className={"bg-card aspect-8/10 rounded-2xl"}>
-              <div className={"flex flex-col justify-between h-full p-4"}>
-                <h3 className={"text-4xl font-semibold text-primary"}>
-                  About the Author
-                </h3>
-                <div className={"flex flex-col gap-4"}>
-                  <p className={"text-primary"}>
-                    Specializing in custom application development, I help
-                    innovators and communities transform their bold ideas into
-                    impactful, cross-platform realities. I offer an empathetic,
-                    end-to-end process from concept to app store distribution.
-                  </p>
-                  <Link href={"mailto:topher@bessaapps.com"}>
-                    <Button>Let&apos;s Talk!</Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={"rounded-2xl overflow-hidden"}>
-              <Image
-                src={Me}
-                alt={
-                  "Headshot of a smiling developer with glasses and a mustache, an expert providing custom mobile app development services."
-                }
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      </Section>
     </main>
   );
 }
