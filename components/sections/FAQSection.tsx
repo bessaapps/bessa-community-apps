@@ -18,8 +18,12 @@ export default function FAQSection() {
           {Object.entries(FAQS).map(
             ([key, value]: [string, string], index: number) => (
               <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger>{key}</AccordionTrigger>
-                <AccordionContent>{value}</AccordionContent>
+                <AccordionTrigger>
+                  <h3 className={"text-base font-semibold"}>{key}</h3>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className={"text-base"}>{value}</p>
+                </AccordionContent>
               </AccordionItem>
             )
           )}

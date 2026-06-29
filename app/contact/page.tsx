@@ -44,8 +44,7 @@ export default function ContactPage() {
       />
       <div className={"max-w-7xl min-h-screen flex items-center px-8 mx-auto"}>
         <div className={"flex flex-col gap-2"}>
-          <h1 className={"text-5xl font-bold leading-[1.1] mb-2"}>Say, hi!</h1>
-          <p className={"text-primary text-xl font-bold"}>Topher</p>
+          <h1 className={"text-5xl font-bold leading-[1.1] mb-4"}>Say, hi!</h1>
           <p className={"flex items-center gap-2"}>
             <LuMapPin />
             Remote - Las Vegas, NV

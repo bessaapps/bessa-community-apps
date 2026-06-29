@@ -75,15 +75,17 @@ export default function HeroSection() {
             Apple App Store and Google Play for innovators, organizations, and
             communities.
           </p>
-          <Link
-            href={bookingLink}
-            target={"_blank"}
-            rel={"noopener noreferrer"}
-          >
-            <Button size={"lg"} className={"cursor-pointer hover:scale-110"}>
-              Start my Project!
-            </Button>
-          </Link>
+          <div>
+            <Link
+              href={bookingLink}
+              target={"_blank"}
+              rel={"noopener noreferrer"}
+            >
+              <Button size={"lg"} className={"cursor-pointer hover:scale-110"}>
+                Start my Project!
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

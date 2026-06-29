@@ -194,22 +194,29 @@ export default async function Home() {
             <h2 className={"text-4xl font-bold"}>I&apos;m Topher</h2>
             <div className={"flex flex-col gap-4"}>
               <p>
-                <span className={"text-primary font-bold"}>
-                  A passionate community builder.
-                </span>{" "}
-                I care deeply about keeping online and real-life communities
-                important to our culture thriving and protected. Web and mobile
-                apps are a great way to connect people in society. So, the
-                technology we build together can support, advance, and defend
-                important communities. From non-profits to educational
-                institutions and everything in between, we can establish tools
-                to champion and conserve the communities we care about most.
+                As a passionate community builder, I care deeply about keeping
+                online and real-life communities important to our culture
+                thriving and protected. Web and mobile apps are a great way to
+                connect people in society. So, the technology we build together
+                can support, advance, and defend important communities. From
+                non-profits to educational institutions and everything in
+                between, we can establish tools to champion and conserve the
+                communities we care about most.
               </p>
-              <Link href={"mailto:topher@bessaapps.com"}>
-                <Button className={"cursor-pointer hover:scale-110"}>
-                  Let&apos;s get started!
-                </Button>
-              </Link>
+              <div>
+                <Link
+                  href={bookingLink}
+                  target={"_blank"}
+                  rel={"noopener noreferrer"}
+                >
+                  <Button
+                    size={"lg"}
+                    className={"cursor-pointer hover:scale-110"}
+                  >
+                    Let&apos;s chat!
+                  </Button>
+                </Link>
+              </div>
               <div className={"flex gap-2"}>
                 <TbBrandTypescript />
                 <TbBrandJavascript />
