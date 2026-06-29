@@ -3,13 +3,7 @@ import { Post } from "@/lib/definitions";
 import { stripHtml } from "string-strip-html";
 import Image from "next/image";
 
-export default function ArticleCard({
-  article,
-  hasExcerpt = true
-}: {
-  article: Post;
-  hasExcerpt?: boolean;
-}) {
+export default function ArticleCard({ article }: { article: Post }) {
   const title = stripHtml(article.title.rendered).result;
   const excerpt = stripHtml(article.excerpt.rendered).result;
 
@@ -36,7 +30,7 @@ export default function ArticleCard({
           }
         >
           <h2 className={"text-primary text-xl font-semibold"}>{title}</h2>
-          {hasExcerpt && <p className={"line-clamp-2"}>{excerpt}</p>}
+          <p className={"line-clamp-2"}>{excerpt}</p>
         </div>
       </div>
     </Link>

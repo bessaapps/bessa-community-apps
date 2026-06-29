@@ -4,7 +4,6 @@ import Work1 from "@/assets/images/mockups/work-1.png";
 import Work2 from "@/assets/images/mockups/work-2.png";
 import Me from "@/assets/images/me.png";
 import Image from "next/image";
-import { AiOutlineArrowRight } from "react-icons/ai";
 import ProcessSection from "../components/sections/ProcessSection";
 import { Post } from "@/lib/definitions";
 import { bookingLink, FAQS, LINKS, SOCIALS } from "@/lib/constants";
@@ -237,36 +236,22 @@ export default async function Home() {
               Designed for innovators and organizations stuck in the ideation
               stage, Launchpad provides the clear path you need to move past
               uncertainty. It&apos;s time to stop dreaming and start launching
-              your custom cross-platform solution.
+              your custom cross-platform solution.{" "}
+              <span className={"text-nowrap"}>
+                <Link
+                  href={"/launchpad"}
+                  title={"Launchpad: The App Builder's Guide"}
+                  className={"text-primary font-semibold"}
+                >
+                  Read More &rarr;
+                </Link>
+              </span>
             </p>
           </div>
-          <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
+          <div className={"grid grid-cols-1 sm:grid-cols-3 gap-4"}>
             {articles.map((article: Post) => (
-              <ArticleCard
-                key={article.id}
-                article={article}
-                hasExcerpt={false}
-              />
+              <ArticleCard key={article.id} article={article} />
             ))}
-            <Link
-              href={"/launchpad"}
-              title={"Launchpad: The App Builder's Guide"}
-            >
-              <div
-                className={
-                  "aspect-square rounded-2xl overflow-hidden flex items-center justify-center"
-                }
-              >
-                <div
-                  className={
-                    "flex items-center gap-4 text-primary font-semibold"
-                  }
-                >
-                  <p>See All Articles</p>
-                  <AiOutlineArrowRight className={"text-3xl"} />
-                </div>
-              </div>
-            </Link>
           </div>
         </Section>
       )}
