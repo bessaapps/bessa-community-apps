@@ -45,6 +45,8 @@ export default function ProcessSection() {
 
   const [api, setApi] = useState<CarouselApi>();
 
+  return null;
+
   return (
     <Section>
       <div className={"flex flex-col gap-8"}>

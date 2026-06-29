@@ -77,8 +77,8 @@ export default async function ServicePage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <Section>
-        <div className={"max-w-3xl flex flex-col gap-4 mx-auto"}>
+      <Section containerClassName={"pt-[65]"}>
+        <div className={"max-w-3xl flex flex-col gap-4 px-4 mx-auto"}>
           <p className={"text-primary uppercase"}>
             {service.acf.short_title || ""}
           </p>
@@ -113,7 +113,7 @@ export default async function ServicePage({
         </div>
       </Section>
       <Section>
-        <div className={"max-w-3xl mx-auto"}>
+        <div className={"max-w-3xl px-4 mx-auto"}>
           <div
             dangerouslySetInnerHTML={{ __html: service.content.rendered }}
             className={

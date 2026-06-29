@@ -50,7 +50,7 @@ export default async function Launchpad() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <Section>
+      <Section containerClassName={"pt-[65]"}>
         <h1 className={"text-5xl font-bold mb-4"}>Launchpad</h1>
         <p className={"text-xl sm:max-w-[50%] mb-8"}>
           Your go-to blog for turning bold ideas into impactful digital products
@@ -65,18 +65,16 @@ export default async function Launchpad() {
         </Link>
       </Section>
       <Section>
-        <div className={"py-24 sm:py-32"}>
-          <div className={"grid sm:grid-cols-3 gap-4"}>
-            {articles.map((article: Post, index: number) =>
-              index === 1 ? (
-                <div key={index} className={"sm:col-span-2 sm:row-span-2"}>
-                  <ArticleCard article={article} />
-                </div>
-              ) : (
-                <ArticleCard key={index} article={article} />
-              )
-            )}
-          </div>
+        <div className={"grid sm:grid-cols-3 gap-4"}>
+          {articles.map((article: Post, index: number) =>
+            index === 1 ? (
+              <div key={index} className={"sm:col-span-2 sm:row-span-2"}>
+                <ArticleCard article={article} />
+              </div>
+            ) : (
+              <ArticleCard key={index} article={article} />
+            )
+          )}
         </div>
       </Section>
     </main>
