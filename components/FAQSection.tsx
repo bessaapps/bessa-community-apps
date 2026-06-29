@@ -5,10 +5,11 @@ import {
   AccordionItem,
   AccordionTrigger
 } from "@/components/ui/accordion";
+import Section from "@/components/Section";
 
 export default function FAQSection() {
   return (
-    <div className={"py-32"}>
+    <Section>
       <h2 className={"text-4xl font-bold mx-4 mb-8"}>
         Frequently Asked Questions
       </h2>
@@ -24,6 +25,6 @@ export default function FAQSection() {
           )}
         </Accordion>
       </div>
-    </div>
+    </Section>
   );
 }

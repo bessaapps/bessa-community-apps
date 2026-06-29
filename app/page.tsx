@@ -18,6 +18,7 @@ import {
   TbBrandNodejs,
   TbBrandTypescript
 } from "react-icons/tb";
+import Section from "@/components/Section";
 
 export default async function Home() {
   const SUBHEADING =
@@ -110,7 +111,7 @@ export default async function Home() {
   };
 
   return (
-    <section>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -118,161 +119,157 @@ export default async function Home() {
         }}
       />
       <HeroSection />
-      <div className={"max-w-7xl px-4 mx-auto"}>
-        <div className={"py-32"}>
-          <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
-            <h2 className={"text-4xl font-bold"}>Services</h2>
-            <p>
-              Get your quality app that works beautifully on iOS, Android, and
-              web. I&apos;ll help you all the way from validating your idea to
-              publishing it to the app stores, help you with everything in
-              between, test your app, keep your app secure, snappy, and
-              up-to-date, and solve any technical issues that may come up.{" "}
-              <span className={"text-nowrap"}>
-                <Link
-                  href={bookingLink}
-                  target={"_blank"}
-                  rel={"noopener noreferrer"}
-                  className={"text-primary font-semibold"}
-                >
-                  Start Here &rarr;
-                </Link>
-              </span>
-            </p>
-          </div>
-          <Services />
-        </div>
-        <ProcessSection />
-        <div className={"py-32"} id={"works"}>
-          <h2 className={"text-4xl font-bold mx-4 mb-8"}>Pinned Projects</h2>
-          <div className={"grid grid-cols-1 sm:grid-cols-2 gap-4"}>
-            {WORKS.map(({ name, href, image, tags }) => (
+      <Section>
+        <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
+          <h2 className={"text-4xl font-bold"}>Services</h2>
+          <p>
+            Get your quality app that works beautifully on iOS, Android, and
+            web. I&apos;ll help you all the way from validating your idea to
+            publishing it to the app stores, help you with everything in
+            between, test your app, keep your app secure, snappy, and
+            up-to-date, and solve any technical issues that may come up.{" "}
+            <span className={"text-nowrap"}>
               <Link
-                key={href}
-                href={href}
-                title={name}
+                href={bookingLink}
                 target={"_blank"}
                 rel={"noopener noreferrer"}
-                className={
-                  "bg-card relative max-w-full h-full aspect-square rounded-2xl"
-                }
+                className={"text-primary font-semibold"}
               >
-                <Image
-                  src={image}
-                  alt={name}
-                  className={"h-full w-full object-contain p-8 sm:p-16"}
-                  sizes={"(max-width: 640px) 100vw, 626px"}
-                />
-                <div
-                  className={
-                    "absolute inset-0 bg-linear-to-b from-transparent to-background"
-                  }
-                />
-                <div
-                  className={
-                    "absolute bg-transparent top-0 flex flex-col justify-end h-full p-4"
-                  }
-                >
-                  <p className={"text-primary font-semibold"}>{name}</p>
-                  <p>
-                    {tags.map((tag: string, index: number) => (
-                      <span key={index}>
-                        {tag}
-                        {index < tags.length - 1 && <span> &middot; </span>}
-                      </span>
-                    ))}
-                  </p>
-                </div>
+                Start Here &rarr;
               </Link>
-            ))}
-          </div>
+            </span>
+          </p>
         </div>
-        <div className={"py-32"} id={"about"}>
-          <div className={"grid sm:grid-cols-3 gap-8 sm:gap-4 mb-8"}>
-            <div
+        <Services />
+      </Section>
+      <ProcessSection />
+      <Section id={"works"}>
+        <h2 className={"text-4xl font-bold mx-4 mb-8"}>Pinned Projects</h2>
+        <div className={"grid grid-cols-1 sm:grid-cols-2 gap-4"}>
+          {WORKS.map(({ name, href, image, tags }) => (
+            <Link
+              key={href}
+              href={href}
+              title={name}
+              target={"_blank"}
+              rel={"noopener noreferrer"}
               className={
-                "sm:col-span-2 flex flex-col gap-4 justify-between p-4"
+                "bg-card relative max-w-full h-full aspect-square rounded-2xl"
               }
             >
-              <h2 className={"text-4xl font-bold"}>I&apos;m Topher</h2>
-              <div className={"flex flex-col gap-4"}>
-                <p>
-                  <span className={"text-primary font-bold"}>
-                    A passionate community builder.
-                  </span>{" "}
-                  I care deeply about keeping online and real-life communities
-                  important to our culture thriving and protected. Web and
-                  mobile apps are a great way to connect people in society. So,
-                  the technology we build together can support, advance, and
-                  defend important communities. From non-profits to educational
-                  institutions and everything in between, we can establish tools
-                  to champion and conserve the communities we care about most.
-                </p>
-                <Link href={"mailto:topher@bessaapps.com"}>
-                  <Button className={"cursor-pointer hover:scale-110"}>
-                    Let&apos;s get started!
-                  </Button>
-                </Link>
-                <div className={"flex gap-2"}>
-                  <TbBrandTypescript />
-                  <TbBrandJavascript />
-                  <TbBrandNodejs />
-                </div>
-              </div>
-            </div>
-            <div className={"rounded-2xl overflow-hidden"}>
               <Image
-                src={Me}
-                alt={
-                  "Headshot of a smiling developer with glasses and a mustache, an expert providing custom mobile app development services."
+                src={image}
+                alt={name}
+                className={"h-full w-full object-contain p-8 sm:p-16"}
+                sizes={"(max-width: 640px) 100vw, 626px"}
+              />
+              <div
+                className={
+                  "absolute inset-0 bg-linear-to-b from-transparent to-background"
                 }
               />
+              <div
+                className={
+                  "absolute bg-transparent top-0 flex flex-col justify-end h-full p-4"
+                }
+              >
+                <p className={"text-primary font-semibold"}>{name}</p>
+                <p>
+                  {tags.map((tag: string, index: number) => (
+                    <span key={index}>
+                      {tag}
+                      {index < tags.length - 1 && <span> &middot; </span>}
+                    </span>
+                  ))}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </Section>
+      <Section id={"about"}>
+        <div className={"grid sm:grid-cols-3 gap-8 sm:gap-4 mb-8"}>
+          <div
+            className={"sm:col-span-2 flex flex-col gap-4 justify-between p-4"}
+          >
+            <h2 className={"text-4xl font-bold"}>I&apos;m Topher</h2>
+            <div className={"flex flex-col gap-4"}>
+              <p>
+                <span className={"text-primary font-bold"}>
+                  A passionate community builder.
+                </span>{" "}
+                I care deeply about keeping online and real-life communities
+                important to our culture thriving and protected. Web and mobile
+                apps are a great way to connect people in society. So, the
+                technology we build together can support, advance, and defend
+                important communities. From non-profits to educational
+                institutions and everything in between, we can establish tools
+                to champion and conserve the communities we care about most.
+              </p>
+              <Link href={"mailto:topher@bessaapps.com"}>
+                <Button className={"cursor-pointer hover:scale-110"}>
+                  Let&apos;s get started!
+                </Button>
+              </Link>
+              <div className={"flex gap-2"}>
+                <TbBrandTypescript />
+                <TbBrandJavascript />
+                <TbBrandNodejs />
+              </div>
             </div>
           </div>
+          <div className={"rounded-2xl overflow-hidden"}>
+            <Image
+              src={Me}
+              alt={
+                "Headshot of a smiling developer with glasses and a mustache, an expert providing custom mobile app development services."
+              }
+            />
+          </div>
         </div>
-        <FAQSection />
-        {!!articles?.length && (
-          <div className={"py-32"}>
-            <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
-              <h2 className={"text-4xl font-bold"}>Launchpad</h2>
-              <p>
-                Designed for innovators and organizations stuck in the ideation
-                stage, Launchpad provides the clear path you need to move past
-                uncertainty. It&apos;s time to stop dreaming and start launching
-                your custom cross-platform solution.
-              </p>
-            </div>
-            <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
-              {articles.map((article: Post) => (
-                <ArticleCard
-                  key={article.id}
-                  article={article}
-                  hasExcerpt={false}
-                />
-              ))}
-              <Link
-                href={"/launchpad"}
-                title={"Launchpad: The App Builder's Guide"}
+      </Section>
+      <FAQSection />
+      {!!articles?.length && (
+        <Section>
+          <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
+            <h2 className={"text-4xl font-bold"}>Launchpad</h2>
+            <p>
+              Designed for innovators and organizations stuck in the ideation
+              stage, Launchpad provides the clear path you need to move past
+              uncertainty. It&apos;s time to stop dreaming and start launching
+              your custom cross-platform solution.
+            </p>
+          </div>
+          <div className={"grid grid-cols-1 sm:grid-cols-4 gap-4"}>
+            {articles.map((article: Post) => (
+              <ArticleCard
+                key={article.id}
+                article={article}
+                hasExcerpt={false}
+              />
+            ))}
+            <Link
+              href={"/launchpad"}
+              title={"Launchpad: The App Builder's Guide"}
+            >
+              <div
+                className={
+                  "aspect-square rounded-2xl overflow-hidden flex items-center justify-center"
+                }
               >
                 <div
                   className={
-                    "aspect-square rounded-2xl overflow-hidden flex items-center justify-center"
+                    "flex items-center gap-4 text-primary font-semibold"
                   }
                 >
-                  <div
-                    className={
-                      "flex items-center gap-4 text-primary font-semibold"
-                    }
-                  >
-                    <p>See All Articles</p>
-                    <AiOutlineArrowRight className={"text-3xl"} />
-                  </div>
+                  <p>See All Articles</p>
+                  <AiOutlineArrowRight className={"text-3xl"} />
                 </div>
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
-        )}
-      </div>
-    </section>
+        </Section>
+      )}
+    </>
   );
 }

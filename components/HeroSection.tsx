@@ -63,7 +63,7 @@ export default function HeroSection() {
       />
       <div
         className={
-          "h-screen max-w-7xl absolute top-0 right-0 left-0 flex items-center px-4 mx-auto"
+          "h-screen max-w-7xl absolute top-0 right-0 left-0 flex items-center px-8 mx-auto"
         }
       >
         <div className={"flex flex-col gap-4"}>
