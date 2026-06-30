@@ -22,9 +22,9 @@ export const FAQS = {
   "What is React Native?":
     "React Native and Expo are the tools we'll use to build your mobile app for iOS, Android, and the web simultaneously. Not only will we transform your brilliant idea into a high-demand app, but we’ll also make it readily accessible on mobile and web, and available on the Apple App Store, Google Play, and others, getting your app into the hands of more people.",
   "What are the Apple App Store and Google Play?":
-    "Apple, Google, and other companies like Amazon have their own app stores where people can download iOS, Android, and APK apps. Apple has the App Store, and Google has Google Play. Let’s make sure yours is available on both. Not only will we build your app for web and mobile, but we’ll also submit and distribute it to the internet, the Apple App Store, Google Play, and others.",
+    "Apple, Google, and other companies like Amazon have their own app stores where people can download iOS, Android, and APK apps. Apple has the App Store, and Google has Google Play. Let’s make sure yours is available on both. Not only will we build your app for web and mobile, but we’ll also submit and distribute it to the web, the Apple App Store, Google Play, and other platforms.",
   "How Much Do Your App Development Services Cost?":
     "My rate is set to a modest $50/hr, meaning projects typically start around $15,000, depending on the scope of work.",
   "Will You Sign a Non-Disclosure Agreement (NDA)?":
-    "Of course! I’m excited to hear your idea and turn it into reality, but it’s your idea; my goal is to publish your idea to the app stores, not steal it from you. If you like, I have an NDA already drawn up for you on my Contact page. You can easily fill it out and sign it online, and I’ll sign it and send it back! You may also send me your own to topher@bessaapps.com"
+    "Of course! I’m excited to hear your idea and turn it into reality, but it’s your idea; my goal is to publish it on the app stores, not steal it from you. If you like, I have an NDA already drawn up for you on my Contact page. You can easily fill it out and sign it online, and I’ll sign it and send it back! You can also email yours to topher@bessaapps.com."
 };
