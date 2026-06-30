@@ -18,7 +18,7 @@ export default function HeroSection() {
       />
       <div
         className={
-          "absolute inset-0 bg-linear-to-b from-transparent to-background"
+          "absolute inset-0 bg-linear-to-b from-background/50 to-background"
         }
       />
       <div
@@ -30,7 +30,7 @@ export default function HeroSection() {
           <h1 className={"text-5xl font-bold leading-[1.1] max-w-[575]"}>
             From Impactful Concept to App Store Launch
           </h1>
-          <p className={"text-primary text-xl max-w-[575] mb-8"}>
+          <p className={"text-xl max-w-[575] mb-8"}>
             Building revolutionary cross-platform apps for innovators,
             organizations, and communities, and publishing them to the Apple App
             Store and Google Play.
@@ -62,9 +62,8 @@ export default function HeroSection() {
                 }
               />
             </div>
-            <p className={"text-primary text-xs"}>
-              Free discovery call to clarify
-              <br /> your goals{" "}
+            <p className={"text-primary text-xs max-w-[160]"}>
+              Free discovery call to clarify your goals{" "}
               <span className={"font-bold"}>
                 <Link
                   href={bookingLink}
