@@ -42,18 +42,18 @@ export default function RootLayout({
         <Clock />
         <Weather />
       </body>
-      {process.env.NODE_ENV !== "development" && (
+      {process.env.NODE_ENV === "development" && (
         <>
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
           <Script
             src={"https://plausible.io/js/pa-hfGv_cBDDnOhXgCy0sWFP.js"}
-            id={"plausible"}
-            strategy="beforeInteractive"
-          >
+            strategy={"beforeInteractive"}
+          />
+          <Script id={"plausible"} strategy={"beforeInteractive"}>
             {`
-   window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()
-  `}
+              window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+              plausible.init()
+            `}
           </Script>
         </>
       )}
