@@ -26,5 +26,5 @@ export const FAQS = {
   "How Much Do Your App Development Services Cost?":
     "My rate is set to a modest $50/hr, meaning projects typically start around $15,000, depending on the scope of work.",
   "Will You Sign a Non-Disclosure Agreement (NDA)?":
-    "Of course! I’m excited to hear your idea and turn it into reality, but it’s your idea; my goal is to publish your idea to the app stores, not steal it from you. If you like, I have an NDA already drawn up for you on my Contact page. You can easily fill it out and sign it online, and I’ll sign it and send it back!"
+    "Of course! I’m excited to hear your idea and turn it into reality, but it’s your idea; my goal is to publish your idea to the app stores, not steal it from you. If you like, I have an NDA already drawn up for you on my Contact page. You can easily fill it out and sign it online, and I’ll sign it and send it back! You may also send me your own to topher@bessaapps.com"
 };
