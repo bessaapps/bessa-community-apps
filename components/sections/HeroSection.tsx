@@ -1,4 +1,5 @@
 import HeroImage from "@/assets/images/hero.png";
+import Me from "@/assets/images/me.png";
 import Image from "next/image";
 import { bookingLink } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -40,6 +41,27 @@ export default function HeroSection() {
                 Learn More
               </Button>
             </Link>
+            <div className={"relative h-10 w-10"}>
+              <div
+                className={
+                  "h-10 w-10 relative rounded-full overflow-hidden b-10"
+                }
+              >
+                <Image
+                  src={Me}
+                  alt={
+                    "Headshot of a smiling developer with glasses and a mustache, an expert providing custom mobile app development services."
+                  }
+                  className={"object-cover"}
+                  fill
+                />
+              </div>
+              <div
+                className={
+                  "bg-green-500 h-3 w-3 absolute bottom-0 right-0 rounded-full"
+                }
+              />
+            </div>
             <p className={"text-primary text-xs"}>
               Free discovery call to clarify
               <br /> your goals{" "}
