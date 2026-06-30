@@ -12,7 +12,8 @@ export default function Section({
   return (
     <>
       <div className={containerClassName}>
-        <section id={id} className={"max-w-7xl px-4 my-24 mx-auto"}>
+        {/* Must use vertical padding instead of margin for anchor links to work properly. */}
+        <section id={id} className={"max-w-7xl px-4 py-24 mx-auto"}>
           {children}
         </section>
       </div>

@@ -34,16 +34,25 @@ export default function HeroSection() {
             organizations, and communities, and publishing them to the Apple App
             Store and Google Play.
           </p>
-          <div>
-            <Link
-              href={bookingLink}
-              target={"_blank"}
-              rel={"noopener noreferrer"}
-            >
+          <div className={"flex items-center gap-4"}>
+            <Link href={"#services"} title={"Services"}>
               <Button size={"lg"} className={"cursor-pointer hover:scale-110"}>
-                Start my Project!
+                Learn More
               </Button>
             </Link>
+            <p className={"text-primary text-xs"}>
+              Free discovery call to clarify
+              <br /> your goals{" "}
+              <span className={"font-bold"}>
+                <Link
+                  href={bookingLink}
+                  target={"_blank"}
+                  rel={"noopener noreferrer"}
+                >
+                  Schedule now
+                </Link>
+              </span>
+            </p>
           </div>
         </div>
       </div>

@@ -122,7 +122,9 @@ export default function TopNavigationNavigationMenu() {
             className={navigationMenuTriggerStyle()}
           >
             <NavigationMenuLink asChild>
-              <Link href={href}>{anchor}</Link>
+              <Link href={href} title={anchor}>
+                {anchor}
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
         ))}

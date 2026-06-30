@@ -118,7 +118,7 @@ export default async function Home() {
         }}
       />
       <HeroSection />
-      <Section>
+      <Section id={"services"}>
         <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
           <h2 className={"text-4xl font-bold"}>Services</h2>
           <p>
