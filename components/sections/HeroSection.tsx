@@ -1,7 +1,4 @@
-import Play from "@/assets/images/play.png";
-import AppStore from "@/assets/images/app-store.png";
-import Android from "@/assets/images/android.png";
-import Apple from "@/assets/images/ios.png";
+import HeroImage from "@/assets/images/hero.png";
 import Image from "next/image";
 import { bookingLink } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -10,52 +7,14 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <div className={"relative h-screen px-4"}>
-      <div
-        className={
-          "max-w-1/2 sm:max-w-1/2 absolute bottom-52 sm:top-1/16 right-4 sm:right-16"
-        }
-      >
-        <Image
-          src={Play}
-          alt={"Google Play Logo"}
-          sizes={"(max-width: 640px) 100vw, 1504px"}
-          fetchPriority={"high"}
-          priority
-        />
-      </div>
-      <div
-        className={
-          "max-w-3/4 sm:max-w-5/8 absolute bottom-8 sm:bottom-0 left-1/8"
-        }
-      >
-        <Image
-          src={AppStore}
-          alt={"Apple App Store Logo"}
-          sizes={"(max-width: 640px) 100vw, 1880px"}
-          fetchPriority={"high"}
-          priority
-        />
-      </div>
-      <div
-        className={"max-w-1/4 hidden sm:block absolute right-1/16 bottom-1/32"}
-      >
-        <Image
-          src={Apple}
-          alt={"iOS Logo"}
-          sizes={"(max-width: 640px) 100vw, 752px"}
-          fetchPriority={"high"}
-          priority
-        />
-      </div>
-      <div className={"max-w-3/16 hidden sm:block absolute top-1/8 left-1/8"}>
-        <Image
-          src={Android}
-          alt={"Android Logo"}
-          sizes={"(max-width: 640px) 100vw, 378px"}
-          fetchPriority={"high"}
-          priority
-        />
-      </div>
+      <Image
+        src={HeroImage}
+        alt={"Apple App Store, Google Play, iOS, and Android Logos"}
+        className={"object-contain"}
+        fetchPriority={"high"}
+        priority
+        fill
+      />
       <div
         className={
           "absolute inset-0 bg-linear-to-b from-transparent to-background"
