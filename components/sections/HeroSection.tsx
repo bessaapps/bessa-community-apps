@@ -35,13 +35,13 @@ export default function HeroSection() {
             organizations, and communities, and publishing them to the Apple App
             Store and Google Play.
           </p>
-          <div className={"flex items-center gap-4"}>
-            <Link href={"#services"} title={"Services"}>
-              <Button size={"lg"} className={"cursor-pointer hover:scale-110"}>
+          <div className={"flex items-center"}>
+            <Link href={"#services"} title={"Services"} className={"mr-4"}>
+              <Button className={"cursor-pointer hover:scale-110"}>
                 Learn More
               </Button>
             </Link>
-            <div className={"relative h-10 w-10"}>
+            <div className={"relative h-10 w-10 mr-2"}>
               <div
                 className={
                   "h-10 w-10 relative rounded-full overflow-hidden b-10"
