@@ -7,6 +7,7 @@ import Clock from "@/components/Clock";
 import Weather from "@/components/Weather";
 import TopNavigation from "../components/navigation/TopNavigation";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 
 const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk" });
 
@@ -42,7 +43,19 @@ export default function RootLayout({
         <Weather />
       </body>
       {process.env.NODE_ENV !== "development" && (
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
+        <>
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
+          <Script
+            src={"https://plausible.io/js/pa-hfGv_cBDDnOhXgCy0sWFP.js"}
+            id={"plausible"}
+            strategy="beforeInteractive"
+          >
+            {`
+   window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+  `}
+          </Script>
+        </>
       )}
     </html>
   );
