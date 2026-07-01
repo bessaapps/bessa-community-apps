@@ -4,7 +4,7 @@ import { BsGithub, BsLinkedin, BsTwitterX } from "react-icons/bs";
 import { bookingLink, keyword, title } from "@/lib/constants";
 import { AiOutlineCalendar } from "react-icons/ai";
 
-export default function CTA() {
+export default function CTASection() {
   return (
     <div className={"min-h-[calc(100vh-64px)] flex p-4"} id={"contact"}>
       <div
@@ -97,7 +97,7 @@ export default function CTA() {
           </div>
           <p className={"text-sm text-right accent-muted"}>
             &copy; Copyright{" "}
-            <Link href={"/"} title={`${keyword} - ${title}`}>
+            <Link href={"/public"} title={`${keyword} - ${title}`}>
               Bessa Community Apps, LLC
             </Link>
           </p>

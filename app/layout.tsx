@@ -1,5 +1,5 @@
 import "./globals.css";
-import CTA from "@/components/CTA";
+import CTASection from "../components/sections/CTASection";
 import { formatMetadata } from "@/lib/helpers";
 import { url } from "@/lib/constants";
 import { Space_Grotesk, Inter } from "next/font/google";
@@ -35,7 +35,7 @@ export default function RootLayout({
           <main>
             <div className={"overflow-y-scroll"}>
               {children}
-              <CTA />
+              <CTASection />
             </div>
           </main>
         </div>
