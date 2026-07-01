@@ -1,15 +1,13 @@
 import { formatMetadata } from "@/lib/helpers";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { stripHtml } from "string-strip-html";
 import ProcessSection from "../../../components/sections/ProcessSection";
 import ServicesSection from "../../../components/sections/ServicesSection";
-import { bookingLink } from "@/lib/constants";
 import { Service, WithContext } from "schema-dts";
 import FAQSection from "../../../components/sections/FAQSection";
 import { permanentRedirect } from "next/navigation";
 import Section from "@/components/sections/Section";
+import CTA from "@/components/CTA";
 
 export async function generateMetadata({
   params
@@ -83,15 +81,7 @@ export default async function ServicePage({
             {service.acf.short_title || ""}
           </p>
           <h1 className={"text-4xl sm:text-6xl font-bold mb-4"}>{title}</h1>
-          <Link
-            href={bookingLink}
-            target={"_blank"}
-            rel={"noopener noreferrer"}
-          >
-            <Button size={"lg"} className={"cursor-pointer hover:scale-110"}>
-              Get Started
-            </Button>
-          </Link>
+          <CTA />
         </div>
       </Section>
       <Section>

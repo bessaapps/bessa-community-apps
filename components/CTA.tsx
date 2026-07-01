@@ -6,17 +6,22 @@ import { Zap } from "lucide-react";
 import { bookingLink } from "@/lib/constants";
 
 export default function CTA({
-  href,
-  title,
-  anchor
+  href = bookingLink,
+  title = "Get Started!",
+  anchor = "Get Started!"
 }: {
-  href: string;
-  title: string;
-  anchor: string;
+  href?: string;
+  title?: string;
+  anchor?: string;
 }) {
   return (
     <div className={"flex flex-col sm:flex-row sm:items-center gap-4"}>
-      <Link href={href} title={title}>
+      <Link
+        href={href}
+        title={title}
+        target={href === bookingLink ? "_blank" : undefined}
+        rel={href === bookingLink ? "noopener noreferrer" : undefined}
+      >
         <Button className={"cursor-pointer hover:scale-110"}>{anchor}</Button>
       </Link>
       <div className={"flex items-center gap-4"}>
@@ -43,7 +48,7 @@ export default function CTA({
         </div>
         <p className={"text-primary text-xs max-w-[160]"}>
           Free discovery call to clarify your goals{" "}
-          <span className={"font-bold"}>
+          <span className={"font-bold underline"}>
             <Link
               href={bookingLink}
               target={"_blank"}
