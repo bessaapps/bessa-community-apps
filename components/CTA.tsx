@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BsGithub, BsLinkedin, BsTwitterX } from "react-icons/bs";
 import { bookingLink, keyword, title } from "@/lib/constants";
+import { AiOutlineCalendar } from "react-icons/ai";
 
 export default function CTA() {
   return (
@@ -31,13 +32,35 @@ export default function CTA() {
                 target={"_blank"}
                 rel={"noopener noreferrer"}
               >
-                <Button
-                  variant={"secondary"}
-                  size={"lg"}
-                  className={"cursor-pointer hover:scale-110"}
+                <div
+                  className={
+                    "w-fit h-fit relative inline-flex rounded-md overflow-hidden"
+                  }
                 >
-                  Book a Call
-                </Button>
+                  {/* Animated gradient border */}
+                  <span
+                    className={
+                      "absolute inset-0 rounded-md pointer-events-none overflow-hidden"
+                    }
+                  >
+                    <span
+                      className={
+                        "absolute -inset-full animate-spin animation-duration-[4s] bg-[conic-gradient(from_0deg,#000000_0deg,#000000_40deg,transparent_60deg)]"
+                      }
+                    />
+                  </span>
+                  {/* Button */}
+                  <Button
+                    variant={"secondary"}
+                    size={"lg"}
+                    className={
+                      "relative z-10 m-0.5 rounded-md bg-background dark:bg-background hover:bg-background dark:hover:bg-background shadow-none cursor-pointer"
+                    }
+                  >
+                    <AiOutlineCalendar className="size-4" />
+                    Book a Call
+                  </Button>
+                </div>
               </Link>
             </div>
             <p className={"text-secondary"}>
