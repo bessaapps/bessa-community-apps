@@ -2,14 +2,14 @@ import "./globals.css";
 import CTASection from "../components/sections/CTASection";
 import { formatMetadata } from "@/lib/helpers";
 import { url } from "@/lib/constants";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import Clock from "@/components/Clock";
 import Weather from "@/components/Weather";
 import TopNavigation from "../components/navigation/TopNavigation";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 
-const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk" });
+const jetBrainsMono = JetBrains_Mono({ variable: "--font-jetbrains-mono" });
 
 const inter = Inter({ variable: "--font-inter" });
 
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang={"en"}>
       <body
-        className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
+        className={`${jetBrainsMono.variable} ${inter.variable} antialiased`}
       >
         <div className={"h-full max-h-screen grid grid-rows-[auto_1fr]"}>
           <TopNavigation />

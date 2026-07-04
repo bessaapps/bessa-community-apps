@@ -26,7 +26,7 @@ export default function HeroSection() {
         <div className={"flex flex-col gap-4"}>
           <h1
             className={
-              "text-4xl sm:text-5xl font-bold leading-[1.1] max-w-[575]"
+              "text-4xl sm:text-5xl font-bold leading-[1.1] max-w-[650]"
             }
           >
             From Impactful Concept to App Store Launch
