@@ -29,7 +29,7 @@ export default function ArticleCard({ article }: { article: Post }) {
             "absolute bg-transparent top-0 flex flex-col justify-between h-full p-4"
           }
         >
-          <h2 className={"text-primary text-xl font-semibold"}>{title}</h2>
+          <h3 className={"text-primary text-xl font-semibold"}>{title}</h3>
           <p className={"line-clamp-2"}>{excerpt}</p>
         </div>
       </div>

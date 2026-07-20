@@ -10,7 +10,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 
 const ibmPlexSerif = IBM_Plex_Serif({
-  weight: ["300"],
+  weight: ["500"],
   variable: "--font-ibm-plex-serif"
 });
 
