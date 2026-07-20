@@ -2,16 +2,21 @@ import "./globals.css";
 import CTASection from "../components/sections/CTASection";
 import { formatMetadata } from "@/lib/helpers";
 import { url } from "@/lib/constants";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Serif } from "next/font/google";
 import Clock from "@/components/Clock";
 import Weather from "@/components/Weather";
 import TopNavigation from "../components/navigation/TopNavigation";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 
-const jetBrainsMono = JetBrains_Mono({ variable: "--font-jetbrains-mono" });
+const ibmPlexSerif = IBM_Plex_Serif({
+  weight: ["300"],
+  variable: "--font-ibm-plex-serif"
+});
 
-const inter = Inter({ variable: "--font-inter" });
+const ibmPlexSans = IBM_Plex_Sans({
+  variable: "--font-ibm-plex-sans"
+});
 
 export const metadata = formatMetadata({
   metadataTitle: "Bessa Community Apps",
@@ -28,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang={"en"}>
       <body
-        className={`${jetBrainsMono.variable} ${inter.variable} antialiased`}
+        className={`${ibmPlexSerif.variable} ${ibmPlexSans.variable} antialiased`}
       >
         <div className={"h-full max-h-screen grid grid-rows-[auto_1fr]"}>
           <TopNavigation />
