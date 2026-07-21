@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import Me from "@/assets/images/me.png";
+import Me from "@/assets/images/me-square.png";
 import Image from "next/image";
 import { Zap } from "lucide-react";
 import { bookingLink } from "@/lib/constants";
