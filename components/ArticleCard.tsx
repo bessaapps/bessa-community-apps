@@ -6,19 +6,25 @@ import Image from "next/image";
 export default function ArticleCard({ article }: { article: Post }) {
   const title = stripHtml(article.title.rendered).result;
   const excerpt = stripHtml(article.excerpt.rendered).result;
+  const featuredMedia = article?._embedded["wp:featuredmedia"][0];
 
   return (
     <Link key={article.id} href={`/launchpad/${article.slug}`} title={title}>
-      <div
-        className={"relative w-full aspect-square rounded-2xl overflow-hidden"}
-      >
-        <Image
-          src={article?._embedded?.["wp:featuredmedia"]?.[0]?.source_url}
-          alt={article?._embedded?.["wp:featuredmedia"]?.[0]?.alt_text}
-          style={{ objectFit: "cover" }}
-          sizes={"(max-width: 640px) 100vw, 640px"}
-          fill
-        />
+      <div className={"bg-card relative rounded-2xl"}>
+        <div
+          className={
+            "h-full w-full max-h-full max-w-full aspect-square flex items-center justify-center p-16"
+          }
+        >
+          <Image
+            src={featuredMedia?.source_url}
+            height={featuredMedia?.media_details.height}
+            width={featuredMedia?.media_details.width}
+            alt={featuredMedia?.alt_text}
+            className={"h-full w-full object-contain"}
+            sizes={"(max-width: 640px) 100vw, 640px"}
+          />
+        </div>
         <div
           className={
             "absolute inset-0 bg-linear-to-b from-transparent to-background"

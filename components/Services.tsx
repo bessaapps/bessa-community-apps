@@ -31,7 +31,7 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
                 <div className={"bg-card relative rounded-2xl"}>
                   <div
                     className={
-                      "h-full w-full max-h-full max-w-full aspect-square flex items-center justify-center p-8"
+                      "h-full w-full max-h-full max-w-full aspect-square flex items-center justify-center p-16"
                     }
                   >
                     <Image
