@@ -28,21 +28,18 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
 
             return (
               <Link key={id} href={`/${slug}`} title={titleRendered}>
-                <div className={"bg-card relative rounded-2xl"}>
-                  <div
-                    className={
-                      "h-full w-full max-h-full max-w-full aspect-square flex items-center justify-center p-16"
-                    }
-                  >
-                    <Image
-                      src={featuredMedia.source_url}
-                      height={featuredMedia.media_details.height}
-                      width={featuredMedia.media_details.width}
-                      alt={featuredMedia.alt_text}
-                      className={"h-full w-full object-contain"}
-                      sizes={"(max-width: 640px) 100vw, 412px"}
-                    />
-                  </div>
+                <div
+                  className={
+                    "bg-card relative aspect-square rounded-2xl overflow-hidden"
+                  }
+                >
+                  <Image
+                    src={featuredMedia.source_url}
+                    alt={featuredMedia.alt_text}
+                    style={{ objectFit: "cover" }}
+                    sizes={"(max-width: 640px) 100vw, 412px"}
+                    fill
+                  />
                   <div
                     className={
                       "absolute inset-0 bg-linear-to-b from-transparent to-background"

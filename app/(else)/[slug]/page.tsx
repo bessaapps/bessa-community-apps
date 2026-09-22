@@ -85,21 +85,18 @@ export default async function ServicePage({
         </div>
       </Section>
       <Section>
-        <div className={"bg-card relative aspect-[1.4] rounded-2xl"}>
-          <div
-            className={
-              "h-full w-full max-h-full max-w-full aspect-square flex items-center justify-center p-8"
-            }
-          >
-            <Image
-              src={featuredMedia.source_url}
-              height={featuredMedia.media_details.height}
-              width={featuredMedia.media_details.width}
-              alt={featuredMedia.alt_text}
-              className={"h-full w-full object-contain"}
-              sizes={"(max-width: 640px) 100vw, 1268px"}
-            />
-          </div>
+        <div
+          className={
+            "bg-card relative aspect-[1.4] rounded-2xl overflow-hidden"
+          }
+        >
+          <Image
+            src={featuredMedia.source_url}
+            alt={featuredMedia.alt_text}
+            style={{ objectFit: "cover" }}
+            sizes={"(max-width: 640px) 100vw, 1268px"}
+            fill
+          />
         </div>
       </Section>
       <Section>
