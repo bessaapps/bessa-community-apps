@@ -6,7 +6,7 @@ import ProcessSection from "../../../components/sections/ProcessSection";
 import ServicesSection from "../../../components/sections/ServicesSection";
 import { BlogPosting, WithContext } from "schema-dts";
 import dayjs from "dayjs";
-import Me from "@/assets/images/me.png";
+import Me from "@/assets/images/me-square.png";
 import { bookingLink, url } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import ShareButtons from "@/components/ShareButtons";
