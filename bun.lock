@@ -18,7 +18,7 @@
         "react-dom": "19.2.0",
         "react-icons": "^5.7.0",
         "schema-dts": "^1.1.5",
-        "string-strip-html": "^13.7.5",
+        "string-strip-html": "^13.7.6",
         "tailwind-merge": "^3.7.0",
       },
       "devDependencies": {
@@ -971,7 +971,7 @@
 
     "string-left-right": ["string-left-right@6.2.5", "", { "dependencies": { "codsen-utils": "^1.10.3" } }, "sha512-oc7BSa7LWJMFARfOtTS5X0cHao+XVGGp7YrT+fBmI3t7HMYlAchwSBwug2myCOb2ZCAWA5/8tH4wJwtisZ96Mw=="],
 
-    "string-strip-html": ["string-strip-html@13.7.5", "", { "dependencies": { "codsen-utils": "^1.10.3", "html-entity-codec": "^1.1.0", "ranges-apply": "^7.2.6", "ranges-push": "^7.3.3", "string-left-right": "^6.2.5" } }, "sha512-bp5ncCya2fj3yTLsS6uOtoal1xvc7AOPq8NUL2P0F04zqd42+ymdHxjCOZrXeu65MO/UI8rOUvSi56bmWvAUdA=="],
+    "string-strip-html": ["string-strip-html@13.7.6", "", { "dependencies": { "codsen-utils": "^1.10.3", "html-entity-codec": "^1.1.0", "ranges-apply": "^7.2.6", "ranges-push": "^7.3.3", "string-left-right": "^6.2.5" } }, "sha512-3e2B6EQs7oY0oAePP+kLZDOPhxprs2jua4bh+x2TMQiWdxatCFXUkmr2N6TwhiiZzrhdRsvnbb9ESJiYOO7gXA=="],
 
     "string.prototype.includes": ["string.prototype.includes@2.0.1", "", { "dependencies": { "call-bind": "^1.0.7", "define-properties": "^1.2.1", "es-abstract": "^1.23.3" } }, "sha512-o7+c9bW6zpAdJHTtujeePODAhkuicdAryFsfVKwA+wGw89wJ4GTY484WTucM9hLtDEOpOvI+aHnzqnC5lHp4Rg=="],
 
