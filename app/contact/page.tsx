@@ -54,7 +54,7 @@ export default function ContactPage() {
               href={bookingLink}
               target={"_blank"}
               rel={"noopener noreferrer"}
-              className={"text-primary font-semibold"}
+              className={"text-accent-foreground font-semibold"}
             >
               Book a call &rarr;
             </Link>
@@ -62,7 +62,7 @@ export default function ContactPage() {
           <p>
             <Link
               href={"mailto:topher@bessaapps.com"}
-              className={"text-primary font-semibold"}
+              className={"text-accent-foreground font-semibold"}
             >
               Email me &rarr;
             </Link>
@@ -74,7 +74,7 @@ export default function ContactPage() {
               }
               target={"_blank"}
               rel={"noopener noreferrer"}
-              className={"text-primary font-semibold"}
+              className={"text-accent-foreground font-semibold"}
             >
               Non-Disclosure Agreement &rarr;
             </Link>

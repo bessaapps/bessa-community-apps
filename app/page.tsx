@@ -248,7 +248,7 @@ export default async function Home() {
                 <Link
                   href={"/launchpad"}
                   title={"Launchpad: The App Builder's Guide"}
-                  className={"text-primary font-semibold"}
+                  className={"text-accent-foreground font-semibold"}
                 >
                   Read More &rarr;
                 </Link>

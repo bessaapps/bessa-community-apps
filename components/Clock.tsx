@@ -13,7 +13,7 @@ export default function Clock() {
   return (
     <div
       className={
-        "bg-[#0a0a0a] h-screen fixed top-0 right-0 [writing-mode:vertical-rl]"
+        "bg-background h-screen fixed top-0 right-0 [writing-mode:vertical-rl]"
       }
     >
       <p className={"text-xs text-center"}>
