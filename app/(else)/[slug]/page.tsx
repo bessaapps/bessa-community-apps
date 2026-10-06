@@ -33,7 +33,7 @@ export async function generateMetadata({
   });
 }
 
-export default async function ServicePage({
+export default async function PostPage({
   params
 }: {
   params: Promise<{ slug: string }>;
@@ -77,9 +77,7 @@ export default async function ServicePage({
       />
       <Section containerClassName={"pt-[65]"}>
         <div className={"max-w-3xl flex flex-col gap-4 px-4 mx-auto"}>
-          <p className={"text-primary uppercase"}>
-            {service.acf.short_title || ""}
-          </p>
+          <p className={"uppercase"}>{service.acf.short_title || ""}</p>
           <h1 className={"text-4xl sm:text-6xl font-bold mb-4"}>{title}</h1>
           <CTA />
         </div>

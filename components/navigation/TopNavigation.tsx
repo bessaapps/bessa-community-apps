@@ -11,7 +11,7 @@ export default function TopNavigation() {
   return (
     <div
       className={
-        "bg-black/50 w-full fixed top-0 z-10 border-b-[1] border-b-accent backdrop-blur"
+        "bg-background/50 w-full fixed top-0 z-10 border-b-[1] border-b-accent backdrop-blur"
       }
     >
       <div className={"w-full max-w-7xl px-4 py-2 mx-auto"}>

@@ -146,12 +146,8 @@ export default async function Home() {
         <h2 className={"text-4xl font-bold mx-4 mb-8"}>Pinned Projects</h2>
         <div className={"grid grid-cols-1 sm:grid-cols-2 gap-4"}>
           {WORKS.map(({ name, href, image, tags }) => (
-            <Link
+            <div
               key={href}
-              href={href}
-              title={name}
-              target={"_blank"}
-              rel={"noopener noreferrer"}
               className={
                 "bg-card relative max-w-full h-full aspect-square rounded-2xl"
               }
@@ -182,7 +178,7 @@ export default async function Home() {
                   ))}
                 </p>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </Section>
@@ -248,7 +244,7 @@ export default async function Home() {
                 <Link
                   href={"/launchpad"}
                   title={"Launchpad: The App Builder's Guide"}
-                  className={"text-primary font-semibold"}
+                  className={"text-accent-foreground font-semibold"}
                 >
                   Read More &rarr;
                 </Link>

@@ -15,12 +15,12 @@ export default function CTASection() {
         <div className={"max-w-7xl py-16 sm:py-32 px-4 sm:px-8"}>
           <div
             className={
-              "text-background text-4xl sm:text-6xl leading-[1.2] mb-4"
+              "text-accent-foreground text-4xl sm:text-6xl leading-[1.2] mb-4"
             }
           >
             Stop dreaming, start launching.
           </div>
-          <p className={"text-secondary sm:text-xl"}>
+          <p className={"sm:text-xl"}>
             Ready to transform your vision into a cross-platform reality? Book a
             call to discuss your project goals, timelines, and how we can bring
             your app to life on iOS, Android, and the web.
@@ -33,16 +33,15 @@ export default function CTASection() {
                 rel={"noopener noreferrer"}
               >
                 <Button
-                  variant={"secondary"}
                   size={"lg"}
-                  className={"cursor-pointer"}
+                  className={"bg-background hover:bg-background cursor-pointer"}
                 >
                   <AiOutlineCalendar className="size-4" />
                   Book a Call
                 </Button>
               </Link>
             </div>
-            <p className={"text-secondary"}>
+            <p>
               <Link href={"mailto:topher@bessaapps.com"}>
                 topher@bessaapps.com
               </Link>
@@ -55,7 +54,7 @@ export default function CTASection() {
               target={"_blank"}
               rel={"noopener noreferrer"}
             >
-              <BsLinkedin className={"text-xl text-muted"} />
+              <BsLinkedin className={"text-xl"} />
             </Link>
             <Link
               href={"https://github.com/bessaapps"}
@@ -63,7 +62,7 @@ export default function CTASection() {
               target={"_blank"}
               rel={"noopener noreferrer"}
             >
-              <BsGithub className={"text-xl text-muted"} />
+              <BsGithub className={"text-xl"} />
             </Link>
             <Link
               href={"https://x.com/bessaapps"}
@@ -71,7 +70,7 @@ export default function CTASection() {
               target={"_blank"}
               rel={"noopener noreferrer"}
             >
-              <BsTwitterX className={"text-xl text-muted"} />
+              <BsTwitterX className={"text-xl"} />
             </Link>
           </div>
           <p className={"text-sm text-right accent-muted"}>
