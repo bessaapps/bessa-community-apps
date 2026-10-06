@@ -132,7 +132,7 @@ export default async function Home() {
                 href={bookingLink}
                 target={"_blank"}
                 rel={"noopener noreferrer"}
-                className={"text-primary font-semibold"}
+                className={"text-accent-foreground font-semibold"}
               >
                 Start Here &rarr;
               </Link>
@@ -172,7 +172,7 @@ export default async function Home() {
                   "absolute bg-transparent top-0 flex flex-col justify-end h-full p-4"
                 }
               >
-                <p className={"text-primary font-semibold"}>{name}</p>
+                <p className={"text-accent-foreground font-semibold"}>{name}</p>
                 <p>
                   {tags.map((tag: string, index: number) => (
                     <span key={index}>

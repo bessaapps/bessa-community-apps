@@ -46,7 +46,7 @@ export default function CTA({
             <Zap color={"white"} size={12} />
           </div>
         </div>
-        <p className={"text-primary text-xs max-w-[160]"}>
+        <p className={"text-accent-foreground text-xs max-w-[160]"}>
           Free discovery call to clarify your goals{" "}
           <span className={"font-bold underline"}>
             <Link

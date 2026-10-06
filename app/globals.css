@@ -6,20 +6,20 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --card: #171717;
-  --card-foreground: #fafafa;
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --card: #a1a1a1;
+  --card-foreground: #171717;
   --popover: #171717;
   --popover-foreground: #fafafa;
-  --primary: #e5e5e5;
+  --primary: #e4f324;
   --primary-foreground: #171717;
   --secondary: #262626;
   --secondary-foreground: #fafafa;
   --muted: #262626;
   --muted-foreground: #a1a1a1;
-  --accent: #262626;
-  --accent-foreground: #fafafa;
+  --accent: #fafafa;
+  --accent-foreground: #262626;
   --destructive: #ff6467;
   --border: #ffffff1a;
   --input: #ffffff26;
@@ -124,7 +124,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--primary);
+  color: var(--foreground);
 }
 h1 {
   font-family: var(--font-ibm-plex-serif), "serif";

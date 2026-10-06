@@ -30,7 +30,7 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
               <Link key={id} href={`/${slug}`} title={titleRendered}>
                 <div
                   className={
-                    "bg-card relative aspect-square rounded-2xl overflow-hidden"
+                    "relative aspect-square rounded-2xl overflow-hidden"
                   }
                 >
                   <Image
@@ -50,10 +50,15 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
                       "absolute bg-transparent top-0 flex flex-col justify-between h-full p-4"
                     }
                   >
-                    <h3 className={"text-primary text-xl font-semibold"}>
+                    <h3
+                      className={"text-xl font-semibold"}
+                      style={{ color: "#fafafa" }}
+                    >
                       {acf.short_title}
                     </h3>
-                    <p className={"line-clamp-1"}>{titleRendered}</p>
+                    <p className={"text-accent-foreground line-clamp-1"}>
+                      {titleRendered}
+                    </p>
                   </div>
                 </div>
               </Link>
@@ -73,7 +78,9 @@ export default async function Services({ hiddenId }: { hiddenId?: number }) {
                   <div key={id}>
                     <Link href={`/${slug}`} title={titleRendered}>
                       <p className={"line-clamp-1"}>
-                        <span className={"text-primary font-semibold"}>
+                        <span
+                          className={"text-accent-foreground font-semibold"}
+                        >
                           {acf.short_title}:
                         </span>{" "}
                         {titleRendered}
