@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function ArticleCard({ article }: { article: Post }) {
   const title = stripHtml(article.title.rendered).result;
   const excerpt = stripHtml(article.excerpt.rendered).result;
-  const featuredMedia = article?._embedded["wp:featuredmedia"][0];
+  const featuredMedia = article?._embedded?.["wp:featuredmedia"]?.[0];
 
   return (
     <Link key={article.id} href={`/launchpad/${article.slug}`} title={title}>
@@ -16,14 +16,16 @@ export default function ArticleCard({ article }: { article: Post }) {
             "h-full w-full max-h-full max-w-full aspect-square flex items-center justify-center p-16"
           }
         >
-          <Image
-            src={featuredMedia?.source_url}
-            height={featuredMedia?.media_details.height}
-            width={featuredMedia?.media_details.width}
-            alt={featuredMedia?.alt_text}
-            className={"h-full w-full object-contain"}
-            sizes={"(max-width: 640px) 100vw, 640px"}
-          />
+          {featuredMedia && (
+            <Image
+              src={featuredMedia?.source_url}
+              height={featuredMedia?.media_details.height}
+              width={featuredMedia?.media_details.width}
+              alt={featuredMedia?.alt_text}
+              className={"h-full w-full object-contain"}
+              sizes={"(max-width: 640px) 100vw, 640px"}
+            />
+          )}
         </div>
         <div
           className={

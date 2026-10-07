@@ -29,12 +29,13 @@ export async function generateMetadata({
 
   const title = stripHtml(post.title.rendered).result;
   const excerpt = stripHtml(post.excerpt.rendered).result;
+  const featuredMedia = post?._embedded?.["wp:featuredmedia"]?.[0];
 
   return formatMetadata({
     metadataTitle: post?.acf?.meta_title || title,
     metadataDescription: excerpt,
     path: `/launchpad/${post.slug}`,
-    imagePath: post._embedded["wp:featuredmedia"][0].source_url
+    imagePath: featuredMedia?.source_url
   });
 }
 
@@ -55,12 +56,13 @@ export default async function ArticlePage({
 
   const title = stripHtml(post.title.rendered).result;
   const excerpt = stripHtml(post.excerpt.rendered).result;
+  const featuredMedia = post?._embedded?.["wp:featuredmedia"]?.[0];
 
   const jsonLd: WithContext<BlogPosting> = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post?.acf?.meta_title || title,
-    image: post._embedded["wp:featuredmedia"][0].source_url,
+    image: featuredMedia?.source_url,
     description: excerpt,
     publisher: {
       "@type": "Organization",
@@ -79,7 +81,7 @@ export default async function ArticlePage({
       <Section containerClassName={"pt-[65]"}>
         <div className={"max-w-3xl px-4 mx-auto flex flex-col gap-4"}>
           <Link href={"/launchpad"} title={"Launchpad - Bessa Community Apps"}>
-            <p className={"text-primary uppercase"}>Launchpad</p>
+            <p className={"uppercase"}>Launchpad</p>
           </Link>
           <h1 className={"text-4xl sm:text-6xl font-bold"}>{title}</h1>
           <div className={"flex items-center gap-4"}>
@@ -92,10 +94,8 @@ export default async function ArticlePage({
               />
             </div>
             <div>
-              <p className={"text-primary font-bold"}>
-                Topher, Software Engineer
-              </p>
-              <p className={"text-primary text-sm"}>
+              <p className={"font-bold"}>Topher, Software Engineer</p>
+              <p className={"text-sm"}>
                 <time dateTime={dayjs(post.modified).format("YYYY-MM-DD")}>
                   {dayjs(post.modified).format("MMMM DD, YYYY")}
                   &nbsp;&mdash;{" "}
@@ -120,16 +120,18 @@ export default async function ArticlePage({
           </div>
         </div>
       </Section>
-      <Section>
-        <div className={"relative aspect-[1.4] rounded-2xl overflow-hidden"}>
-          <Image
-            src={post._embedded["wp:featuredmedia"][0].source_url}
-            alt={post._embedded["wp:featuredmedia"][0].alt_text}
-            fill
-            className={"object-cover"}
-          />
-        </div>
-      </Section>
+      {featuredMedia && (
+        <Section>
+          <div className={"relative aspect-[1.4] rounded-2xl overflow-hidden"}>
+            <Image
+              src={featuredMedia?.source_url}
+              alt={featuredMedia?.alt_text}
+              fill
+              className={"object-cover"}
+            />
+          </div>
+        </Section>
+      )}
       <Section>
         <div className={"max-w-3xl px-4 mx-auto"}>
           <div className={"flex flex-col gap-8"}>
