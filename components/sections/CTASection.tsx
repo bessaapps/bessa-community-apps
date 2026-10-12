@@ -20,7 +20,7 @@ export default function CTASection() {
           >
             Stop dreaming, start launching.
           </div>
-          <p className={"sm:text-xl"}>
+          <p className={"text-accent-foreground sm:text-xl"}>
             Ready to transform your vision into a cross-platform reality? Book a
             call to discuss your project goals, timelines, and how we can bring
             your app to life on iOS, Android, and the web.
@@ -41,7 +41,7 @@ export default function CTASection() {
                 </Button>
               </Link>
             </div>
-            <p>
+            <p className={"text-accent-foreground"}>
               <Link href={"mailto:topher@bessaapps.com"}>
                 topher@bessaapps.com
               </Link>
@@ -53,6 +53,7 @@ export default function CTASection() {
               title={"LinkedIn"}
               target={"_blank"}
               rel={"noopener noreferrer"}
+              className={"text-accent-foreground"}
             >
               <BsLinkedin className={"text-xl"} />
             </Link>
@@ -61,6 +62,7 @@ export default function CTASection() {
               title={"GitHub"}
               target={"_blank"}
               rel={"noopener noreferrer"}
+              className={"text-accent-foreground"}
             >
               <BsGithub className={"text-xl"} />
             </Link>
@@ -69,6 +71,7 @@ export default function CTASection() {
               title={"X"}
               target={"_blank"}
               rel={"noopener noreferrer"}
+              className={"text-accent-foreground"}
             >
               <BsTwitterX className={"text-xl"} />
             </Link>

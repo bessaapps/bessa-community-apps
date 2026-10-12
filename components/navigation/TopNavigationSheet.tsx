@@ -48,7 +48,9 @@ export default function TopNavigationSheet() {
                 title={anchor}
                 onClick={() => setIsOpen(false)}
               >
-                <li className={"text-primary font-medium"}>{anchor}</li>
+                <li className={"text-accent-foreground font-medium"}>
+                  {anchor}
+                </li>
               </Link>
             ))}
             <Link
@@ -56,7 +58,7 @@ export default function TopNavigationSheet() {
               title={"Launchpad: The App Builder's Guide"}
               onClick={() => setIsOpen(false)}
             >
-              <li className={"text-primary font-medium"}>Learn</li>
+              <li className={"text-accent-foreground font-medium"}>Learn</li>
             </Link>
           </ul>
         </nav>
@@ -71,7 +73,7 @@ export default function TopNavigationSheet() {
                   title={title.rendered}
                   onClick={() => setIsOpen(false)}
                 >
-                  <li className={"text-primary font-medium"}>
+                  <li className={"text-accent-foreground font-medium"}>
                     {acf.short_title}
                   </li>
                 </Link>
@@ -90,7 +92,7 @@ export default function TopNavigationSheet() {
                   title={title.rendered}
                   onClick={() => setIsOpen(false)}
                 >
-                  <li className={"text-primary font-medium"}>
+                  <li className={"text-accent-foreground font-medium"}>
                     {acf.short_title}
                   </li>
                 </Link>
