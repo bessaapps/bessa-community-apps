@@ -29,7 +29,7 @@ export async function generateMetadata({
     metadataTitle: service?.acf?.meta_title || title,
     metadataDescription: excerpt,
     path: `/${service.slug}`,
-    imagePath: service._embedded["wp:featuredmedia"][0].source_url
+    imagePath: service?._embedded?.["wp:featuredmedia"]?.[0]?.source_url
   });
 }
 
@@ -50,7 +50,7 @@ export default async function PostPage({
 
   const title = stripHtml(service.title.rendered).result;
   const excerpt = stripHtml(service.excerpt.rendered).result;
-  const featuredMedia = service._embedded["wp:featuredmedia"][0];
+  const featuredMedia = service?._embedded?.["wp:featuredmedia"]?.[0];
 
   const jsonLd: WithContext<Service> = {
     "@context": "https://schema.org",
@@ -62,7 +62,7 @@ export default async function PostPage({
     },
     areaServed: "Worldwide",
     name: service?.acf?.meta_title || title,
-    image: featuredMedia.source_url,
+    image: featuredMedia?.source_url,
     description: excerpt,
     url: `http://bessaapps.com/${slug}`
   };
@@ -82,21 +82,23 @@ export default async function PostPage({
           <CTA />
         </div>
       </Section>
-      <Section>
-        <div
-          className={
-            "bg-card relative aspect-[1.4] rounded-2xl overflow-hidden"
-          }
-        >
-          <Image
-            src={featuredMedia.source_url}
-            alt={featuredMedia.alt_text}
-            style={{ objectFit: "cover" }}
-            sizes={"(max-width: 640px) 100vw, 1268px"}
-            fill
-          />
-        </div>
-      </Section>
+      {featuredMedia?.source_url && (
+        <Section>
+          <div
+            className={
+              "bg-card relative aspect-[1.4] rounded-2xl overflow-hidden"
+            }
+          >
+            <Image
+              src={featuredMedia.source_url}
+              alt={featuredMedia?.alt_text}
+              style={{ objectFit: "cover" }}
+              sizes={"(max-width: 640px) 100vw, 1268px"}
+              fill
+            />
+          </div>
+        </Section>
+      )}
       <Section>
         <div className={"max-w-3xl px-4 mx-auto"}>
           <div

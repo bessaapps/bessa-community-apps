@@ -120,11 +120,11 @@ export default async function ArticlePage({
           </div>
         </div>
       </Section>
-      {featuredMedia && (
+      {featuredMedia?.source_url && (
         <Section>
           <div className={"relative aspect-[1.4] rounded-2xl overflow-hidden"}>
             <Image
-              src={featuredMedia?.source_url}
+              src={featuredMedia.source_url}
               alt={featuredMedia?.alt_text}
               fill
               className={"object-cover"}
