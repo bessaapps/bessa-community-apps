@@ -32,9 +32,9 @@ export default function HeroSection() {
             From Impactful Concept to App Store Launch
           </h1>
           <p className={"text-xl max-w-[575] mb-8"}>
-            Building revolutionary cross-platform apps for innovators,
-            organizations, and communities, and publishing them to the Apple App
-            Store and Google Play.
+            I help communities, organizations, innovators, and SMBs expand
+            radical ideas into cross-platform apps available in app stores and
+            on the web.
           </p>
           <CTA href={"#services"} title={"Services"} anchor={"Learn More"} />
         </div>

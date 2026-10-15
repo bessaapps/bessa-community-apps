@@ -122,11 +122,14 @@ export default async function Home() {
         <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
           <h2 className={"text-4xl font-bold"}>Services</h2>
           <p>
-            Get your quality app that works beautifully on iOS, Android, and
-            web. I&apos;ll help you all the way from validating your idea to
-            publishing it to the app stores, help you with everything in
-            between, test your app, keep your app secure, snappy, and
-            up-to-date, and solve any technical issues that may come up.{" "}
+            Turn your app idea from a napkin sketch to an impactful, sustainable
+            product. My in-depth, cross-platform app development services
+            include a comprehensive process including validating your idea,
+            developing your app, testing your app and keeping it up-to-date,
+            publishing your app to the Apple App Store, Google Play, the web,
+            and more, and getting your app into the hands of people who need and
+            want it. My services are designed to see you all the way from the
+            ideation phase to well past the distribution stage.{" "}
             <span className={"text-nowrap"}>
               <Link
                 href={bookingLink}
@@ -190,14 +193,13 @@ export default async function Home() {
             <h2 className={"text-4xl font-bold"}>I&apos;m Topher</h2>
             <div className={"flex flex-col gap-4"}>
               <p>
-                As a passionate community builder, I care deeply about keeping
-                online and real-life communities important to our culture
-                thriving and protected. Web and mobile apps are a great way to
-                connect people in society. So, the technology we build together
-                can support, advance, and defend important communities. From
-                non-profits to educational institutions and everything in
-                between, we can establish tools to champion and conserve the
-                communities we care about most.
+                As a passionate community-builder, I deeply believe that apps
+                can be powerful tools in keeping important communities safe and
+                thriving. I enjoy working with individuals and organizations,
+                building them cross-platform apps as a means for communication
+                and mobilization. With more than a decade of experience and a
+                degree in web application development, I’m excited to help you
+                build effective relationships with your community.
               </p>
               <div>
                 <Link
