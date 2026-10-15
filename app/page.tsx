@@ -6,7 +6,7 @@ import Me from "@/assets/images/me.png";
 import Image from "next/image";
 import ProcessSection from "../components/sections/ProcessSection";
 import { Post } from "@/lib/definitions";
-import { bookingLink, FAQS, LINKS, SOCIALS } from "@/lib/constants";
+import { BOOKING_LINK, FAQS, LINKS, SOCIALS } from "@/lib/constants";
 import { Graph, ListItem, Question } from "schema-dts";
 import ArticleCard from "@/components/ArticleCard";
 import Services from "@/components/Services";
@@ -132,7 +132,7 @@ export default async function Home() {
             ideation phase to well past the distribution stage.{" "}
             <span className={"text-nowrap"}>
               <Link
-                href={bookingLink}
+                href={BOOKING_LINK}
                 target={"_blank"}
                 rel={"noopener noreferrer"}
                 className={"text-accent-foreground font-semibold"}
@@ -203,7 +203,7 @@ export default async function Home() {
               </p>
               <div>
                 <Link
-                  href={bookingLink}
+                  href={BOOKING_LINK}
                   target={"_blank"}
                   rel={"noopener noreferrer"}
                 >

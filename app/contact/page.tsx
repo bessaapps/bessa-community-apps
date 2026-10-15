@@ -1,15 +1,25 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { formatMetadata } from "@/lib/helpers";
 import { Graph } from "schema-dts";
-import { bookingLink, SOCIALS, url } from "@/lib/constants";
+import { BOOKING_LINK, METADATA, SOCIALS, URL } from "@/lib/constants";
 import { LuMapPin } from "react-icons/lu";
 
-export const metadata = formatMetadata({
-  metadataTitle: "Contact Bessa Community Apps",
-  metadataDescription:
-    "Start your cross-platform mobile app with a call, email, or by downloading the non-disclosure agreement.",
-  path: `${url}/contact`
-});
+const TITLE = "Contact Bessa Community Apps";
+const DESCRIPTION =
+  "Start your cross-platform mobile app with a call, email, or by downloading the non-disclosure agreement.";
+
+export const metadata: Metadata = {
+  ...METADATA,
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: {
+    ...METADATA.openGraph,
+    title: TITLE,
+    description: DESCRIPTION,
+    url: `${URL}/contact`
+  },
+  twitter: { ...METADATA.twitter, title: TITLE, description: DESCRIPTION }
+};
 
 export default function ContactPage() {
   const jsonLd: Graph = {
@@ -27,7 +37,7 @@ export default function ContactPage() {
         name: "Contact Bessa Community Apps",
         description:
           "Start your cross-platform mobile app with a call, email, or by downloading the non-disclosure agreement.",
-        url: `${url}/contact`,
+        url: `${URL}/contact`,
         datePublished: new Date().toISOString(),
         dateModified: new Date().toISOString()
       }
@@ -51,7 +61,7 @@ export default function ContactPage() {
           </p>
           <p>
             <Link
-              href={bookingLink}
+              href={BOOKING_LINK}
               target={"_blank"}
               rel={"noopener noreferrer"}
               className={"text-accent-foreground font-semibold"}

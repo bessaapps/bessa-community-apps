@@ -1,8 +1,41 @@
-export const keyword = "Mobile Development and Consulting";
-export const title = "Mobile Development and Consulting for Impactful Apps";
-export const url = "https://bessaapps.com";
+import { Metadata } from "next";
 
-export const bookingLink = "https://calendar.app.google/uGBwb7WfWXLUgSU6A";
+export const KEYWORD = "Mobile Development and Consulting";
+export const TITLE = "Mobile Development and Consulting for Impactful Apps";
+const DESCRIPTION =
+  "Building and publishing revolutionary cross-platform apps to the Apple App Store and Google Play for innovators, organizations, and communities.";
+export const URL = "https://bessaapps.com";
+
+export const BOOKING_LINK = "https://calendar.app.google/uGBwb7WfWXLUgSU6A";
+
+export const METADATA: Metadata = {
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
+    siteName: TITLE,
+    images: [
+      {
+        url: `${URL}/images/opengraph-image.png`
+      }
+    ],
+    locale: "en_US",
+    type: "website"
+  },
+  twitter: {
+    title: TITLE,
+    description: DESCRIPTION,
+    card: "summary_large_image",
+    creator: "@bessaapps",
+    images: [
+      {
+        url: `${URL}/images/twitter-image.png`
+      }
+    ]
+  }
+};
 
 export const LINKS = [
   { href: "/#works", anchor: "Works" },

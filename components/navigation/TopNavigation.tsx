@@ -3,7 +3,7 @@
 import Logo from "../../assets/images/logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { keyword, title } from "@/lib/constants";
+import { KEYWORD, TITLE } from "@/lib/constants";
 import TopNavigationSheet from "./TopNavigationSheet";
 import TopNavigationNavigationMenu from "./TopNavigationNavigationMenu";
 
@@ -18,7 +18,7 @@ export default function TopNavigation() {
         <div
           className={"flex items-center justify-between sm:justify-start gap-8"}
         >
-          <Link href={"/"} title={`${keyword} - ${title}`}>
+          <Link href={"/"} title={`${KEYWORD} - ${TITLE}`}>
             <div className={"w-12"}>
               <Image
                 src={Logo}

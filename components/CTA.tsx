@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import Me from "@/assets/images/me-square.png";
 import Image from "next/image";
 import { Zap } from "lucide-react";
-import { bookingLink } from "@/lib/constants";
+import { BOOKING_LINK } from "@/lib/constants";
 
 export default function CTA({
-  href = bookingLink,
+  href = BOOKING_LINK,
   title = "Get Started!",
   anchor = "Get Started!"
 }: {
@@ -19,8 +19,8 @@ export default function CTA({
       <Link
         href={href}
         title={title}
-        target={href === bookingLink ? "_blank" : undefined}
-        rel={href === bookingLink ? "noopener noreferrer" : undefined}
+        target={href === BOOKING_LINK ? "_blank" : undefined}
+        rel={href === BOOKING_LINK ? "noopener noreferrer" : undefined}
       >
         <Button className={"cursor-pointer hover:scale-110"}>{anchor}</Button>
       </Link>
@@ -50,7 +50,7 @@ export default function CTA({
           Free discovery call to clarify your goals{" "}
           <span className={"font-bold underline"}>
             <Link
-              href={bookingLink}
+              href={BOOKING_LINK}
               target={"_blank"}
               rel={"noopener noreferrer"}
             >

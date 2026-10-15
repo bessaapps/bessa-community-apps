@@ -1,18 +1,28 @@
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { formatMetadata } from "@/lib/helpers";
 import { Post } from "@/lib/definitions";
 import ArticleCard from "@/components/ArticleCard";
 import { Blog, WithContext } from "schema-dts";
-import { bookingLink, url } from "@/lib/constants";
+import { BOOKING_LINK, METADATA, URL } from "@/lib/constants";
 import Section from "../../components/sections/Section";
 
-export const metadata = formatMetadata({
-  metadataTitle: "Launchpad: The App Builder's Guide",
-  metadataDescription:
-    "Stop dreaming; start launching. The Launchpad blog helps innovators move past feeling immobilized with custom application development and a clear path forward.",
-  path: `${url}/launchpad`
-});
+const TITLE = "Launchpad: The App Builder's Guide";
+const DESCRIPTION =
+  "Stop dreaming; start launching. The Launchpad blog helps innovators move past feeling immobilized with custom application development and a clear path forward.";
+
+export const metadata: Metadata = {
+  ...METADATA,
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: {
+    ...METADATA.openGraph,
+    title: TITLE,
+    description: DESCRIPTION,
+    url: `${URL}/launchpad`
+  },
+  twitter: { ...METADATA.twitter, title: TITLE, description: DESCRIPTION }
+};
 
 export default async function Launchpad() {
   const response = await fetch(
@@ -26,7 +36,7 @@ export default async function Launchpad() {
     "@context": "https://schema.org",
     "@type": "Blog",
     name: "Launchpad",
-    url: `${url}/launchpad`,
+    url: `${URL}/launchpad`,
     description:
       "Stop dreaming, start launching. I guide innovators and organizations through custom app development with a clear, non-intimidating path to digital success.",
     about:
@@ -36,7 +46,7 @@ export default async function Launchpad() {
       name: "Bessa Community Apps",
       logo: {
         "@type": "ImageObject",
-        url: `${url}/logo.png`
+        url: `${URL}/logo.png`
       }
     },
     inLanguage: "en-US"
@@ -58,7 +68,7 @@ export default async function Launchpad() {
           innovator or an organization, I provide the clear, non-intimidating
           path forward you need to stop dreaming and start launching.
         </p>
-        <Link href={bookingLink} target={"_blank"} rel={"noopener noreferrer"}>
+        <Link href={BOOKING_LINK} target={"_blank"} rel={"noopener noreferrer"}>
           <Button size={"lg"} className={"cursor-pointer hover:scale-110"}>
             Start my Project!
           </Button>

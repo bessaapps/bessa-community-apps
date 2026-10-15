@@ -1,4 +1,3 @@
-import { formatMetadata } from "@/lib/helpers";
 import Image from "next/image";
 import { stripHtml } from "string-strip-html";
 import ProcessSection from "../../../components/sections/ProcessSection";
@@ -8,12 +7,14 @@ import FAQSection from "../../../components/sections/FAQSection";
 import { permanentRedirect } from "next/navigation";
 import Section from "@/components/sections/Section";
 import CTA from "@/components/CTA";
+import { METADATA } from "@/lib/constants";
+import { Metadata } from "next";
 
 export async function generateMetadata({
   params
 }: {
   params: { slug: string };
-}) {
+}): Promise<Metadata> {
   const { slug } = await params;
   const response = await fetch(
     `https://cms.bessaapps.com/wp-json/wp/v2/posts?slug=${slug}&_embed`,
@@ -25,12 +26,31 @@ export async function generateMetadata({
   const title = stripHtml(service.title.rendered).result;
   const excerpt = stripHtml(service.excerpt.rendered).result;
 
-  return formatMetadata({
-    metadataTitle: service?.acf?.meta_title || title,
-    metadataDescription: excerpt,
-    path: `/${service.slug}`,
-    imagePath: service?._embedded?.["wp:featuredmedia"]?.[0]?.source_url
-  });
+  return {
+    ...METADATA,
+    title: service?.acf?.meta_title || title,
+    description: excerpt,
+    openGraph: {
+      ...METADATA.openGraph,
+      title: service?.acf?.meta_title || title,
+      url: `/${service.slug}`,
+      images: [
+        {
+          url: service?._embedded?.["wp:featuredmedia"]?.[0]?.source_url
+        }
+      ]
+    },
+    twitter: {
+      ...METADATA.twitter,
+      title: service?.acf?.meta_title || title,
+      description: excerpt,
+      images: [
+        {
+          url: service?._embedded?.["wp:featuredmedia"]?.[0]?.source_url
+        }
+      ]
+    }
+  };
 }
 
 export default async function PostPage({

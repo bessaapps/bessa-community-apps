@@ -1,4 +1,3 @@
-import { formatMetadata } from "@/lib/helpers";
 import Link from "next/link";
 import Image from "next/image";
 import { stripHtml } from "string-strip-html";
@@ -7,18 +6,19 @@ import ServicesSection from "../../../components/sections/ServicesSection";
 import { BlogPosting, WithContext } from "schema-dts";
 import dayjs from "dayjs";
 import Me from "@/assets/images/me-square.png";
-import { bookingLink, url } from "@/lib/constants";
+import { BOOKING_LINK, METADATA, URL } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import ShareButtons from "@/components/ShareButtons";
 import FAQSection from "../../../components/sections/FAQSection";
 import { permanentRedirect } from "next/navigation";
 import Section from "@/components/sections/Section";
+import { Metadata } from "next";
 
 export async function generateMetadata({
   params
 }: {
   params: { slug: string };
-}) {
+}): Promise<Metadata> {
   const { slug } = await params;
   const response = await fetch(
     `https://cms.bessaapps.com/wp-json/wp/v2/posts?slug=${slug}&_embed`,
@@ -29,14 +29,33 @@ export async function generateMetadata({
 
   const title = stripHtml(post.title.rendered).result;
   const excerpt = stripHtml(post.excerpt.rendered).result;
-  const featuredMedia = post?._embedded?.["wp:featuredmedia"]?.[0];
 
-  return formatMetadata({
-    metadataTitle: post?.acf?.meta_title || title,
-    metadataDescription: excerpt,
-    path: `/launchpad/${post.slug}`,
-    imagePath: featuredMedia?.source_url
-  });
+  return {
+    ...METADATA,
+    title: post?.acf?.meta_title || title,
+    description: excerpt,
+    openGraph: {
+      ...METADATA.openGraph,
+      title: post?.acf?.meta_title || title,
+      description: excerpt,
+      url: `/launchpad/${post.slug}`,
+      images: [
+        {
+          url: post?._embedded?.["wp:featuredmedia"]?.[0]?.source_url
+        }
+      ]
+    },
+    twitter: {
+      ...METADATA.twitter,
+      title: post?.acf?.meta_title || title,
+      description: excerpt,
+      images: [
+        {
+          url: post?._embedded?.["wp:featuredmedia"]?.[0]?.source_url
+        }
+      ]
+    }
+  };
 }
 
 export default async function ArticlePage({
@@ -108,7 +127,7 @@ export default async function ArticlePage({
               </p>
             </div>
             <Link
-              href={bookingLink}
+              href={BOOKING_LINK}
               target={"_blank"}
               rel={"noopener noreferrer"}
               className={"ml-auto my-8"}
@@ -143,7 +162,7 @@ export default async function ArticlePage({
             />
             <div className={"flex justify-end"}>
               <ShareButtons
-                url={`${url}/launchpad/${post.slug}`}
+                url={`${URL}/launchpad/${post.slug}`}
                 title={post?.acf?.meta_title || title}
               />
             </div>

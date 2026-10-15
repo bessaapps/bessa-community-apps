@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BsGithub, BsLinkedin, BsTwitterX } from "react-icons/bs";
-import { bookingLink, keyword, title } from "@/lib/constants";
+import { BOOKING_LINK, KEYWORD, TITLE } from "@/lib/constants";
 import { AiOutlineCalendar } from "react-icons/ai";
 
 export default function CTASection() {
@@ -28,7 +28,7 @@ export default function CTASection() {
           <div className={"flex flex-col gap-4 py-8"}>
             <div>
               <Link
-                href={bookingLink}
+                href={BOOKING_LINK}
                 target={"_blank"}
                 rel={"noopener noreferrer"}
               >
@@ -78,7 +78,7 @@ export default function CTASection() {
           </div>
           <p className={"text-sm text-right accent-muted"}>
             &copy; Copyright{" "}
-            <Link href={"/public"} title={`${keyword} - ${title}`}>
+            <Link href={"/public"} title={`${KEYWORD} - ${TITLE}`}>
               Bessa Community Apps, LLC
             </Link>
           </p>

@@ -1,13 +1,13 @@
 import "./globals.css";
 import CTASection from "../components/sections/CTASection";
-import { formatMetadata } from "@/lib/helpers";
-import { url } from "@/lib/constants";
+import { METADATA } from "@/lib/constants";
 import { IBM_Plex_Sans, IBM_Plex_Serif } from "next/font/google";
 import Clock from "@/components/Clock";
 import Weather from "@/components/Weather";
 import TopNavigation from "../components/navigation/TopNavigation";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
+import { Metadata } from "next";
 
 const ibmPlexSerif = IBM_Plex_Serif({
   weight: ["500"],
@@ -18,12 +18,7 @@ const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-ibm-plex-sans"
 });
 
-export const metadata = formatMetadata({
-  metadataTitle: "Bessa Community Apps",
-  metadataDescription:
-    "Building and publishing revolutionary cross-platform apps to the Apple App Store and Google Play for innovators, organizations, and communities.",
-  path: url
-});
+export const metadata: Metadata = METADATA;
 
 export default function RootLayout({
   children
