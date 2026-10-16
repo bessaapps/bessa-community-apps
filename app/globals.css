@@ -129,6 +129,6 @@ h2 {
 }
 
 ::selection {
-  background-color: var(--color-secondary);
-  color: var(--color-secondary-foreground);
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
 }
