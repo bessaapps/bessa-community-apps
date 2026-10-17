@@ -122,14 +122,14 @@ export default async function Home() {
         <div className={"grid sm:grid-cols-2 gap-4 mx-4 mb-8"}>
           <h2 className={"text-4xl font-bold"}>Services</h2>
           <p>
-            Turn your app idea from a napkin sketch to an impactful, sustainable
-            product. My in-depth, cross-platform app development services
-            include a comprehensive process including validating your idea,
-            developing your app, testing your app and keeping it up-to-date,
-            publishing your app to the Apple App Store, Google Play, the web,
-            and more, and getting your app into the hands of people who need and
-            want it. My services are designed to see you all the way from the
-            ideation phase to well past the distribution stage.{" "}
+            Turn your app idea from a napkin sketch into an impactful,
+            sustainable product. My in-depth, cross-platform app development
+            services include a comprehensive process including validating your
+            idea, developing your app, testing your app and keeping it
+            up-to-date, publishing your app to the Apple App Store, Google Play,
+            the web, and more, and getting your app into the hands of people who
+            need and want it. My services are designed to see you all the way
+            from the ideation phase to well past the distribution stage.{" "}
             <span className={"text-nowrap"}>
               <Link
                 href={BOOKING_LINK}
