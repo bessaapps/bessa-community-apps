@@ -36,6 +36,7 @@ export default function CTA({
               }
               className={"object-cover"}
               fill
+              sizes={"40px"}
             />
           </div>
           <div

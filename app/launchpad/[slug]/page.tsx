@@ -103,7 +103,7 @@ export default async function ArticlePage({
             <p className={"uppercase"}>Launchpad</p>
           </Link>
           <h1 className={"text-4xl sm:text-6xl font-bold"}>{title}</h1>
-          <div className={"flex items-center gap-4"}>
+          <div className={"flex flex-col sm:flex-row sm:items-center gap-4"}>
             <div className={"w-12 rounded-full aspect-square overflow-hidden"}>
               <Image
                 src={Me}
@@ -130,7 +130,7 @@ export default async function ArticlePage({
               href={BOOKING_LINK}
               target={"_blank"}
               rel={"noopener noreferrer"}
-              className={"ml-auto my-8"}
+              className={"sm:ml-auto my-8"}
             >
               <Button size={"lg"} className={"cursor-pointer hover:scale-110"}>
                 Start my Project!
