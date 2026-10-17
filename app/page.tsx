@@ -6,8 +6,13 @@ import Me from "@/assets/images/me.png";
 import Image from "next/image";
 import ProcessSection from "../components/sections/ProcessSection";
 import { Post } from "@/lib/definitions";
-import { BOOKING_LINK, FAQS, LINKS, SOCIALS } from "@/lib/constants";
-import { Graph, ListItem, Question } from "schema-dts";
+import {
+  BOOKING_LINK,
+  BREADCRUMB_LIST,
+  FAQ_PAGE,
+  PROFESSIONAL_SERVICE
+} from "@/lib/constants";
+import { Graph } from "schema-dts";
 import ArticleCard from "@/components/ArticleCard";
 import Services from "@/components/Services";
 import FAQSection from "../components/sections/FAQSection";
@@ -20,9 +25,6 @@ import {
 import Section from "../components/sections/Section";
 
 export default async function Home() {
-  const SUBHEADING =
-    "Building and publishing revolutionary cross-platform apps to the Apple App Store and Google Play for innovators, organizations, and communities.";
-
   const WORKS = [
     {
       name: "AS/400 App",
@@ -59,54 +61,7 @@ export default async function Home() {
 
   const jsonLd: Graph = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "ProfessionalService",
-        name: "Bessa Community Apps",
-        url: "https://bessaapps.com",
-        logo: "https://bessaapps.com/logo.png",
-        image: "https://bessaapps.com/logo.png",
-        description: SUBHEADING,
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Las Vegas",
-          addressRegion: "NV",
-          postalCode: "89104",
-          addressCountry: "US"
-        },
-        priceRange: "$1500+",
-        sameAs: SOCIALS
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: Object.entries(FAQS).map(
-          ([key, value]): Question => ({
-            "@type": "Question",
-            name: key,
-            acceptedAnswer: { "@type": "Answer", text: value }
-          })
-        )
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          ...LINKS.map(
-            ({ href, anchor }, index): ListItem => ({
-              "@type": "ListItem",
-              position: index + 1,
-              name: anchor,
-              item: `https://bessaapps.com${href}`
-            })
-          ),
-          {
-            "@type": "ListItem",
-            position: LINKS.length + 1,
-            name: "Launchpad",
-            item: "https://bessaapps.com/launchpad"
-          }
-        ]
-      }
-    ]
+    "@graph": [PROFESSIONAL_SERVICE, FAQ_PAGE, BREADCRUMB_LIST]
   };
 
   return (

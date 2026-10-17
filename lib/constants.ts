@@ -1,4 +1,11 @@
 import { Metadata } from "next";
+import {
+  BreadcrumbList,
+  FAQPage,
+  ListItem,
+  ProfessionalService,
+  Question
+} from "schema-dts";
 
 export const KEYWORD = "Mobile Development and Consulting";
 export const TITLE = "Mobile Development and Consulting for Impactful Apps";
@@ -7,35 +14,6 @@ const DESCRIPTION =
 export const URL = "https://bessaapps.com";
 
 export const BOOKING_LINK = "https://calendar.app.google/uGBwb7WfWXLUgSU6A";
-
-export const METADATA: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-  openGraph: {
-    title: TITLE,
-    description: DESCRIPTION,
-    url: URL,
-    siteName: TITLE,
-    images: [
-      {
-        url: `${URL}/images/opengraph-image.png`
-      }
-    ],
-    locale: "en_US",
-    type: "website"
-  },
-  twitter: {
-    title: TITLE,
-    description: DESCRIPTION,
-    card: "summary_large_image",
-    creator: "@bessaapps",
-    images: [
-      {
-        url: `${URL}/images/twitter-image.png`
-      }
-    ]
-  }
-};
 
 export const LINKS = [
   { href: "/#works", anchor: "Works" },
@@ -66,4 +44,82 @@ export const FAQS = {
     "I offer a free consultation. I charge $50/hr. after that. Typical projects range from $3,000 to $10,000.",
   "Will you sign a non-disclosure agreement (NDA)?":
     "Yes, of course! Your ideas are your own. I’m just here to help turn your ideas into an impactful app that you own, profit from, and can be proud of."
+};
+
+export const METADATA: Metadata = {
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
+    siteName: TITLE,
+    images: [
+      {
+        url: `${URL}/images/opengraph-image.png`
+      }
+    ],
+    locale: "en_US",
+    type: "website"
+  },
+  twitter: {
+    title: TITLE,
+    description: DESCRIPTION,
+    card: "summary_large_image",
+    creator: "@bessaapps",
+    images: [
+      {
+        url: `${URL}/images/twitter-image.png`
+      }
+    ]
+  }
+};
+
+export const PROFESSIONAL_SERVICE: ProfessionalService = {
+  "@type": "ProfessionalService",
+  name: "Bessa Community Apps",
+  url: URL,
+  logo: `${URL}/logo.png`,
+  image: `${URL}/images/opengraph-image.png`,
+  description: DESCRIPTION,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Las Vegas",
+    addressRegion: "NV",
+    postalCode: "89104",
+    addressCountry: "US"
+  },
+  priceRange: "$1500+",
+  sameAs: SOCIALS
+};
+
+export const FAQ_PAGE: FAQPage = {
+  "@type": "FAQPage",
+  mainEntity: Object.entries(FAQS).map(
+    ([key, value]): Question => ({
+      "@type": "Question",
+      name: key,
+      acceptedAnswer: { "@type": "Answer", text: value }
+    })
+  )
+};
+
+export const BREADCRUMB_LIST: BreadcrumbList = {
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    ...LINKS.map(
+      ({ href, anchor }, index): ListItem => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: anchor,
+        item: `${URL}${href}`
+      })
+    ),
+    {
+      "@type": "ListItem",
+      position: LINKS.length + 1,
+      name: "Launchpad",
+      item: "https://bessaapps.com/launchpad"
+    }
+  ]
 };
