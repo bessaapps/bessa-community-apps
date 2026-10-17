@@ -4,9 +4,11 @@ import {
   FAQPage,
   ListItem,
   ProfessionalService,
-  Question
+  Question,
+  Service
 } from "schema-dts";
 
+const BUSINESS_NAME = "Bessa Community Apps";
 export const KEYWORD = "Mobile Development and Consulting";
 export const TITLE = "Mobile Development and Consulting for Impactful Apps";
 const DESCRIPTION =
@@ -77,7 +79,7 @@ export const METADATA: Metadata = {
 
 export const PROFESSIONAL_SERVICE: ProfessionalService = {
   "@type": "ProfessionalService",
-  name: "Bessa Community Apps",
+  name: BUSINESS_NAME,
   url: URL,
   logo: `${URL}/logo.png`,
   image: `${URL}/images/opengraph-image.png`,
@@ -119,7 +121,16 @@ export const BREADCRUMB_LIST: BreadcrumbList = {
       "@type": "ListItem",
       position: LINKS.length + 1,
       name: "Launchpad",
-      item: "https://bessaapps.com/launchpad"
+      item: `${URL}/launchpad`
     }
   ]
+};
+
+export const SERVICE: Service = {
+  "@type": "Service",
+  provider: {
+    "@type": "Organization",
+    name: BUSINESS_NAME
+  },
+  areaServed: "Worldwide"
 };

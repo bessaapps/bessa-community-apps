@@ -7,7 +7,7 @@ import FAQSection from "../../../components/sections/FAQSection";
 import { permanentRedirect } from "next/navigation";
 import Section from "@/components/sections/Section";
 import CTA from "@/components/CTA";
-import { METADATA } from "@/lib/constants";
+import { METADATA, SERVICE, URL } from "@/lib/constants";
 import { Metadata } from "next";
 
 export async function generateMetadata({
@@ -74,17 +74,12 @@ export default async function PostPage({
 
   const jsonLd: WithContext<Service> = {
     "@context": "https://schema.org",
-    "@type": "Service",
+    ...SERVICE,
     serviceType: service?.acf?.meta_title || title,
-    provider: {
-      "@type": "Organization",
-      name: "Bessa Community Apps"
-    },
-    areaServed: "Worldwide",
     name: service?.acf?.meta_title || title,
     image: featuredMedia?.source_url,
     description: excerpt,
-    url: `http://bessaapps.com/${slug}`
+    url: `${URL}/${slug}`
   };
 
   return (
